@@ -1,0 +1,9 @@
+Billinger Bot v2.6.2 — Four-Provider, High-Contrast and Timeout Maintenance Release
+
+- Gemini, OpenAI, Groq and OpenRouter display together in one row on normal laptop and desktop screens.
+- Medium screens use a 2x2 layout and mobile screens use one card per row.
+- Added a persistent four-provider overview and direct jump buttons.
+- Changed light-grey dashboard copy, labels, helper text and placeholders to darker high-contrast text.
+- Increased default AI timeout to 120 seconds and supports up to 300 seconds.
+- Provider connection tests use a small response, a 120-second minimum read window and low/no reasoning where supported.
+- Timeout errors now distinguish response delay from network, authentication, quota and invalid-model failures.

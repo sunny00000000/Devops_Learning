@@ -1,0 +1,60 @@
+{
+  "id": "program-progress-evidence-workbook",
+  "title": "DevOps Master Course — Progress Tracker and Evidence Workbook (2026)",
+  "page_count": 10,
+  "headings": [
+    "How to Use This Workbook",
+    "Course Dashboard",
+    "Volume-Level Progress",
+    "Part-Level Progress",
+    "Lab Completion Log",
+    "Weekly Review",
+    "Skills Confidence Matrix",
+    "Interview Readiness Tracker",
+    "Certification Planning",
+    "Capstone Milestone Tracker",
+    "Final Graduation Record"
+  ],
+  "chunks": [
+    {
+      "page": 1,
+      "text": "DEVOPS MASTER COURSE | FINAL RELEASE PACKAGE 2026\nPage 1\nDEVOPS MASTER COURSE\nProgress Tracker and Evidence Workbook\nPrintable and editable tracking system for all 15 volumes\nEdition\n2026 Final Release\nCurriculum\nVolumes 1-15\nDelivery\nDOCX + PDF + Executable Repository\nProfessional learning, practical evidence, enterprise readiness."
+    },
+    {
+      "page": 2,
+      "text": "DEVOPS MASTER COURSE | FINAL RELEASE PACKAGE 2026\nPage 2\nHow to Use This Workbook\n1.\nSet the target dates and current status for each volume and part.\n2.\nRecord knowledge, practical and interview scores independently.\n3.\nLink or reference the evidence folder for each completed item.\n4.\nReview progress weekly and record blockers and next actions.\n5.\nDo not mark an item complete without validation and cleanup evidence.\n1. Course Dashboard\nMetric\nTarget\nCurrent\nNotes\nVolumes completed\n15\nParts completed\nAs defined by course files\nLabs passed\n150\nKnowledge average\n>= 75%\nPractical average\n>= 75%\nInterview rating\nProfessional or Master\nCapstone score\n>= 80%\n2. Volume-Level Progress\nVol.\nSpecialization\nStatus\nKnowledge\nPractical\nInterview\nEvidence\nReview date\n1\nLinux and \nDevOps \nFoundations\nNot Started\n2\nLinux \nAdministration, \nShell Scripting \nand \nTroubleshootin\ng\nNot Started\n3\nGit, GitHub and \nCollaborative \nDevelopment\nNot Started\n4\nNetworking, \nWeb \nInfrastructure \nand Security \nFoundations\nNot Started\n5\nPython \nAutomation for \nDevOps\nNot Started\n6\nContainers and \nDocker \nEngineering\nNot Started\n7\nKubernetes \nAdministration \nand \nApplication \nDelivery\nNot Started"
+    },
+    {
+      "page": 3,
+      "text": "DEVOPS MASTER COURSE | FINAL RELEASE PACKAGE 2026\nPage 3\nVol.\nSpecialization\nStatus\nKnowledge\nPractical\nInterview\nEvidence\nReview date\n8\nInfrastructure \nas Code and \nConfiguration \nManagement\nNot Started\n9\nCloud-Native \nCI/CD \nFoundations\nNot Started\n10\nAdvanced \nCI/CD, GitOps \nand DevSecOps\nNot Started\n11\nObservability \nand Site \nReliability \nEngineering\nNot Started\n12\nMulti-Cloud \nand Enterprise \nCloud \nArchitecture\nNot Started\n13\nPlatform \nEngineering \nand Internal \nDeveloper \nPlatforms\nNot Started\n14\nDataOps, \nMLOps, AI \nInfrastructure \nand LLMOps\nNot Started\n15\nDevOps \nLeadership, \nEnterprise \nTransformatio\nn and Final \nMastery\nNot Started\n3. Part-Level Progress\nVolumes 1-3\nPart\nTrack\nStatus\nKnowledge\nPractical\nInterview\nEvidence/ref.\n1A\nFoundations\nNot Started\n1B\nCore Engineering\nNot Started\n1C\nAdvanced \nEngineering\nNot Started\n1D\nProduction \nOperations\nNot Started\n1E\nEnterprise Scale \nand Governance\nNot Started\n1F\nProjects, \nInterviews and \nCapstone\nNot Started\n2A\nFoundations\nNot Started\n2B\nCore Engineering\nNot Started\n2C\nAdvanced \nEngineering\nNot Started"
+    },
+    {
+      "page": 4,
+      "text": "DEVOPS MASTER COURSE | FINAL RELEASE PACKAGE 2026\nPage 4\nPart\nTrack\nStatus\nKnowledge\nPractical\nInterview\nEvidence/ref.\n2D\nProduction \nOperations\nNot Started\n2E\nEnterprise Scale \nand Governance\nNot Started\n2F\nProjects, \nInterviews and \nCapstone\nNot Started\n3A\nFoundations\nNot Started\n3B\nCore Engineering\nNot Started\n3C\nAdvanced \nEngineering\nNot Started\n3D\nProduction \nOperations\nNot Started\n3E\nEnterprise Scale \nand Governance\nNot Started\n3F\nProjects, \nInterviews and \nCapstone\nNot Started\nVolumes 4-6\nPart\nTrack\nStatus\nKnowledge\nPractical\nInterview\nEvidence/ref.\n4A\nFoundations\nNot Started\n4B\nCore Engineering\nNot Started\n4C\nAdvanced \nEngineering\nNot Started\n4D\nProduction \nOperations\nNot Started\n4E\nEnterprise Scale \nand Governance\nNot Started\n4F\nProjects, \nInterviews and \nCapstone\nNot Started\n5A\nFoundations\nNot Started\n5B\nCore Engineering\nNot Started\n5C\nAdvanced \nEngineering\nNot Started\n5D\nProduction \nOperations\nNot Started\n5E\nEnterprise Scale \nand Governance\nNot Started\n5F\nProjects, \nInterviews and \nCapstone\nNot Started\n6A\nFoundations\nNot Started\n6B\nCore Engineering\nNot Started\n6C\nAdvanced \nEngineering\nNot Started\n6D\nProduction \nOperations\nNot Started"
+    },
+    {
+      "page": 5,
+      "text": "DEVOPS MASTER COURSE | FINAL RELEASE PACKAGE 2026\nPage 5\nPart\nTrack\nStatus\nKnowledge\nPractical\nInterview\nEvidence/ref.\n6E\nEnterprise Scale \nand Governance\nNot Started\n6F\nProjects, \nInterviews and \nCapstone\nNot Started\nVolumes 7-9\nPart\nTrack\nStatus\nKnowledge\nPractical\nInterview\nEvidence/ref.\n7A\nFoundations\nNot Started\n7B\nCore Engineering\nNot Started\n7C\nAdvanced \nEngineering\nNot Started\n7D\nProduction \nOperations\nNot Started\n7E\nEnterprise Scale \nand Governance\nNot Started\n7F\nProjects, \nInterviews and \nCapstone\nNot Started\n8A\nFoundations\nNot Started\n8B\nCore Engineering\nNot Started\n8C\nAdvanced \nEngineering\nNot Started\n8D\nProduction \nOperations\nNot Started\n8E\nEnterprise Scale \nand Governance\nNot Started\n8F\nProjects, \nInterviews and \nCapstone\nNot Started\n9A\nFoundations\nNot Started\n9B\nCore Engineering\nNot Started\n9C\nAdvanced \nEngineering\nNot Started\n9D\nProduction \nOperations\nNot Started\n9E\nEnterprise Scale \nand Governance\nNot Started\n9F\nProjects, \nInterviews and \nCapstone\nNot Started\nVolumes 10-12\nPart\nTrack\nStatus\nKnowledge\nPractical\nInterview\nEvidence/ref.\n10A\nFoundations\nNot Started\n10B\nCore Engineering\nNot Started\n10C\nAdvanced \nEngineering\nNot Started"
+    },
+    {
+      "page": 6,
+      "text": "DEVOPS MASTER COURSE | FINAL RELEASE PACKAGE 2026\nPage 6\nPart\nTrack\nStatus\nKnowledge\nPractical\nInterview\nEvidence/ref.\n10D\nProduction \nOperations\nNot Started\n10E\nEnterprise Scale \nand Governance\nNot Started\n10F\nProjects, \nInterviews and \nCapstone\nNot Started\n11A\nFoundations\nNot Started\n11B\nCore Engineering\nNot Started\n11C\nAdvanced \nEngineering\nNot Started\n11D\nProduction \nOperations\nNot Started\n11E\nEnterprise Scale \nand Governance\nNot Started\n11F\nProjects, \nInterviews and \nCapstone\nNot Started\n12A\nFoundations\nNot Started\n12B\nCore Engineering\nNot Started\n12C\nAdvanced \nEngineering\nNot Started\n12D\nProduction \nOperations\nNot Started\n12E\nEnterprise Scale \nand Governance\nNot Started\n12F\nProjects, \nInterviews and \nCapstone\nNot Started\nVolumes 13-15\nPart\nTrack\nStatus\nKnowledge\nPractical\nInterview\nEvidence/ref.\n13A\nFoundations\nNot Started\n13B\nCore Engineering\nNot Started\n13C\nAdvanced \nEngineering\nNot Started\n13D\nProduction \nOperations\nNot Started\n13E\nEnterprise Scale \nand Governance\nNot Started\n13F\nProjects, \nInterviews and \nCapstone\nNot Started\n14A\nFoundations\nNot Started\n14B\nCore Engineering\nNot Started\n14C\nAdvanced \nEngineering\nNot Started\n14D\nProduction \nOperations\nNot Started"
+    },
+    {
+      "page": 7,
+      "text": "DEVOPS MASTER COURSE | FINAL RELEASE PACKAGE 2026\nPage 7\nPart\nTrack\nStatus\nKnowledge\nPractical\nInterview\nEvidence/ref.\n14E\nEnterprise Scale \nand Governance\nNot Started\n14F\nProjects, \nInterviews and \nCapstone\nNot Started\n15A\nFoundations\nNot Started\n15B\nCore Engineering\nNot Started\n15C\nAdvanced \nEngineering\nNot Started\n15D\nProduction \nOperations\nNot Started\n15E\nEnterprise Scale \nand Governance\nNot Started\n15F\nProjects, \nInterviews and \nCapstone\nNot Started\n4. Lab Completion Log\nUse one row per lab. The repository also includes an editable CSV containing all 150 lab identifiers.\nLab ID\nDate\nStatus\nScore\nFailure drill\nCleanup\nEvidence \nlocation\n5. Weekly Review\nWeek\nCompleted\nEvidence \nproduced\nBlocker\nNext action\nMentor note"
+    },
+    {
+      "page": 8,
+      "text": "DEVOPS MASTER COURSE | FINAL RELEASE PACKAGE 2026\nPage 8\nWeek\nCompleted\nEvidence \nproduced\nBlocker\nNext action\nMentor note\n6. Skills Confidence Matrix\nSkill\nExplain\nBuild\nTroubleshoot\nDesign\nTeach\nLinux operations\nNetworking\nGit and \ncollaboration\nPython automation\nContainers\nKubernetes\nTerraform and \nAnsible\nCI/CD\nDevSecOps\nObservability\nSRE\nCloud architecture\nPlatform \nengineering\nMLOps/AI \ninfrastructure\nLeadership and \ntransformation\n7. Interview Readiness Tracker\nDomain\nLast practice\nRating\nStrong example\nGap\nNext drill\nLinux and DevOps \nFoundations\nLinux \nAdministration, Shell \nScripting and \nTroubleshooting\nGit, GitHub and \nCollaborative \nDevelopment\nNetworking, Web \nInfrastructure and \nSecurity Foundations\nPython Automation \nfor DevOps"
+    },
+    {
+      "page": 9,
+      "text": "DEVOPS MASTER COURSE | FINAL RELEASE PACKAGE 2026\nPage 9\nDomain\nLast practice\nRating\nStrong example\nGap\nNext drill\nContainers and \nDocker Engineering\nKubernetes \nAdministration and \nApplication Delivery\nInfrastructure as \nCode and \nConfiguration \nManagement\nCloud-Native CI/CD \nFoundations\nAdvanced CI/CD, \nGitOps and \nDevSecOps\nObservability and Site \nReliability \nEngineering\nMulti-Cloud and \nEnterprise Cloud \nArchitecture\nPlatform Engineering \nand Internal \nDeveloper Platforms\nDataOps, MLOps, AI \nInfrastructure and \nLLMOps\nDevOps Leadership, \nEnterprise \nTransformation and \nFinal Mastery\n8. Certification Planning\nCertification\nRelevance\nTarget date\nStudy evidence\nMock score\nStatus\nLinux / \nadministration\nVolumes 1-2\nKubernetes\nVolumes 7 and 10\nTerraform / cloud\nVolumes 8 and 12\nPrometheus / \nOpenTelemetry\nVolume 11\nCloud provider \nprofessional\nVolume 12\nPlatform / AI \nspecialization\nVolumes 13-14\n9. Capstone Milestone Tracker\nMilestone\nOwner\nTarget\nStatus\nEvidence\nGate result\nRequirements and \narchitecture\nRepository and \nbootstrap"
+    },
+    {
+      "page": 10,
+      "text": "DEVOPS MASTER COURSE | FINAL RELEASE PACKAGE 2026\nPage 10\nMilestone\nOwner\nTarget\nStatus\nEvidence\nGate result\nCI/CD and artifact \ncontrols\nKubernetes \nruntime\nSecurity and policy\nObservability and \nSLOs\nFailure drills and \nDR\nGolden path and \nsecond service\nFinal demo and \ndefense\nTeardown and \nclosure\n10. Final Graduation Record\nRequirement\nResult\nReviewer\nDate\nEvidence\nAll required volumes \npassed\n150-lab target \ncompleted\nAssessment averages \nachieved\nCapstone accepted\nPortfolio reviewed\nGraduation approved"
+    }
+  ]
+}

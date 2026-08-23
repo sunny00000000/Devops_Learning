@@ -1,0 +1,15 @@
+BILLINGER BOT v2.1.0 UPDATE NOTES
+=================================
+
+NEW
+- Imported 65 matched PDF/DOCX course volumes from learning.zip.
+- Assigned each volume to one or more relevant DevOps tool lists.
+- Added PDF reading directly inside each tool's Learning Roadmap view.
+- Added extracted text with page navigation.
+- Added source-grounded document questions and optional Local AI answers.
+- Added course-book search and reviewed-status tracking per student.
+- Added exact learning-library mapping reports in Markdown and CSV.
+
+UNCHANGED
+- Existing student database, lessons, labs, tests, interviews, company simulation,
+  capstones, resume builder, Safe Real Lab, and sidebar scrolling behavior remain compatible.

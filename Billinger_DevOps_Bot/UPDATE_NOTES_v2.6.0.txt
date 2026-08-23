@@ -1,0 +1,24 @@
+BILLINGER BOT v2.6.0 — ADAPTIVE AI MENTOR EDITION
+
+NEW
+- Google Gemini, OpenAI API, Groq, and OpenRouter integration.
+- API-key Credential Vault inside the administrator dashboard.
+- Windows DPAPI encryption and masked key hints.
+- Task-specific provider routes with editable fallback order.
+- Quota/credit/rate-limit/timeout/provider-outage failover.
+- Per-provider and global daily request limits.
+- Provider cooldown/circuit-breaker behavior and usage audit logs.
+- AI lesson tutor and source-context support.
+- AI test weakness, missing-command, and revision analysis.
+- AI interview-answer analysis while fixed Billinger scoring stays authoritative.
+- Adaptive, random, command, incident, and company-role test modes.
+- Company-role interview question packs.
+- Curriculum and missing-command audit proposals requiring administrator review.
+- Personal-data and secret redaction before online requests.
+- Verified local question-bank fallback.
+
+PRESERVED
+All v2.5.1 learning, verified library, company simulator, practical exams, portfolio, career, email, recruitment, backup, studio dashboard, and security functions remain present.
+
+LIVE-SERVICE NOTE
+The packaged test suite uses controlled provider mocks because no user API credentials are bundled and no paid external calls are made during release testing. Use Test Provider after entering each real key.

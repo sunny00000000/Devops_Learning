@@ -1,0 +1,927 @@
+﻿domain,category,content_type,level,id_or_title,detail
+Linux Administration,Foundations,command_or_configuration_example,,auditctl -l,
+Linux Administration,Foundations,command_or_configuration_example,,cd /var/log,
+Linux Administration,Foundations,command_or_configuration_example,,chmod 640 file,
+Linux Administration,Foundations,command_or_configuration_example,,df -h,
+Linux Administration,Foundations,command_or_configuration_example,,du -sh /var/log/*,
+Linux Administration,Foundations,command_or_configuration_example,,findmnt,
+Linux Administration,Foundations,command_or_configuration_example,,iostat -xz 1,
+Linux Administration,Foundations,command_or_configuration_example,,"journalctl -u nginx --since ""30 min ago""",
+Linux Administration,Foundations,command_or_configuration_example,,ls -lah,
+Linux Administration,Foundations,command_or_configuration_example,,pwd,
+Linux Administration,Foundations,command_or_configuration_example,,sar -u 1 5,
+Linux Administration,Foundations,command_or_configuration_example,,ss -tulpn,
+Linux Administration,Foundations,command_or_configuration_example,,sysctl -a,
+Linux Administration,Foundations,command_or_configuration_example,,systemd-analyze blame,
+Linux Administration,Foundations,command_or_configuration_example,,top,
+Linux Administration,Foundations,command_or_configuration_example,,vmstat 1,
+Linux Administration,Foundations,company_workflow,Beginner,Beginner,"A junior engineer receives a ticket, connects to a non-production server, inspects the filesystem, applies an approved package or permission change, validates the service, and records evidence."
+Linux Administration,Foundations,lesson,Beginner,Terminal Navigation,
+Linux Administration,Foundations,lesson,Beginner,Files And Directories,
+Linux Administration,Foundations,lesson,Beginner,Permissions And Ownership,
+Linux Administration,Foundations,lesson,Beginner,Packages And Processes,
+Linux Administration,Foundations,practice_lab,Beginner,linux-lab-1 — Beginner company lab,"Prepare a web-service account, directory structure, permissions, and a service health report."
+Linux Administration,Foundations,company_workflow,Intermediate,Intermediate,"An engineer handles an alert by checking service state, reading recent logs, validating listening ports, confirming disk space, applying a reversible fix, and updating the incident ticket."
+Linux Administration,Foundations,lesson,Intermediate,Systemd Services,
+Linux Administration,Foundations,lesson,Intermediate,Journald And Log Analysis,
+Linux Administration,Foundations,lesson,Intermediate,Storage And Mounts,
+Linux Administration,Foundations,lesson,Intermediate,Network Diagnostics,
+Linux Administration,Foundations,practice_lab,Intermediate,linux-lab-2 — Intermediate company lab,Troubleshoot a simulated service outage caused by a full filesystem and incorrect service configuration.
+Linux Administration,Foundations,company_workflow,Advanced,Advanced,"A senior engineer reviews baseline metrics, identifies a bottleneck, tests changes in staging, uses configuration control, implements backup validation, and creates a rollback plan."
+Linux Administration,Foundations,lesson,Advanced,Performance Tuning,
+Linux Administration,Foundations,lesson,Advanced,Security Hardening,
+Linux Administration,Foundations,lesson,Advanced,Backup And Recovery,
+Linux Administration,Foundations,lesson,Advanced,Shell Automation,
+Linux Administration,Foundations,practice_lab,Advanced,linux-lab-3 — Advanced company lab,Build a repeatable server-hardening and backup verification procedure with evidence.
+Linux Administration,Foundations,company_workflow,Master,Master,"A platform lead defines fleet standards, automates compliance, establishes SLO-linked alerts, runs game days, and approves production changes through peer review."
+Linux Administration,Foundations,lesson,Master,Fleet Standards,
+Linux Administration,Foundations,lesson,Master,Capacity Engineering,
+Linux Administration,Foundations,lesson,Master,Incident Command,
+Linux Administration,Foundations,lesson,Master,Golden Images,
+Linux Administration,Foundations,practice_lab,Master,linux-lab-4 — Master company lab,"Design a Linux operating model for 200 servers including patching, observability, security, backup, and disaster recovery."
+Linux Administration,Foundations,company_ticket,Beginner,"BILL-0101 — Prepare a web-service account, directory structure, permissions, and a service health report","Prepare a web-service account, directory structure, permissions, and a service health report. Business impact: Internal team productivity"
+Linux Administration,Foundations,company_ticket,Intermediate,BILL-0102 — Troubleshoot a simulated service outage caused by a full filesystem and incorrect service configuration,Troubleshoot a simulated service outage caused by a full filesystem and incorrect service configuration. Business impact: Staging reliability and release flow
+Linux Administration,Foundations,company_ticket,Advanced,BILL-0103 — Build a repeatable server-hardening and backup verification procedure with evidence,Build a repeatable server-hardening and backup verification procedure with evidence. Business impact: Customer-facing production reliability
+Linux Administration,Foundations,company_ticket,Master,"BILL-0104 — Design a Linux operating model for 200 servers including patching, observability, security, backup, and disaster recovery","Design a Linux operating model for 200 servers including patching, observability, security, backup, and disaster recovery. Business impact: Enterprise platform, governance, and business continuity"
+Linux Administration,Foundations,production_incident,SEV-2,INC-001 — Production degradation involving Linux Administration,Build a repeatable server-hardening and backup verification procedure with evidence. Customer impact: Customer-facing production reliability
+Linux Administration,Foundations,enterprise_capstone,Master,CAP-001 — Enterprise Linux Administration delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using Linux Administration as part of an end-to-end DevOps platform."
+"Networking, DNS & HTTP",Foundations,command_or_configuration_example,,curl -vk https://service,
+"Networking, DNS & HTTP",Foundations,command_or_configuration_example,,"curl -w ""%{time_connect} %{time_starttransfer} %{time_total}\n"" -o NUL -s URL",
+"Networking, DNS & HTTP",Foundations,command_or_configuration_example,,dig +trace example.com,
+"Networking, DNS & HTTP",Foundations,command_or_configuration_example,,dig SRV _service._tcp.example.com,
+"Networking, DNS & HTTP",Foundations,command_or_configuration_example,,ip addr,
+"Networking, DNS & HTTP",Foundations,command_or_configuration_example,,ip route,
+"Networking, DNS & HTTP",Foundations,command_or_configuration_example,,iperf3 -c host,
+"Networking, DNS & HTTP",Foundations,command_or_configuration_example,,mtr host,
+"Networking, DNS & HTTP",Foundations,command_or_configuration_example,,nslookup example.com,
+"Networking, DNS & HTTP",Foundations,command_or_configuration_example,,openssl s_client -connect host:443,
+"Networking, DNS & HTTP",Foundations,command_or_configuration_example,,ping -c 4 host,
+"Networking, DNS & HTTP",Foundations,command_or_configuration_example,,ss -s,
+"Networking, DNS & HTTP",Foundations,command_or_configuration_example,,tcpdump -w capture.pcap,
+"Networking, DNS & HTTP",Foundations,command_or_configuration_example,,traceroute host,
+"Networking, DNS & HTTP",Foundations,company_workflow,Beginner,Beginner,"A junior engineer verifies hostname resolution, checks reachability, tests the application port, and captures the exact error before escalation."
+"Networking, DNS & HTTP",Foundations,lesson,Beginner,Ip Addressing,
+"Networking, DNS & HTTP",Foundations,lesson,Beginner,Ports And Protocols,
+"Networking, DNS & HTTP",Foundations,lesson,Beginner,Dns Basics,
+"Networking, DNS & HTTP",Foundations,lesson,Beginner,Http Request-Response,
+"Networking, DNS & HTTP",Foundations,practice_lab,Beginner,networking-lab-1 — Beginner company lab,Diagnose why a client can ping a server but cannot open the web application.
+"Networking, DNS & HTTP",Foundations,company_workflow,Intermediate,Intermediate,"An engineer traces client-to-service traffic through DNS, firewall, load balancer, proxy, and application, validating each hop."
+"Networking, DNS & HTTP",Foundations,lesson,Intermediate,Subnets And Routing,
+"Networking, DNS & HTTP",Foundations,lesson,Intermediate,Firewalls And Nat,
+"Networking, DNS & HTTP",Foundations,lesson,Intermediate,Tls Certificates,
+"Networking, DNS & HTTP",Foundations,lesson,Intermediate,Reverse Proxies,
+"Networking, DNS & HTTP",Foundations,practice_lab,Intermediate,networking-lab-2 — Intermediate company lab,Fix a reverse-proxy outage caused by a certificate and upstream routing mismatch.
+"Networking, DNS & HTTP",Foundations,company_workflow,Advanced,Advanced,"A senior engineer compares healthy and unhealthy flows, examines packets and metrics, then implements least-privilege rules with staged rollout."
+"Networking, DNS & HTTP",Foundations,lesson,Advanced,Load Balancing,
+"Networking, DNS & HTTP",Foundations,lesson,Advanced,Service Discovery,
+"Networking, DNS & HTTP",Foundations,lesson,Advanced,Network Policies,
+"Networking, DNS & HTTP",Foundations,lesson,Advanced,Packet Analysis,
+"Networking, DNS & HTTP",Foundations,practice_lab,Advanced,networking-lab-3 — Advanced company lab,Design and validate active-active traffic routing across two application zones.
+"Networking, DNS & HTTP",Foundations,company_workflow,Master,Master,"A platform architect models latency, throughput, dependencies, blast radius, and failover before approving the production topology."
+"Networking, DNS & HTTP",Foundations,lesson,Master,Global Traffic Management,
+"Networking, DNS & HTTP",Foundations,lesson,Master,Zero Trust Networking,
+"Networking, DNS & HTTP",Foundations,lesson,Master,Capacity And Latency,
+"Networking, DNS & HTTP",Foundations,lesson,Master,Failure Domains,
+"Networking, DNS & HTTP",Foundations,practice_lab,Master,networking-lab-4 — Master company lab,"Create a global DNS, CDN, load-balancing, and failover design with measurable SLOs."
+"Networking, DNS & HTTP",Foundations,company_ticket,Beginner,BILL-0201 — Diagnose why a client can ping a server but cannot open the web application,Diagnose why a client can ping a server but cannot open the web application. Business impact: Internal team productivity
+"Networking, DNS & HTTP",Foundations,company_ticket,Intermediate,BILL-0202 — Fix a reverse-proxy outage caused by a certificate and upstream routing mismatch,Fix a reverse-proxy outage caused by a certificate and upstream routing mismatch. Business impact: Staging reliability and release flow
+"Networking, DNS & HTTP",Foundations,company_ticket,Advanced,BILL-0203 — Design and validate active-active traffic routing across two application zones,Design and validate active-active traffic routing across two application zones. Business impact: Customer-facing production reliability
+"Networking, DNS & HTTP",Foundations,company_ticket,Master,"BILL-0204 — Create a global DNS, CDN, load-balancing, and failover design with measurable SLOs","Create a global DNS, CDN, load-balancing, and failover design with measurable SLOs. Business impact: Enterprise platform, governance, and business continuity"
+"Networking, DNS & HTTP",Foundations,production_incident,SEV-2,"INC-002 — Production degradation involving Networking, DNS & HTTP",Design and validate active-active traffic routing across two application zones. Customer impact: Customer-facing production reliability
+"Networking, DNS & HTTP",Foundations,enterprise_capstone,Master,"CAP-002 — Enterprise Networking, DNS & HTTP delivery project","Design, implement, validate, secure, document, and operationalize a company-grade solution using Networking, DNS & HTTP as part of an end-to-end DevOps platform."
+Git & Collaborative Development,Source Control,command_or_configuration_example,,git add .,
+Git & Collaborative Development,Source Control,command_or_configuration_example,,git bisect start,
+Git & Collaborative Development,Source Control,command_or_configuration_example,,git bundle create repo.bundle --all,
+Git & Collaborative Development,Source Control,command_or_configuration_example,,git cherry-pick SHA,
+Git & Collaborative Development,Source Control,command_or_configuration_example,,"git commit -m ""feat: add health check""",
+Git & Collaborative Development,Source Control,command_or_configuration_example,,git fetch --all,
+Git & Collaborative Development,Source Control,command_or_configuration_example,,git init,
+Git & Collaborative Development,Source Control,command_or_configuration_example,,git log --graph --oneline --decorate,
+Git & Collaborative Development,Source Control,command_or_configuration_example,,git mergetool,
+Git & Collaborative Development,Source Control,command_or_configuration_example,,git rebase origin/main,
+Git & Collaborative Development,Source Control,command_or_configuration_example,,git status,
+Git & Collaborative Development,Source Control,command_or_configuration_example,,git tag -a v1.0.0,
+Git & Collaborative Development,Source Control,command_or_configuration_example,,git verify-commit SHA,
+Git & Collaborative Development,Source Control,command_or_configuration_example,,git verify-tag v1.0.0,
+Git & Collaborative Development,Source Control,command_or_configuration_example,,git worktree add ../hotfix hotfix,
+Git & Collaborative Development,Source Control,company_workflow,Beginner,Beginner,"A developer creates a small branch, commits an atomic change, pushes it, and opens a review with test evidence."
+Git & Collaborative Development,Source Control,lesson,Beginner,Repositories And Commits,
+Git & Collaborative Development,Source Control,lesson,Beginner,Branches,
+Git & Collaborative Development,Source Control,lesson,Beginner,Diff And Status,
+Git & Collaborative Development,Source Control,lesson,Beginner,Remote Workflows,
+Git & Collaborative Development,Source Control,practice_lab,Beginner,git-lab-1 — Beginner company lab,"Create a repository, commit three logical changes, and prepare a clean pull request."
+Git & Collaborative Development,Source Control,company_workflow,Intermediate,Intermediate,"An engineer updates a branch, resolves conflicts, runs tests, requests review, and uses revert rather than rewriting shared history after release."
+Git & Collaborative Development,Source Control,lesson,Intermediate,Merge And Rebase,
+Git & Collaborative Development,Source Control,lesson,Intermediate,Conflict Resolution,
+Git & Collaborative Development,Source Control,lesson,Intermediate,Tags And Releases,
+Git & Collaborative Development,Source Control,lesson,Intermediate,Revert And Reset,
+Git & Collaborative Development,Source Control,practice_lab,Intermediate,git-lab-2 — Intermediate company lab,Resolve a merge conflict and release a tagged version with a rollback commit.
+Git & Collaborative Development,Source Control,company_workflow,Advanced,Advanced,"A senior engineer defines short-lived branches, required checks, CODEOWNERS, signed releases, and protected environments."
+Git & Collaborative Development,Source Control,lesson,Advanced,Trunk-Based Development,
+Git & Collaborative Development,Source Control,lesson,Advanced,Branch Protection,
+Git & Collaborative Development,Source Control,lesson,Advanced,Signed Commits,
+Git & Collaborative Development,Source Control,lesson,Advanced,Monorepo Strategies,
+Git & Collaborative Development,Source Control,practice_lab,Advanced,git-lab-3 — Advanced company lab,Implement a governed repository workflow for an application and infrastructure repository.
+Git & Collaborative Development,Source Control,company_workflow,Master,Master,"A platform lead defines organization-wide policies, release provenance, dependency controls, and migration plans with measurable adoption."
+Git & Collaborative Development,Source Control,lesson,Master,Repository Governance,
+Git & Collaborative Development,Source Control,lesson,Master,Release Engineering,
+Git & Collaborative Development,Source Control,lesson,Master,Supply-Chain Provenance,
+Git & Collaborative Development,Source Control,lesson,Master,Large-Scale Migration,
+Git & Collaborative Development,Source Control,practice_lab,Master,git-lab-4 — Master company lab,"Design source-control governance for 50 teams, including exceptions, audit, and emergency changes."
+Git & Collaborative Development,Source Control,company_ticket,Beginner,"BILL-0301 — Create a repository, commit three logical changes, and prepare a clean pull request","Create a repository, commit three logical changes, and prepare a clean pull request. Business impact: Internal team productivity"
+Git & Collaborative Development,Source Control,company_ticket,Intermediate,BILL-0302 — Resolve a merge conflict and release a tagged version with a rollback commit,Resolve a merge conflict and release a tagged version with a rollback commit. Business impact: Staging reliability and release flow
+Git & Collaborative Development,Source Control,company_ticket,Advanced,BILL-0303 — Implement a governed repository workflow for an application and infrastructure repository,Implement a governed repository workflow for an application and infrastructure repository. Business impact: Customer-facing production reliability
+Git & Collaborative Development,Source Control,company_ticket,Master,"BILL-0304 — Design source-control governance for 50 teams, including exceptions, audit, and emergency changes","Design source-control governance for 50 teams, including exceptions, audit, and emergency changes. Business impact: Enterprise platform, governance, and business continuity"
+Git & Collaborative Development,Source Control,production_incident,SEV-1,INC-003 — Production degradation involving Git & Collaborative Development,Implement a governed repository workflow for an application and infrastructure repository. Customer impact: Customer-facing production reliability
+Git & Collaborative Development,Source Control,enterprise_capstone,Master,CAP-003 — Enterprise Git & Collaborative Development delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using Git & Collaborative Development as part of an end-to-end DevOps platform."
+Shell Scripting,Automation,command_or_configuration_example,,awk,
+Shell Scripting,Automation,command_or_configuration_example,,curl --fail --retry 3,
+Shell Scripting,Automation,command_or_configuration_example,,exit 1,
+Shell Scripting,Automation,command_or_configuration_example,,flock /tmp/job.lock command,
+Shell Scripting,Automation,command_or_configuration_example,,"for f in *.log; do echo ""$f""; done",
+Shell Scripting,Automation,command_or_configuration_example,,getopts,
+Shell Scripting,Automation,command_or_configuration_example,,grep -E,
+Shell Scripting,Automation,command_or_configuration_example,,if [ -f file ]; then echo ok; fi,
+Shell Scripting,Automation,command_or_configuration_example,,mktemp -d,
+Shell Scripting,Automation,command_or_configuration_example,,"name=""app""",
+Shell Scripting,Automation,command_or_configuration_example,,set -Eeuo pipefail,
+Shell Scripting,Automation,command_or_configuration_example,,sha256sum artifact,
+Shell Scripting,Automation,command_or_configuration_example,,shellcheck script.sh,
+Shell Scripting,Automation,command_or_configuration_example,,timeout 30 command,
+Shell Scripting,Automation,command_or_configuration_example,,xargs -P 4,
+Shell Scripting,Automation,company_workflow,Beginner,Beginner,A junior engineer automates a documented manual check and validates it against sample inputs before team use.
+Shell Scripting,Automation,lesson,Beginner,Variables And Quoting,
+Shell Scripting,Automation,lesson,Beginner,Conditions And Loops,
+Shell Scripting,Automation,lesson,Beginner,Exit Codes,
+Shell Scripting,Automation,lesson,Beginner,Input And Output,
+Shell Scripting,Automation,practice_lab,Beginner,shell-lab-1 — Beginner company lab,"Write a script that validates a service, disk space, and required files."
+Shell Scripting,Automation,company_workflow,Intermediate,Intermediate,"An engineer adds argument validation, structured logs, dry-run mode, and clear error handling before scheduling a script."
+Shell Scripting,Automation,lesson,Intermediate,Functions And Arguments,
+Shell Scripting,Automation,lesson,Intermediate,Strict Mode,
+Shell Scripting,Automation,lesson,Intermediate,Logging,
+Shell Scripting,Automation,lesson,Intermediate,Text Processing,
+Shell Scripting,Automation,practice_lab,Intermediate,shell-lab-2 — Intermediate company lab,Build a safe log-rotation script with dry-run and retention settings.
+Shell Scripting,Automation,company_workflow,Advanced,Advanced,"A senior engineer ensures reruns are safe, secrets are not printed, failures are isolated, and automated tests cover critical branches."
+Shell Scripting,Automation,lesson,Advanced,Parallelism,
+Shell Scripting,Automation,lesson,Advanced,Api Calls,
+Shell Scripting,Automation,lesson,Advanced,Idempotency,
+Shell Scripting,Automation,lesson,Advanced,Testing Shell Scripts,
+Shell Scripting,Automation,practice_lab,Advanced,shell-lab-3 — Advanced company lab,Automate deployment validation across several hosts with bounded parallelism.
+Shell Scripting,Automation,company_workflow,Master,Master,"A platform lead decides when shell is appropriate, defines libraries and review gates, and migrates complex scripts to maintainable services."
+Shell Scripting,Automation,lesson,Master,Automation Standards,
+Shell Scripting,Automation,lesson,Master,Cross-Platform Strategy,
+Shell Scripting,Automation,lesson,Master,Security Review,
+Shell Scripting,Automation,lesson,Master,Operational Ownership,
+Shell Scripting,Automation,practice_lab,Master,shell-lab-4 — Master company lab,"Create an enterprise shell-automation standard with examples, controls, and migration criteria."
+Shell Scripting,Automation,company_ticket,Beginner,"BILL-0401 — Write a script that validates a service, disk space, and required files","Write a script that validates a service, disk space, and required files. Business impact: Internal team productivity"
+Shell Scripting,Automation,company_ticket,Intermediate,BILL-0402 — Build a safe log-rotation script with dry-run and retention settings,Build a safe log-rotation script with dry-run and retention settings. Business impact: Staging reliability and release flow
+Shell Scripting,Automation,company_ticket,Advanced,BILL-0403 — Automate deployment validation across several hosts with bounded parallelism,Automate deployment validation across several hosts with bounded parallelism. Business impact: Customer-facing production reliability
+Shell Scripting,Automation,company_ticket,Master,"BILL-0404 — Create an enterprise shell-automation standard with examples, controls, and migration criteria","Create an enterprise shell-automation standard with examples, controls, and migration criteria. Business impact: Enterprise platform, governance, and business continuity"
+Shell Scripting,Automation,production_incident,SEV-2,INC-004 — Production degradation involving Shell Scripting,Automate deployment validation across several hosts with bounded parallelism. Customer impact: Customer-facing production reliability
+Shell Scripting,Automation,enterprise_capstone,Master,CAP-004 — Enterprise Shell Scripting delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using Shell Scripting as part of an end-to-end DevOps platform."
+Python for DevOps Automation,Automation,command_or_configuration_example,,python -m build,
+Python for DevOps Automation,Automation,command_or_configuration_example,,python -m compileall .,
+Python for DevOps Automation,Automation,command_or_configuration_example,,python -m json.tool file.json,
+Python for DevOps Automation,Automation,command_or_configuration_example,,python -m pip audit,
+Python for DevOps Automation,Automation,command_or_configuration_example,,python -m pip check,
+Python for DevOps Automation,Automation,command_or_configuration_example,,python -m pip install -r requirements.txt,
+Python for DevOps Automation,Automation,command_or_configuration_example,,python -m unittest,
+Python for DevOps Automation,Automation,command_or_configuration_example,,python -m unittest discover -v,
+Python for DevOps Automation,Automation,command_or_configuration_example,,python -m venv .venv,
+Python for DevOps Automation,Automation,command_or_configuration_example,,python -X dev app.py,
+Python for DevOps Automation,Automation,command_or_configuration_example,,python app.py,
+Python for DevOps Automation,Automation,company_workflow,Beginner,Beginner,A junior engineer converts a manual report into a small script with input validation and clear errors.
+Python for DevOps Automation,Automation,lesson,Beginner,Syntax And Data Structures,
+Python for DevOps Automation,Automation,lesson,Beginner,Functions And Modules,
+Python for DevOps Automation,Automation,lesson,Beginner,Files And Json,
+Python for DevOps Automation,Automation,lesson,Beginner,Exceptions,
+Python for DevOps Automation,Automation,practice_lab,Beginner,python-automation-lab-1 — Beginner company lab,"Read inventory JSON, validate hosts, and generate a deployment summary."
+Python for DevOps Automation,Automation,company_workflow,Intermediate,Intermediate,"An engineer builds a CLI client, handles retries and timeouts, logs actions, and writes tests using mocked responses."
+Python for DevOps Automation,Automation,lesson,Intermediate,Http Apis,
+Python for DevOps Automation,Automation,lesson,Intermediate,Cli Design,
+Python for DevOps Automation,Automation,lesson,Intermediate,Logging,
+Python for DevOps Automation,Automation,lesson,Intermediate,Unit Testing,
+Python for DevOps Automation,Automation,practice_lab,Intermediate,python-automation-lab-2 — Intermediate company lab,"Build a CLI that calls a health API, retries transient failures, and exports JSON."
+Python for DevOps Automation,Automation,company_workflow,Advanced,Advanced,"A senior engineer designs safe concurrency, externalized config, secret injection, schema migrations, and release automation."
+Python for DevOps Automation,Automation,lesson,Advanced,Concurrency,
+Python for DevOps Automation,Automation,lesson,Advanced,Configuration And Secrets,
+Python for DevOps Automation,Automation,lesson,Advanced,Packaging,
+Python for DevOps Automation,Automation,lesson,Advanced,Database Access,
+Python for DevOps Automation,Automation,practice_lab,Advanced,python-automation-lab-3 — Advanced company lab,Create an inventory service that checks hosts concurrently and stores auditable results.
+Python for DevOps Automation,Automation,company_workflow,Master,Master,"A platform lead defines ownership, service levels, compatibility, telemetry, and security for shared automation products."
+Python for DevOps Automation,Automation,lesson,Master,Internal Developer Platforms,
+Python for DevOps Automation,Automation,lesson,Master,Service Reliability,
+Python for DevOps Automation,Automation,lesson,Master,Api Contracts,
+Python for DevOps Automation,Automation,lesson,Master,Governance,
+Python for DevOps Automation,Automation,practice_lab,Master,python-automation-lab-4 — Master company lab,"Design an internal automation platform with plugins, RBAC, audit logs, and lifecycle management."
+Python for DevOps Automation,Automation,company_ticket,Beginner,"BILL-0501 — Read inventory JSON, validate hosts, and generate a deployment summary","Read inventory JSON, validate hosts, and generate a deployment summary. Business impact: Internal team productivity"
+Python for DevOps Automation,Automation,company_ticket,Intermediate,"BILL-0502 — Build a CLI that calls a health API, retries transient failures, and exports JSON","Build a CLI that calls a health API, retries transient failures, and exports JSON. Business impact: Staging reliability and release flow"
+Python for DevOps Automation,Automation,company_ticket,Advanced,BILL-0503 — Create an inventory service that checks hosts concurrently and stores auditable results,Create an inventory service that checks hosts concurrently and stores auditable results. Business impact: Customer-facing production reliability
+Python for DevOps Automation,Automation,company_ticket,Master,"BILL-0504 — Design an internal automation platform with plugins, RBAC, audit logs, and lifecycle management","Design an internal automation platform with plugins, RBAC, audit logs, and lifecycle management. Business impact: Enterprise platform, governance, and business continuity"
+Python for DevOps Automation,Automation,production_incident,SEV-2,INC-005 — Production degradation involving Python for DevOps Automation,Create an inventory service that checks hosts concurrently and stores auditable results. Customer impact: Customer-facing production reliability
+Python for DevOps Automation,Automation,enterprise_capstone,Master,CAP-005 — Enterprise Python for DevOps Automation delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using Python for DevOps Automation as part of an end-to-end DevOps platform."
+Docker & Containers,Containers,command_or_configuration_example,,docker build -t app:1.0 .,
+Docker & Containers,Containers,command_or_configuration_example,,"docker buildx build --platform linux/amd64,linux/arm64 .",
+Docker & Containers,Containers,command_or_configuration_example,,docker compose up -d,
+Docker & Containers,Containers,command_or_configuration_example,,docker diff container,
+Docker & Containers,Containers,command_or_configuration_example,,docker history image,
+Docker & Containers,Containers,command_or_configuration_example,,docker inspect container,
+Docker & Containers,Containers,command_or_configuration_example,,docker logs container,
+Docker & Containers,Containers,command_or_configuration_example,,docker manifest inspect image,
+Docker & Containers,Containers,command_or_configuration_example,,docker network ls,
+Docker & Containers,Containers,command_or_configuration_example,,docker ps,
+Docker & Containers,Containers,command_or_configuration_example,,docker run --rm -p 8080:8080 app:1.0,
+Docker & Containers,Containers,command_or_configuration_example,,docker save image -o image.tar,
+Docker & Containers,Containers,command_or_configuration_example,,docker stats,
+Docker & Containers,Containers,command_or_configuration_example,,docker system df,
+Docker & Containers,Containers,company_workflow,Beginner,Beginner,"A developer builds an image, runs it locally, verifies health, tags it, and pushes it to an approved registry."
+Docker & Containers,Containers,lesson,Beginner,Images And Containers,
+Docker & Containers,Containers,lesson,Beginner,Dockerfiles,
+Docker & Containers,Containers,lesson,Beginner,Ports And Volumes,
+Docker & Containers,Containers,lesson,Beginner,Registries,
+Docker & Containers,Containers,practice_lab,Beginner,docker-lab-1 — Beginner company lab,Containerize a small web application with a health check and persistent data.
+Docker & Containers,Containers,company_workflow,Intermediate,Intermediate,"An engineer creates a smaller production image, defines dependent services, sets limits, and validates startup and shutdown behavior."
+Docker & Containers,Containers,lesson,Intermediate,Multi-Stage Builds,
+Docker & Containers,Containers,lesson,Intermediate,Compose,
+Docker & Containers,Containers,lesson,Intermediate,Networks,
+Docker & Containers,Containers,lesson,Intermediate,Resource Limits,
+Docker & Containers,Containers,practice_lab,Intermediate,docker-lab-2 — Intermediate company lab,Build a multi-service development environment and troubleshoot failed service discovery.
+Docker & Containers,Containers,company_workflow,Advanced,Advanced,"A senior engineer scans images, pins dependencies, runs as non-root, signs artifacts, and defines exception handling."
+Docker & Containers,Containers,lesson,Advanced,Image Security,
+Docker & Containers,Containers,lesson,Advanced,Rootless Execution,
+Docker & Containers,Containers,lesson,Advanced,Supply Chain,
+Docker & Containers,Containers,lesson,Advanced,Runtime Diagnostics,
+Docker & Containers,Containers,practice_lab,Advanced,docker-lab-3 — Advanced company lab,"Harden an image, reduce size, document vulnerabilities, and prove runtime restrictions."
+Docker & Containers,Containers,company_workflow,Master,Master,"A platform lead defines base images, retention, provenance, vulnerability gates, and migration from legacy workloads."
+Docker & Containers,Containers,lesson,Master,Registry Governance,
+Docker & Containers,Containers,lesson,Master,Platform Standards,
+Docker & Containers,Containers,lesson,Master,Cost And Capacity,
+Docker & Containers,Containers,lesson,Master,Migration Strategy,
+Docker & Containers,Containers,practice_lab,Master,docker-lab-4 — Master company lab,Design a governed container supply chain for multiple teams and environments.
+Docker & Containers,Containers,company_ticket,Beginner,BILL-0601 — Containerize a small web application with a health check and persistent data,Containerize a small web application with a health check and persistent data. Business impact: Internal team productivity
+Docker & Containers,Containers,company_ticket,Intermediate,BILL-0602 — Build a multi-service development environment and troubleshoot failed service discovery,Build a multi-service development environment and troubleshoot failed service discovery. Business impact: Staging reliability and release flow
+Docker & Containers,Containers,company_ticket,Advanced,"BILL-0603 — Harden an image, reduce size, document vulnerabilities, and prove runtime restrictions","Harden an image, reduce size, document vulnerabilities, and prove runtime restrictions. Business impact: Customer-facing production reliability"
+Docker & Containers,Containers,company_ticket,Master,BILL-0604 — Design a governed container supply chain for multiple teams and environments,"Design a governed container supply chain for multiple teams and environments. Business impact: Enterprise platform, governance, and business continuity"
+Docker & Containers,Containers,production_incident,SEV-1,INC-006 — Production degradation involving Docker & Containers,"Harden an image, reduce size, document vulnerabilities, and prove runtime restrictions. Customer impact: Customer-facing production reliability"
+Docker & Containers,Containers,enterprise_capstone,Master,CAP-006 — Enterprise Docker & Containers delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using Docker & Containers as part of an end-to-end DevOps platform."
+Kubernetes,Containers,command_or_configuration_example,,kubectl api-resources,
+Kubernetes,Containers,command_or_configuration_example,,kubectl apply -f app.yaml,
+Kubernetes,Containers,command_or_configuration_example,,kubectl auth can-i --list,
+Kubernetes,Containers,command_or_configuration_example,,kubectl debug node/NODE -it --image=busybox,
+Kubernetes,Containers,command_or_configuration_example,,kubectl describe pod POD,
+Kubernetes,Containers,command_or_configuration_example,,kubectl diff -f manifests/,
+Kubernetes,Containers,command_or_configuration_example,,kubectl drain NODE --ignore-daemonsets,
+Kubernetes,Containers,command_or_configuration_example,,kubectl get events --sort-by=.lastTimestamp,
+Kubernetes,Containers,command_or_configuration_example,,kubectl get hpa,
+Kubernetes,Containers,command_or_configuration_example,,kubectl get pods -A,
+Kubernetes,Containers,command_or_configuration_example,,kubectl logs POD,
+Kubernetes,Containers,command_or_configuration_example,,kubectl port-forward svc/app 8080:80,
+Kubernetes,Containers,command_or_configuration_example,,kubectl rollout undo deploy/app,
+Kubernetes,Containers,command_or_configuration_example,,kubectl top pods,
+Kubernetes,Containers,command_or_configuration_example,,kubectl wait --for=condition=available deploy/app,
+Kubernetes,Containers,company_workflow,Beginner,Beginner,"A developer applies reviewed manifests to a sandbox namespace, checks rollout and logs, then documents the service endpoint."
+Kubernetes,Containers,lesson,Beginner,Pods And Deployments,
+Kubernetes,Containers,lesson,Beginner,Services,
+Kubernetes,Containers,lesson,Beginner,Config Maps And Secrets,
+Kubernetes,Containers,lesson,Beginner,Kubectl Basics,
+Kubernetes,Containers,practice_lab,Beginner,kubernetes-lab-1 — Beginner company lab,"Deploy a web application with configuration, health probes, and a ClusterIP service."
+Kubernetes,Containers,company_workflow,Intermediate,Intermediate,"An engineer prepares environment overlays, capacity requests, ingress, persistent storage, and rollback validation."
+Kubernetes,Containers,lesson,Intermediate,Ingress,
+Kubernetes,Containers,lesson,Intermediate,Persistent Volumes,
+Kubernetes,Containers,lesson,Intermediate,Requests And Limits,
+Kubernetes,Containers,lesson,Intermediate,Rolling Updates,
+Kubernetes,Containers,practice_lab,Intermediate,kubernetes-lab-2 — Intermediate company lab,Troubleshoot a rollout with failing readiness probes and insufficient resources.
+Kubernetes,Containers,company_workflow,Advanced,Advanced,"A senior engineer applies least privilege, isolates namespaces, tunes autoscaling, and diagnoses control-plane or node symptoms."
+Kubernetes,Containers,lesson,Advanced,Rbac And Policies,
+Kubernetes,Containers,lesson,Advanced,Autoscaling,
+Kubernetes,Containers,lesson,Advanced,Network Policies,
+Kubernetes,Containers,lesson,Advanced,Cluster Troubleshooting,
+Kubernetes,Containers,practice_lab,Advanced,kubernetes-lab-3 — Advanced company lab,Secure and scale a multi-tier application while preserving availability during node maintenance.
+Kubernetes,Containers,company_workflow,Master,Master,"A platform lead defines tenancy, fleet upgrades, disaster recovery, developer abstractions, SLOs, and cluster economics."
+Kubernetes,Containers,lesson,Master,Multi-Cluster Design,
+Kubernetes,Containers,lesson,Master,Platform Apis,
+Kubernetes,Containers,lesson,Master,Upgrade Strategy,
+Kubernetes,Containers,lesson,Master,Cost And Reliability,
+Kubernetes,Containers,practice_lab,Master,kubernetes-lab-4 — Master company lab,Design a production Kubernetes platform for 30 teams with governance and self-service.
+Kubernetes,Containers,company_ticket,Beginner,"BILL-0701 — Deploy a web application with configuration, health probes, and a ClusterIP service","Deploy a web application with configuration, health probes, and a ClusterIP service. Business impact: Internal team productivity"
+Kubernetes,Containers,company_ticket,Intermediate,BILL-0702 — Troubleshoot a rollout with failing readiness probes and insufficient resources,Troubleshoot a rollout with failing readiness probes and insufficient resources. Business impact: Staging reliability and release flow
+Kubernetes,Containers,company_ticket,Advanced,BILL-0703 — Secure and scale a multi-tier application while preserving availability during node maintenance,Secure and scale a multi-tier application while preserving availability during node maintenance. Business impact: Customer-facing production reliability
+Kubernetes,Containers,company_ticket,Master,BILL-0704 — Design a production Kubernetes platform for 30 teams with governance and self-service,"Design a production Kubernetes platform for 30 teams with governance and self-service. Business impact: Enterprise platform, governance, and business continuity"
+Kubernetes,Containers,production_incident,SEV-2,INC-007 — Production degradation involving Kubernetes,Secure and scale a multi-tier application while preserving availability during node maintenance. Customer impact: Customer-facing production reliability
+Kubernetes,Containers,enterprise_capstone,Master,CAP-007 — Enterprise Kubernetes delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using Kubernetes as part of an end-to-end DevOps platform."
+CI/CD Engineering,Delivery,command_or_configuration_example,,abort and rollback,
+CI/CD Engineering,Delivery,command_or_configuration_example,,approve production,
+CI/CD Engineering,Delivery,command_or_configuration_example,,build,
+CI/CD Engineering,Delivery,command_or_configuration_example,,canary 5%,
+CI/CD Engineering,Delivery,command_or_configuration_example,,change failure rate,
+CI/CD Engineering,Delivery,command_or_configuration_example,,deploy staging,
+CI/CD Engineering,Delivery,command_or_configuration_example,,deployment frequency,
+CI/CD Engineering,Delivery,command_or_configuration_example,,lead time,
+CI/CD Engineering,Delivery,command_or_configuration_example,,mean time to restore,
+CI/CD Engineering,Delivery,command_or_configuration_example,,package,
+CI/CD Engineering,Delivery,command_or_configuration_example,,promote 25%,
+CI/CD Engineering,Delivery,command_or_configuration_example,,publish,
+CI/CD Engineering,Delivery,command_or_configuration_example,,rollback release,
+CI/CD Engineering,Delivery,command_or_configuration_example,,smoke test,
+CI/CD Engineering,Delivery,command_or_configuration_example,,test,
+CI/CD Engineering,Delivery,command_or_configuration_example,,verify SLO,
+CI/CD Engineering,Delivery,company_workflow,Beginner,Beginner,"A developer pushes a change; the pipeline validates formatting, tests, builds an immutable artifact, and publishes evidence."
+CI/CD Engineering,Delivery,lesson,Beginner,Continuous Integration,
+CI/CD Engineering,Delivery,lesson,Beginner,Pipeline Stages,
+CI/CD Engineering,Delivery,lesson,Beginner,Artifacts,
+CI/CD Engineering,Delivery,lesson,Beginner,Basic Deployment,
+CI/CD Engineering,Delivery,practice_lab,Beginner,cicd-lab-1 — Beginner company lab,"Create a pipeline plan for lint, unit test, package, and artifact retention."
+CI/CD Engineering,Delivery,company_workflow,Intermediate,Intermediate,"An engineer promotes the same artifact through test and staging, uses protected secrets, obtains approval, deploys, and validates health."
+CI/CD Engineering,Delivery,lesson,Intermediate,Environment Promotion,
+CI/CD Engineering,Delivery,lesson,Intermediate,Secrets,
+CI/CD Engineering,Delivery,lesson,Intermediate,Approvals,
+CI/CD Engineering,Delivery,lesson,Intermediate,Rollback,
+CI/CD Engineering,Delivery,practice_lab,Intermediate,cicd-lab-2 — Intermediate company lab,Design a three-environment pipeline with approvals and automated rollback criteria.
+CI/CD Engineering,Delivery,company_workflow,Advanced,Advanced,"A senior engineer combines canary rollout, policy checks, backward-compatible migrations, telemetry, and automated decision gates."
+CI/CD Engineering,Delivery,lesson,Advanced,Progressive Delivery,
+CI/CD Engineering,Delivery,lesson,Advanced,Security Gates,
+CI/CD Engineering,Delivery,lesson,Advanced,Database Changes,
+CI/CD Engineering,Delivery,lesson,Advanced,Pipeline Observability,
+CI/CD Engineering,Delivery,practice_lab,Advanced,cicd-lab-3 — Advanced company lab,Create a progressive-delivery runbook for a risky API and database change.
+CI/CD Engineering,Delivery,company_workflow,Master,Master,"A platform lead provides reusable pipeline components, policy-as-code, scorecards, and disaster-recovery exercises."
+CI/CD Engineering,Delivery,lesson,Master,Delivery Platform,
+CI/CD Engineering,Delivery,lesson,Master,Dora Metrics,
+CI/CD Engineering,Delivery,lesson,Master,Governance,
+CI/CD Engineering,Delivery,lesson,Master,Resilience Testing,
+CI/CD Engineering,Delivery,practice_lab,Master,cicd-lab-4 — Master company lab,Design an organization-wide CI/CD product with paved roads and controlled exceptions.
+CI/CD Engineering,Delivery,company_ticket,Beginner,"BILL-0801 — Create a pipeline plan for lint, unit test, package, and artifact retention","Create a pipeline plan for lint, unit test, package, and artifact retention. Business impact: Internal team productivity"
+CI/CD Engineering,Delivery,company_ticket,Intermediate,BILL-0802 — Design a three-environment pipeline with approvals and automated rollback criteria,Design a three-environment pipeline with approvals and automated rollback criteria. Business impact: Staging reliability and release flow
+CI/CD Engineering,Delivery,company_ticket,Advanced,BILL-0803 — Create a progressive-delivery runbook for a risky API and database change,Create a progressive-delivery runbook for a risky API and database change. Business impact: Customer-facing production reliability
+CI/CD Engineering,Delivery,company_ticket,Master,BILL-0804 — Design an organization-wide CI/CD product with paved roads and controlled exceptions,"Design an organization-wide CI/CD product with paved roads and controlled exceptions. Business impact: Enterprise platform, governance, and business continuity"
+CI/CD Engineering,Delivery,production_incident,SEV-2,INC-008 — Production degradation involving CI/CD Engineering,Create a progressive-delivery runbook for a risky API and database change. Customer impact: Customer-facing production reliability
+CI/CD Engineering,Delivery,enterprise_capstone,Master,CAP-008 — Enterprise CI/CD Engineering delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using CI/CD Engineering as part of an end-to-end DevOps platform."
+Jenkins,Delivery,command_or_configuration_example,,"@Library(""company-lib"") _",
+Jenkins,Delivery,command_or_configuration_example,,"agent { label ""linux"" }",
+Jenkins,Delivery,command_or_configuration_example,,archiveArtifacts,
+Jenkins,Delivery,command_or_configuration_example,,build queue analysis,
+Jenkins,Delivery,command_or_configuration_example,,disableConcurrentBuilds(),
+Jenkins,Delivery,command_or_configuration_example,,junit,
+Jenkins,Delivery,command_or_configuration_example,,options { timeout(...) },
+Jenkins,Delivery,command_or_configuration_example,,parameters,
+Jenkins,Delivery,command_or_configuration_example,,pipeline { agent any },
+Jenkins,Delivery,command_or_configuration_example,,post { always {} },
+Jenkins,Delivery,command_or_configuration_example,,quietDown,
+Jenkins,Delivery,command_or_configuration_example,,safeRestart,
+Jenkins,Delivery,command_or_configuration_example,,"stage(""Test"")",
+Jenkins,Delivery,command_or_configuration_example,,withCredentials,
+Jenkins,Delivery,company_workflow,Beginner,Beginner,"A developer adds a Jenkinsfile, triggers a branch build, reads console output, and archives test reports."
+Jenkins,Delivery,lesson,Beginner,Jobs And Pipelines,
+Jenkins,Delivery,lesson,Beginner,Jenkinsfile,
+Jenkins,Delivery,lesson,Beginner,Stages And Steps,
+Jenkins,Delivery,lesson,Beginner,Artifacts,
+Jenkins,Delivery,practice_lab,Beginner,jenkins-lab-1 — Beginner company lab,"Create a declarative pipeline for checkout, test, package, and archive."
+Jenkins,Delivery,company_workflow,Intermediate,Intermediate,"An engineer routes jobs to labeled agents, injects credentials safely, parameterizes releases, and sends failure notifications."
+Jenkins,Delivery,lesson,Intermediate,Agents,
+Jenkins,Delivery,lesson,Intermediate,Credentials,
+Jenkins,Delivery,lesson,Intermediate,Parameters,
+Jenkins,Delivery,lesson,Intermediate,Post Actions,
+Jenkins,Delivery,practice_lab,Intermediate,jenkins-lab-2 — Intermediate company lab,Build a parameterized deployment pipeline using protected credentials.
+Jenkins,Delivery,company_workflow,Advanced,Advanced,"A senior engineer centralizes approved steps, limits plugins, backs up configuration, and reviews script approvals."
+Jenkins,Delivery,lesson,Advanced,Shared Libraries,
+Jenkins,Delivery,lesson,Advanced,Plugin Governance,
+Jenkins,Delivery,lesson,Advanced,Controller Backup,
+Jenkins,Delivery,lesson,Advanced,Pipeline Security,
+Jenkins,Delivery,practice_lab,Advanced,jenkins-lab-3 — Advanced company lab,Create a shared pipeline library and recovery plan for a Jenkins controller.
+Jenkins,Delivery,company_workflow,Master,Master,"A platform lead decides controller boundaries, agent elasticity, service objectives, and migration to managed or cloud-native alternatives."
+Jenkins,Delivery,lesson,Master,High Availability Strategy,
+Jenkins,Delivery,lesson,Master,Migration,
+Jenkins,Delivery,lesson,Master,Capacity,
+Jenkins,Delivery,lesson,Master,Governance,
+Jenkins,Delivery,practice_lab,Master,jenkins-lab-4 — Master company lab,Design Jenkins as a governed internal service for 40 teams.
+Jenkins,Delivery,company_ticket,Beginner,"BILL-0901 — Create a declarative pipeline for checkout, test, package, and archive","Create a declarative pipeline for checkout, test, package, and archive. Business impact: Internal team productivity"
+Jenkins,Delivery,company_ticket,Intermediate,BILL-0902 — Build a parameterized deployment pipeline using protected credentials,Build a parameterized deployment pipeline using protected credentials. Business impact: Staging reliability and release flow
+Jenkins,Delivery,company_ticket,Advanced,BILL-0903 — Create a shared pipeline library and recovery plan for a Jenkins controller,Create a shared pipeline library and recovery plan for a Jenkins controller. Business impact: Customer-facing production reliability
+Jenkins,Delivery,company_ticket,Master,BILL-0904 — Design Jenkins as a governed internal service for 40 teams,"Design Jenkins as a governed internal service for 40 teams. Business impact: Enterprise platform, governance, and business continuity"
+Jenkins,Delivery,production_incident,SEV-1,INC-009 — Production degradation involving Jenkins,Create a shared pipeline library and recovery plan for a Jenkins controller. Customer impact: Customer-facing production reliability
+Jenkins,Delivery,enterprise_capstone,Master,CAP-009 — Enterprise Jenkins delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using Jenkins as part of an end-to-end DevOps platform."
+GitHub Actions,Delivery,command_or_configuration_example,,actions/cache,
+GitHub Actions,Delivery,command_or_configuration_example,,artifact retention,
+GitHub Actions,Delivery,command_or_configuration_example,,environment: production,
+GitHub Actions,Delivery,command_or_configuration_example,,on: pull_request,
+GitHub Actions,Delivery,command_or_configuration_example,,permissions: id-token: write,
+GitHub Actions,Delivery,command_or_configuration_example,,required workflows,
+GitHub Actions,Delivery,command_or_configuration_example,,run: test-command,
+GitHub Actions,Delivery,command_or_configuration_example,,runner groups,
+GitHub Actions,Delivery,command_or_configuration_example,,runs-on: self-hosted,
+GitHub Actions,Delivery,command_or_configuration_example,,secrets.TOKEN,
+GitHub Actions,Delivery,command_or_configuration_example,,strategy.matrix,
+GitHub Actions,Delivery,command_or_configuration_example,,uses: actions/checkout,
+GitHub Actions,Delivery,command_or_configuration_example,,uses: actions/upload-artifact,
+GitHub Actions,Delivery,command_or_configuration_example,,uses: owner/action@SHA,
+GitHub Actions,Delivery,command_or_configuration_example,,workflow_call,
+GitHub Actions,Delivery,company_workflow,Beginner,Beginner,"A developer opens a pull request; the workflow checks out code, tests it, and publishes a report."
+GitHub Actions,Delivery,lesson,Beginner,Workflow Syntax,
+GitHub Actions,Delivery,lesson,Beginner,Events,
+GitHub Actions,Delivery,lesson,Beginner,Jobs And Steps,
+GitHub Actions,Delivery,lesson,Beginner,Artifacts,
+GitHub Actions,Delivery,practice_lab,Beginner,github-actions-lab-1 — Beginner company lab,Create a pull-request workflow with tests and artifacts.
+GitHub Actions,Delivery,company_workflow,Intermediate,Intermediate,"An engineer tests multiple versions, caches dependencies, protects production, and uses environment-scoped secrets."
+GitHub Actions,Delivery,lesson,Intermediate,Matrices,
+GitHub Actions,Delivery,lesson,Intermediate,Caching,
+GitHub Actions,Delivery,lesson,Intermediate,Environments,
+GitHub Actions,Delivery,lesson,Intermediate,Secrets,
+GitHub Actions,Delivery,practice_lab,Intermediate,github-actions-lab-2 — Intermediate company lab,Build a matrix pipeline and protected deployment environment.
+GitHub Actions,Delivery,company_workflow,Advanced,Advanced,"A senior engineer replaces long-lived cloud keys with OIDC, centralizes workflows, and pins third-party actions."
+GitHub Actions,Delivery,lesson,Advanced,Oidc,
+GitHub Actions,Delivery,lesson,Advanced,Reusable Workflows,
+GitHub Actions,Delivery,lesson,Advanced,Self-Hosted Runners,
+GitHub Actions,Delivery,lesson,Advanced,Supply-Chain Controls,
+GitHub Actions,Delivery,practice_lab,Advanced,github-actions-lab-3 — Advanced company lab,Create a secure reusable deployment workflow using cloud federation.
+GitHub Actions,Delivery,company_workflow,Master,Master,"A platform lead defines approved actions, runner isolation, retention, audit, and service-level objectives."
+GitHub Actions,Delivery,lesson,Master,Organization Policy,
+GitHub Actions,Delivery,lesson,Master,Runner Platform,
+GitHub Actions,Delivery,lesson,Master,Cost,
+GitHub Actions,Delivery,lesson,Master,Compliance,
+GitHub Actions,Delivery,practice_lab,Master,github-actions-lab-4 — Master company lab,Design GitHub Actions governance for an enterprise organization.
+GitHub Actions,Delivery,company_ticket,Beginner,BILL-1001 — Create a pull-request workflow with tests and artifacts,Create a pull-request workflow with tests and artifacts. Business impact: Internal team productivity
+GitHub Actions,Delivery,company_ticket,Intermediate,BILL-1002 — Build a matrix pipeline and protected deployment environment,Build a matrix pipeline and protected deployment environment. Business impact: Staging reliability and release flow
+GitHub Actions,Delivery,company_ticket,Advanced,BILL-1003 — Create a secure reusable deployment workflow using cloud federation,Create a secure reusable deployment workflow using cloud federation. Business impact: Customer-facing production reliability
+GitHub Actions,Delivery,company_ticket,Master,BILL-1004 — Design GitHub Actions governance for an enterprise organization,"Design GitHub Actions governance for an enterprise organization. Business impact: Enterprise platform, governance, and business continuity"
+GitHub Actions,Delivery,production_incident,SEV-2,INC-010 — Production degradation involving GitHub Actions,Create a secure reusable deployment workflow using cloud federation. Customer impact: Customer-facing production reliability
+GitHub Actions,Delivery,enterprise_capstone,Master,CAP-010 — Enterprise GitHub Actions delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using GitHub Actions as part of an end-to-end DevOps platform."
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,ephemeral plans,
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,module versioning,
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,policy checks,
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,terraform fmt -check,
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,terraform import,
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,terraform init,
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,terraform output,
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,terraform plan,
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,terraform plan -detailed-exitcode,
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,terraform state list,
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,terraform state mv,
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,terraform state pull,
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,terraform test,
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,terraform validate,
+Terraform & Infrastructure as Code,Infrastructure as Code,command_or_configuration_example,,terraform workspace list,
+Terraform & Infrastructure as Code,Infrastructure as Code,company_workflow,Beginner,Beginner,"A developer changes infrastructure code, formats and validates it, reviews the plan, then applies in a sandbox."
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Beginner,Providers And Resources,
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Beginner,Variables And Outputs,
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Beginner,Plan And Apply,
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Beginner,State Basics,
+Terraform & Infrastructure as Code,Infrastructure as Code,practice_lab,Beginner,terraform-lab-1 — Beginner company lab,Provision a small network and compute resource with variables and outputs.
+Terraform & Infrastructure as Code,Infrastructure as Code,company_workflow,Intermediate,Intermediate,"An engineer uses versioned modules, remote locking, separate environment state, and imports existing resources carefully."
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Intermediate,Modules,
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Intermediate,Remote State,
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Intermediate,Workspaces And Environments,
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Intermediate,Imports,
+Terraform & Infrastructure as Code,Infrastructure as Code,practice_lab,Intermediate,terraform-lab-2 — Intermediate company lab,Refactor repeated infrastructure into modules without recreating resources.
+Terraform & Infrastructure as Code,Infrastructure as Code,company_workflow,Advanced,Advanced,"A senior engineer adds policy checks, detects drift, protects state, plans recovery, and avoids secrets in outputs."
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Advanced,Testing And Policy,
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Advanced,State Recovery,
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Advanced,Drift,
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Advanced,Secrets,
+Terraform & Infrastructure as Code,Infrastructure as Code,practice_lab,Advanced,terraform-lab-3 — Advanced company lab,Recover from an incorrect state move and establish drift detection.
+Terraform & Infrastructure as Code,Infrastructure as Code,company_workflow,Master,Master,"A platform lead defines account structure, approved modules, policy-as-code, exceptions, and self-service workflows."
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Master,Landing Zones,
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Master,Module Registry,
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Master,Governance,
+Terraform & Infrastructure as Code,Infrastructure as Code,lesson,Master,Platform Integration,
+Terraform & Infrastructure as Code,Infrastructure as Code,practice_lab,Master,terraform-lab-4 — Master company lab,"Design an enterprise IaC operating model with security, audit, and disaster recovery."
+Terraform & Infrastructure as Code,Infrastructure as Code,company_ticket,Beginner,BILL-1101 — Provision a small network and compute resource with variables and outputs,Provision a small network and compute resource with variables and outputs. Business impact: Internal team productivity
+Terraform & Infrastructure as Code,Infrastructure as Code,company_ticket,Intermediate,BILL-1102 — Refactor repeated infrastructure into modules without recreating resources,Refactor repeated infrastructure into modules without recreating resources. Business impact: Staging reliability and release flow
+Terraform & Infrastructure as Code,Infrastructure as Code,company_ticket,Advanced,BILL-1103 — Recover from an incorrect state move and establish drift detection,Recover from an incorrect state move and establish drift detection. Business impact: Customer-facing production reliability
+Terraform & Infrastructure as Code,Infrastructure as Code,company_ticket,Master,"BILL-1104 — Design an enterprise IaC operating model with security, audit, and disaster recovery","Design an enterprise IaC operating model with security, audit, and disaster recovery. Business impact: Enterprise platform, governance, and business continuity"
+Terraform & Infrastructure as Code,Infrastructure as Code,production_incident,SEV-2,INC-011 — Production degradation involving Terraform & Infrastructure as Code,Recover from an incorrect state move and establish drift detection. Customer impact: Customer-facing production reliability
+Terraform & Infrastructure as Code,Infrastructure as Code,enterprise_capstone,Master,CAP-011 — Enterprise Terraform & Infrastructure as Code delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using Terraform & Infrastructure as Code as part of an end-to-end DevOps platform."
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,--check,
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,--diff,
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,--limit group,
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,--tags deploy,
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,ansible all -m ping,
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,ansible-galaxy init role,
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,ansible-inventory --graph,
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,ansible-playbook site.yml,
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,ansible-vault encrypt,
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,credential types,
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,execution environments,
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,job templates,
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,max_fail_percentage,
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,serial: 10%,
+Ansible Configuration Automation,Infrastructure as Code,command_or_configuration_example,,strategy: free,
+Ansible Configuration Automation,Infrastructure as Code,company_workflow,Beginner,Beginner,"A junior engineer targets a sandbox group, checks connectivity, runs a reviewed playbook, and confirms changed versus unchanged hosts."
+Ansible Configuration Automation,Infrastructure as Code,lesson,Beginner,Inventory,
+Ansible Configuration Automation,Infrastructure as Code,lesson,Beginner,Ad-Hoc Commands,
+Ansible Configuration Automation,Infrastructure as Code,lesson,Beginner,Playbooks,
+Ansible Configuration Automation,Infrastructure as Code,lesson,Beginner,Modules,
+Ansible Configuration Automation,Infrastructure as Code,practice_lab,Beginner,ansible-lab-1 — Beginner company lab,"Configure a web server package, service, and configuration idempotently."
+Ansible Configuration Automation,Infrastructure as Code,company_workflow,Intermediate,Intermediate,"An engineer separates reusable roles, validates variable precedence, templates config, and restarts only when required."
+Ansible Configuration Automation,Infrastructure as Code,lesson,Intermediate,Roles,
+Ansible Configuration Automation,Infrastructure as Code,lesson,Intermediate,Variables,
+Ansible Configuration Automation,Infrastructure as Code,lesson,Intermediate,Templates,
+Ansible Configuration Automation,Infrastructure as Code,lesson,Intermediate,Handlers,
+Ansible Configuration Automation,Infrastructure as Code,practice_lab,Intermediate,ansible-lab-2 — Intermediate company lab,Create a reusable application role with validation and handlers.
+Ansible Configuration Automation,Infrastructure as Code,company_workflow,Advanced,Advanced,"A senior engineer protects secrets, discovers cloud hosts dynamically, tests roles, and rolls changes through batches."
+Ansible Configuration Automation,Infrastructure as Code,lesson,Advanced,Vault,
+Ansible Configuration Automation,Infrastructure as Code,lesson,Advanced,Dynamic Inventory,
+Ansible Configuration Automation,Infrastructure as Code,lesson,Advanced,Testing,
+Ansible Configuration Automation,Infrastructure as Code,lesson,Advanced,Rolling Operations,
+Ansible Configuration Automation,Infrastructure as Code,practice_lab,Advanced,ansible-lab-3 — Advanced company lab,Patch a fleet in controlled batches with rollback and failure thresholds.
+Ansible Configuration Automation,Infrastructure as Code,company_workflow,Master,Master,"A platform lead provides RBAC, approved content, isolated execution, audit trails, and event-driven runbooks."
+Ansible Configuration Automation,Infrastructure as Code,lesson,Master,Automation Controller,
+Ansible Configuration Automation,Infrastructure as Code,lesson,Master,Governance,
+Ansible Configuration Automation,Infrastructure as Code,lesson,Master,Execution Environments,
+Ansible Configuration Automation,Infrastructure as Code,lesson,Master,Event-Driven Automation,
+Ansible Configuration Automation,Infrastructure as Code,practice_lab,Master,ansible-lab-4 — Master company lab,Design a governed enterprise automation service for infrastructure and operations.
+Ansible Configuration Automation,Infrastructure as Code,company_ticket,Beginner,"BILL-1201 — Configure a web server package, service, and configuration idempotently","Configure a web server package, service, and configuration idempotently. Business impact: Internal team productivity"
+Ansible Configuration Automation,Infrastructure as Code,company_ticket,Intermediate,BILL-1202 — Create a reusable application role with validation and handlers,Create a reusable application role with validation and handlers. Business impact: Staging reliability and release flow
+Ansible Configuration Automation,Infrastructure as Code,company_ticket,Advanced,BILL-1203 — Patch a fleet in controlled batches with rollback and failure thresholds,Patch a fleet in controlled batches with rollback and failure thresholds. Business impact: Customer-facing production reliability
+Ansible Configuration Automation,Infrastructure as Code,company_ticket,Master,BILL-1204 — Design a governed enterprise automation service for infrastructure and operations,"Design a governed enterprise automation service for infrastructure and operations. Business impact: Enterprise platform, governance, and business continuity"
+Ansible Configuration Automation,Infrastructure as Code,production_incident,SEV-1,INC-012 — Production degradation involving Ansible Configuration Automation,Patch a fleet in controlled batches with rollback and failure thresholds. Customer impact: Customer-facing production reliability
+Ansible Configuration Automation,Infrastructure as Code,enterprise_capstone,Master,CAP-012 — Enterprise Ansible Configuration Automation delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using Ansible Configuration Automation as part of an end-to-end DevOps platform."
+AWS Cloud,Cloud,command_or_configuration_example,,aws cloudtrail lookup-events,
+AWS Cloud,Cloud,command_or_configuration_example,,aws cloudwatch get-metric-data,
+AWS Cloud,Cloud,command_or_configuration_example,,aws configservice describe-config-rules,
+AWS Cloud,Cloud,command_or_configuration_example,,aws configure list,
+AWS Cloud,Cloud,command_or_configuration_example,,aws ec2 describe-instances,
+AWS Cloud,Cloud,command_or_configuration_example,,aws logs tail,
+AWS Cloud,Cloud,command_or_configuration_example,,aws organizations list-accounts,
+AWS Cloud,Cloud,command_or_configuration_example,,aws route53 list-hosted-zones,
+AWS Cloud,Cloud,command_or_configuration_example,,aws s3 ls,
+AWS Cloud,Cloud,command_or_configuration_example,,aws sts get-caller-identity,
+AWS Cloud,Cloud,command_or_configuration_example,,cost allocation tags,
+AWS Cloud,Cloud,command_or_configuration_example,,service control policies,
+AWS Cloud,Cloud,command_or_configuration_example,,well-architected review,
+AWS Cloud,Cloud,company_workflow,Beginner,Beginner,"A junior engineer works in a sandbox account using least privilege, tags resources, validates access, and cleans up temporary resources."
+AWS Cloud,Cloud,lesson,Beginner,Iam,
+AWS Cloud,Cloud,lesson,Beginner,Ec2,
+AWS Cloud,Cloud,lesson,Beginner,S3,
+AWS Cloud,Cloud,lesson,Beginner,Vpc Basics,
+AWS Cloud,Cloud,practice_lab,Beginner,aws-lab-1 — Beginner company lab,Create a secure static-site and compute sandbox design with cost controls.
+AWS Cloud,Cloud,company_workflow,Intermediate,Intermediate,"An engineer deploys a multi-tier service, configures monitoring and backups, tests scaling, and documents recovery."
+AWS Cloud,Cloud,lesson,Intermediate,Load Balancing And Autoscaling,
+AWS Cloud,Cloud,lesson,Intermediate,Rds,
+AWS Cloud,Cloud,lesson,Intermediate,Cloudwatch,
+AWS Cloud,Cloud,lesson,Intermediate,Route 53,
+AWS Cloud,Cloud,practice_lab,Intermediate,aws-lab-2 — Intermediate company lab,Design and troubleshoot a highly available web application across availability zones.
+AWS Cloud,Cloud,company_workflow,Advanced,Advanced,"A senior engineer applies account boundaries, centralized logs, guardrails, automated detection, and tested recovery patterns."
+AWS Cloud,Cloud,lesson,Advanced,Organizations And Accounts,
+AWS Cloud,Cloud,lesson,Advanced,Security Services,
+AWS Cloud,Cloud,lesson,Advanced,Event-Driven Systems,
+AWS Cloud,Cloud,lesson,Advanced,Disaster Recovery,
+AWS Cloud,Cloud,practice_lab,Advanced,aws-lab-3 — Advanced company lab,Create a multi-account security and disaster-recovery operating model.
+AWS Cloud,Cloud,company_workflow,Master,Master,"A cloud lead defines paved roads, service ownership, budgets, quotas, resilience tiers, and architectural review."
+AWS Cloud,Cloud,lesson,Master,Landing Zones,
+AWS Cloud,Cloud,lesson,Master,Platform Products,
+AWS Cloud,Cloud,lesson,Master,Finops,
+AWS Cloud,Cloud,lesson,Master,Global Architecture,
+AWS Cloud,Cloud,practice_lab,Master,aws-lab-4 — Master company lab,Design an AWS landing zone and internal platform for multiple business units.
+AWS Cloud,Cloud,company_ticket,Beginner,BILL-1301 — Create a secure static-site and compute sandbox design with cost controls,Create a secure static-site and compute sandbox design with cost controls. Business impact: Internal team productivity
+AWS Cloud,Cloud,company_ticket,Intermediate,BILL-1302 — Design and troubleshoot a highly available web application across availability zones,Design and troubleshoot a highly available web application across availability zones. Business impact: Staging reliability and release flow
+AWS Cloud,Cloud,company_ticket,Advanced,BILL-1303 — Create a multi-account security and disaster-recovery operating model,Create a multi-account security and disaster-recovery operating model. Business impact: Customer-facing production reliability
+AWS Cloud,Cloud,company_ticket,Master,BILL-1304 — Design an AWS landing zone and internal platform for multiple business units,"Design an AWS landing zone and internal platform for multiple business units. Business impact: Enterprise platform, governance, and business continuity"
+AWS Cloud,Cloud,production_incident,SEV-2,INC-013 — Production degradation involving AWS Cloud,Create a multi-account security and disaster-recovery operating model. Customer impact: Customer-facing production reliability
+AWS Cloud,Cloud,enterprise_capstone,Master,CAP-013 — Enterprise AWS Cloud delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using AWS Cloud as part of an end-to-end DevOps platform."
+Microsoft Azure,Cloud,command_or_configuration_example,,az account show,
+Microsoft Azure,Cloud,command_or_configuration_example,,az group list,
+Microsoft Azure,Cloud,command_or_configuration_example,,az identity list,
+Microsoft Azure,Cloud,command_or_configuration_example,,az monitor metrics list,
+Microsoft Azure,Cloud,command_or_configuration_example,,az network vnet list,
+Microsoft Azure,Cloud,command_or_configuration_example,,az policy assignment list,
+Microsoft Azure,Cloud,command_or_configuration_example,,az role assignment list,
+Microsoft Azure,Cloud,command_or_configuration_example,,az storage account list,
+Microsoft Azure,Cloud,command_or_configuration_example,,az vm list,
+Microsoft Azure,Cloud,command_or_configuration_example,,az webapp log tail,
+Microsoft Azure,Cloud,command_or_configuration_example,,cost management exports,
+Microsoft Azure,Cloud,command_or_configuration_example,,management groups,
+Microsoft Azure,Cloud,command_or_configuration_example,,policy initiatives,
+Microsoft Azure,Cloud,company_workflow,Beginner,Beginner,A junior engineer deploys tagged resources in a sandbox group with approved identity and budget boundaries.
+Microsoft Azure,Cloud,lesson,Beginner,Subscriptions And Resource Groups,
+Microsoft Azure,Cloud,lesson,Beginner,Microsoft Entra Id,
+Microsoft Azure,Cloud,lesson,Beginner,Virtual Machines,
+Microsoft Azure,Cloud,lesson,Beginner,Storage,
+Microsoft Azure,Cloud,practice_lab,Beginner,azure-lab-1 — Beginner company lab,"Design a sandbox resource group with VM, storage, identity, and cleanup controls."
+Microsoft Azure,Cloud,company_workflow,Intermediate,Intermediate,"An engineer builds a multi-tier environment, configures diagnostics, validates private connectivity, and tests backup restore."
+Microsoft Azure,Cloud,lesson,Intermediate,Virtual Networks,
+Microsoft Azure,Cloud,lesson,Intermediate,Application Gateway,
+Microsoft Azure,Cloud,lesson,Intermediate,Azure Monitor,
+Microsoft Azure,Cloud,lesson,Intermediate,Managed Databases,
+Microsoft Azure,Cloud,practice_lab,Intermediate,azure-lab-2 — Intermediate company lab,Troubleshoot an application that cannot reach a private managed database.
+Microsoft Azure,Cloud,company_workflow,Advanced,Advanced,"A senior engineer applies policy at hierarchy level, replaces secrets with managed identities, and validates regional recovery."
+Microsoft Azure,Cloud,lesson,Advanced,Management Groups,
+Microsoft Azure,Cloud,lesson,Advanced,Policy,
+Microsoft Azure,Cloud,lesson,Advanced,Managed Identities,
+Microsoft Azure,Cloud,lesson,Advanced,Disaster Recovery,
+Microsoft Azure,Cloud,practice_lab,Advanced,azure-lab-3 — Advanced company lab,Create a governed multi-subscription design with central logging and recovery.
+Microsoft Azure,Cloud,company_workflow,Master,Master,"A cloud lead defines management hierarchy, connectivity, identity, platform subscriptions, budgets, and self-service products."
+Microsoft Azure,Cloud,lesson,Master,Enterprise-Scale Landing Zone,
+Microsoft Azure,Cloud,lesson,Master,Hybrid Platform,
+Microsoft Azure,Cloud,lesson,Master,Finops,
+Microsoft Azure,Cloud,lesson,Master,Platform Engineering,
+Microsoft Azure,Cloud,practice_lab,Master,azure-lab-4 — Master company lab,Design an Azure enterprise landing zone for regulated workloads.
+Microsoft Azure,Cloud,company_ticket,Beginner,"BILL-1401 — Design a sandbox resource group with VM, storage, identity, and cleanup controls","Design a sandbox resource group with VM, storage, identity, and cleanup controls. Business impact: Internal team productivity"
+Microsoft Azure,Cloud,company_ticket,Intermediate,BILL-1402 — Troubleshoot an application that cannot reach a private managed database,Troubleshoot an application that cannot reach a private managed database. Business impact: Staging reliability and release flow
+Microsoft Azure,Cloud,company_ticket,Advanced,BILL-1403 — Create a governed multi-subscription design with central logging and recovery,Create a governed multi-subscription design with central logging and recovery. Business impact: Customer-facing production reliability
+Microsoft Azure,Cloud,company_ticket,Master,BILL-1404 — Design an Azure enterprise landing zone for regulated workloads,"Design an Azure enterprise landing zone for regulated workloads. Business impact: Enterprise platform, governance, and business continuity"
+Microsoft Azure,Cloud,production_incident,SEV-2,INC-014 — Production degradation involving Microsoft Azure,Create a governed multi-subscription design with central logging and recovery. Customer impact: Customer-facing production reliability
+Microsoft Azure,Cloud,enterprise_capstone,Master,CAP-014 — Enterprise Microsoft Azure delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using Microsoft Azure as part of an end-to-end DevOps platform."
+Google Cloud Platform,Cloud,command_or_configuration_example,,billing export,
+Google Cloud Platform,Cloud,command_or_configuration_example,,gcloud compute instances list,
+Google Cloud Platform,Cloud,command_or_configuration_example,,gcloud compute networks list,
+Google Cloud Platform,Cloud,command_or_configuration_example,,gcloud config list,
+Google Cloud Platform,Cloud,command_or_configuration_example,,gcloud iam service-accounts list,
+Google Cloud Platform,Cloud,command_or_configuration_example,,gcloud logging sinks list,
+Google Cloud Platform,Cloud,command_or_configuration_example,,gcloud monitoring policies list,
+Google Cloud Platform,Cloud,command_or_configuration_example,,gcloud projects list,
+Google Cloud Platform,Cloud,command_or_configuration_example,,gcloud resource-manager org-policies list,
+Google Cloud Platform,Cloud,command_or_configuration_example,,gcloud sql instances list,
+Google Cloud Platform,Cloud,command_or_configuration_example,,gcloud storage ls,
+Google Cloud Platform,Cloud,command_or_configuration_example,,organization policy,
+Google Cloud Platform,Cloud,command_or_configuration_example,,shared VPC,
+Google Cloud Platform,Cloud,company_workflow,Beginner,Beginner,"A junior engineer uses a sandbox project, service account, labels, budget alert, and cleans up resources after validation."
+Google Cloud Platform,Cloud,lesson,Beginner,Projects And Billing,
+Google Cloud Platform,Cloud,lesson,Beginner,Iam,
+Google Cloud Platform,Cloud,lesson,Beginner,Compute Engine,
+Google Cloud Platform,Cloud,lesson,Beginner,Cloud Storage,
+Google Cloud Platform,Cloud,practice_lab,Beginner,gcp-lab-1 — Beginner company lab,"Design a project with compute, storage, identity, and budget safeguards."
+Google Cloud Platform,Cloud,company_workflow,Intermediate,Intermediate,"An engineer deploys a multi-tier service, configures private networking and monitoring, and validates backup recovery."
+Google Cloud Platform,Cloud,lesson,Intermediate,Vpc And Load Balancing,
+Google Cloud Platform,Cloud,lesson,Intermediate,Cloud Sql,
+Google Cloud Platform,Cloud,lesson,Intermediate,Cloud Monitoring,
+Google Cloud Platform,Cloud,lesson,Intermediate,Cloud Dns,
+Google Cloud Platform,Cloud,practice_lab,Intermediate,gcp-lab-2 — Intermediate company lab,Troubleshoot a service that fails through the load balancer but works directly.
+Google Cloud Platform,Cloud,company_workflow,Advanced,Advanced,"A senior engineer defines folders and guardrails, eliminates static keys, centralizes logs, and tests regional failover."
+Google Cloud Platform,Cloud,lesson,Advanced,Organization Policies,
+Google Cloud Platform,Cloud,lesson,Advanced,Workload Identity,
+Google Cloud Platform,Cloud,lesson,Advanced,Event Systems,
+Google Cloud Platform,Cloud,lesson,Advanced,Disaster Recovery,
+Google Cloud Platform,Cloud,practice_lab,Advanced,gcp-lab-3 — Advanced company lab,Design a governed folder/project structure and recovery plan.
+Google Cloud Platform,Cloud,company_workflow,Master,Master,"A cloud lead creates reusable foundations, shared VPCs, budgets, service catalogs, and architecture standards."
+Google Cloud Platform,Cloud,lesson,Master,Landing Zones,
+Google Cloud Platform,Cloud,lesson,Master,Data Platform,
+Google Cloud Platform,Cloud,lesson,Master,Finops,
+Google Cloud Platform,Cloud,lesson,Master,Global Architecture,
+Google Cloud Platform,Cloud,practice_lab,Master,gcp-lab-4 — Master company lab,Design a GCP landing zone and internal developer platform.
+Google Cloud Platform,Cloud,company_ticket,Beginner,"BILL-1501 — Design a project with compute, storage, identity, and budget safeguards","Design a project with compute, storage, identity, and budget safeguards. Business impact: Internal team productivity"
+Google Cloud Platform,Cloud,company_ticket,Intermediate,BILL-1502 — Troubleshoot a service that fails through the load balancer but works directly,Troubleshoot a service that fails through the load balancer but works directly. Business impact: Staging reliability and release flow
+Google Cloud Platform,Cloud,company_ticket,Advanced,BILL-1503 — Design a governed folder/project structure and recovery plan,Design a governed folder/project structure and recovery plan. Business impact: Customer-facing production reliability
+Google Cloud Platform,Cloud,company_ticket,Master,BILL-1504 — Design a GCP landing zone and internal developer platform,"Design a GCP landing zone and internal developer platform. Business impact: Enterprise platform, governance, and business continuity"
+Google Cloud Platform,Cloud,production_incident,SEV-1,INC-015 — Production degradation involving Google Cloud Platform,Design a governed folder/project structure and recovery plan. Customer impact: Customer-facing production reliability
+Google Cloud Platform,Cloud,enterprise_capstone,Master,CAP-015 — Enterprise Google Cloud Platform delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using Google Cloud Platform as part of an end-to-end DevOps platform."
+"Prometheus, Grafana & Observability",Operations,command_or_configuration_example,,burn-rate alerts,
+"Prometheus, Grafana & Observability",Operations,command_or_configuration_example,,histogram_quantile,
+"Prometheus, Grafana & Observability",Operations,command_or_configuration_example,,increase(errors_total[10m]),
+"Prometheus, Grafana & Observability",Operations,command_or_configuration_example,,label_replace,
+"Prometheus, Grafana & Observability",Operations,command_or_configuration_example,,promtool check config,
+"Prometheus, Grafana & Observability",Operations,command_or_configuration_example,,rate(http_requests_total[5m]),
+"Prometheus, Grafana & Observability",Operations,command_or_configuration_example,,retention tiers,
+"Prometheus, Grafana & Observability",Operations,command_or_configuration_example,,sampling policy,
+"Prometheus, Grafana & Observability",Operations,command_or_configuration_example,,sum by (service),
+"Prometheus, Grafana & Observability",Operations,command_or_configuration_example,,telemetry contracts,
+"Prometheus, Grafana & Observability",Operations,command_or_configuration_example,,topk,
+"Prometheus, Grafana & Observability",Operations,command_or_configuration_example,,up,
+"Prometheus, Grafana & Observability",Operations,company_workflow,Beginner,Beginner,"A junior engineer checks target health, runs a basic query, reads a dashboard, and links an alert to a runbook."
+"Prometheus, Grafana & Observability",Operations,lesson,Beginner,Metrics And Labels,
+"Prometheus, Grafana & Observability",Operations,lesson,Beginner,Prometheus Scraping,
+"Prometheus, Grafana & Observability",Operations,lesson,Beginner,Grafana Dashboards,
+"Prometheus, Grafana & Observability",Operations,lesson,Beginner,Basic Alerts,
+"Prometheus, Grafana & Observability",Operations,practice_lab,Beginner,observability-lab-1 — Beginner company lab,"Create a service dashboard with traffic, errors, latency, and saturation."
+"Prometheus, Grafana & Observability",Operations,company_workflow,Intermediate,Intermediate,"An engineer adds recording rules, removes noisy alerts, routes notifications, and validates exporter failure behavior."
+"Prometheus, Grafana & Observability",Operations,lesson,Intermediate,Recording Rules,
+"Prometheus, Grafana & Observability",Operations,lesson,Intermediate,Alertmanager,
+"Prometheus, Grafana & Observability",Operations,lesson,Intermediate,Exporters,
+"Prometheus, Grafana & Observability",Operations,lesson,Intermediate,Dashboard Design,
+"Prometheus, Grafana & Observability",Operations,practice_lab,Intermediate,observability-lab-2 — Intermediate company lab,Design alerts that identify user impact without paging on harmless symptoms.
+"Prometheus, Grafana & Observability",Operations,company_workflow,Advanced,Advanced,"A senior engineer defines SLIs, controls cardinality, scales storage, and correlates traces, logs, and metrics."
+"Prometheus, Grafana & Observability",Operations,lesson,Advanced,Slos And Error Budgets,
+"Prometheus, Grafana & Observability",Operations,lesson,Advanced,High Availability,
+"Prometheus, Grafana & Observability",Operations,lesson,Advanced,Cardinality,
+"Prometheus, Grafana & Observability",Operations,lesson,Advanced,Tracing Integration,
+"Prometheus, Grafana & Observability",Operations,practice_lab,Advanced,observability-lab-3 — Advanced company lab,Implement multi-window burn-rate alerting for an API SLO.
+"Prometheus, Grafana & Observability",Operations,company_workflow,Master,Master,"A platform lead defines telemetry standards, tenant boundaries, retention, cost allocation, and adoption scorecards."
+"Prometheus, Grafana & Observability",Operations,lesson,Master,Observability Platform,
+"Prometheus, Grafana & Observability",Operations,lesson,Master,Governance,
+"Prometheus, Grafana & Observability",Operations,lesson,Master,Cost Controls,
+"Prometheus, Grafana & Observability",Operations,lesson,Master,Incident Learning,
+"Prometheus, Grafana & Observability",Operations,practice_lab,Master,observability-lab-4 — Master company lab,Design an observability platform for 100 services with measurable reliability outcomes.
+"Prometheus, Grafana & Observability",Operations,company_ticket,Beginner,"BILL-1601 — Create a service dashboard with traffic, errors, latency, and saturation","Create a service dashboard with traffic, errors, latency, and saturation. Business impact: Internal team productivity"
+"Prometheus, Grafana & Observability",Operations,company_ticket,Intermediate,BILL-1602 — Design alerts that identify user impact without paging on harmless symptoms,Design alerts that identify user impact without paging on harmless symptoms. Business impact: Staging reliability and release flow
+"Prometheus, Grafana & Observability",Operations,company_ticket,Advanced,BILL-1603 — Implement multi-window burn-rate alerting for an API SLO,Implement multi-window burn-rate alerting for an API SLO. Business impact: Customer-facing production reliability
+"Prometheus, Grafana & Observability",Operations,company_ticket,Master,BILL-1604 — Design an observability platform for 100 services with measurable reliability outcomes,"Design an observability platform for 100 services with measurable reliability outcomes. Business impact: Enterprise platform, governance, and business continuity"
+"Prometheus, Grafana & Observability",Operations,production_incident,SEV-2,"INC-016 — Production degradation involving Prometheus, Grafana & Observability",Implement multi-window burn-rate alerting for an API SLO. Customer impact: Customer-facing production reliability
+"Prometheus, Grafana & Observability",Operations,enterprise_capstone,Master,"CAP-016 — Enterprise Prometheus, Grafana & Observability delivery project","Design, implement, validate, secure, document, and operationalize a company-grade solution using Prometheus, Grafana & Observability as part of an end-to-end DevOps platform."
+Centralized Logging & OpenSearch/ELK,Operations,command_or_configuration_example,,archive tiers,
+Centralized Logging & OpenSearch/ELK,Operations,command_or_configuration_example,,field caps,
+Centralized Logging & OpenSearch/ELK,Operations,command_or_configuration_example,,grep request_id,
+Centralized Logging & OpenSearch/ELK,Operations,command_or_configuration_example,,grok patterns,
+Centralized Logging & OpenSearch/ELK,Operations,command_or_configuration_example,,index templates,
+Centralized Logging & OpenSearch/ELK,Operations,command_or_configuration_example,,journalctl -o json,
+Centralized Logging & OpenSearch/ELK,Operations,command_or_configuration_example,,JSON fields,
+Centralized Logging & OpenSearch/ELK,Operations,command_or_configuration_example,,lifecycle policies,
+Centralized Logging & OpenSearch/ELK,Operations,command_or_configuration_example,,mapping templates,
+Centralized Logging & OpenSearch/ELK,Operations,command_or_configuration_example,,retention matrix,
+Centralized Logging & OpenSearch/ELK,Operations,command_or_configuration_example,,snapshot and restore,
+Centralized Logging & OpenSearch/ELK,Operations,command_or_configuration_example,,tenant quotas,
+Centralized Logging & OpenSearch/ELK,Operations,company_workflow,Beginner,Beginner,"A junior engineer confirms logs are emitted as structured events, finds a request ID, and records the timeline."
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Beginner,Structured Logging,
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Beginner,Collectors,
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Beginner,Indexes,
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Beginner,Search Basics,
+Centralized Logging & OpenSearch/ELK,Operations,practice_lab,Beginner,logging-lab-1 — Beginner company lab,Convert plain application logs into structured events and search an incident timeline.
+Centralized Logging & OpenSearch/ELK,Operations,company_workflow,Intermediate,Intermediate,"An engineer parses events, routes indexes, applies retention, creates operational views, and restricts sensitive data."
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Intermediate,Pipelines And Parsing,
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Intermediate,Index Lifecycle,
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Intermediate,Dashboards,
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Intermediate,Access Control,
+Centralized Logging & OpenSearch/ELK,Operations,practice_lab,Intermediate,logging-lab-2 — Intermediate company lab,"Build an ingestion pipeline for web, application, and audit logs."
+Centralized Logging & OpenSearch/ELK,Operations,company_workflow,Advanced,Advanced,"A senior engineer controls mappings, shard growth, redaction, recovery, and correlation with metrics and traces."
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Advanced,Cluster Scaling,
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Advanced,Schema Governance,
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Advanced,Pii Controls,
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Advanced,Cross-Signal Correlation,
+Centralized Logging & OpenSearch/ELK,Operations,practice_lab,Advanced,logging-lab-3 — Advanced company lab,Recover a degraded logging cluster and prevent repeat shard exhaustion.
+Centralized Logging & OpenSearch/ELK,Operations,company_workflow,Master,Master,"A platform lead defines data classes, retention tiers, legal holds, chargeback, and self-service onboarding."
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Master,Logging Platform,
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Master,Compliance Retention,
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Master,Cost Optimization,
+Centralized Logging & OpenSearch/ELK,Operations,lesson,Master,Tenant Governance,
+Centralized Logging & OpenSearch/ELK,Operations,practice_lab,Master,logging-lab-4 — Master company lab,Design a compliant logging platform for engineering and security teams.
+Centralized Logging & OpenSearch/ELK,Operations,company_ticket,Beginner,BILL-1701 — Convert plain application logs into structured events and search an incident timeline,Convert plain application logs into structured events and search an incident timeline. Business impact: Internal team productivity
+Centralized Logging & OpenSearch/ELK,Operations,company_ticket,Intermediate,"BILL-1702 — Build an ingestion pipeline for web, application, and audit logs","Build an ingestion pipeline for web, application, and audit logs. Business impact: Staging reliability and release flow"
+Centralized Logging & OpenSearch/ELK,Operations,company_ticket,Advanced,BILL-1703 — Recover a degraded logging cluster and prevent repeat shard exhaustion,Recover a degraded logging cluster and prevent repeat shard exhaustion. Business impact: Customer-facing production reliability
+Centralized Logging & OpenSearch/ELK,Operations,company_ticket,Master,BILL-1704 — Design a compliant logging platform for engineering and security teams,"Design a compliant logging platform for engineering and security teams. Business impact: Enterprise platform, governance, and business continuity"
+Centralized Logging & OpenSearch/ELK,Operations,production_incident,SEV-2,INC-017 — Production degradation involving Centralized Logging & OpenSearch/ELK,Recover a degraded logging cluster and prevent repeat shard exhaustion. Customer impact: Customer-facing production reliability
+Centralized Logging & OpenSearch/ELK,Operations,enterprise_capstone,Master,CAP-017 — Enterprise Centralized Logging & OpenSearch/ELK delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using Centralized Logging & OpenSearch/ELK as part of an end-to-end DevOps platform."
+DevSecOps & Supply-Chain Security,Security,command_or_configuration_example,,admission policy,
+DevSecOps & Supply-Chain Security,Security,command_or_configuration_example,,control mapping,
+DevSecOps & Supply-Chain Security,Security,command_or_configuration_example,,dependency scan,
+DevSecOps & Supply-Chain Security,Security,command_or_configuration_example,,evidence automation,
+DevSecOps & Supply-Chain Security,Security,command_or_configuration_example,,generate SBOM,
+DevSecOps & Supply-Chain Security,Security,command_or_configuration_example,,least privilege review,
+DevSecOps & Supply-Chain Security,Security,command_or_configuration_example,,policy evaluate,
+DevSecOps & Supply-Chain Security,Security,command_or_configuration_example,,risk acceptance,
+DevSecOps & Supply-Chain Security,Security,command_or_configuration_example,,scan image,
+DevSecOps & Supply-Chain Security,Security,command_or_configuration_example,,scan source,
+DevSecOps & Supply-Chain Security,Security,command_or_configuration_example,,scan Terraform,
+DevSecOps & Supply-Chain Security,Security,command_or_configuration_example,,secret scan,
+DevSecOps & Supply-Chain Security,Security,command_or_configuration_example,,sign artifact,
+DevSecOps & Supply-Chain Security,Security,command_or_configuration_example,,verify provenance,
+DevSecOps & Supply-Chain Security,Security,company_workflow,Beginner,Beginner,"A developer removes hard-coded secrets, fixes critical findings, and records an approved exception when necessary."
+DevSecOps & Supply-Chain Security,Security,lesson,Beginner,Least Privilege,
+DevSecOps & Supply-Chain Security,Security,lesson,Beginner,Secret Handling,
+DevSecOps & Supply-Chain Security,Security,lesson,Beginner,Basic Scanning,
+DevSecOps & Supply-Chain Security,Security,lesson,Beginner,Secure Defaults,
+DevSecOps & Supply-Chain Security,Security,practice_lab,Beginner,devsecops-lab-1 — Beginner company lab,Identify and remediate secrets and vulnerable dependencies in a sample repository.
+DevSecOps & Supply-Chain Security,Security,company_workflow,Intermediate,Intermediate,"An engineer integrates multiple scanners, deduplicates findings, applies severity thresholds, and avoids blocking on low-confidence noise."
+DevSecOps & Supply-Chain Security,Security,lesson,Intermediate,Sast And Dast,
+DevSecOps & Supply-Chain Security,Security,lesson,Intermediate,Container Scanning,
+DevSecOps & Supply-Chain Security,Security,lesson,Intermediate,Iac Scanning,
+DevSecOps & Supply-Chain Security,Security,lesson,Intermediate,Policy Gates,
+DevSecOps & Supply-Chain Security,Security,practice_lab,Intermediate,devsecops-lab-2 — Intermediate company lab,Build a risk-based pipeline gate with evidence and exception expiry.
+DevSecOps & Supply-Chain Security,Security,company_workflow,Advanced,Advanced,"A senior engineer produces provenance, signs artifacts, uses short-lived identity, models threats, and monitors runtime drift."
+DevSecOps & Supply-Chain Security,Security,lesson,Advanced,Sbom And Signing,
+DevSecOps & Supply-Chain Security,Security,lesson,Advanced,Oidc,
+DevSecOps & Supply-Chain Security,Security,lesson,Advanced,Threat Modeling,
+DevSecOps & Supply-Chain Security,Security,lesson,Advanced,Runtime Controls,
+DevSecOps & Supply-Chain Security,Security,practice_lab,Advanced,devsecops-lab-3 — Advanced company lab,Secure a container supply chain from commit to production admission.
+DevSecOps & Supply-Chain Security,Security,company_workflow,Master,Master,"A security platform lead provides reusable controls, measures risk reduction, maps evidence to controls, and runs response exercises."
+DevSecOps & Supply-Chain Security,Security,lesson,Master,Security Platform,
+DevSecOps & Supply-Chain Security,Security,lesson,Master,Risk Governance,
+DevSecOps & Supply-Chain Security,Security,lesson,Master,Compliance Evidence,
+DevSecOps & Supply-Chain Security,Security,lesson,Master,Incident Response,
+DevSecOps & Supply-Chain Security,Security,practice_lab,Master,devsecops-lab-4 — Master company lab,Design a DevSecOps operating model for regulated software delivery.
+DevSecOps & Supply-Chain Security,Security,company_ticket,Beginner,BILL-1801 — Identify and remediate secrets and vulnerable dependencies in a sample repository,Identify and remediate secrets and vulnerable dependencies in a sample repository. Business impact: Internal team productivity
+DevSecOps & Supply-Chain Security,Security,company_ticket,Intermediate,BILL-1802 — Build a risk-based pipeline gate with evidence and exception expiry,Build a risk-based pipeline gate with evidence and exception expiry. Business impact: Staging reliability and release flow
+DevSecOps & Supply-Chain Security,Security,company_ticket,Advanced,BILL-1803 — Secure a container supply chain from commit to production admission,Secure a container supply chain from commit to production admission. Business impact: Customer-facing production reliability
+DevSecOps & Supply-Chain Security,Security,company_ticket,Master,BILL-1804 — Design a DevSecOps operating model for regulated software delivery,"Design a DevSecOps operating model for regulated software delivery. Business impact: Enterprise platform, governance, and business continuity"
+DevSecOps & Supply-Chain Security,Security,production_incident,SEV-1,INC-018 — Production degradation involving DevSecOps & Supply-Chain Security,Secure a container supply chain from commit to production admission. Customer impact: Customer-facing production reliability
+DevSecOps & Supply-Chain Security,Security,enterprise_capstone,Master,CAP-018 — Enterprise DevSecOps & Supply-Chain Security delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using DevSecOps & Supply-Chain Security as part of an end-to-end DevOps platform."
+SRE & Incident Management,Operations,command_or_configuration_example,,availability SLI,
+SRE & Incident Management,Operations,command_or_configuration_example,,capacity model,
+SRE & Incident Management,Operations,command_or_configuration_example,,check dashboard,
+SRE & Incident Management,Operations,command_or_configuration_example,,communications lead,
+SRE & Incident Management,Operations,command_or_configuration_example,,declare incident,
+SRE & Incident Management,Operations,command_or_configuration_example,,error budget,
+SRE & Incident Management,Operations,command_or_configuration_example,,incident commander,
+SRE & Incident Management,Operations,command_or_configuration_example,,latency SLI,
+SRE & Incident Management,Operations,command_or_configuration_example,,open runbook,
+SRE & Incident Management,Operations,command_or_configuration_example,,operations lead,
+SRE & Incident Management,Operations,command_or_configuration_example,,record timeline,
+SRE & Incident Management,Operations,command_or_configuration_example,,reliability roadmap,
+SRE & Incident Management,Operations,command_or_configuration_example,,risk register,
+SRE & Incident Management,Operations,command_or_configuration_example,,service tiering,
+SRE & Incident Management,Operations,command_or_configuration_example,,toil register,
+SRE & Incident Management,Operations,company_workflow,Beginner,Beginner,"A junior responder acknowledges an alert, checks the runbook, gathers evidence, communicates status, and escalates early."
+SRE & Incident Management,Operations,lesson,Beginner,Service Health,
+SRE & Incident Management,Operations,lesson,Beginner,Runbooks,
+SRE & Incident Management,Operations,lesson,Beginner,On-Call Basics,
+SRE & Incident Management,Operations,lesson,Beginner,Incident Severity,
+SRE & Incident Management,Operations,practice_lab,Beginner,sre-lab-1 — Beginner company lab,Respond to a simulated service outage using a clear incident checklist.
+SRE & Incident Management,Operations,company_workflow,Intermediate,Intermediate,"An engineer defines user-centered indicators, reviews budget consumption, writes a blameless postmortem, and automates repetitive work."
+SRE & Incident Management,Operations,lesson,Intermediate,Slis And Slos,
+SRE & Incident Management,Operations,lesson,Intermediate,Error Budgets,
+SRE & Incident Management,Operations,lesson,Intermediate,Postmortems,
+SRE & Incident Management,Operations,lesson,Intermediate,Toil Reduction,
+SRE & Incident Management,Operations,practice_lab,Intermediate,sre-lab-2 — Intermediate company lab,Create an SLO and postmortem for an API with recurring latency incidents.
+SRE & Incident Management,Operations,company_workflow,Advanced,Advanced,"A senior engineer coordinates roles, manages communications, models demand, tests failure modes, and negotiates dependency objectives."
+SRE & Incident Management,Operations,lesson,Advanced,Incident Command,
+SRE & Incident Management,Operations,lesson,Advanced,Capacity Planning,
+SRE & Incident Management,Operations,lesson,Advanced,Chaos Testing,
+SRE & Incident Management,Operations,lesson,Advanced,Dependency Reliability,
+SRE & Incident Management,Operations,practice_lab,Advanced,sre-lab-3 — Advanced company lab,Run a game day for loss of a critical dependency and produce actions.
+SRE & Incident Management,Operations,company_workflow,Master,Master,"An SRE lead aligns investment with risk, creates reliability tiers, governs exceptions, and reports business impact."
+SRE & Incident Management,Operations,lesson,Master,Reliability Strategy,
+SRE & Incident Management,Operations,lesson,Master,Organizational Incentives,
+SRE & Incident Management,Operations,lesson,Master,Platform Resilience,
+SRE & Incident Management,Operations,lesson,Master,Executive Reporting,
+SRE & Incident Management,Operations,practice_lab,Master,sre-lab-4 — Master company lab,Design a reliability program for a portfolio of business-critical services.
+SRE & Incident Management,Operations,company_ticket,Beginner,BILL-1901 — Respond to a simulated service outage using a clear incident checklist,Respond to a simulated service outage using a clear incident checklist. Business impact: Internal team productivity
+SRE & Incident Management,Operations,company_ticket,Intermediate,BILL-1902 — Create an SLO and postmortem for an API with recurring latency incidents,Create an SLO and postmortem for an API with recurring latency incidents. Business impact: Staging reliability and release flow
+SRE & Incident Management,Operations,company_ticket,Advanced,BILL-1903 — Run a game day for loss of a critical dependency and produce actions,Run a game day for loss of a critical dependency and produce actions. Business impact: Customer-facing production reliability
+SRE & Incident Management,Operations,company_ticket,Master,BILL-1904 — Design a reliability program for a portfolio of business-critical services,"Design a reliability program for a portfolio of business-critical services. Business impact: Enterprise platform, governance, and business continuity"
+SRE & Incident Management,Operations,production_incident,SEV-2,INC-019 — Production degradation involving SRE & Incident Management,Run a game day for loss of a critical dependency and produce actions. Customer impact: Customer-facing production reliability
+SRE & Incident Management,Operations,enterprise_capstone,Master,CAP-019 — Enterprise SRE & Incident Management delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using SRE & Incident Management as part of an end-to-end DevOps platform."
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,architecture decision record,
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,backpressure,
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,capacity estimate,
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,circuit breaker,
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,context diagram,
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,control plane,
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,data plane,
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,developer experience metrics,
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,functional requirements,
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,idempotency,
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,non-functional requirements,
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,RTO and RPO,
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,sequence diagram,
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,tenant boundary,
+System Design & Platform Engineering,Architecture,command_or_configuration_example,,unit economics,
+System Design & Platform Engineering,Architecture,company_workflow,Beginner,Beginner,"An engineer clarifies users, traffic, constraints, dependencies, and failure expectations before drawing components."
+System Design & Platform Engineering,Architecture,lesson,Beginner,Requirements,
+System Design & Platform Engineering,Architecture,lesson,Beginner,Components And Data Flow,
+System Design & Platform Engineering,Architecture,lesson,Beginner,Availability Basics,
+System Design & Platform Engineering,Architecture,lesson,Beginner,Documentation,
+System Design & Platform Engineering,Architecture,practice_lab,Beginner,system-design-lab-1 — Beginner company lab,Design a small deployment service and explain its request flow.
+System Design & Platform Engineering,Architecture,company_workflow,Intermediate,Intermediate,"An engineer estimates load, chooses stateless boundaries, adds queues and caches deliberately, and defines retries and timeouts."
+System Design & Platform Engineering,Architecture,lesson,Intermediate,Scaling Patterns,
+System Design & Platform Engineering,Architecture,lesson,Intermediate,Caching And Queues,
+System Design & Platform Engineering,Architecture,lesson,Intermediate,Data Choices,
+System Design & Platform Engineering,Architecture,lesson,Intermediate,Failure Handling,
+System Design & Platform Engineering,Architecture,practice_lab,Intermediate,system-design-lab-2 — Intermediate company lab,Design a build-event processing system that handles bursts safely.
+System Design & Platform Engineering,Architecture,company_workflow,Advanced,Advanced,"A senior engineer defines failure domains, consistency, tenant isolation, identity, audit, and operational controls."
+System Design & Platform Engineering,Architecture,lesson,Advanced,Multi-Region Design,
+System Design & Platform Engineering,Architecture,lesson,Advanced,Platform Apis,
+System Design & Platform Engineering,Architecture,lesson,Advanced,Tenancy,
+System Design & Platform Engineering,Architecture,lesson,Advanced,Security Architecture,
+System Design & Platform Engineering,Architecture,practice_lab,Advanced,system-design-lab-3 — Advanced company lab,Design a multi-tenant internal deployment platform with regional recovery.
+System Design & Platform Engineering,Architecture,company_workflow,Master,Master,"A platform leader measures adoption and outcomes, maintains paved roads, funds reliability, and evolves architecture through evidence."
+System Design & Platform Engineering,Architecture,lesson,Master,Platform As Product,
+System Design & Platform Engineering,Architecture,lesson,Master,Economics,
+System Design & Platform Engineering,Architecture,lesson,Master,Governance,
+System Design & Platform Engineering,Architecture,lesson,Master,Evolutionary Architecture,
+System Design & Platform Engineering,Architecture,practice_lab,Master,system-design-lab-4 — Master company lab,"Create a three-year platform strategy with product roadmap, operating model, and success metrics."
+System Design & Platform Engineering,Architecture,company_ticket,Beginner,BILL-2001 — Design a small deployment service and explain its request flow,Design a small deployment service and explain its request flow. Business impact: Internal team productivity
+System Design & Platform Engineering,Architecture,company_ticket,Intermediate,BILL-2002 — Design a build-event processing system that handles bursts safely,Design a build-event processing system that handles bursts safely. Business impact: Staging reliability and release flow
+System Design & Platform Engineering,Architecture,company_ticket,Advanced,BILL-2003 — Design a multi-tenant internal deployment platform with regional recovery,Design a multi-tenant internal deployment platform with regional recovery. Business impact: Customer-facing production reliability
+System Design & Platform Engineering,Architecture,company_ticket,Master,"BILL-2004 — Create a three-year platform strategy with product roadmap, operating model, and success metrics","Create a three-year platform strategy with product roadmap, operating model, and success metrics. Business impact: Enterprise platform, governance, and business continuity"
+System Design & Platform Engineering,Architecture,production_incident,SEV-2,INC-020 — Production degradation involving System Design & Platform Engineering,Design a multi-tenant internal deployment platform with regional recovery. Customer impact: Customer-facing production reliability
+System Design & Platform Engineering,Architecture,enterprise_capstone,Master,CAP-020 — Enterprise System Design & Platform Engineering delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using System Design & Platform Engineering as part of an end-to-end DevOps platform."
+Databases for DevOps,Data,command_or_configuration_example,,backup command,
+Databases for DevOps,Data,command_or_configuration_example,,connection test,
+Databases for DevOps,Data,command_or_configuration_example,,EXPLAIN,
+Databases for DevOps,Data,command_or_configuration_example,,failover rehearsal,
+Databases for DevOps,Data,command_or_configuration_example,,migration up/down,
+Databases for DevOps,Data,command_or_configuration_example,,PITR target,
+Databases for DevOps,Data,command_or_configuration_example,,pool metrics,
+Databases for DevOps,Data,command_or_configuration_example,,replica lag,
+Databases for DevOps,Data,command_or_configuration_example,,restore verify,
+Databases for DevOps,Data,command_or_configuration_example,,retention policy,
+Databases for DevOps,Data,command_or_configuration_example,,RPO tiers,
+Databases for DevOps,Data,command_or_configuration_example,,RTO tiers,
+Databases for DevOps,Data,command_or_configuration_example,,SELECT 1,
+Databases for DevOps,Data,command_or_configuration_example,,slow query log,
+Databases for DevOps,Data,company_workflow,Beginner,Beginner,"A junior engineer checks connectivity and capacity, performs an approved backup, and verifies the backup file and logs."
+Databases for DevOps,Data,lesson,Beginner,Relational Concepts,
+Databases for DevOps,Data,lesson,Beginner,Connections,
+Databases for DevOps,Data,lesson,Beginner,Backups,
+Databases for DevOps,Data,lesson,Beginner,Basic Monitoring,
+Databases for DevOps,Data,practice_lab,Beginner,databases-lab-1 — Beginner company lab,Create a backup and restore validation checklist for a small database.
+Databases for DevOps,Data,company_workflow,Intermediate,Intermediate,"An engineer stages a backward-compatible migration, checks query plans, monitors replicas, and validates application pools."
+Databases for DevOps,Data,lesson,Intermediate,Indexes And Queries,
+Databases for DevOps,Data,lesson,Intermediate,Replication,
+Databases for DevOps,Data,lesson,Intermediate,Migrations,
+Databases for DevOps,Data,lesson,Intermediate,Connection Pooling,
+Databases for DevOps,Data,practice_lab,Intermediate,databases-lab-2 — Intermediate company lab,Plan a zero-downtime schema change for a busy application.
+Databases for DevOps,Data,company_workflow,Advanced,Advanced,"A senior engineer tests failover and PITR, reviews encryption and access, and resolves bottlenecks using evidence."
+Databases for DevOps,Data,lesson,Advanced,High Availability,
+Databases for DevOps,Data,lesson,Advanced,Point-In-Time Recovery,
+Databases for DevOps,Data,lesson,Advanced,Data Security,
+Databases for DevOps,Data,lesson,Advanced,Performance,
+Databases for DevOps,Data,practice_lab,Advanced,databases-lab-3 — Advanced company lab,Recover a database to a point before an accidental change and document data loss.
+Databases for DevOps,Data,company_workflow,Master,Master,"A platform lead defines service tiers, backup objectives, ownership, audit, and managed-service standards."
+Databases for DevOps,Data,lesson,Master,Data Platform Governance,
+Databases for DevOps,Data,lesson,Master,Resilience Tiers,
+Databases for DevOps,Data,lesson,Master,Capacity Economics,
+Databases for DevOps,Data,lesson,Master,Compliance,
+Databases for DevOps,Data,practice_lab,Master,databases-lab-4 — Master company lab,Design a database platform operating model for multiple application teams.
+Databases for DevOps,Data,company_ticket,Beginner,BILL-2101 — Create a backup and restore validation checklist for a small database,Create a backup and restore validation checklist for a small database. Business impact: Internal team productivity
+Databases for DevOps,Data,company_ticket,Intermediate,BILL-2102 — Plan a zero-downtime schema change for a busy application,Plan a zero-downtime schema change for a busy application. Business impact: Staging reliability and release flow
+Databases for DevOps,Data,company_ticket,Advanced,BILL-2103 — Recover a database to a point before an accidental change and document data loss,Recover a database to a point before an accidental change and document data loss. Business impact: Customer-facing production reliability
+Databases for DevOps,Data,company_ticket,Master,BILL-2104 — Design a database platform operating model for multiple application teams,"Design a database platform operating model for multiple application teams. Business impact: Enterprise platform, governance, and business continuity"
+Databases for DevOps,Data,production_incident,SEV-1,INC-021 — Production degradation involving Databases for DevOps,Recover a database to a point before an accidental change and document data loss. Customer impact: Customer-facing production reliability
+Databases for DevOps,Data,enterprise_capstone,Master,CAP-021 — Enterprise Databases for DevOps delivery project,"Design, implement, validate, secure, document, and operationalize a company-grade solution using Databases for DevOps as part of an end-to-end DevOps platform."

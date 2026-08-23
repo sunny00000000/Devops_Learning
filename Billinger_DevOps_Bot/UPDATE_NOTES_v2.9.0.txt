@@ -1,0 +1,9 @@
+Billinger Bot v2.9.0 — 4K Precision Polish Edition
+
+Final visual-quality pass over v2.8:
+- Replaces frosted-glass blur on primary surfaces with solid dark panels.
+- Removes excessive glow, text shadow and floating 3D transforms from normal work areas.
+- Adds crisp high-contrast borders, typography and focus states.
+- Tunes content density for 1080p, 1440p, ultrawide and 3840×2160 displays.
+- Keeps Comfort Dark, High Contrast and Reduced Motion defaults.
+- Preserves all learning, readiness, AI, career, portfolio, institute and security features.

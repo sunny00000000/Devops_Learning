@@ -1,0 +1,3353 @@
+{
+  "version": "2.6.2",
+  "source": "learning.zip + learn.zip",
+  "resource_count": 69,
+  "resources": [
+    {
+      "id": "vol-10a",
+      "volume": "10A",
+      "title": "Volume 10A - CICD Foundations",
+      "summary": "Design a CI/CD operating model that reduces batch size while preserving control, evidence, and Build a multi-stage pipeline with deterministic inputs, isolated execution, caching, quality gates, artifact promotion, and deployment verification. Choose a Git integration strategy that supports rapid feedback, protected branches, peer review, and Implement test layers, deployment strategies, environment controls, secret boundaries, and release rollback Measure delivery performance with flow, stability, reliability, queue, and recovery indicators without turning metrics into individual productivity scores. Complete a vendor-neutral capstone that…",
+      "tools": [
+        "cicd"
+      ],
+      "primary_tool": "cicd",
+      "tool_names": [
+        "CI/CD Engineering"
+      ],
+      "page_count": 39,
+      "word_count": 10150,
+      "heading_count": 10,
+      "headings": [
+        "Chapter 1: Software Delivery, CI/CD, and the Production Operating",
+        "Chapter 2: Git Workflows, Change Integration, and Repository",
+        "Chapter 3: Pipeline Architecture, Stages, Jobs, Runners, and",
+        "Chapter 4: Build Engineering, Dependency Control, Caching, and",
+        "Chapter 5: Automated Testing, Quality Gates, and Test Evidence",
+        "Chapter 6: Artifacts, Versioning, Registries, Promotion, and",
+        "Chapter 7: Environments, Configuration, Secrets, Identity, and",
+        "Chapter 8: Deployment Strategies, Database Changes, Feature",
+        "Chapter 9: Pipeline Observability, DORA Metrics, SLOs, and",
+        "Chapter 10: CI/CD Foundation Architecture and Integrated"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_10A_CICD_Foundations.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_10A_CICD_Foundations.docx",
+      "text_file": "text/vol-10a.json",
+      "pdf_bytes": 605640,
+      "docx_bytes": 68901,
+      "previous_tool_assignments": [
+        "cicd",
+        "git"
+      ],
+      "related_topics": [
+        "git"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "This is the CI/CD foundations book. Git workflows are a chapter, not a separate Git-library placement.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-10b",
+      "volume": "10B",
+      "title": "Volume 10B - Jenkins Enterprise Engineering",
+      "summary": "Design a Jenkins controller platform with explicit release, upgrade, backup, recovery, plugin, and Secure authentication, authorization, credentials, controller isolation, build execution, webhooks, and Operate static and ephemeral agents with labels, executors, workspace isolation, toolchains, capacity controls, and failure containment. Author maintainable Declarative and Scripted Pipelines with robust stages, post conditions, parallelism, retries, timeouts, inputs, and resumability. Implement multibranch pipelines, pull-request governance, trusted/untrusted code boundaries, artifacts, deployment stages, and shared libraries.",
+      "tools": [
+        "jenkins"
+      ],
+      "primary_tool": "jenkins",
+      "tool_names": [
+        "Jenkins"
+      ],
+      "page_count": 45,
+      "word_count": 15346,
+      "heading_count": 10,
+      "headings": [
+        "Chapter 11: Jenkins Architecture, Release Lines, Installation, and",
+        "Chapter 12: Security Model, Identity, Authorization, Credentials,",
+        "Chapter 13: Plugin Governance, Upgrades, Backup, Restore, and",
+        "Chapter 14: Agents, Executors, Labels, Cloud Provisioning, and",
+        "Chapter 15: Jenkinsfile Engineering: Declarative and Scripted",
+        "Chapter 16: Multibranch Pipelines, Pull Requests, Triggers, and SCM",
+        "Chapter 17: Build Environments, Credentials, Artifacts, Containers,",
+        "Chapter 18: Shared Libraries, Groovy Boundaries, Testing, and",
+        "Chapter 19: Scaling, Performance, Observability, Reliability, and",
+        "Chapter 20: Configuration as Code, Job Automation, and Enterprise"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_10B_Jenkins_Enterprise_Engineering.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_10B_Jenkins_Enterprise_Engineering.docx",
+      "text_file": "text/vol-10b.json",
+      "pdf_bytes": 672484,
+      "docx_bytes": 80460,
+      "previous_tool_assignments": [
+        "jenkins",
+        "cicd"
+      ],
+      "related_topics": [
+        "cicd"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Jenkins. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-10c",
+      "volume": "10C",
+      "title": "Volume 10C - GitHub Actions GitLab CICD",
+      "summary": "Engineer GitHub Actions workflows with explicit events, permissions, contexts, dependencies, concurrency, evidence, and failure behavior. Design GitHub-hosted, larger, self-hosted, and Kubernetes-based runner fleets with trust boundaries, autoscaling, cleanup, and capacity objectives. Create reusable workflows, composite actions, custom actions, and organization-level golden paths with versioned interfaces and dependency controls. Use OIDC, environments, deployment protection, artifact attestations, immutable references, and least- privilege tokens to secure GitHub delivery.",
+      "tools": [
+        "github-actions"
+      ],
+      "primary_tool": "github-actions",
+      "tool_names": [
+        "GitHub Actions"
+      ],
+      "page_count": 41,
+      "word_count": 13460,
+      "heading_count": 10,
+      "headings": [
+        "Chapter 21: GitHub Actions Architecture, Workflow Syntax, Events,",
+        "Chapter 22: GitHub Runner Fleets, Larger Runners, Self-Hosted",
+        "Chapter 23: Reusable Workflows, Composite Actions, Custom",
+        "Chapter 24: GitHub Actions Security, OIDC, Environments,",
+        "Chapter 25: Advanced GitHub Actions Orchestration, Matrices,",
+        "Chapter 26: GitLab CI/CD Architecture, YAML, Rules, DAGs,",
+        "Chapter 27: GitLab Runner Executors, Fleet Security, Autoscaling,",
+        "Chapter 28: GitLab Includes, CI/CD Components, Parent-Child",
+        "Chapter 29: GitLab Pipeline Security, ID Tokens, Job Tokens,",
+        "Chapter 30: Cross-Platform CI/CD Platform Operations and"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_10C_GitHub_Actions_GitLab_CICD.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_10C_GitHub_Actions_GitLab_CICD.docx",
+      "text_file": "text/vol-10c.json",
+      "pdf_bytes": 664499,
+      "docx_bytes": 75956,
+      "previous_tool_assignments": [
+        "github-actions",
+        "cicd",
+        "git"
+      ],
+      "related_topics": [
+        "cicd",
+        "git"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The dominant platforms are GitHub Actions and GitLab CI/CD; it is anchored under GitHub Actions and not duplicated under Git.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-10d",
+      "volume": "10D",
+      "title": "Volume 10D - Kubernetes GitOps Progressive Delivery",
+      "summary": "Design a Kubernetes delivery operating model with explicit build, promotion, reconciliation, runtime, and Package workloads with Helm and Kustomize while preserving rendered-state visibility and immutable Operate Argo CD and Flux with multi-tenancy, least privilege, observability, upgrade, backup, and clean Choose rolling, blue-green, canary, and feature-delivery strategies from workload and business risk. Secure GitOps repositories, controllers, secrets, policy, evidence, and emergency change as one trust chain. Deliver and defend a portfolio-grade Kubernetes delivery platform with measured SLOs and recovery",
+      "tools": [
+        "kubernetes"
+      ],
+      "primary_tool": "kubernetes",
+      "tool_names": [
+        "Kubernetes"
+      ],
+      "page_count": 37,
+      "word_count": 9780,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 31 Kubernetes Delivery Operating Model and GitOps Foundations",
+        "Chapter 32 Kubernetes Manifests, Kustomize and Helm Packaging",
+        "Chapter 33 Environment Repositories, Promotion, Drift and Reconciliation",
+        "Chapter 34 Argo CD Foundations and Application Lifecycle",
+        "Chapter 35 Argo CD at Scale: ApplicationSet, Multi-Tenancy, HA and Operations",
+        "Chapter 36 Flux GitOps Toolkit, Bootstrap, Multi-Tenancy and Image Automation",
+        "Chapter 37 Deployment Strategies: Rolling, Recreate, Blue-Green, Canary and Feature Delivery",
+        "Chapter 38 Argo Rollouts, Analysis, Experiments and Traffic Management",
+        "Chapter 39 GitOps Security, Secrets, Policy, Observability and Release Governance",
+        "Chapter 40 Enterprise Kubernetes Delivery Platform Capstone",
+        "Chapter 31: Kubernetes Delivery Operating Model and GitOps",
+        "Chapter 32: Kubernetes Manifests, Kustomize and Helm"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_10D_Kubernetes_GitOps_Progressive_Delivery.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_10D_Kubernetes_GitOps_Progressive_Delivery.docx",
+      "text_file": "text/vol-10d.json",
+      "pdf_bytes": 720386,
+      "docx_bytes": 123171,
+      "previous_tool_assignments": [
+        "kubernetes",
+        "cicd",
+        "git",
+        "system-design"
+      ],
+      "related_topics": [
+        "cicd",
+        "git",
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The course is Kubernetes GitOps and progressive delivery; it belongs under Kubernetes.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-10e",
+      "volume": "10E",
+      "title": "Volume 10E - DevSecOps Supply Chain Governance",
+      "summary": "Translate threats, business impact, and obligations into owned, testable delivery requirements. Protect repositories, dependencies, runner fleets, identities, secrets, artifacts, and deployment paths as one Build high-signal SAST, SCA, secret, DAST, API, fuzzing, container, Kubernetes, IaC, and cloud configuration Generate, validate, retain, and operationalize SBOM, VEX, provenance, attestations, and signatures. Operate policy as code, vulnerability triage, exceptions, security observability, evidence, and governance. Contain supply-chain compromise and restore trusted delivery through clean-room recovery.",
+      "tools": [
+        "devsecops"
+      ],
+      "primary_tool": "devsecops",
+      "tool_names": [
+        "DevSecOps & Supply-Chain Security"
+      ],
+      "page_count": 53,
+      "word_count": 13578,
+      "heading_count": 30,
+      "headings": [
+        "Chapter 41 DevSecOps Operating Model, Threat Modeling and Security Requirements",
+        "Chapter 42 Source Repository Security, Change Governance and Secret Prevention",
+        "Chapter 43 Dependency Governance, SCA and License Risk",
+        "Chapter 44 Secure Build Systems, Runner Fleets, Identity and Isolation",
+        "Chapter 45 SAST, Secret Scanning, Code Review and Developer Feedback",
+        "Chapter 46 DAST, API Security, Fuzzing and Runtime Validation",
+        "Chapter 47 Container, Kubernetes, IaC and Cloud Configuration Security",
+        "Chapter 48 SBOM, VEX, Component Identity and Vulnerability Intelligence",
+        "Chapter 49 SLSA, in-toto, Provenance and Reproducible Builds",
+        "Chapter 50 Sigstore, Cosign Signing, Verification and Artifact Promotion",
+        "Chapter 51 Policy as Code, Kubernetes Admission and Deployment Authorization",
+        "Chapter 52 Vulnerability Triage, Risk Scoring, SLAs and Exceptions"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_10E_DevSecOps_Supply_Chain_Governance_Regenerated.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_10E_DevSecOps_Supply_Chain_Governance_Regenerated.docx",
+      "text_file": "text/vol-10e.json",
+      "pdf_bytes": 957230,
+      "docx_bytes": 131599,
+      "previous_tool_assignments": [
+        "devsecops",
+        "cicd",
+        "observability",
+        "system-design"
+      ],
+      "related_topics": [
+        "cicd",
+        "observability",
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under DevSecOps & Supply-Chain Security. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-10f",
+      "volume": "10F",
+      "title": "Volume 10F - Enterprise Delivery Projects Interviews",
+      "summary": "Design the enterprise delivery platform as a product with explicit ownership, trust boundaries, SLOs, cost, Select and measure projects from operational evidence, user research, risk, and business value. Standardize delivery contracts across Jenkins, GitHub Actions, GitLab CI/CD, Kubernetes, and GitOps. Migrate brownfield pipelines, operate release trains, and recover delivery control planes during failure or Troubleshoot complex controller, runner, identity, artifact, deployment, and supply-chain incidents using Demonstrate senior capability through certifications, system design, interviews, portfolio projects, and the final…",
+      "tools": [
+        "cicd"
+      ],
+      "primary_tool": "cicd",
+      "tool_names": [
+        "CI/CD Engineering"
+      ],
+      "page_count": 53,
+      "word_count": 13958,
+      "heading_count": 30,
+      "headings": [
+        "Chapter 56 Enterprise CI/CD Architecture and Operating Model",
+        "Chapter 57 Delivery Portfolio Discovery, Project Selection and Value Measurement",
+        "Chapter 58 Multi-Platform Pipeline Standardization Project",
+        "Chapter 59 Enterprise Kubernetes Delivery Platform Project",
+        "Chapter 60 Artifact Promotion, Release Trains and Environment Governance",
+        "Chapter 61 Brownfield Migration from Legacy Pipelines",
+        "Chapter 62 Pipeline Disaster Recovery, Business Continuity and Clean-Room Rebuild",
+        "Chapter 63 Advanced Jenkins Troubleshooting and Controller Incident Response",
+        "Chapter 64 GitHub Actions and GitLab CI/CD Incident Troubleshooting",
+        "Chapter 65 GitOps, Deployment, Identity and Supply-Chain Incident Response",
+        "Chapter 66 Delivery Performance, Scale, Reliability and Capacity Engineering",
+        "Chapter 67 Internal Developer Platform and Delivery Product Management"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_10F_Enterprise_Delivery_Projects_Interviews.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_10F_Enterprise_Delivery_Projects_Interviews.docx",
+      "text_file": "text/vol-10f.json",
+      "pdf_bytes": 964236,
+      "docx_bytes": 133272,
+      "previous_tool_assignments": [
+        "cicd",
+        "jenkins",
+        "github-actions",
+        "system-design"
+      ],
+      "related_topics": [
+        "jenkins",
+        "github-actions",
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The course is enterprise delivery projects and interviews; it belongs under CI/CD Engineering.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-11a",
+      "volume": "11A",
+      "title": "Volume 11A - Observability Foundations",
+      "summary": "Design an observability operating model with named users, questions, owners, service levels, trust boundaries, retention, and cost controls. Correlate metrics, logs, traces, events, profiles, resource context, release context, and platform self- Troubleshoot Linux host and process behavior using CPU, memory, storage, network, service, and kernel Design metric and log schemas that aggregate correctly, avoid unbounded cardinality, and protect Define user-centric SLIs, SLOs, error budgets, dashboards, alerts, and runbooks. Build and validate a small observability platform project with controlled failure and recovery exercises.",
+      "tools": [
+        "observability"
+      ],
+      "primary_tool": "observability",
+      "tool_names": [
+        "Prometheus, Grafana & Observability"
+      ],
+      "page_count": 38,
+      "word_count": 11720,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 1 Observability, Monitoring and the SRE Operating Model",
+        "Chapter 2 Telemetry Signals and End-to-End Data Flow",
+        "Chapter 3 Service Inventory, Ownership and Observability Requirements",
+        "Chapter 4 Linux Host and Process Monitoring Fundamentals",
+        "Chapter 5 Metrics and Time-Series Data Fundamentals",
+        "Chapter 6 Logs and Structured Event Engineering",
+        "Chapter 7 Distributed Tracing and Context Propagation Fundamentals",
+        "Chapter 8 SLIs, SLOs, Error Budgets and User-Centric Measurement",
+        "Chapter 9 Dashboards, Alerting and Diagnostic Workflow Foundations",
+        "Chapter 10 Foundation Observability Platform Project",
+        "Chapter 1: Observability, Monitoring and the SRE Operating",
+        "Chapter 2: Telemetry Signals and End-to-End Data Flow"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_11A_Observability_Foundations.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_11A_Observability_Foundations.docx",
+      "text_file": "text/vol-11a.json",
+      "pdf_bytes": 668721,
+      "docx_bytes": 128298,
+      "previous_tool_assignments": [
+        "observability",
+        "logging",
+        "sre"
+      ],
+      "related_topics": [
+        "logging",
+        "sre"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Prometheus, Grafana & Observability. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-11b",
+      "volume": "11B",
+      "title": "Volume 11B - Prometheus PromQL Alertmanager",
+      "summary": "Design a Prometheus architecture with clear scrape, rule, query, storage, alerting, availability, and security Instrument applications and exporters with stable metric names, bounded labels, suitable metric types, and Build static and discovered scrape jobs, then control target and sample labels through relabeling. Write correct PromQL for rates, ratios, aggregation, vector matching, quantiles, absence, change detection, saturation, and SLO measurements. Use recording rules to stabilize repeated queries and alerting rules to detect actionable, sustained Configure Alertmanager routing, grouping, inhibition, silences, templates, receivers, and…",
+      "tools": [
+        "observability"
+      ],
+      "primary_tool": "observability",
+      "tool_names": [
+        "Prometheus, Grafana & Observability"
+      ],
+      "page_count": 39,
+      "word_count": 10857,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 11 Prometheus Architecture and Deployment Fundamentals",
+        "Chapter 12 Metric Exposition and Application Instrumentation",
+        "Chapter 13 Service Discovery, Scrape Configuration and Relabeling",
+        "Chapter 14 Exporter Engineering, Node Exporter, Blackbox Exporter and Pushgateway",
+        "Chapter 15 PromQL Foundations: Selection, Rates, Aggregation and Time",
+        "Chapter 16 Advanced PromQL: Vector Matching, Histograms and SLO Queries",
+        "Chapter 17 Recording Rules, Rule Testing and Query Performance",
+        "Chapter 18 Alerting Rules and Actionable Alert Engineering",
+        "Chapter 19 Alertmanager Routing, Inhibition, Silences, Templates and HA",
+        "Chapter 20 Production Prometheus Monitoring Platform Capstone",
+        "Chapter 11: Prometheus Architecture and Deployment",
+        "Chapter 12: Metric Exposition and Application Instrumentation"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_11B_Prometheus_PromQL_Alertmanager.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_11B_Prometheus_PromQL_Alertmanager.docx",
+      "text_file": "text/vol-11b.json",
+      "pdf_bytes": 775342,
+      "docx_bytes": 75381,
+      "previous_tool_assignments": [
+        "observability",
+        "sre"
+      ],
+      "related_topics": [
+        "sre"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Prometheus, Grafana & Observability. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-11c",
+      "volume": "11C",
+      "title": "Volume 11C - Grafana Centralized Logging Loki Elastic OpenSearch",
+      "summary": "Deploy and govern Grafana with provisioned data sources, folders, dashboards, authentication, access controls, backups, and self-monitoring. Design dashboards that support overview, diagnosis, change correlation, ownership, and drill-down rather than decorative visualization. Create structured application logs with stable fields, severity conventions, correlation identifiers, timestamps, and privacy controls. Design collectors and pipelines for files, systemd, containers, Kubernetes, network endpoints, parsing, enrichment, buffering, retry, and backpressure.",
+      "tools": [
+        "logging"
+      ],
+      "primary_tool": "logging",
+      "tool_names": [
+        "Centralized Logging & OpenSearch/ELK"
+      ],
+      "page_count": 37,
+      "word_count": 10453,
+      "heading_count": 19,
+      "headings": [
+        "Chapter 21: Grafana Architecture, Data Sources, Security and Provisioning",
+        "Chapter 22: Production Dashboard Engineering and Operational UX",
+        "Chapter 23: Grafana Alerting, Annotations, Correlations and Governance",
+        "Chapter 24: Centralized Logging Architecture and Structured Log Engineering",
+        "Chapter 25: Grafana Loki Architecture, Storage, Tenancy and Operations",
+        "Chapter 26: LogQL Query Engineering, Metrics from Logs and Alerting",
+        "Chapter 27: Grafana Alloy Log Collection for Linux, Containers and Kubernetes",
+        "Chapter 28: Elasticsearch Logging: ECS, Data Streams, Ingest Pipelines and Lifecycle",
+        "Chapter 29: OpenSearch Logging: Data Prepper, PPL, ISM, Security and Operations",
+        "Chapter 21: Grafana Architecture, Data Sources, Security and",
+        "Chapter 22: Production Dashboard Engineering and Operational",
+        "Chapter 23: Grafana Alerting, Annotations, Correlations and"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_11C_Grafana_Centralized_Logging_Loki_Elastic_OpenSearch.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_11C_Grafana_Centralized_Logging_Loki_Elastic_OpenSearch.docx",
+      "text_file": "text/vol-11c.json",
+      "pdf_bytes": 729924,
+      "docx_bytes": 75410,
+      "previous_tool_assignments": [
+        "observability",
+        "logging"
+      ],
+      "related_topics": [
+        "observability"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The dominant material is centralized logging with Loki, Elastic and OpenSearch; corrected from Observability to Centralized Logging.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-11d",
+      "volume": "11D",
+      "title": "Volume 11D - OpenTelemetry Tracing APM Profiling eBPF",
+      "summary": "Explain traces, spans, links, events, status, resources, attributes, context propagation, baggage, exemplars, and Standardize service identity and telemetry names using OpenTelemetry resources and semantic conventions. Choose manual, library, zero-code, operator-injected, or eBPF instrumentation based on coverage, risk, and Design agent, gateway, and agent-to-gateway Collector topologies with memory limiting, batching, retry, queues, persistent storage, health checks, and internal telemetry. Implement head and tail sampling policies that preserve errors and high-value transactions while controlling cost Operate Tempo with appropriate…",
+      "tools": [
+        "observability"
+      ],
+      "primary_tool": "observability",
+      "tool_names": [
+        "Prometheus, Grafana & Observability"
+      ],
+      "page_count": 26,
+      "word_count": 9097,
+      "heading_count": 18,
+      "headings": [
+        "Chapter 31: Distributed Tracing Fundamentals and Context Propagation",
+        "Chapter 32: OpenTelemetry Architecture, Resources and Semantic Conventions",
+        "Chapter 33: Instrumentation Engineering: Manual, Automatic and Kubernetes Operator",
+        "Chapter 34: OpenTelemetry Collector Pipelines, Topologies and Resiliency",
+        "Chapter 35: Sampling, Baggage, Privacy and Telemetry Cost Control",
+        "Chapter 36: Grafana Tempo Architecture, Storage, Security and Operations",
+        "Chapter 37: TraceQL, Exemplars, Service Graphs and Cross-Signal Correlation",
+        "Chapter 38: Application Performance Monitoring and Production Diagnosis",
+        "Chapter 39: Continuous Profiling with Grafana Pyroscope",
+        "Chapter 31: Distributed Tracing Fundamentals and Context",
+        "Chapter 32: OpenTelemetry Architecture, Resources and",
+        "Chapter 33: Instrumentation Engineering: Manual, Automatic"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_11D_OpenTelemetry_Tracing_APM_Profiling_eBPF.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_11D_OpenTelemetry_Tracing_APM_Profiling_eBPF.docx",
+      "text_file": "text/vol-11d.json",
+      "pdf_bytes": 672155,
+      "docx_bytes": 70464,
+      "previous_tool_assignments": [
+        "observability",
+        "logging",
+        "sre"
+      ],
+      "related_topics": [
+        "logging",
+        "sre"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Prometheus, Grafana & Observability. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-11e",
+      "volume": "11E",
+      "title": "Volume 11E - SRE Operations Incidents Capacity Reliability Governance",
+      "summary": "Create SLO portfolios, error-budget policies and burn-rate alerts that connect user experience to engineering Design sustainable on-call rotations, escalation paths, handoffs, runbooks and competency development Lead incidents using clear command, operations, communications and liaison roles while maintaining a reliable Write high-quality postmortems and convert findings into prioritized, owned, verifiable corrective actions. Measure and reduce toil with automation, self-service, simplification and architectural change. Forecast capacity, test limits, identify bottlenecks and implement graceful overload handling. Engineer safer releases…",
+      "tools": [
+        "sre"
+      ],
+      "primary_tool": "sre",
+      "tool_names": [
+        "SRE & Incident Management"
+      ],
+      "page_count": 37,
+      "word_count": 12078,
+      "heading_count": 24,
+      "headings": [
+        "Chapter 41: SRE Operating Model, Service Ownership and Reliability Strategy",
+        "Chapter 42: Advanced SLIs, SLO Portfolios, Error Budgets and Burn-Rate Governance",
+        "Chapter 43: Sustainable On-Call Engineering, Escalation and Human Reliability",
+        "Chapter 44: Actionable Alerting, Paging Policy and Operational Readiness",
+        "Chapter 45: Incident Command, Triage, Stabilization and Recovery",
+        "Chapter 46: Crisis Communication, Status Management and Stakeholder Coordination",
+        "Chapter 47: Blameless Postmortems, Problem Management and Learning Systems",
+        "Chapter 48: Toil Measurement, Automation and Operational Excellence",
+        "Chapter 49: Capacity Planning, Forecasting, Load Testing and Performance Economics",
+        "Chapter 41: SRE Operating Model, Service Ownership and",
+        "Chapter 42: Advanced SLIs, SLO Portfolios, Error Budgets and",
+        "Chapter 43: Sustainable On-Call Engineering, Escalation and"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_11E_SRE_Operations_Incidents_Capacity_Reliability_Governance.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_11E_SRE_Operations_Incidents_Capacity_Reliability_Governance.docx",
+      "text_file": "text/vol-11e.json",
+      "pdf_bytes": 865962,
+      "docx_bytes": 81153,
+      "previous_tool_assignments": [
+        "sre",
+        "observability",
+        "system-design"
+      ],
+      "related_topics": [
+        "observability",
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under SRE & Incident Management. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-11f",
+      "volume": "11F",
+      "title": "Volume 11F - Enterprise Observability SRE Projects Certifications Interviews Capstone",
+      "summary": "Design a multi-cluster, multi-region observability platform with explicit availability, durability, latency, tenant- isolation and recovery objectives. Scale Prometheus-compatible metrics, Loki-style logs, OpenTelemetry pipelines, tracing backends and profiling systems without losing diagnostic continuity. Build telemetry cost models covering cardinality, ingestion, retention, query load, object storage, egress and Manage dashboards, rules, collectors, SLOs, runbooks and policies as version-controlled, tested and promoted Plan brownfield migrations from fragmented or proprietary tooling with dual-write, reconciliation, rollback and…",
+      "tools": [
+        "observability"
+      ],
+      "primary_tool": "observability",
+      "tool_names": [
+        "Prometheus, Grafana & Observability"
+      ],
+      "page_count": 36,
+      "word_count": 13475,
+      "heading_count": 23,
+      "headings": [
+        "Chapter 56: Enterprise Observability and SRE Program Blueprint",
+        "Chapter 57: Multi-Cluster and Multi-Region Observability Architecture",
+        "Chapter 58: Telemetry Pipeline Scale, High Availability and Disaster Recovery",
+        "Chapter 59: Telemetry Economics, Cardinality, Retention and FinOps Governance",
+        "Chapter 60: Observability as Code, GitOps, Policy Testing and Promotion",
+        "Chapter 61: Brownfield Migration, Vendor Consolidation and Adoption Engineering",
+        "Chapter 62: Complex Troubleshooting Methodology and Evidence Discipline",
+        "Chapter 63: Metrics Failure Drill: Scrape Gaps, Remote Write and Query Inconsistency",
+        "Chapter 64: Logging Failure Drill: Collection Loss, Backpressure and Query Degradation",
+        "Chapter 57: Multi-Cluster and Multi-Region Observability",
+        "Chapter 58: Telemetry Pipeline Scale, High Availability and",
+        "Chapter 59: Telemetry Economics, Cardinality, Retention and"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_11F_Enterprise_Observability_SRE_Projects_Certifications_Interviews_Capstone.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_11F_Enterprise_Observability_SRE_Projects_Certifications_Interviews_Capstone.docx",
+      "text_file": "text/vol-11f.json",
+      "pdf_bytes": 884966,
+      "docx_bytes": 84411,
+      "previous_tool_assignments": [
+        "observability",
+        "logging",
+        "sre",
+        "system-design"
+      ],
+      "related_topics": [
+        "logging",
+        "sre",
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "This is the observability/SRE capstone in the Volume 11 sequence; it is anchored under Observability once.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-12a",
+      "volume": "12A",
+      "title": "Volume 12A - Multi Cloud Architecture Landing Zone Foundations",
+      "summary": "Define a defensible cloud and workload-placement strategy. Map provider and customer responsibility for security and reliability. Perform risk-based well-architected reviews and write ADRs. Design enterprise resource hierarchy, identity, networking and landing-zone controls. Establish metadata, budgets, unit economics and FinOps accountability. Build a tested multi-cloud IaC repository and foundation capstone.",
+      "tools": [
+        "system-design"
+      ],
+      "primary_tool": "system-design",
+      "tool_names": [
+        "System Design & Platform Engineering"
+      ],
+      "page_count": 37,
+      "word_count": 9749,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 1 Cloud Operating Model and Multi-Cloud Decision Strategy",
+        "Chapter 2 Shared Responsibility, Service Models and Failure Boundaries",
+        "Chapter 3 Well-Architected Frameworks and Architecture Decision Records",
+        "Chapter 4 Resource Hierarchy and Environment Segmentation",
+        "Chapter 5 Identity Federation, Least Privilege and Workload Identity",
+        "Chapter 6 Cloud Networking, DNS and Hybrid Connectivity Foundations",
+        "Chapter 7 Landing Zones, Guardrails and Security Baselines",
+        "Chapter 8 Resource Governance, Metadata, Budgets and FinOps Foundations",
+        "Chapter 9 Infrastructure as Code Foundations for Multi-Cloud",
+        "Chapter 10 Multi-Cloud Landing-Zone Foundation Capstone",
+        "Chapter 1: Cloud Operating Model and Multi-Cloud Decision",
+        "Chapter 2: Shared Responsibility, Service Models and Failure"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_12A_Multi_Cloud_Architecture_Landing_Zone_Foundations.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_12A_Multi_Cloud_Architecture_Landing_Zone_Foundations.docx",
+      "text_file": "text/vol-12a.json",
+      "pdf_bytes": 660416,
+      "docx_bytes": 70867,
+      "previous_tool_assignments": [
+        "system-design",
+        "aws",
+        "azure",
+        "gcp",
+        "terraform",
+        "devsecops"
+      ],
+      "related_topics": [
+        "aws",
+        "azure",
+        "gcp",
+        "terraform",
+        "devsecops"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The book is multi-cloud architecture and landing-zone design, so it belongs under System Design rather than a single cloud.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-12b",
+      "volume": "12B",
+      "title": "Volume 12B - AWS Enterprise Cloud Engineering",
+      "summary": "Explain and design the major architecture domains covered by AWS Enterprise Cloud Engineering. Implement provider or cross-cloud controls through version-controlled automation. Test identity, network, security, reliability, operations and cost behavior. Troubleshoot failures using effective policy, route, service and telemetry evidence. Produce sanitized architecture, runbook, laboratory and interview portfolio artifacts.",
+      "tools": [
+        "aws"
+      ],
+      "primary_tool": "aws",
+      "tool_names": [
+        "AWS Cloud"
+      ],
+      "page_count": 44,
+      "word_count": 14560,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 11 AWS Organizations, Control Tower and Multi-Account Foundations",
+        "Chapter 12 AWS Identity, Federation and Organization Guardrails",
+        "Chapter 13 AWS Networking, DNS and Hybrid Connectivity",
+        "Chapter 14 AWS Compute, Containers and Serverless Architecture",
+        "Chapter 15 AWS Storage, Databases and Data Protection",
+        "Chapter 16 AWS Security Engineering and Detection",
+        "Chapter 17 AWS Reliability, Multi-Region Design and Disaster Recovery",
+        "Chapter 18 AWS Observability, Systems Management and Incident Operations",
+        "Chapter 19 AWS FinOps, Governance and Cost Engineering",
+        "Chapter 20 AWS Enterprise Landing-Zone Capstone",
+        "Chapter 11: AWS Organizations, Control Tower and Multi-",
+        "Chapter 12: AWS Identity, Federation and Organization"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_12B_AWS_Enterprise_Cloud_Engineering.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_12B_AWS_Enterprise_Cloud_Engineering.docx",
+      "text_file": "text/vol-12b.json",
+      "pdf_bytes": 789407,
+      "docx_bytes": 59846,
+      "previous_tool_assignments": [
+        "aws",
+        "system-design"
+      ],
+      "related_topics": [
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under AWS Cloud. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-12c",
+      "volume": "12C",
+      "title": "Volume 12C - Microsoft Azure Enterprise Cloud Engineering",
+      "summary": "Explain and design the major architecture domains covered by Microsoft Azure Enterprise Cloud Engineering. Implement provider or cross-cloud controls through version-controlled automation. Test identity, network, security, reliability, operations and cost behavior. Troubleshoot failures using effective policy, route, service and telemetry evidence. Produce sanitized architecture, runbook, laboratory and interview portfolio artifacts.",
+      "tools": [
+        "azure"
+      ],
+      "primary_tool": "azure",
+      "tool_names": [
+        "Microsoft Azure"
+      ],
+      "page_count": 42,
+      "word_count": 14439,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 21 Azure Tenant, Management Groups and Landing Zones",
+        "Chapter 22 Microsoft Entra Identity, RBAC and Privileged Access",
+        "Chapter 23 Azure Networking, Private Connectivity and Hybrid Design",
+        "Chapter 24 Azure Compute, Containers and Serverless Architecture",
+        "Chapter 25 Azure Storage, Databases and Data Protection",
+        "Chapter 26 Azure Security, Defender and Sentinel Operations",
+        "Chapter 27 Azure Reliability, Global Traffic and Disaster Recovery",
+        "Chapter 28 Azure Monitor, Application Insights and Hybrid Operations",
+        "Chapter 29 Azure Cost Management, Governance and FinOps",
+        "Chapter 30 Azure Enterprise Landing-Zone Capstone",
+        "Chapter 21: Azure Tenant, Management Groups and Landing",
+        "Chapter 22: Microsoft Entra Identity, RBAC and Privileged"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_12C_Microsoft_Azure_Enterprise_Cloud_Engineering.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_12C_Microsoft_Azure_Enterprise_Cloud_Engineering.docx",
+      "text_file": "text/vol-12c.json",
+      "pdf_bytes": 786051,
+      "docx_bytes": 59284,
+      "previous_tool_assignments": [
+        "azure",
+        "system-design"
+      ],
+      "related_topics": [
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Microsoft Azure. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-12d",
+      "volume": "12D",
+      "title": "Volume 12D - Google Cloud Enterprise Engineering",
+      "summary": "Explain and design the major architecture domains covered by Google Cloud Enterprise Engineering. Implement provider or cross-cloud controls through version-controlled automation. Test identity, network, security, reliability, operations and cost behavior. Troubleshoot failures using effective policy, route, service and telemetry evidence. Produce sanitized architecture, runbook, laboratory and interview portfolio artifacts.",
+      "tools": [
+        "gcp"
+      ],
+      "primary_tool": "gcp",
+      "tool_names": [
+        "Google Cloud Platform"
+      ],
+      "page_count": 42,
+      "word_count": 14543,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 31 Google Cloud Organization, Folders, Projects and Landing Zones",
+        "Chapter 32 Google Cloud IAM, Federation and Organization Policy",
+        "Chapter 33 Google Cloud Networking, Shared VPC and Hybrid Connectivity",
+        "Chapter 34 Google Cloud Compute, Serverless and GKE Architecture",
+        "Chapter 35 Google Cloud Storage, Databases and Data Protection",
+        "Chapter 36 Google Cloud Security Command Center and Data Perimeters",
+        "Chapter 37 Google Cloud Reliability, Global Load Balancing and Disaster Recovery",
+        "Chapter 38 Google Cloud Operations Suite and OpenTelemetry",
+        "Chapter 39 Google Cloud FinOps, Billing Exports and Resource Governance",
+        "Chapter 40 Google Cloud Enterprise Foundation Capstone",
+        "Chapter 31: Google Cloud Organization, Folders, Projects and",
+        "Chapter 32: Google Cloud IAM, Federation and Organization"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_12D_Google_Cloud_Enterprise_Engineering.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_12D_Google_Cloud_Enterprise_Engineering.docx",
+      "text_file": "text/vol-12d.json",
+      "pdf_bytes": 785915,
+      "docx_bytes": 59175,
+      "previous_tool_assignments": [
+        "gcp",
+        "system-design"
+      ],
+      "related_topics": [
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Google Cloud Platform. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-12e",
+      "volume": "12E",
+      "title": "Volume 12E - Hybrid & Multi Cloud Operations Migration DR Security & FinOps",
+      "summary": "Explain and design the major architecture domains covered by Hybrid and Multi-Cloud Operations, Migration, DR, Implement provider or cross-cloud controls through version-controlled automation. Test identity, network, security, reliability, operations and cost behavior. Troubleshoot failures using effective policy, route, service and telemetry evidence. Produce sanitized architecture, runbook, laboratory and interview portfolio artifacts.",
+      "tools": [
+        "system-design"
+      ],
+      "primary_tool": "system-design",
+      "tool_names": [
+        "System Design & Platform Engineering"
+      ],
+      "page_count": 54,
+      "word_count": 21520,
+      "heading_count": 30,
+      "headings": [
+        "Chapter 41 Multi-Cloud Operating Model and Control Plane",
+        "Chapter 42 Cross-Cloud Identity Federation and Privileged Access",
+        "Chapter 43 Multi-Cloud Networking, DNS and Zero-Trust Connectivity",
+        "Chapter 44 Hybrid Kubernetes and Fleet Management",
+        "Chapter 45 Multi-Cloud Infrastructure as Code and State Governance",
+        "Chapter 46 Multi-Cloud CI/CD, GitOps and Artifact Promotion",
+        "Chapter 47 Data Portability, Replication and Sovereignty",
+        "Chapter 48 Application Migration Strategy and Wave Planning",
+        "Chapter 49 Database Migration and Modernization",
+        "Chapter 50 Multi-Cloud Resilience and Disaster Recovery",
+        "Chapter 51 Cloud Security Posture, CNAPP and SOC Integration",
+        "Chapter 52 Multi-Cloud Observability and Incident Response"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_12E_Hybrid_and_Multi_Cloud_Operations_Migration_DR_Security_and_FinOps.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_12E_Hybrid_and_Multi_Cloud_Operations_Migration_DR_Security_and_FinOps.docx",
+      "text_file": "text/vol-12e.json",
+      "pdf_bytes": 1088560,
+      "docx_bytes": 64978,
+      "previous_tool_assignments": [
+        "aws",
+        "azure",
+        "gcp",
+        "system-design",
+        "sre",
+        "devsecops"
+      ],
+      "related_topics": [
+        "aws",
+        "azure",
+        "gcp",
+        "sre",
+        "devsecops"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "Corrected from AWS to System Design because the book is explicitly hybrid and multi-cloud operations.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-12f",
+      "volume": "12F",
+      "title": "Volume 12F - Enterprise Cloud Projects Certifications Interviews & Final Capstone",
+      "summary": "Explain and design the major architecture domains covered by Enterprise Cloud Projects, Certifications, Interviews Implement provider or cross-cloud controls through version-controlled automation. Test identity, network, security, reliability, operations and cost behavior. Troubleshoot failures using effective policy, route, service and telemetry evidence. Produce sanitized architecture, runbook, laboratory and interview portfolio artifacts.",
+      "tools": [
+        "system-design"
+      ],
+      "primary_tool": "system-design",
+      "tool_names": [
+        "System Design & Platform Engineering"
+      ],
+      "page_count": 54,
+      "word_count": 21284,
+      "heading_count": 30,
+      "headings": [
+        "Chapter 56 Enterprise Cloud Architecture Project Selection",
+        "Chapter 57 AWS Enterprise Reference Project",
+        "Chapter 58 Azure Enterprise Reference Project",
+        "Chapter 59 Google Cloud Enterprise Reference Project",
+        "Chapter 60 Multi-Cloud Network and Identity Factory",
+        "Chapter 61 Cloud Platform Engineering and Golden Paths",
+        "Chapter 62 Cloud Security Architecture and Threat Modeling",
+        "Chapter 63 Enterprise Disaster Recovery Simulation",
+        "Chapter 64 Performance, Capacity and Cloud Cost Optimization",
+        "Chapter 65 Complex AWS Troubleshooting Scenarios",
+        "Chapter 66 Complex Azure Troubleshooting Scenarios",
+        "Chapter 67 Complex Google Cloud Troubleshooting Scenarios"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_12F_Enterprise_Cloud_Projects_Certifications_Interviews_and_Final_Capstone.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_12F_Enterprise_Cloud_Projects_Certifications_Interviews_and_Final_Capstone.docx",
+      "text_file": "text/vol-12f.json",
+      "pdf_bytes": 1086718,
+      "docx_bytes": 65451,
+      "previous_tool_assignments": [
+        "aws",
+        "azure",
+        "gcp",
+        "system-design",
+        "sre"
+      ],
+      "related_topics": [
+        "aws",
+        "azure",
+        "gcp",
+        "sre"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "Corrected from AWS to System Design because it covers enterprise cloud projects across AWS, Azure and GCP.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-13a",
+      "volume": "13A",
+      "title": "Volume 13A - Platform Engineering Product Foundations",
+      "summary": "Explain and design the capabilities covered by Platform Engineering Product Foundations. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "system-design"
+      ],
+      "primary_tool": "system-design",
+      "tool_names": [
+        "System Design & Platform Engineering"
+      ],
+      "page_count": 36,
+      "word_count": 14060,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 1 Platform Engineering as a Product Discipline",
+        "Chapter 2 Value Streams, Cognitive Load and Developer Journeys",
+        "Chapter 3 Platform Team Topology and Interaction Modes",
+        "Chapter 4 Platform Capability Mapping and Maturity",
+        "Chapter 5 Developer Research, Personas and Jobs to Be Done",
+        "Chapter 6 Service Catalog and Ownership Foundations",
+        "Chapter 7 Golden Paths and Paved Roads",
+        "Chapter 8 Platform APIs, Contracts and Versioning",
+        "Chapter 9 Internal Platform Architecture and Control Planes",
+        "Chapter 10 Platform MVP Capstone",
+        "Chapter 1: Platform Engineering as a Product Discipline",
+        "Chapter 2: Value Streams, Cognitive Load and Developer"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_13A_Platform_Engineering_Product_Foundations.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_13A_Platform_Engineering_Product_Foundations.docx",
+      "text_file": "text/vol-13a.json",
+      "pdf_bytes": 758873,
+      "docx_bytes": 55055,
+      "previous_tool_assignments": [
+        "system-design",
+        "cicd",
+        "sre"
+      ],
+      "related_topics": [
+        "cicd",
+        "sre"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under System Design & Platform Engineering. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-13b",
+      "volume": "13B",
+      "title": "Volume 13B - Backstage Developer Portal Engineering",
+      "summary": "Explain and design the capabilities covered by Backstage Developer Portal Engineering. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "system-design"
+      ],
+      "primary_tool": "system-design",
+      "tool_names": [
+        "System Design & Platform Engineering"
+      ],
+      "page_count": 36,
+      "word_count": 13763,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 11 Backstage Architecture and Deployment",
+        "Chapter 12 Software Catalog Data Model",
+        "Chapter 13 Catalog Ingestion, Discovery and Quality",
+        "Chapter 14 Software Templates and Scaffolder Workflows",
+        "Chapter 15 TechDocs and Documentation as Code",
+        "Chapter 16 Backstage Plugins, Search and Extensibility",
+        "Chapter 17 Authentication, Permissions and Multi-Tenancy",
+        "Chapter 18 Portal Integrations and Operational Views",
+        "Chapter 19 Backstage Reliability, Security and Upgrades",
+        "Chapter 20 Enterprise Developer Portal Capstone",
+        "Chapter 11: Backstage Architecture and Deployment",
+        "Chapter 12: Software Catalog Data Model"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_13B_Backstage_Developer_Portal_Engineering.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_13B_Backstage_Developer_Portal_Engineering.docx",
+      "text_file": "text/vol-13b.json",
+      "pdf_bytes": 755638,
+      "docx_bytes": 54947,
+      "previous_tool_assignments": [
+        "system-design",
+        "cicd",
+        "github-actions"
+      ],
+      "related_topics": [
+        "cicd",
+        "github-actions"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under System Design & Platform Engineering. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-13c",
+      "volume": "13C",
+      "title": "Volume 13C - Self Service Infrastructure & Platform Control Planes",
+      "summary": "Explain and design the capabilities covered by Self-Service Infrastructure and Platform Control Planes. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "system-design"
+      ],
+      "primary_tool": "system-design",
+      "tool_names": [
+        "System Design & Platform Engineering"
+      ],
+      "page_count": 36,
+      "word_count": 13892,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 21 Crossplane Control-Plane Foundations",
+        "Chapter 22 Composite Resource Definitions and Compositions",
+        "Chapter 23 Composition Functions and Pipelines",
+        "Chapter 24 Provider, Configuration and Package Lifecycle",
+        "Chapter 25 Terraform Modules as Platform Services",
+        "Chapter 26 Kubernetes Operators and Custom Controllers",
+        "Chapter 27 Secrets, Identity and Credential Brokering",
+        "Chapter 28 Policy, Guardrails and Admission Control",
+        "Chapter 29 Portal-to-Control-Plane Integration",
+        "Chapter 30 Self-Service Infrastructure Capstone",
+        "Chapter 21: Crossplane Control-Plane Foundations",
+        "Chapter 22: Composite Resource Definitions and Compositions"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_13C_Self_Service_Infrastructure_and_Platform_Control_Planes.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_13C_Self_Service_Infrastructure_and_Platform_Control_Planes.docx",
+      "text_file": "text/vol-13c.json",
+      "pdf_bytes": 757944,
+      "docx_bytes": 54868,
+      "previous_tool_assignments": [
+        "system-design",
+        "terraform",
+        "kubernetes"
+      ],
+      "related_topics": [
+        "terraform",
+        "kubernetes"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under System Design & Platform Engineering. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-13d",
+      "volume": "13D",
+      "title": "Volume 13D - Golden Paths & Developer Experience",
+      "summary": "Explain and design the capabilities covered by Golden Paths and Developer Experience. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "system-design"
+      ],
+      "primary_tool": "system-design",
+      "tool_names": [
+        "System Design & Platform Engineering"
+      ],
+      "page_count": 36,
+      "word_count": 13756,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 31 Repository and Source-Control Golden Paths",
+        "Chapter 32 Reusable CI/CD Workflows",
+        "Chapter 33 Environment Provisioning and Promotion",
+        "Chapter 34 Preview Environments and Ephemeral Testing",
+        "Chapter 35 Managed Data-Service Golden Paths",
+        "Chapter 36 Observability as a Platform Product",
+        "Chapter 37 DevSecOps Paved Roads",
+        "Chapter 38 Testing, Release and Progressive Delivery Paths",
+        "Chapter 39 Documentation, Support and Platform Service Management",
+        "Chapter 40 Developer Experience Golden-Path Capstone",
+        "Chapter 31: Repository and Source-Control Golden Paths",
+        "Chapter 32: Reusable CI/CD Workflows"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_13D_Golden_Paths_and_Developer_Experience.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_13D_Golden_Paths_and_Developer_Experience.docx",
+      "text_file": "text/vol-13d.json",
+      "pdf_bytes": 755806,
+      "docx_bytes": 54953,
+      "previous_tool_assignments": [
+        "system-design",
+        "cicd",
+        "github-actions"
+      ],
+      "related_topics": [
+        "cicd",
+        "github-actions"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under System Design & Platform Engineering. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-13e",
+      "volume": "13E",
+      "title": "Volume 13E - Enterprise Platform Operations Governance & Scale",
+      "summary": "Explain and design the capabilities covered by Enterprise Platform Operations, Governance and Scale. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "system-design"
+      ],
+      "primary_tool": "system-design",
+      "tool_names": [
+        "System Design & Platform Engineering"
+      ],
+      "page_count": 51,
+      "word_count": 19786,
+      "heading_count": 30,
+      "headings": [
+        "Chapter 41 Platform Multi-Tenancy and Isolation",
+        "Chapter 42 Cluster and Runtime Fleet Management",
+        "Chapter 43 Platform SRE and Service-Level Management",
+        "Chapter 44 Capacity, Performance and Scalability",
+        "Chapter 45 Platform Security Architecture",
+        "Chapter 46 Software Supply Chain for Platform Services",
+        "Chapter 47 Platform FinOps and Unit Economics",
+        "Chapter 48 Data Governance in Self-Service Platforms",
+        "Chapter 49 Policy Lifecycle and Exceptions",
+        "Chapter 50 Service Lifecycle and Deprecation",
+        "Chapter 51 Brownfield Migration to Platform Services",
+        "Chapter 52 Platform Disaster Recovery and Continuity"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_13E_Enterprise_Platform_Operations_Governance_and_Scale.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_13E_Enterprise_Platform_Operations_Governance_and_Scale.docx",
+      "text_file": "text/vol-13e.json",
+      "pdf_bytes": 1043606,
+      "docx_bytes": 57899,
+      "previous_tool_assignments": [
+        "system-design",
+        "sre",
+        "devsecops",
+        "observability"
+      ],
+      "related_topics": [
+        "sre",
+        "devsecops",
+        "observability"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under System Design & Platform Engineering. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-13f",
+      "volume": "13F",
+      "title": "Volume 13F - Platform Engineering Projects Interviews & Final Capstone",
+      "summary": "Explain and design the capabilities covered by Platform Engineering Projects, Interviews and Final Capstone. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "system-design"
+      ],
+      "primary_tool": "system-design",
+      "tool_names": [
+        "System Design & Platform Engineering"
+      ],
+      "page_count": 51,
+      "word_count": 19867,
+      "heading_count": 30,
+      "headings": [
+        "Chapter 56 Platform Discovery and Current-State Assessment",
+        "Chapter 57 Platform Business Case and Investment Model",
+        "Chapter 58 Backstage Enterprise Project",
+        "Chapter 59 Crossplane Platform API Project",
+        "Chapter 60 Kubernetes Application Platform Project",
+        "Chapter 61 Golden Path Product Project",
+        "Chapter 62 Multi-Cloud Platform Project",
+        "Chapter 63 Platform Security Review Project",
+        "Chapter 64 Platform Reliability Game Day",
+        "Chapter 65 Platform Migration Factory",
+        "Chapter 66 Complex Platform Troubleshooting",
+        "Chapter 67 Platform Product Management Mastery"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_13F_Platform_Engineering_Projects_Interviews_and_Final_Capstone.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_13F_Platform_Engineering_Projects_Interviews_and_Final_Capstone.docx",
+      "text_file": "text/vol-13f.json",
+      "pdf_bytes": 1047590,
+      "docx_bytes": 57804,
+      "previous_tool_assignments": [
+        "system-design",
+        "cicd",
+        "sre"
+      ],
+      "related_topics": [
+        "cicd",
+        "sre"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under System Design & Platform Engineering. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-14a",
+      "volume": "14A",
+      "title": "Volume 14A - DataOps & Modern Data Platform Foundations",
+      "summary": "Explain and design the capabilities covered by DataOps and Modern Data Platform Foundations. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "databases"
+      ],
+      "primary_tool": "databases",
+      "tool_names": [
+        "Databases for DevOps"
+      ],
+      "page_count": 36,
+      "word_count": 13496,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 1 DataOps Operating Model and Data Product Thinking",
+        "Chapter 2 Modern Data Architecture and Workload Placement",
+        "Chapter 3 Batch Data Engineering and Orchestration",
+        "Chapter 4 Streaming and Event-Driven Data Systems",
+        "Chapter 5 Data Transformation and Analytics Engineering",
+        "Chapter 6 Data Quality Engineering",
+        "Chapter 7 Metadata, Catalog and Lineage",
+        "Chapter 8 Data Contracts and Schema Evolution",
+        "Chapter 9 Data Security, Privacy and Governance",
+        "Chapter 10 Enterprise Data Platform Capstone",
+        "Chapter 1: DataOps Operating Model and Data Product Thinking",
+        "Chapter 2: Modern Data Architecture and Workload Placement"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_14A_DataOps_and_Modern_Data_Platform_Foundations.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_14A_DataOps_and_Modern_Data_Platform_Foundations.docx",
+      "text_file": "text/vol-14a.json",
+      "pdf_bytes": 751001,
+      "docx_bytes": 54699,
+      "previous_tool_assignments": [
+        "databases",
+        "python-automation",
+        "system-design"
+      ],
+      "related_topics": [
+        "python-automation",
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The dominant course is DataOps and modern data platforms, so it belongs under Databases for DevOps.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-14b",
+      "volume": "14B",
+      "title": "Volume 14B - MLOps Lifecycle Engineering",
+      "summary": "Explain and design the capabilities covered by MLOps Lifecycle Engineering. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "python-automation"
+      ],
+      "primary_tool": "python-automation",
+      "tool_names": [
+        "Python for DevOps Automation"
+      ],
+      "page_count": 36,
+      "word_count": 13572,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 11 ML Product Framing and Success Criteria",
+        "Chapter 12 Experiment Tracking with MLflow",
+        "Chapter 13 Dataset Versioning and Lineage for ML",
+        "Chapter 14 Feature Engineering and Feature Stores",
+        "Chapter 15 ML Pipeline Orchestration",
+        "Chapter 16 Model Registry and Promotion",
+        "Chapter 17 Continuous Integration, Training and Delivery",
+        "Chapter 18 Model Evaluation and Validation",
+        "Chapter 19 Model Monitoring, Drift and Feedback",
+        "Chapter 20 Production MLOps Capstone",
+        "Chapter 11: ML Product Framing and Success Criteria",
+        "Chapter 12: Experiment Tracking with MLflow"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_14B_MLOps_Lifecycle_Engineering.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_14B_MLOps_Lifecycle_Engineering.docx",
+      "text_file": "text/vol-14b.json",
+      "pdf_bytes": 750523,
+      "docx_bytes": 54706,
+      "previous_tool_assignments": [
+        "python-automation",
+        "cicd",
+        "observability",
+        "system-design"
+      ],
+      "related_topics": [
+        "cicd",
+        "observability",
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The dominant course is MLOps lifecycle automation, placed under Python for DevOps Automation.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-14c",
+      "volume": "14C",
+      "title": "Volume 14C - Kubeflow Ray & Distributed AI Infrastructure",
+      "summary": "Explain and design the capabilities covered by Kubeflow, Ray and Distributed AI Infrastructure. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "kubernetes"
+      ],
+      "primary_tool": "kubernetes",
+      "tool_names": [
+        "Kubernetes"
+      ],
+      "page_count": 36,
+      "word_count": 13409,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 21 Kubernetes-Native AI Platform Architecture",
+        "Chapter 22 Kubeflow Notebooks and Workspace Isolation",
+        "Chapter 23 Kubeflow Pipelines Engineering",
+        "Chapter 24 Kubeflow Trainer and Distributed Jobs",
+        "Chapter 25 Katib Hyperparameter Optimization",
+        "Chapter 26 GPU Scheduling, Quotas and Topology",
+        "Chapter 27 Ray Data for AI Workloads",
+        "Chapter 28 Ray Train for Distributed Training",
+        "Chapter 29 KubeRay Operations and Cluster Lifecycle",
+        "Chapter 30 Distributed AI Platform Capstone",
+        "Chapter 21: Kubernetes-Native AI Platform Architecture",
+        "Chapter 22: Kubeflow Notebooks and Workspace Isolation"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_14C_Kubeflow_Ray_and_Distributed_AI_Infrastructure.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_14C_Kubeflow_Ray_and_Distributed_AI_Infrastructure.docx",
+      "text_file": "text/vol-14c.json",
+      "pdf_bytes": 752618,
+      "docx_bytes": 54664,
+      "previous_tool_assignments": [
+        "kubernetes",
+        "python-automation",
+        "system-design"
+      ],
+      "related_topics": [
+        "python-automation",
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "Kubeflow and distributed AI infrastructure are Kubernetes-centered, so the book belongs under Kubernetes.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-14d",
+      "volume": "14D",
+      "title": "Volume 14D - Model Serving RAG Agents & LLMOps",
+      "summary": "Explain and design the capabilities covered by Model Serving, RAG, Agents and LLMOps. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "python-automation"
+      ],
+      "primary_tool": "python-automation",
+      "tool_names": [
+        "Python for DevOps Automation"
+      ],
+      "page_count": 36,
+      "word_count": 13504,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 31 Online, Batch and Streaming Inference Architecture",
+        "Chapter 32 KServe Model Serving",
+        "Chapter 33 Ray Serve for Composable AI Applications",
+        "Chapter 34 Model Gateways, Routing and Provider Abstraction",
+        "Chapter 35 Prompt Management and Versioning",
+        "Chapter 36 Retrieval-Augmented Generation Architecture",
+        "Chapter 37 Vector Data and Retrieval Operations",
+        "Chapter 38 LLM and Agent Evaluation",
+        "Chapter 39 AI Guardrails, Safety and Human Oversight",
+        "Chapter 40 Enterprise LLMOps Capstone",
+        "Chapter 31: Online, Batch and Streaming Inference Architecture",
+        "Chapter 32: KServe Model Serving"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_14D_Model_Serving_RAG_Agents_and_LLMOps.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_14D_Model_Serving_RAG_Agents_and_LLMOps.docx",
+      "text_file": "text/vol-14d.json",
+      "pdf_bytes": 750949,
+      "docx_bytes": 54806,
+      "previous_tool_assignments": [
+        "python-automation",
+        "system-design",
+        "observability",
+        "databases"
+      ],
+      "related_topics": [
+        "system-design",
+        "observability",
+        "databases"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "Model serving, agents and LLMOps are automation-centric and placed under Python for DevOps Automation.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-14e",
+      "volume": "14E",
+      "title": "Volume 14E - AI Infrastructure Operations Security Risk & FinOps",
+      "summary": "Explain and design the capabilities covered by AI Infrastructure Operations, Security, Risk and FinOps. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "devsecops"
+      ],
+      "primary_tool": "devsecops",
+      "tool_names": [
+        "DevSecOps & Supply-Chain Security"
+      ],
+      "page_count": 51,
+      "word_count": 19637,
+      "heading_count": 30,
+      "headings": [
+        "Chapter 41 GPU Cluster Architecture",
+        "Chapter 42 AI Storage and High-Performance Data Paths",
+        "Chapter 43 AI Networking and Distributed Communication",
+        "Chapter 44 Batch Scheduling and Queue Governance",
+        "Chapter 45 AI Platform Capacity Planning",
+        "Chapter 46 AI Observability and Performance Engineering",
+        "Chapter 47 AI FinOps and Unit Economics",
+        "Chapter 48 AI Infrastructure Security",
+        "Chapter 49 Model and Data Supply-Chain Security",
+        "Chapter 50 Data Privacy and Confidential AI",
+        "Chapter 51 Model Risk and Responsible AI Governance",
+        "Chapter 52 AI Incident Response"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_14E_AI_Infrastructure_Operations_Security_Risk_and_FinOps.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_14E_AI_Infrastructure_Operations_Security_Risk_and_FinOps.docx",
+      "text_file": "text/vol-14e.json",
+      "pdf_bytes": 1042147,
+      "docx_bytes": 57856,
+      "previous_tool_assignments": [
+        "devsecops",
+        "sre",
+        "observability",
+        "system-design"
+      ],
+      "related_topics": [
+        "sre",
+        "observability",
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The dominant course is AI infrastructure security, risk and governance, so it belongs under DevSecOps.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-14f",
+      "volume": "14F",
+      "title": "Volume 14F - AI Platform Projects Interviews & Final Capstone",
+      "summary": "Explain and design the capabilities covered by AI Platform Projects, Interviews and Final Capstone. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "system-design"
+      ],
+      "primary_tool": "system-design",
+      "tool_names": [
+        "System Design & Platform Engineering"
+      ],
+      "page_count": 51,
+      "word_count": 19520,
+      "heading_count": 30,
+      "headings": [
+        "Chapter 56 DataOps Portfolio Project",
+        "Chapter 57 MLOps Lifecycle Project",
+        "Chapter 58 Kubeflow Platform Project",
+        "Chapter 59 Ray Distributed AI Project",
+        "Chapter 60 KServe Production Serving Project",
+        "Chapter 61 RAG and Knowledge Platform Project",
+        "Chapter 62 LLM Evaluation and Observability Project",
+        "Chapter 63 AI Security and Red-Team Project",
+        "Chapter 64 GPU FinOps and Capacity Project",
+        "Chapter 65 AI Platform Migration Project",
+        "Chapter 66 Complex AI Troubleshooting",
+        "Chapter 67 AI and Data Certification Roadmap"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_14F_AI_Platform_Projects_Interviews_and_Final_Capstone.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_14F_AI_Platform_Projects_Interviews_and_Final_Capstone.docx",
+      "text_file": "text/vol-14f.json",
+      "pdf_bytes": 1040223,
+      "docx_bytes": 57605,
+      "previous_tool_assignments": [
+        "python-automation",
+        "kubernetes",
+        "system-design",
+        "sre"
+      ],
+      "related_topics": [
+        "python-automation",
+        "kubernetes",
+        "sre"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "Corrected to System Design because it is an AI platform project/interview/capstone book rather than a Python language course.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-15a",
+      "volume": "15A",
+      "title": "Volume 15A - DevOps Leadership Strategy & Operating Models",
+      "summary": "Explain and design the capabilities covered by DevOps Leadership, Strategy and Operating Models. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "system-design"
+      ],
+      "primary_tool": "system-design",
+      "tool_names": [
+        "System Design & Platform Engineering"
+      ],
+      "page_count": 36,
+      "word_count": 13653,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 1 The DevOps Technology Leader Role",
+        "Chapter 2 Technology Strategy and Operating Model",
+        "Chapter 3 Business Outcomes and Value Streams",
+        "Chapter 4 Organization Design and Team Topologies",
+        "Chapter 5 Culture, Psychological Safety and Learning",
+        "Chapter 6 Decision Rights, Architecture and Governance",
+        "Chapter 7 Technology Portfolio and Product Thinking",
+        "Chapter 8 Risk, Security and Reliability Leadership",
+        "Chapter 9 Executive Communication and Influence",
+        "Chapter 10 Leadership Foundations Capstone",
+        "Chapter 1: The DevOps Technology Leader Role",
+        "Chapter 2: Technology Strategy and Operating Model"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_15A_DevOps_Leadership_Strategy_and_Operating_Models.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_15A_DevOps_Leadership_Strategy_and_Operating_Models.docx",
+      "text_file": "text/vol-15a.json",
+      "pdf_bytes": 753539,
+      "docx_bytes": 54795,
+      "previous_tool_assignments": [
+        "system-design",
+        "sre"
+      ],
+      "related_topics": [
+        "sre"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under System Design & Platform Engineering. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-15b",
+      "volume": "15B",
+      "title": "Volume 15B - Enterprise DevOps Transformation",
+      "summary": "Explain and design the capabilities covered by Enterprise DevOps Transformation. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "system-design"
+      ],
+      "primary_tool": "system-design",
+      "tool_names": [
+        "System Design & Platform Engineering"
+      ],
+      "page_count": 36,
+      "word_count": 13379,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 11 Enterprise DevOps Assessment",
+        "Chapter 12 Transformation Vision, Principles and Roadmap",
+        "Chapter 13 Portfolio Prioritization and Funding",
+        "Chapter 14 Platform Engineering Transformation",
+        "Chapter 15 Cloud and Infrastructure Transformation",
+        "Chapter 16 Legacy Modernization and Migration",
+        "Chapter 17 DevSecOps Transformation",
+        "Chapter 18 SRE and Reliability Adoption",
+        "Chapter 19 Organizational Change and Adoption",
+        "Chapter 20 Enterprise Transformation Capstone",
+        "Chapter 11: Enterprise DevOps Assessment",
+        "Chapter 12: Transformation Vision, Principles and Roadmap"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_15B_Enterprise_DevOps_Transformation.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_15B_Enterprise_DevOps_Transformation.docx",
+      "text_file": "text/vol-15b.json",
+      "pdf_bytes": 749525,
+      "docx_bytes": 54585,
+      "previous_tool_assignments": [
+        "system-design",
+        "sre",
+        "cicd"
+      ],
+      "related_topics": [
+        "sre",
+        "cicd"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under System Design & Platform Engineering. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-15c",
+      "volume": "15C",
+      "title": "Volume 15C - Metrics Economics Governance & Executive Scorecards",
+      "summary": "Explain and design the capabilities covered by Metrics, Economics, Governance and Executive Scorecards. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "observability"
+      ],
+      "primary_tool": "observability",
+      "tool_names": [
+        "Prometheus, Grafana & Observability"
+      ],
+      "page_count": 36,
+      "word_count": 13668,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 21 DORA Software Delivery Performance Metrics",
+        "Chapter 22 Flow and Value-Stream Metrics",
+        "Chapter 23 Reliability and Customer Outcome Metrics",
+        "Chapter 24 Quality and Security Performance",
+        "Chapter 25 Developer Experience and Productivity",
+        "Chapter 26 FinOps and Technology Value",
+        "Chapter 27 Portfolio Economics and Investment Decisions",
+        "Chapter 28 OKRs, Outcomes and Guardrails",
+        "Chapter 29 Audit, Compliance and Evidence Governance",
+        "Chapter 30 Executive Technology Scorecard Capstone",
+        "Chapter 21: DORA Software Delivery Performance Metrics",
+        "Chapter 22: Flow and Value-Stream Metrics"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_15C_Metrics_Economics_Governance_and_Executive_Scorecards.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_15C_Metrics_Economics_Governance_and_Executive_Scorecards.docx",
+      "text_file": "text/vol-15c.json",
+      "pdf_bytes": 754676,
+      "docx_bytes": 54835,
+      "previous_tool_assignments": [
+        "observability",
+        "sre",
+        "system-design"
+      ],
+      "related_topics": [
+        "sre",
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "Executive metrics and scorecards are anchored under Observability; leadership context does not duplicate it elsewhere.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-15d",
+      "volume": "15D",
+      "title": "Volume 15D - People Talent Partners & Global Engineering",
+      "summary": "Explain and design the capabilities covered by People, Talent, Partners and Global Engineering. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "system-design"
+      ],
+      "primary_tool": "system-design",
+      "tool_names": [
+        "System Design & Platform Engineering"
+      ],
+      "page_count": 36,
+      "word_count": 13703,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 31 Workforce and Capability Planning",
+        "Chapter 32 Career Architecture for DevOps and Platform Roles",
+        "Chapter 33 Hiring and Interview System Design",
+        "Chapter 34 Onboarding and Time to Effectiveness",
+        "Chapter 35 Coaching, Feedback and Performance",
+        "Chapter 36 Communities of Practice and Technical Leadership",
+        "Chapter 37 Vendor, Partner and Managed-Service Strategy",
+        "Chapter 38 Contracts, Licensing and Commercial Governance",
+        "Chapter 39 Distributed and Global Engineering Teams",
+        "Chapter 40 People Leadership Capstone",
+        "Chapter 31: Workforce and Capability Planning",
+        "Chapter 32: Career Architecture for DevOps and Platform Roles"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_15D_People_Talent_Partners_and_Global_Engineering.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_15D_People_Talent_Partners_and_Global_Engineering.docx",
+      "text_file": "text/vol-15d.json",
+      "pdf_bytes": 753340,
+      "docx_bytes": 54885,
+      "previous_tool_assignments": [
+        "system-design"
+      ],
+      "related_topics": [],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under System Design & Platform Engineering. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-15e",
+      "volume": "15E",
+      "title": "Volume 15E - Enterprise Execution Resilience & Executive Operations",
+      "summary": "Explain and design the capabilities covered by Enterprise Execution, Resilience and Executive Operations. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "sre"
+      ],
+      "primary_tool": "sre",
+      "tool_names": [
+        "SRE & Incident Management"
+      ],
+      "page_count": 51,
+      "word_count": 19932,
+      "heading_count": 30,
+      "headings": [
+        "Chapter 41 Transformation Program Governance",
+        "Chapter 42 Enterprise Architecture Governance",
+        "Chapter 43 Policy as Code and Automated Governance",
+        "Chapter 44 Platform and Shared-Service Portfolio Management",
+        "Chapter 45 Major Incident Leadership",
+        "Chapter 46 Crisis Communication and Stakeholder Trust",
+        "Chapter 47 Enterprise Resilience and Game Days",
+        "Chapter 48 Mergers, Acquisitions and Technology Integration",
+        "Chapter 49 DevOps in Regulated Environments",
+        "Chapter 50 Technology Debt and Modernization Governance",
+        "Chapter 51 AI-Assisted Software Delivery Governance",
+        "Chapter 52 Sustainability and Resource Efficiency"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_15E_Enterprise_Execution_Resilience_and_Executive_Operations.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_15E_Enterprise_Execution_Resilience_and_Executive_Operations.docx",
+      "text_file": "text/vol-15e.json",
+      "pdf_bytes": 1046196,
+      "docx_bytes": 57880,
+      "previous_tool_assignments": [
+        "sre",
+        "system-design",
+        "devsecops"
+      ],
+      "related_topics": [
+        "system-design",
+        "devsecops"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "Enterprise resilience and executive operations are anchored under SRE and Incident Management.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-15f",
+      "volume": "15F",
+      "title": "Volume 15F - Final Mastery Portfolio Simulations & Graduation Capstone",
+      "summary": "Explain and design the capabilities covered by Final Mastery Portfolio, Simulations and Graduation Capstone. Implement or simulate production workflows through version-controlled automation. Test identity, policy, security, reliability, cost and lifecycle behavior. Troubleshoot complex failures using a structured evidence-first method. Produce sanitized architecture, laboratory, runbook and interview portfolio artifacts.",
+      "tools": [
+        "system-design"
+      ],
+      "primary_tool": "system-design",
+      "tool_names": [
+        "System Design & Platform Engineering"
+      ],
+      "page_count": 51,
+      "word_count": 19799,
+      "heading_count": 30,
+      "headings": [
+        "Chapter 56 Mastery Portfolio Architecture",
+        "Chapter 57 Enterprise Architecture Defense",
+        "Chapter 58 Transformation Business Case",
+        "Chapter 59 Board and Executive Presentation",
+        "Chapter 60 Senior DevOps Leadership Interviews",
+        "Chapter 61 Staff and Principal Engineering Scenarios",
+        "Chapter 62 CTO and CIO Decision Scenarios",
+        "Chapter 63 Consulting Discovery and Advisory Engagement",
+        "Chapter 64 Audit and Regulatory Simulation",
+        "Chapter 65 Major Outage Executive Simulation",
+        "Chapter 66 Technology Cost Crisis Simulation",
+        "Chapter 67 Cybersecurity Incident Leadership Simulation"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_15F_Final_Mastery_Portfolio_Simulations_and_Graduation_Capstone.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_15F_Final_Mastery_Portfolio_Simulations_and_Graduation_Capstone.docx",
+      "text_file": "text/vol-15f.json",
+      "pdf_bytes": 1045193,
+      "docx_bytes": 57795,
+      "previous_tool_assignments": [
+        "system-design",
+        "sre",
+        "cicd"
+      ],
+      "related_topics": [
+        "sre",
+        "cicd"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under System Design & Platform Engineering. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-1",
+      "volume": "1",
+      "title": "Volume 1 - Linux",
+      "summary": "After completing this volume you should be able to operate a Linux server, manage users and permissions, control processes and services, inspect logs, troubleshoot network and storage issues, use SSH safely, and explain how Linux is used in a DevOps team.",
+      "tools": [
+        "linux"
+      ],
+      "primary_tool": "linux",
+      "tool_names": [
+        "Linux Administration"
+      ],
+      "page_count": 45,
+      "word_count": 5616,
+      "heading_count": 20,
+      "headings": [
+        "Unit 1 - Linux and DevOps Foundations",
+        "Unit 2 - Lab Setup and Terminal Basics",
+        "Unit 3 - Filesystem and Navigation",
+        "Unit 4 - Files, Directories, Text and Search",
+        "Unit 5 - Users, Groups and Identity",
+        "Unit 6 - Permissions, Ownership and sudo",
+        "Unit 7 - Processes and Job Control",
+        "Unit 8 - systemd and Service Management",
+        "Unit 9 - Logs and Debugging",
+        "Unit 10 - Networking Fundamentals",
+        "Unit 11 - Packages and Software Management",
+        "Unit 12 - Storage, Disks and Filesystems"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_1_Linux.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_1_Linux.docx",
+      "text_file": "text/vol-1.json",
+      "pdf_bytes": 346553,
+      "docx_bytes": 53806,
+      "previous_tool_assignments": [
+        "linux",
+        "networking",
+        "shell",
+        "sre"
+      ],
+      "related_topics": [
+        "networking",
+        "shell",
+        "sre"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title and curriculum core are Linux administration; Linux mentions elsewhere do not place other books here.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-2",
+      "volume": "2",
+      "title": "Volume 2 - Bash Scripting",
+      "summary": "DevOps Master Course - Volume 2: Bash Shell Scripting and DevOps Automation Structured learning edition | Complete units through hands-on evidence Absolute Beginner to Production-Ready Engineer This volume teaches why each Bash feature exists, how it behaves, how companies use it, how it fails, and how to",
+      "tools": [
+        "shell"
+      ],
+      "primary_tool": "shell",
+      "tool_names": [
+        "Shell Scripting"
+      ],
+      "page_count": 68,
+      "word_count": 14891,
+      "heading_count": 30,
+      "headings": [
+        "Unit 1 - Shell, Bash and the Automation Mindset",
+        "Unit 2 - Script Structure, Comments and Execution Modes",
+        "Unit 3 - Variables, Quoting and Environment",
+        "Unit 4 - User Input, Arguments and Options",
+        "Unit 5 - Arithmetic and Numeric Validation",
+        "Unit 6 - Conditions, Tests and Decision Making",
+        "Unit 7 - case Statements and State Handling",
+        "Unit 8 - Loops and Repetition",
+        "Unit 9 - Functions, Scope and Reusable Design",
+        "Unit 10 - Arrays and Associative Arrays",
+        "Unit 11 - Redirection, Pipes and File Descriptors",
+        "Unit 12 - Text Processing with grep, sed, awk, cut, sort and"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_2_Bash_Scripting.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_2_Bash_Scripting.docx",
+      "text_file": "text/vol-2.json",
+      "pdf_bytes": 1106233,
+      "docx_bytes": 75312,
+      "previous_tool_assignments": [
+        "shell",
+        "linux",
+        "python-automation"
+      ],
+      "related_topics": [
+        "linux",
+        "python-automation"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The book is a Bash/shell scripting course. Linux and Python references are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-3",
+      "volume": "3",
+      "title": "Volume 3 - Git GitHub Networking",
+      "summary": "DevOps Master Course - Volume 3: Git, GitHub and Networking Absolute beginner progressing to production-ready Professional Git, GitHub collaboration, networking Read -> reproduce -> explain -> troubleshoot ->",
+      "tools": [
+        "git"
+      ],
+      "primary_tool": "git",
+      "tool_names": [
+        "Git & Collaborative Development"
+      ],
+      "page_count": 81,
+      "word_count": 13552,
+      "heading_count": 48,
+      "headings": [
+        "Unit 1: Version Control and the DevOps Software Lifecycle",
+        "Unit 2: Installing and Configuring Git",
+        "Unit 3: Repositories, Working Tree, Index and Commit History",
+        "Unit 4: Commit Design, Messages and Atomic Changes",
+        "Unit 5: Git Objects and Internal Architecture",
+        "Unit 6: Branches, HEAD and Detached HEAD",
+        "Unit 7: Merging and Merge Conflicts",
+        "Unit 8: Rebase and History Rewriting",
+        "Unit 9: Undoing Changes: Restore, Reset, Revert and Reflog",
+        "Unit 10: Tags, Releases, Archives and Versioning",
+        "Unit 11: Remote Repositories, Clone, Fetch, Pull and Push",
+        "Unit 12: Stash, Clean and Worktree"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_3_Git_GitHub_Networking.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_3_Git_GitHub_Networking.docx",
+      "text_file": "text/vol-3.json",
+      "pdf_bytes": 1038642,
+      "docx_bytes": 70862,
+      "previous_tool_assignments": [
+        "git",
+        "github-actions",
+        "networking",
+        "cicd"
+      ],
+      "related_topics": [
+        "github-actions",
+        "networking",
+        "cicd"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The dominant course is Git and collaborative repository work. Networking chapters do not make it a Networking book.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-4",
+      "volume": "4",
+      "title": "Volume 4 - Docker Containerization",
+      "summary": "DevOps Master Course - Volume 4: Docker and Containerization From First Container to Secure Production Delivery Complete beginners progressing to professional DevOps and platform Understand -> build -> inspect -> break -> recover -> secure ->",
+      "tools": [
+        "docker"
+      ],
+      "primary_tool": "docker",
+      "tool_names": [
+        "Docker & Containers"
+      ],
+      "page_count": 87,
+      "word_count": 13851,
+      "heading_count": 48,
+      "headings": [
+        "Unit 1: Why Containers Exist",
+        "Unit 2: Linux Foundations Behind Containers",
+        "Unit 3: Installing Docker and Validating the Engine",
+        "Unit 4: Docker CLI Object Model",
+        "Unit 5: Running and Inspecting Containers",
+        "Unit 6: Container Lifecycle and Signals",
+        "Unit 7: Executing Commands, Logs and Copying Files",
+        "Unit 8: Resource Limits and Runtime Controls",
+        "Unit 9: Images, Layers and Digests",
+        "Unit 10: Your First Dockerfile",
+        "Unit 11: Dockerfile Instructions in Depth",
+        "Unit 12: CMD, ENTRYPOINT and Signal-Safe Execution"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_4_Docker_Containerization.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_4_Docker_Containerization.docx",
+      "text_file": "text/vol-4.json",
+      "pdf_bytes": 1076882,
+      "docx_bytes": 67283,
+      "previous_tool_assignments": [
+        "docker",
+        "linux",
+        "networking",
+        "devsecops"
+      ],
+      "related_topics": [
+        "linux",
+        "networking",
+        "devsecops"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The dominant course is Docker/container engineering. Linux and networking are prerequisites, not placements.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-5",
+      "volume": "5",
+      "title": "Volume 5 - Kubernetes",
+      "summary": "From First Pod to Secure Production Platform Engineering Beginners progressing to production-ready DevOps, SRE and platform Kubernetes 1.36 concepts and stable APIs, with version-awareness for Understand -> declare -> apply -> observe -> break -> recover ->",
+      "tools": [
+        "kubernetes"
+      ],
+      "primary_tool": "kubernetes",
+      "tool_names": [
+        "Kubernetes"
+      ],
+      "page_count": 65,
+      "word_count": 16517,
+      "heading_count": 50,
+      "headings": [
+        "Unit 1: Why Kubernetes Exists",
+        "Unit 2: Cluster Architecture",
+        "Unit 3: Kubernetes API and Object Model",
+        "Unit 4: kubectl, kubeconfig and Context Safety",
+        "Unit 5: Creating a Local Learning Cluster",
+        "Unit 6: Namespaces, Labels and Annotations",
+        "Unit 7: Declarative Management, Diff and Server-Side Apply",
+        "Unit 8: API Discovery, kubectl Explain and Output Processing",
+        "Unit 9: Pods: The Smallest Deployable Unit",
+        "Unit 10: Multi-Container Pods and Init Containers",
+        "Unit 11: Pod Lifecycle, Restart Policy and Termination",
+        "Unit 12: Probes: Startup, Readiness and Liveness"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_5_Kubernetes.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_5_Kubernetes.docx",
+      "text_file": "text/vol-5.json",
+      "pdf_bytes": 1270216,
+      "docx_bytes": 74481,
+      "previous_tool_assignments": [
+        "kubernetes",
+        "docker",
+        "networking",
+        "observability",
+        "devsecops",
+        "sre"
+      ],
+      "related_topics": [
+        "docker",
+        "networking",
+        "observability",
+        "devsecops",
+        "sre"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The dominant course is Kubernetes. Docker, networking, security and SRE are supporting topics.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-6a",
+      "volume": "6A",
+      "title": "Volume 6A - AWS Foundations",
+      "summary": "Concepts • Architecture • Security • CLI • Labs • Troubleshooting • Interviews Course series. It is designed to move a learner from cloud fundamentals to the point where they can deploy, secure, scale, network, and financially govern a small production-style AWS workload. Learning principle: Every chapter explains why the service or design exists before showing how to use",
+      "tools": [
+        "aws"
+      ],
+      "primary_tool": "aws",
+      "tool_names": [
+        "AWS Cloud"
+      ],
+      "page_count": 46,
+      "word_count": 10944,
+      "heading_count": 11,
+      "headings": [
+        "Chapter 1 Cloud Computing and Amazon Web Services",
+        "Chapter 2 AWS Global Infrastructure",
+        "Chapter 3 AWS Account Setup, Free Usage Controls, and Root Security",
+        "Chapter 4 AWS Management Interfaces",
+        "Chapter 5 Identity and Access Management Deep Dive",
+        "Chapter 6 Amazon EC2 Compute Engineering",
+        "Chapter 7 Amazon Machine Images and Elastic Block Store",
+        "Chapter 8 Elastic Load Balancing and EC2 Auto Scaling",
+        "Chapter 9 Amazon VPC Networking Foundations",
+        "Chapter 10 AWS Cost Management, Governance, and Foundation Project",
+        "CHAPTER 10"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_6A_AWS_Foundations.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_6A_AWS_Foundations.docx",
+      "text_file": "text/vol-6a.json",
+      "pdf_bytes": 654632,
+      "docx_bytes": 70727,
+      "previous_tool_assignments": [
+        "aws"
+      ],
+      "related_topics": [],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under AWS Cloud. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-6b",
+      "volume": "6B",
+      "title": "Volume 6B - AWS Core Infrastructure",
+      "summary": "EC2 FLEETS | VPC | DNS | LOAD BALANCING | SCALING | STORAGE Advanced design, operations, troubleshooting, labs, and interviews decisions that make systems reproducible, resilient, secure, observable, recoverable, and cost-aware: instance fleet standards, fault-domain design, controlled traffic paths, health-aware routing, elastic",
+      "tools": [
+        "aws"
+      ],
+      "primary_tool": "aws",
+      "tool_names": [
+        "AWS Cloud"
+      ],
+      "page_count": 53,
+      "word_count": 14991,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 11 Advanced EC2 Administration",
+        "Chapter 12 Advanced Amazon VPC",
+        "Chapter 13 Security Groups, Network ACLs, and Segmentation",
+        "Chapter 14 Amazon Route 53 and DNS Engineering",
+        "Chapter 15 Elastic Load Balancing Deep Dive",
+        "Chapter 16 EC2 Auto Scaling Engineering",
+        "Chapter 17 Amazon EBS Deep Dive",
+        "Chapter 18 Amazon EFS and Amazon FSx",
+        "Chapter 19 Amazon S3 Masterclass",
+        "Chapter 20 Enterprise Storage Architecture, Backup, and Disaster Recovery",
+        "CHAPTER 11",
+        "CHAPTER 12"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_6B_AWS_Core_Infrastructure.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_6B_AWS_Core_Infrastructure.docx",
+      "text_file": "text/vol-6b.json",
+      "pdf_bytes": 812968,
+      "docx_bytes": 86145,
+      "previous_tool_assignments": [
+        "aws",
+        "networking",
+        "system-design"
+      ],
+      "related_topics": [
+        "networking",
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under AWS Cloud. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-6c",
+      "volume": "6C",
+      "title": "Volume 6C - AWS Data Platforms",
+      "summary": "RDS | AURORA | DYNAMODB | CACHE | REDSHIFT | LAKES | STREAMS | MIGRATION Production databases, analytics, migration, governance, labs, and interviews systems, purpose-built NoSQL, caching, warehouses, lakes, streaming, search, migration, security, recovery, cost, and an integrated capstone. The focus is production decision-making: semantics,",
+      "tools": [
+        "aws"
+      ],
+      "primary_tool": "aws",
+      "tool_names": [
+        "AWS Cloud"
+      ],
+      "page_count": 55,
+      "word_count": 14033,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 21 Amazon RDS Engineering",
+        "Chapter 22 Amazon Aurora Engineering",
+        "Chapter 23 Amazon DynamoDB and NoSQL Design",
+        "Chapter 24 Amazon ElastiCache and MemoryDB",
+        "Chapter 25 Amazon Redshift and Data Warehousing",
+        "Chapter 26 AWS Data Lakes and Analytics",
+        "Chapter 27 Streaming, Kafka, and Search Analytics",
+        "Chapter 28 AWS Database Migration Engineering",
+        "Chapter 29 Data Security, Backup, Reliability, and Operations",
+        "Chapter 30 Enterprise Data Platform Architecture and Capstone",
+        "CHAPTER 21",
+        "CHAPTER 22"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_6C_AWS_Data_Platforms.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_6C_AWS_Data_Platforms.docx",
+      "text_file": "text/vol-6c.json",
+      "pdf_bytes": 803890,
+      "docx_bytes": 84663,
+      "previous_tool_assignments": [
+        "aws",
+        "databases"
+      ],
+      "related_topics": [
+        "databases"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under AWS Cloud. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-6d",
+      "volume": "6D",
+      "title": "Volume 6D - AWS Containers Serverless",
+      "summary": "ECR | ECS | FARGATE | EKS | LAMBDA | API GATEWAY | SQS/SNS | EVENTBRIDGE | STEP Production container platforms, serverless applications, event-driven integration, labs, how teams package software as immutable container images, operate services on Amazon ECS and Amazon EKS, use AWS Fargate to remove host management, build event-driven functions with AWS",
+      "tools": [
+        "aws"
+      ],
+      "primary_tool": "aws",
+      "tool_names": [
+        "AWS Cloud"
+      ],
+      "page_count": 52,
+      "word_count": 15966,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 31 Amazon ECR and Container Supply-Chain Engineering",
+        "Chapter 32 Amazon ECS Production Engineering",
+        "Chapter 33 AWS Fargate Serverless Containers",
+        "Chapter 34 Amazon EKS and Kubernetes Operations",
+        "Chapter 35 AWS Lambda Production Engineering",
+        "Chapter 36 Amazon API Gateway Engineering",
+        "Chapter 37 Amazon SQS and Amazon SNS Messaging",
+        "Chapter 38 Amazon EventBridge Integration Engineering",
+        "Chapter 39 AWS Step Functions Workflow Orchestration",
+        "Chapter 40 Enterprise Event-Driven Application Architecture and Capstone",
+        "Chapter 31 - Amazon ECR and Container Supply-Chain Engineering",
+        "Chapter 32 - Amazon ECS Production Engineering"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_6D_AWS_Containers_Serverless.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_6D_AWS_Containers_Serverless.docx",
+      "text_file": "text/vol-6d.json",
+      "pdf_bytes": 878549,
+      "docx_bytes": 92283,
+      "previous_tool_assignments": [
+        "aws",
+        "docker",
+        "kubernetes"
+      ],
+      "related_topics": [
+        "docker",
+        "kubernetes"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under AWS Cloud. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-6e",
+      "volume": "6E",
+      "title": "Volume 6E - AWS Enterprise DevOps Security",
+      "summary": "CLOUDFORMATION | CDK | CI/CD | CLOUDWATCH | SECURITY | GOVERNANCE | RESILIENCE | Production automation, observability, compliance, threat detection, multi-account governance, labs, troubleshooting, and enterprise capstone resources, but on creating them repeatedly, reviewing every change, deploying applications safely, detecting failure",
+      "tools": [
+        "aws"
+      ],
+      "primary_tool": "aws",
+      "tool_names": [
+        "AWS Cloud"
+      ],
+      "page_count": 52,
+      "word_count": 16152,
+      "heading_count": 30,
+      "headings": [
+        "Chapter 41 AWS CloudFormation and Infrastructure as Code",
+        "Chapter 42 AWS CDK and Platform Engineering",
+        "Chapter 43 AWS CodePipeline and Release Orchestration",
+        "Chapter 44 AWS CodeBuild, CodeDeploy, and Deployment Strategies",
+        "Chapter 45 Amazon CloudWatch Observability Engineering",
+        "Chapter 46 Distributed Tracing, X-Ray, and Application Signals",
+        "Chapter 47 CloudTrail, AWS Config, and Audit Engineering",
+        "Chapter 48 AWS Systems Manager and Fleet Operations",
+        "Chapter 49 KMS, Secrets, Parameters, and Certificate Management",
+        "Chapter 50 Threat Detection, Vulnerability Management, and Security Hub",
+        "Chapter 51 AWS WAF, Shield, Firewall Manager, and Network Firewall",
+        "Chapter 52 AWS Organizations, Control Tower, and Landing Zones"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_6E_AWS_Enterprise_DevOps_Security.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_6E_AWS_Enterprise_DevOps_Security.docx",
+      "text_file": "text/vol-6e.json",
+      "pdf_bytes": 959380,
+      "docx_bytes": 89627,
+      "previous_tool_assignments": [
+        "aws",
+        "cicd",
+        "devsecops",
+        "observability"
+      ],
+      "related_topics": [
+        "cicd",
+        "devsecops",
+        "observability"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under AWS Cloud. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-6f",
+      "volume": "6F",
+      "title": "Volume 6F - AWS Enterprise Projects Interviews",
+      "summary": "Purpose Convert AWS knowledge into architecture judgment, production operating ability, evidence-backed projects, certification readiness, and senior-level interview performance. This final part is deliberately scenario-driven. You will make decisions under constraints, implement and test systems, diagnose failure, quantify trade-offs, and produce a portfolio that demonstrates professional cloud engineering",
+      "tools": [
+        "aws"
+      ],
+      "primary_tool": "aws",
+      "tool_names": [
+        "AWS Cloud"
+      ],
+      "page_count": 51,
+      "word_count": 13299,
+      "heading_count": 15,
+      "headings": [
+        "Chapter 56 - Architecture Requirements, Trade-offs, and ADRs",
+        "Chapter 57 - Enterprise SaaS Architecture",
+        "Chapter 58 - Hybrid Connectivity and Migration Waves",
+        "Chapter 59 - Application Modernization and Monolith",
+        "Chapter 60 - Multi-Region and Global Application Design",
+        "Chapter 61 - Security Incident Response and Cloud Forensics",
+        "Chapter 62 - Resilience Engineering, Game Days, and Fault Injection",
+        "Chapter 63 - Performance Engineering and Capacity Planning",
+        "Chapter 64 - FinOps and Enterprise Cost Optimization",
+        "Chapter 65 - Platform Engineering and Internal Developer Platforms",
+        "Chapter 66 - Advanced Troubleshooting and Incident Command",
+        "Chapter 67 - Architecture Review Boards, Compliance, and Evidence"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_6F_AWS_Enterprise_Projects_Interviews.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_6F_AWS_Enterprise_Projects_Interviews.docx",
+      "text_file": "text/vol-6f.json",
+      "pdf_bytes": 885959,
+      "docx_bytes": 82033,
+      "previous_tool_assignments": [
+        "aws",
+        "system-design",
+        "sre",
+        "cicd"
+      ],
+      "related_topics": [
+        "system-design",
+        "sre",
+        "cicd"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under AWS Cloud. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-7a",
+      "volume": "7A",
+      "title": "Volume 7A - Azure Foundations",
+      "summary": "AZURE | GLOBAL INFRASTRUCTURE | ENTRA ID | RBAC | ARM | VIRTUAL MACHINES | Beginner-to-enterprise Azure cloud engineering, hands-on labs, troubleshooting, governance, Microsoft Azure. It begins with cloud and Azure fundamentals, then moves through global infrastructure, tenant and subscription hierarchy, administrative tools, identity, authorization, governance, compute,",
+      "tools": [
+        "azure"
+      ],
+      "primary_tool": "azure",
+      "tool_names": [
+        "Microsoft Azure"
+      ],
+      "page_count": 45,
+      "word_count": 14005,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 1 Cloud Computing and Microsoft Azure",
+        "Chapter 2 Azure Global Infrastructure and Reliability",
+        "Chapter 3 Tenants, Management Groups, Subscriptions, and Resource Groups",
+        "Chapter 4 Azure Portal, Cloud Shell, CLI, PowerShell, APIs, and SDKs",
+        "Chapter 5 Microsoft Entra ID Fundamentals",
+        "Chapter 6 Azure RBAC, Managed Identities, and Privileged Access",
+        "Chapter 7 Azure Resource Manager Governance: Tags, Locks, and Policy",
+        "Chapter 8 Azure Virtual Machines Foundations",
+        "Chapter 9 Azure Virtual Networking Foundations",
+        "Chapter 10 Azure Cost Governance and Foundation Capstone",
+        "Chapter 1 - Cloud Computing and Microsoft Azure",
+        "Chapter 2 - Azure Global Infrastructure and Reliability"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_7A_Azure_Foundations.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_7A_Azure_Foundations.docx",
+      "text_file": "text/vol-7a.json",
+      "pdf_bytes": 835394,
+      "docx_bytes": 85905,
+      "previous_tool_assignments": [
+        "azure"
+      ],
+      "related_topics": [],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Microsoft Azure. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-7b",
+      "volume": "7B",
+      "title": "Volume 7B - Azure Core Infrastructure",
+      "summary": "VM SCALE SETS | HUB-SPOKE | FIREWALL | APPLICATION DELIVERY | PRIVATE LINK | STORAGE | HYBRID CONNECTIVITY | BACKUP | DISASTER RECOVERY Production-grade Azure compute, networking, storage, hybrid connectivity, recovery, established identity, governance, virtual-machine, and virtual-network fundamentals. Part B turns those",
+      "tools": [
+        "azure"
+      ],
+      "primary_tool": "azure",
+      "tool_names": [
+        "Microsoft Azure"
+      ],
+      "page_count": 40,
+      "word_count": 12613,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 11 Advanced Azure Virtual Machines and Fleet Operations",
+        "Chapter 12 Virtual Machine Scale Sets and Autoscale",
+        "Chapter 13 Enterprise Virtual Networking and Hub-Spoke Architecture",
+        "Chapter 14 Network Security, Routing, Firewall, and Secure Administration",
+        "Chapter 15 Azure Load Balancing and Global Application Delivery",
+        "Chapter 16 Azure DNS, Private DNS, Private Link, and Service Access",
+        "Chapter 17 Azure Storage Accounts and Blob Data Engineering",
+        "Chapter 18 Managed Disks, Azure Files, and Enterprise File Storage",
+        "Chapter 19 Hybrid Connectivity with VPN Gateway, ExpressRoute, and Virtual WAN",
+        "Chapter 20 Azure Backup, Site Recovery, and Core Infrastructure Capstone",
+        "Chapter 11 - Advanced Azure Virtual Machines and Fleet Operations",
+        "Chapter 12 - Virtual Machine Scale Sets and Autoscale"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_7B_Azure_Core_Infrastructure.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_7B_Azure_Core_Infrastructure.docx",
+      "text_file": "text/vol-7b.json",
+      "pdf_bytes": 750527,
+      "docx_bytes": 79589,
+      "previous_tool_assignments": [
+        "azure",
+        "networking",
+        "system-design"
+      ],
+      "related_topics": [
+        "networking",
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Microsoft Azure. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-7c",
+      "volume": "7C",
+      "title": "Volume 7C - Azure Data Platforms",
+      "summary": "AZURE SQL | POSTGRESQL | COSMOS DB | MANAGED REDIS | DATA LAKES | DATA FACTORY | EVENT HUBS | DATABRICKS | MIGRATION | GOVERNANCE Production-grade transactional databases, distributed data, lakehouse analytics, streaming, compute, networking, storage, hybrid connectivity, backup, and disaster recovery. Part C explains how",
+      "tools": [
+        "azure"
+      ],
+      "primary_tool": "azure",
+      "tool_names": [
+        "Microsoft Azure"
+      ],
+      "page_count": 40,
+      "word_count": 13989,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 21 Azure SQL Database and SQL Managed Instance Engineering",
+        "Chapter 22 Azure Database for PostgreSQL and MySQL Flexible Server",
+        "Chapter 23 Azure Cosmos DB and Globally Distributed NoSQL",
+        "Chapter 24 Azure Managed Redis and Application Caching",
+        "Chapter 25 Azure Data Lake Storage, OneLake, Fabric, and Synapse",
+        "Chapter 26 Azure Data Factory and Enterprise Data Integration",
+        "Chapter 27 Azure Event Hubs and Stream Analytics",
+        "Chapter 28 Azure Databricks and Lakehouse Engineering",
+        "Chapter 29 Azure Database and Data-Platform Migration Engineering",
+        "Chapter 30 Data Security, Governance, Resilience, and Enterprise Capstone",
+        "Chapter 21 - Azure SQL Database and SQL Managed Instance",
+        "Chapter 22 - Azure Database for PostgreSQL and MySQL Flexible"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_7C_Azure_Data_Platforms.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_7C_Azure_Data_Platforms.docx",
+      "text_file": "text/vol-7c.json",
+      "pdf_bytes": 773436,
+      "docx_bytes": 84002,
+      "previous_tool_assignments": [
+        "azure",
+        "databases"
+      ],
+      "related_topics": [
+        "databases"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Microsoft Azure. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-7d",
+      "volume": "7D",
+      "title": "Volume 7D - Azure Containers Serverless",
+      "summary": "ACR | AKS | CONTAINER APPS | APP SERVICE | FUNCTIONS | API MANAGEMENT | Production-grade cloud-native applications, Kubernetes, serverless compute, APIs, messaging, events, workflows, labs, and enterprise architecture infrastructure, networking, storage, databases, analytics, and migration. This part turns those foundations into",
+      "tools": [
+        "azure"
+      ],
+      "primary_tool": "azure",
+      "tool_names": [
+        "Microsoft Azure"
+      ],
+      "page_count": 42,
+      "word_count": 13670,
+      "heading_count": 20,
+      "headings": [
+        "Chapter 31 Azure Container Registry and Container Supply-Chain Engineering",
+        "Chapter 32 Azure Kubernetes Service Production Engineering",
+        "Chapter 33 Azure Container Apps and Azure Container Instances",
+        "Chapter 34 Azure App Service Production Engineering",
+        "Chapter 35 Azure Functions and Serverless Compute Engineering",
+        "Chapter 36 Azure API Management and API Platform Engineering",
+        "Chapter 37 Azure Service Bus Messaging Engineering",
+        "Chapter 38 Azure Event Grid and Event Distribution",
+        "Chapter 39 Azure Logic Apps and Durable Workflow Engineering",
+        "Chapter 40 Enterprise Cloud-Native Application Architecture and Capstone",
+        "Chapter 31 - Azure Container Registry and Container Supply-Chain",
+        "Chapter 32 - Azure Kubernetes Service Production Engineering"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_7D_Azure_Containers_Serverless.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_7D_Azure_Containers_Serverless.docx",
+      "text_file": "text/vol-7d.json",
+      "pdf_bytes": 661281,
+      "docx_bytes": 77007,
+      "previous_tool_assignments": [
+        "azure",
+        "docker",
+        "kubernetes"
+      ],
+      "related_topics": [
+        "docker",
+        "kubernetes"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Microsoft Azure. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-7e",
+      "volume": "7E",
+      "title": "Volume 7E - Azure Enterprise DevOps Security",
+      "summary": "Infrastructure as Code • Continuous Delivery • Observability • Security Operations • Landing infrastructure, data platforms, containers, serverless compute, and integration. This part turns those capabilities into an operable cloud platform through declarative delivery, secure pipelines, telemetry, policy, threat detection, incident response, landing-zone governance, resilience engineering, and cost accountability.",
+      "tools": [
+        "azure"
+      ],
+      "primary_tool": "azure",
+      "tool_names": [
+        "Microsoft Azure"
+      ],
+      "page_count": 52,
+      "word_count": 15118,
+      "heading_count": 30,
+      "headings": [
+        "Chapter 41 Azure Resource Manager, Bicep, and Deployment Stacks",
+        "Chapter 42 Azure Platform Engineering, Template Specs, and Deployment Environments",
+        "Chapter 43 Azure DevOps Organizations, Repos, Boards, and Artifacts",
+        "Chapter 44 Azure Pipelines Continuous Integration and Agent Security",
+        "Chapter 45 Azure Pipelines Continuous Delivery, Environments, and Release Strategies",
+        "Chapter 46 Azure Monitor, Log Analytics, Metrics, Alerts, and KQL",
+        "Chapter 47 Application Insights, OpenTelemetry, SLOs, and Distributed Tracing",
+        "Chapter 48 Azure Audit, Resource Graph, Automation, and Fleet Operations",
+        "Chapter 49 Azure Key Vault, Managed HSM, Secrets, Keys, and Certificates",
+        "Chapter 50 Microsoft Defender for Cloud and Cloud Security Posture Management",
+        "Chapter 51 Microsoft Sentinel and Security Operations Engineering",
+        "Chapter 52 Azure Network Protection and Zero Trust Enforcement"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_7E_Azure_Enterprise_DevOps_Security.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_7E_Azure_Enterprise_DevOps_Security.docx",
+      "text_file": "text/vol-7e.json",
+      "pdf_bytes": 851902,
+      "docx_bytes": 84995,
+      "previous_tool_assignments": [
+        "azure",
+        "cicd",
+        "devsecops",
+        "observability"
+      ],
+      "related_topics": [
+        "cicd",
+        "devsecops",
+        "observability"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Microsoft Azure. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-7f",
+      "volume": "7F",
+      "title": "Volume 7F - Azure Enterprise Projects Interviews",
+      "summary": "Architecture Decisions • Migration • Modernization • Global Reliability • Incidents • FinOps • Platform Engineering • Certifications • Interviews engineering judgment. The emphasis is on architecture trade-offs, operating models, incident leadership, measurable reliability, migration safety, financial accountability, and the ability to explain decisions under",
+      "tools": [
+        "azure"
+      ],
+      "primary_tool": "azure",
+      "tool_names": [
+        "Microsoft Azure"
+      ],
+      "page_count": 49,
+      "word_count": 11629,
+      "heading_count": 15,
+      "headings": [
+        "Chapter 56 - Architecture Decisions, Trade-offs, and Well-",
+        "Chapter 57 - Enterprise SaaS Architecture on Azure",
+        "Chapter 58 - Hybrid Cloud, Azure Arc, and Migration Factories",
+        "Chapter 59 - Application Modernization and Monolith",
+        "Chapter 60 - Multi-Region and Global Application Design",
+        "Chapter 61 - Security Incident Response and Cloud Forensics",
+        "Chapter 62 - Resilience Engineering, Game Days, and Chaos Studio",
+        "Chapter 63 - Performance Engineering and Capacity Planning",
+        "Chapter 64 - FinOps and Enterprise Cost Optimization",
+        "Chapter 65 - Platform Engineering and Internal Developer Platforms",
+        "Chapter 66 - Advanced Troubleshooting and Incident Command",
+        "Chapter 67 - Architecture Governance, Compliance, and Evidence"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_7F_Azure_Enterprise_Projects_Interviews.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_7F_Azure_Enterprise_Projects_Interviews.docx",
+      "text_file": "text/vol-7f.json",
+      "pdf_bytes": 741128,
+      "docx_bytes": 75937,
+      "previous_tool_assignments": [
+        "azure",
+        "system-design",
+        "sre",
+        "cicd"
+      ],
+      "related_topics": [
+        "system-design",
+        "sre",
+        "cicd"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Microsoft Azure. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-8a",
+      "volume": "8A",
+      "title": "Volume 8A - Google Cloud Foundations",
+      "summary": "Cloud Fundamentals • Global Infrastructure • Resource Hierarchy • IAM • Service Accounts • gcloud • Compute Engine • VPC • Billing • Capstone with cloud principles and Google Cloud global infrastructure, then moves through resource hierarchy, identity, command-line automation, compute, networking, cost governance, and an integrated foundation capstone.",
+      "tools": [
+        "gcp"
+      ],
+      "primary_tool": "gcp",
+      "tool_names": [
+        "Google Cloud Platform"
+      ],
+      "page_count": 37,
+      "word_count": 9316,
+      "heading_count": 12,
+      "headings": [
+        "Chapter 1 - Cloud Computing and Google Cloud",
+        "Chapter 2 - Google Cloud Global Infrastructure and Reliability",
+        "Chapter 3 - Organizations, Folders, Projects, and Billing Accounts",
+        "Chapter 4 - Console, Cloud Shell, gcloud CLI, APIs, and SDKs",
+        "Chapter 5 - Cloud Identity and IAM Fundamentals",
+        "Chapter 6 - Service Accounts, Workload Identity Federation, and Privileged Access",
+        "Chapter 7 - Resource Governance: Organization Policy, Tags, Labels, Quotas, and APIs",
+        "Chapter 8 - Compute Engine Foundations",
+        "Chapter 9 - VPC Networking Foundations",
+        "Chapter 10 - Cloud Billing, FinOps, and Foundation Capstone",
+        "Chapter 6 - Service Accounts, Workload Identity Federation, and",
+        "Chapter 7 - Resource Governance: Organization Policy, Tags, Labels,"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_8A_Google_Cloud_Foundations.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_8A_Google_Cloud_Foundations.docx",
+      "text_file": "text/vol-8a.json",
+      "pdf_bytes": 573729,
+      "docx_bytes": 65793,
+      "previous_tool_assignments": [
+        "gcp"
+      ],
+      "related_topics": [],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Google Cloud Platform. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-8b",
+      "volume": "8B",
+      "title": "Volume 8B - Google Cloud Core Infrastructure",
+      "summary": "Compute Fleets • Managed Instance Groups • Shared VPC • Security • Load Balancing • DNS • Storage • Hybrid Connectivity • Backup • Disaster Recovery only on creating virtual machines, networks, and storage. The focus is on building replaceable fleets, centrally governed connectivity, health-aware application delivery, protected data, recoverable operations, and evidence-",
+      "tools": [
+        "gcp"
+      ],
+      "primary_tool": "gcp",
+      "tool_names": [
+        "Google Cloud Platform"
+      ],
+      "page_count": 39,
+      "word_count": 11905,
+      "heading_count": 14,
+      "headings": [
+        "Chapter 11 - Advanced Compute Engine and Fleet Operations",
+        "Chapter 12 - Managed Instance Groups, Autoscaling, and Safe Deployments",
+        "Chapter 13 - Enterprise VPC and Shared VPC Architecture",
+        "Chapter 14 - Network Security, Routing, NAT, and Secure Administration",
+        "Chapter 15 - Cloud Load Balancing, Cloud CDN, and Cloud Armor",
+        "Chapter 16 - Cloud DNS, Service Discovery, and Private Service Access",
+        "Chapter 17 - Cloud Storage Engineering",
+        "Chapter 18 - Persistent Disk, Hyperdisk, Local SSD, and Filestore",
+        "Chapter 19 - Hybrid and Multicloud Connectivity",
+        "Chapter 20 - Backup, Disaster Recovery, and Core Infrastructure Capstone",
+        "Chapter 12 - Managed Instance Groups, Autoscaling, and Safe",
+        "Chapter 14 - Network Security, Routing, NAT, and Secure"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_8B_Google_Cloud_Core_Infrastructure.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_8B_Google_Cloud_Core_Infrastructure.docx",
+      "text_file": "text/vol-8b.json",
+      "pdf_bytes": 691868,
+      "docx_bytes": 74385,
+      "previous_tool_assignments": [
+        "gcp",
+        "networking",
+        "system-design"
+      ],
+      "related_topics": [
+        "networking",
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Google Cloud Platform. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-8c",
+      "volume": "8C",
+      "title": "Volume 8C - Google Cloud Data Platforms",
+      "summary": "Relational Databases • Globally Distributed Data • NoSQL • Caching • Analytics • Lakehouse • Streaming • Spark • Migration • AI-Ready Governance engineering. The objective is not to memorize product names. It is to select data services from workload evidence, design schemas and partitions that scale, protect data paths, operate recovery, and create analytics",
+      "tools": [
+        "gcp"
+      ],
+      "primary_tool": "gcp",
+      "tool_names": [
+        "Google Cloud Platform"
+      ],
+      "page_count": 40,
+      "word_count": 11602,
+      "heading_count": 10,
+      "headings": [
+        "Chapter 21 - Cloud SQL and AlloyDB Production Engineering",
+        "Chapter 22 - Spanner Global Relational Engineering",
+        "Chapter 23 - Firestore Document Database Engineering",
+        "Chapter 24 - Bigtable and Memorystore for Low-Latency Systems",
+        "Chapter 25 - BigQuery Analytics and Workload Engineering",
+        "Chapter 26 - BigLake, Cloud Storage Lakehouse, and Dataplex",
+        "Chapter 27 - Pub/Sub and Dataflow Streaming Engineering",
+        "Chapter 28 - Managed Service for Apache Spark and Batch Data",
+        "Chapter 29 - Database, CDC, and Bulk Data Migration Engineering",
+        "Chapter 30 - Data Security, Resilience, AI Readiness, and Enterprise"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_8C_Google_Cloud_Data_Platforms.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_8C_Google_Cloud_Data_Platforms.docx",
+      "text_file": "text/vol-8c.json",
+      "pdf_bytes": 703232,
+      "docx_bytes": 76486,
+      "previous_tool_assignments": [
+        "gcp",
+        "databases"
+      ],
+      "related_topics": [
+        "databases"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Google Cloud Platform. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-8d",
+      "volume": "8D",
+      "title": "Volume 8D - Google Cloud Containers Serverless",
+      "summary": "Artifact Registry • GKE • Cloud Run • Functions • API Management • Pub/Sub • Eventarc • Cloud. The objective is not to deploy a sample and stop. It is to build a trustworthy software supply chain, select the right runtime, design identity and networking, control traffic and concurrency, engineer asynchronous The chapters progress from artifact integrity to Kubernetes, serverless containers, functions, APIs, messaging,",
+      "tools": [
+        "gcp"
+      ],
+      "primary_tool": "gcp",
+      "tool_names": [
+        "Google Cloud Platform"
+      ],
+      "page_count": 38,
+      "word_count": 10695,
+      "heading_count": 10,
+      "headings": [
+        "Chapter 31 - Artifact Registry and Container Supply-Chain",
+        "Chapter 32 - Google Kubernetes Engine Architecture and Cluster",
+        "Chapter 33 - GKE Production Operations, Networking, Scaling, and",
+        "Chapter 34 - Cloud Run Services, Jobs, and Worker Pools",
+        "Chapter 35 - Cloud Run Functions and Event-Driven Compute",
+        "Chapter 36 - API Gateway, Apigee, and API Platform Engineering",
+        "Chapter 37 - Pub/Sub Messaging and Delivery Engineering",
+        "Chapter 38 - Eventarc Event Routing and Event-Mesh Engineering",
+        "Chapter 39 - Workflows, Cloud Tasks, and Cloud Scheduler",
+        "Chapter 40 - Enterprise Cloud-Native Application Architecture and"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_8D_Google_Cloud_Containers_Serverless.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_8D_Google_Cloud_Containers_Serverless.docx",
+      "text_file": "text/vol-8d.json",
+      "pdf_bytes": 654596,
+      "docx_bytes": 71876,
+      "previous_tool_assignments": [
+        "gcp",
+        "docker",
+        "kubernetes"
+      ],
+      "related_topics": [
+        "docker",
+        "kubernetes"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Google Cloud Platform. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-8e",
+      "volume": "8E",
+      "title": "Volume 8E - Google Cloud Enterprise DevOps Security",
+      "summary": "Production infrastructure as code, secure delivery, observability, threat detection, governance, FinOps, labs, troubleshooting, and enterprise capstone to create resources, execute builds, or enable security products. The goal is to make infrastructure, delivery, observability, access, evidence, and cost controls repeatable under normal operations and dependable during",
+      "tools": [
+        "gcp"
+      ],
+      "primary_tool": "gcp",
+      "tool_names": [
+        "Google Cloud Platform"
+      ],
+      "page_count": 55,
+      "word_count": 17473,
+      "heading_count": 30,
+      "headings": [
+        "Chapter 41 Terraform on Google Cloud and Infrastructure Manager",
+        "Chapter 42 Terraform Blueprints, Modules, and Platform Engineering",
+        "Chapter 43 Cloud Build, Secure Source Management, and Build Infrastructure",
+        "Chapter 44 Cloud Deploy and Progressive Delivery",
+        "Chapter 45 CI/CD Security, Provenance, and Policy Enforcement",
+        "Chapter 46 Cloud Monitoring, Managed Prometheus, SLOs, and Alerting",
+        "Chapter 47 Cloud Logging, OpenTelemetry, Trace, and Application Monitoring",
+        "Chapter 48 Cloud Audit Logs, Asset Inventory, Policy Intelligence, and Fleet Operations",
+        "Chapter 49 Secret Manager, Cloud KMS, HSM, EKM, and Certificate Lifecycle",
+        "Chapter 50 Security Command Center and Cloud Security Posture Management",
+        "Chapter 51 Google Security Operations and Detection Engineering",
+        "Chapter 52 VPC Service Controls, Cloud Armor, Firewall Policies, and Zero Trust"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_8E_Google_Cloud_Enterprise_DevOps_Security.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_8E_Google_Cloud_Enterprise_DevOps_Security.docx",
+      "text_file": "text/vol-8e.json",
+      "pdf_bytes": 811017,
+      "docx_bytes": 80494,
+      "previous_tool_assignments": [
+        "gcp",
+        "cicd",
+        "devsecops",
+        "observability"
+      ],
+      "related_topics": [
+        "cicd",
+        "devsecops",
+        "observability"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Google Cloud Platform. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-8f",
+      "volume": "8F",
+      "title": "Volume 8F - Google Cloud Enterprise Projects Interviews",
+      "summary": "Architecture judgment, migration, modernization, SRE, security response, FinOps, platform engineering, certification, interviews, and final enterprise capstone senior engineering judgment. The emphasis is on architecture decisions, verified operations, measurable reliability, secure migration, incident leadership, cost accountability, and portfolio evidence that can withstand",
+      "tools": [
+        "gcp"
+      ],
+      "primary_tool": "gcp",
+      "tool_names": [
+        "Google Cloud Platform"
+      ],
+      "page_count": 55,
+      "word_count": 14950,
+      "heading_count": 30,
+      "headings": [
+        "Chapter 56 Architecture Decisions, Trade-offs, and Well-Architected Reviews",
+        "Chapter 57 Enterprise SaaS and AI-Enabled Platform Architecture",
+        "Chapter 58 Hybrid Cloud, Distributed Cloud, and Migration Factories",
+        "Chapter 59 Application Modernization and Monolith Decomposition",
+        "Chapter 60 Multi-Region and Global Application Design",
+        "Chapter 61 Security Incident Response and Cloud Forensics",
+        "Chapter 62 Resilience Engineering, Game Days, and Chaos Experiments",
+        "Chapter 63 Performance Engineering and Capacity Planning",
+        "Chapter 64 FinOps and Enterprise Cost Optimization",
+        "Chapter 65 Platform Engineering and Internal Developer Platforms",
+        "Chapter 66 Advanced Troubleshooting and Incident Command",
+        "Chapter 67 Architecture Governance, Compliance, and Evidence"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_8F_Google_Cloud_Enterprise_Projects_Interviews.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_8F_Google_Cloud_Enterprise_Projects_Interviews.docx",
+      "text_file": "text/vol-8f.json",
+      "pdf_bytes": 824362,
+      "docx_bytes": 81904,
+      "previous_tool_assignments": [
+        "gcp",
+        "system-design",
+        "sre",
+        "cicd"
+      ],
+      "related_topics": [
+        "system-design",
+        "sre",
+        "cicd"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Google Cloud Platform. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-9a",
+      "volume": "9A",
+      "title": "Volume 9A - Terraform Foundations",
+      "summary": "Infrastructure as Code, HCL, providers, lifecycle, state, iteration, modules, refactoring, team workflow, Parts A and B build Terraform mastery; Parts C and D develop Ansible automation; Part E combines both tools with CI/CD, security, governance, testing, and operating controls; Part F completes the volume with enterprise projects, advanced troubleshooting, certifications, and interviews.",
+      "tools": [
+        "terraform"
+      ],
+      "primary_tool": "terraform",
+      "tool_names": [
+        "Terraform & Infrastructure as Code"
+      ],
+      "page_count": 40,
+      "word_count": 10403,
+      "heading_count": 10,
+      "headings": [
+        "Chapter 1: Infrastructure as Code and the Terraform Operating",
+        "Chapter 2: Terraform Installation, CLI Workflow, and Project",
+        "Chapter 3: Terraform Language: Blocks, Expressions, Variables,",
+        "Chapter 4: Providers, Resources, Data Sources, and Dependency",
+        "Chapter 5: Planning, Applying, Drift, Refresh, and Change Safety",
+        "Chapter 6: Terraform State, Backends, Locking, and Security",
+        "Chapter 7: Resource Addressing, Meta-Arguments, Iteration, and",
+        "Chapter 8: Terraform Modules, Composition, Versioning, and",
+        "Chapter 9: Importing Existing Infrastructure and Refactoring Safely",
+        "Chapter 10: Team Workflow, Remote Operations, and Terraform"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_9A_Terraform_Foundations.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_9A_Terraform_Foundations.docx",
+      "text_file": "text/vol-9a.json",
+      "pdf_bytes": 689330,
+      "docx_bytes": 70715,
+      "previous_tool_assignments": [
+        "terraform",
+        "system-design"
+      ],
+      "related_topics": [
+        "system-design"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Terraform & Infrastructure as Code. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-9b",
+      "volume": "9B",
+      "title": "Volume 9B - Advanced Terraform Engineering",
+      "summary": "Architecture, testing, policy, HCP Terraform, sensitive data, Stacks, multi-environment delivery, and Part B moves from individual Terraform proficiency to platform-scale engineering. It focuses on architecture boundaries, deterministic provider topologies, reusable module contracts, executable tests, policy gates, managed run platforms, secret minimization, multi-environment orchestration, and recovery-driven",
+      "tools": [
+        "terraform"
+      ],
+      "primary_tool": "terraform",
+      "tool_names": [
+        "Terraform & Infrastructure as Code"
+      ],
+      "page_count": 39,
+      "word_count": 10723,
+      "heading_count": 10,
+      "headings": [
+        "Chapter 11: Terraform Architecture Boundaries and State",
+        "Chapter 12: Advanced HCL, Dynamic Structures, and Runtime",
+        "Chapter 13: Provider Aliases and Multi-Account, Multi-Region",
+        "Chapter 14: Advanced Module Engineering, Registries, and",
+        "Chapter 15: Terraform Tests, Mocking, Checks, and Contract",
+        "Chapter 16: Policy as Code and Governance Gates",
+        "Chapter 17: HCP Terraform and Terraform Enterprise Operations",
+        "Chapter 18: Sensitive Data, Ephemeral Values, and Write-Only",
+        "Chapter 19: Terraform Stacks and Multi-Environment Orchestration",
+        "Chapter 20: Enterprise Terraform Operations and Part B Capstone"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_9B_Advanced_Terraform_Engineering.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_9B_Advanced_Terraform_Engineering.docx",
+      "text_file": "text/vol-9b.json",
+      "pdf_bytes": 695370,
+      "docx_bytes": 71547,
+      "previous_tool_assignments": [
+        "terraform",
+        "system-design",
+        "devsecops"
+      ],
+      "related_topics": [
+        "system-design",
+        "devsecops"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Terraform & Infrastructure as Code. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-9c",
+      "volume": "9C",
+      "title": "Volume 9C - Ansible Foundations",
+      "summary": "Inventory, connectivity, ad hoc operations, playbooks, variables, facts, templates, handlers, validation, Part C begins the Ansible half of Volume 9. Terraform provisions and owns infrastructure resources; Ansible complements it by converging operating-system, middleware, application, and device configuration through agentless automation. This part builds the execution model, inventory discipline, YAML playbooks, data",
+      "tools": [
+        "ansible"
+      ],
+      "primary_tool": "ansible",
+      "tool_names": [
+        "Ansible Configuration Automation"
+      ],
+      "page_count": 44,
+      "word_count": 11059,
+      "heading_count": 10,
+      "headings": [
+        "Chapter 21: Ansible Operating Model, Installation, and Project",
+        "Chapter 22: Inventory, Groups, Host Patterns, and Dynamic Sources",
+        "Chapter 23: SSH, Interpreters, Privilege Escalation, and Connectivity",
+        "Chapter 24: Ad Hoc Commands, Modules, Return Data, and",
+        "Chapter 25: YAML Playbooks, Plays, Tasks, Modules, and",
+        "Chapter 26: Variables, Precedence, Facts, Registered Data, and",
+        "Chapter 27: Conditionals, Loops, Tags, Delegation, and Run Control",
+        "Chapter 28: Jinja2 Templates and Configuration-File Engineering",
+        "Chapter 29: Handlers, Blocks, Error Handling, Check Mode, and Diff",
+        "Chapter 30: Vault, Secret Handling, Quality Gates, and"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_9C_Ansible_Foundations.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_9C_Ansible_Foundations.docx",
+      "text_file": "text/vol-9c.json",
+      "pdf_bytes": 722248,
+      "docx_bytes": 72856,
+      "previous_tool_assignments": [
+        "ansible",
+        "linux"
+      ],
+      "related_topics": [
+        "linux"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Ansible Configuration Automation. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-9d",
+      "volume": "9D",
+      "title": "Volume 9D - Advanced Ansible Engineering",
+      "summary": "Roles, collections, execution environments, AWX/controller, Windows, networks, testing, scale, event- Part D moves from individual playbooks to reusable and governed automation products. It develops role and collection contracts, portable execution environments, controller-based operations, Windows and network automation, test engineering, performance control, event-driven response, and enterprise operating practices.",
+      "tools": [
+        "ansible"
+      ],
+      "primary_tool": "ansible",
+      "tool_names": [
+        "Ansible Configuration Automation"
+      ],
+      "page_count": 41,
+      "word_count": 12032,
+      "heading_count": 10,
+      "headings": [
+        "Chapter 31: Roles, Argument Specifications, Dependencies, and",
+        "Chapter 32: Collections, Galaxy Metadata, Plugins, Semantic",
+        "Chapter 33: Execution Environments, Ansible Builder, Navigator,",
+        "Chapter 34: AWX and Automation Controller Architecture, RBAC,",
+        "Chapter 35: Job Templates, Surveys, Workflows, Schedules,",
+        "Chapter 36: Windows Automation with WinRM, PSRP, SSH,",
+        "Chapter 37: Network Automation, Persistent Connections, Resource",
+        "Chapter 38: ansible-lint, Molecule, pytest-ansible, CI, and Release",
+        "Chapter 39: Strategies, Forks, Serial, Async, Throttling,",
+        "Chapter 40: Event-Driven Ansible, Rulebooks, Observability,"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_9D_Advanced_Ansible_Engineering.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_9D_Advanced_Ansible_Engineering.docx",
+      "text_file": "text/vol-9d.json",
+      "pdf_bytes": 721066,
+      "docx_bytes": 75585,
+      "previous_tool_assignments": [
+        "ansible",
+        "linux",
+        "python-automation"
+      ],
+      "related_topics": [
+        "linux",
+        "python-automation"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "The title, chapter sequence and dominant subject place this book under Ansible Configuration Automation. Other technologies are supporting context only.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-9e",
+      "volume": "9E",
+      "title": "Volume 9E - Integrated Automation Delivery",
+      "summary": "GitOps, Security, Governance, Compliance, Observability, and Enterprise Production objective: build an auditable delivery system in which Terraform provisions infrastructure, Ansible configures and validates it, policy controls risk, and Git records the intended Part E unifies the two automation disciplines developed earlier in Volume 9. Terraform remains responsible for",
+      "tools": [
+        "terraform"
+      ],
+      "primary_tool": "terraform",
+      "tool_names": [
+        "Terraform & Infrastructure as Code"
+      ],
+      "page_count": 53,
+      "word_count": 14389,
+      "heading_count": 15,
+      "headings": [
+        "Chapter 41: Terraform-Ansible Operating Model and Ownership",
+        "Chapter 42: Repository Architecture, Environments, and GitOps",
+        "Chapter 43: Terraform-to-Ansible Handoff Contracts and Dynamic",
+        "Chapter 44: Continuous Integration for Infrastructure and",
+        "Chapter 45: Continuous Delivery Orchestration and Progressive",
+        "Chapter 46: Workload Identity, Secrets, and Keyless Automation",
+        "Chapter 47: Policy as Code, Compliance Gates, and Exception",
+        "Chapter 48: Software Supply-Chain Security, Provenance, and",
+        "Chapter 49: Integrated Testing, Ephemeral Environments, and",
+        "Chapter 50: Drift Detection, Reconciliation, and GitOps Operations",
+        "Chapter 51: Automation Observability, SLOs, and Evidence",
+        "Chapter 52: Change Risk, Approvals, Rollback, and Incident-Safe"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_9E_Integrated_Automation_Delivery.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_9E_Integrated_Automation_Delivery.docx",
+      "text_file": "text/vol-9e.json",
+      "pdf_bytes": 798147,
+      "docx_bytes": 80809,
+      "previous_tool_assignments": [
+        "terraform",
+        "ansible",
+        "cicd"
+      ],
+      "related_topics": [
+        "ansible",
+        "cicd"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "This is the integrated delivery continuation of the Terraform/Ansible volume sequence; it is anchored under Terraform and not duplicated under Ansible or CI/CD.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "vol-9f",
+      "volume": "9F",
+      "title": "Volume 9F - Enterprise Automation Projects Interviews",
+      "summary": "Advanced Troubleshooting, Certifications, System Design, and the Final Terraform- Production objective: demonstrate that you can design, build, operate, troubleshoot, secure, and explain an enterprise automation platform - not merely write isolated Terraform configurations or Part F is the graduation volume for Terraform and Ansible infrastructure automation. It converts the language,",
+      "tools": [
+        "terraform"
+      ],
+      "primary_tool": "terraform",
+      "tool_names": [
+        "Terraform & Infrastructure as Code"
+      ],
+      "page_count": 57,
+      "word_count": 14260,
+      "heading_count": 15,
+      "headings": [
+        "Chapter 56: Enterprise Automation Architecture and Operating",
+        "Chapter 57: Portfolio Discovery, Project Selection, and Value",
+        "Chapter 58: Multi-Account and Multi-Cloud Landing-Zone",
+        "Chapter 59: Kubernetes and Application-Platform Automation",
+        "Chapter 60: Data, Middleware, and Stateful-Service Automation",
+        "Chapter 61: Brownfield Discovery, Import, Refactoring, and",
+        "Chapter 62: Disaster Recovery, Rebuild Automation, and Continuity",
+        "Chapter 63: Advanced Terraform Troubleshooting and State",
+        "Chapter 64: Advanced Ansible Troubleshooting and Controller",
+        "Chapter 65: Integrated Pipeline, Identity, and Supply-Chain Incident",
+        "Chapter 66: Performance, Scale, Reliability, and Capacity",
+        "Chapter 67: Automation Platform Product Management and"
+      ],
+      "pdf_file": "files/pdf/DevOps_Master_Course_Volume_9F_Enterprise_Automation_Projects_Interviews.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Volume_9F_Enterprise_Automation_Projects_Interviews.docx",
+      "text_file": "text/vol-9f.json",
+      "pdf_bytes": 857108,
+      "docx_bytes": 81854,
+      "previous_tool_assignments": [
+        "terraform",
+        "ansible",
+        "system-design",
+        "cicd"
+      ],
+      "related_topics": [
+        "ansible",
+        "system-design",
+        "cicd"
+      ],
+      "placement": "tool",
+      "collection": "tool-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_rationale": "This is the enterprise automation capstone for the Terraform-led volume sequence; it is stored once under Terraform.",
+      "classification_confidence": "High"
+    },
+    {
+      "id": "program-final-release-handbook",
+      "volume": "Guide A",
+      "library_label": "Program Handbook",
+      "resource_type": "Program handbook",
+      "sort_order": 9001,
+      "title": "DevOps Master Course — Final Release Handbook (2026)",
+      "summary": "Master navigation and operating guide for the complete DevOps curriculum, including sequence, competency levels, evidence rules, study cadence, mentoring and graduation standards.",
+      "headings": [
+        "Executive Summary",
+        "Final Package Contents",
+        "Canonical Curriculum Index",
+        "Part Structure and Learning Pattern",
+        "Learning Journey",
+        "Competency Levels",
+        "Evidence-First Completion Rules",
+        "Recommended Study Cadence",
+        "Administration and Mentoring Model",
+        "Graduation Definition"
+      ],
+      "classification_rationale": "Program-wide handbook. Stored in Program Library instead of duplicating it under all 21 tools.",
+      "tools": [],
+      "tool_names": [],
+      "primary_tool": "",
+      "related_topics": [],
+      "placement": "program",
+      "collection": "program-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_confidence": "High",
+      "page_count": 4,
+      "word_count": 846,
+      "heading_count": 10,
+      "pdf_file": "files/pdf/DevOps_Master_Course_Final_Release_Handbook_2026.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Final_Release_Handbook_2026.docx",
+      "text_file": "text/program-final-release-handbook.json",
+      "pdf_bytes": 149038,
+      "docx_bytes": 42018,
+      "source_archive": "learn.zip",
+      "pdf_sha256": "d7c3b1e834c969aafdfbad02714d2c4fd75920e206475bcd49998decbe63351a",
+      "docx_sha256": "6d74d19a434d5ad9c745896eee492ac71f7e35658c51faecd7112e5df9a310c9"
+    },
+    {
+      "id": "program-labs-assessments-capstone",
+      "volume": "Guide B",
+      "library_label": "Practice Manual",
+      "resource_type": "Labs and assessment manual",
+      "sort_order": 9002,
+      "title": "DevOps Master Course — Hands-On Labs, Assessments and Capstone (2026)",
+      "summary": "Program-wide practice manual defining lab lifecycles, scoring rubrics, knowledge and practical assessments, interview evaluation, failure drills, capstones and evidence standards.",
+      "headings": [
+        "Executive Summary",
+        "Lab Repository Design",
+        "Standard Lab Lifecycle",
+        "Lab Scoring Rubric",
+        "Assessment System",
+        "Practical Examination Template",
+        "Interview Evaluation Model",
+        "Final Enterprise Capstone",
+        "Mandatory Failure Drills",
+        "Certification and Completion Rules"
+      ],
+      "classification_rationale": "Cross-domain practice manual. Stored once in Program Library rather than appearing inside every tool.",
+      "tools": [],
+      "tool_names": [],
+      "primary_tool": "",
+      "related_topics": [],
+      "placement": "program",
+      "collection": "program-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_confidence": "High",
+      "page_count": 5,
+      "word_count": 998,
+      "heading_count": 10,
+      "pdf_file": "files/pdf/DevOps_Master_Course_Hands_On_Labs_Assessments_and_Capstone_2026.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Hands_On_Labs_Assessments_and_Capstone_2026.docx",
+      "text_file": "text/program-labs-assessments-capstone.json",
+      "pdf_bytes": 182459,
+      "docx_bytes": 43213,
+      "source_archive": "learn.zip",
+      "pdf_sha256": "ae7f0650eabef036e8c76db79bf471868a73ccc9dc928fa6cad8c113fd2e50e9",
+      "docx_sha256": "d1ca64521dbd9c79c396bae3883a786869a355b4798c1358c7432545d7e12d4a"
+    },
+    {
+      "id": "program-progress-evidence-workbook",
+      "volume": "Workbook",
+      "library_label": "Progress Workbook",
+      "resource_type": "Progress and evidence workbook",
+      "sort_order": 9003,
+      "title": "DevOps Master Course — Progress Tracker and Evidence Workbook (2026)",
+      "summary": "Editable tracker for volume progress, lab evidence, weekly reviews, skill confidence, interview readiness, certifications, capstone milestones and graduation approval.",
+      "headings": [
+        "How to Use This Workbook",
+        "Course Dashboard",
+        "Volume-Level Progress",
+        "Part-Level Progress",
+        "Lab Completion Log",
+        "Weekly Review",
+        "Skills Confidence Matrix",
+        "Interview Readiness Tracker",
+        "Certification Planning",
+        "Capstone Milestone Tracker",
+        "Final Graduation Record"
+      ],
+      "classification_rationale": "Student program tracking workbook. Stored once in Program Library, not under any technical tool.",
+      "tools": [],
+      "tool_names": [],
+      "primary_tool": "",
+      "related_topics": [],
+      "placement": "program",
+      "collection": "program-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_confidence": "High",
+      "page_count": 10,
+      "word_count": 1239,
+      "heading_count": 11,
+      "pdf_file": "files/pdf/DevOps_Master_Course_Progress_Tracker_and_Evidence_Workbook_2026.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Progress_Tracker_and_Evidence_Workbook_2026.docx",
+      "text_file": "text/program-progress-evidence-workbook.json",
+      "pdf_bytes": 429024,
+      "docx_bytes": 43993,
+      "source_archive": "learn.zip",
+      "pdf_sha256": "0eb219f9490007768c6812ce6829a67292cc510cf58619a22d9a16ed988cd712",
+      "docx_sha256": "bf2df90302c3a8b5b07a560e6df93cf62eb0d329c3331ebf1b8bfa2733da5413"
+    },
+    {
+      "id": "program-quality-versioning-policy",
+      "volume": "Policy",
+      "library_label": "Quality Policy",
+      "resource_type": "Quality and update policy",
+      "sort_order": 9004,
+      "title": "DevOps Master Course — Quality Audit, Versioning and Update Policy (2026)",
+      "summary": "Release-assurance policy for content audits, render checks, PDF/DOCX pair integrity, naming, semantic versioning, errata, updates, security and privacy.",
+      "headings": [
+        "Purpose and Scope",
+        "Quality Principles",
+        "Content Quality Gates",
+        "Technical Quality Gates",
+        "PDF and DOCX Pair Integrity",
+        "Naming and Versioning",
+        "Errata Workflow",
+        "Update Cadence",
+        "Security and Privacy",
+        "Release Approval"
+      ],
+      "classification_rationale": "Program governance policy. Stored once in Program Library, not under a technical tool.",
+      "tools": [],
+      "tool_names": [],
+      "primary_tool": "",
+      "related_topics": [],
+      "placement": "program",
+      "collection": "program-library",
+      "classification_method": "Manual title + table-of-contents + content audit",
+      "classification_confidence": "High",
+      "page_count": 4,
+      "word_count": 728,
+      "heading_count": 10,
+      "pdf_file": "files/pdf/DevOps_Master_Course_Quality_Audit_Versioning_and_Update_Policy_2026.pdf",
+      "docx_file": "files/docx/DevOps_Master_Course_Quality_Audit_Versioning_and_Update_Policy_2026.docx",
+      "text_file": "text/program-quality-versioning-policy.json",
+      "pdf_bytes": 132467,
+      "docx_bytes": 41724,
+      "source_archive": "learn.zip",
+      "pdf_sha256": "5e6ad951a0abae3424fe44e3f7a8434cbe0fe245f247b53bba0f8400b2dea68e",
+      "docx_sha256": "86d974a86655b21df0a6b652d8b33c18ae40019f44e01c01f23981cf2bb17f83"
+    }
+  ],
+  "classification_policy": "Strict primary placement: each technical course appears in one tool list only; program-wide guides appear only in Program Library."
+}

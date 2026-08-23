@@ -1,0 +1,41 @@
+BILLINGER BOT v2.9.0 — 4K PRECISION POLISH, DARK ACCESSIBILITY, READINESS, ADAPTIVE AI, CAREER & DEVOPS TRAINING EDITION
+
+NORMAL START
+1. Extract the complete ZIP to a writable Windows folder or external hard disk.
+2. To preserve old progress, copy only your persistent data folders into this new version.
+3. Double-click Start_Billinger_Bot.bat.
+4. Keep the command window open. Press Ctrl+C there to stop the bot.
+5. On the first launch, complete Start Readiness before beginning normal lessons.
+
+FIRST-RUN READINESS
+1. Configure the local administrator PIN.
+2. Select your target role and daily study time.
+3. Complete the 20-question baseline assessment.
+4. Confirm the verified learning library is available.
+5. Run the safe read-only environment scan (optional but recommended).
+6. Configure and test at least one online AI provider (optional).
+7. Create and verify the first backup.
+8. Generate today's learning plan.
+
+AI SETUP
+1. Open System & AI and unlock administrator access.
+2. Add Gemini, OpenAI API, Groq, and/or OpenRouter keys.
+3. Use Discover models to list model identifiers available to that account.
+4. Select a model, save it, and test the provider.
+5. Review task-specific fallback routes and daily request limits.
+6. Use Fallback dry-run to test routing without consuming API credits.
+
+MASTERY STANDARD
+A tool is marked mastered only after lessons, guided labs, knowledge tests,
+four practical levels, company tickets, incident response, capstone,
+mock interview, and verified portfolio evidence all pass their gates.
+
+KEY SAFETY
+- Keys are encrypted with Windows DPAPI and tied to the current Windows account.
+- Dashboard responses show only masked key hints.
+- Normal JSON backups exclude provider key blobs.
+- Re-enter keys after moving the bot to another Windows user account.
+
+Do not normally open Setup_Portable_Runtime.bat.
+Use Run_Self_Test.bat for verification or troubleshooting.
+Use Run_Advanced_Sandbox_Tests.bat for the extended local test suite.

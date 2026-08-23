@@ -1,0 +1,18 @@
+BILLINGER BOT v2.5.1 — VERIFIED STUDIO INTERFACE
+
+This is the corrective dashboard release.
+
+IMPORTANT:
+Extract this package into a NEW folder. Do not overwrite an older Billinger folder.
+Close old Billinger command windows before launching.
+
+VISIBLE CONFIRMATION:
+The correct build displays "Studio build 2.5.1" below the centered Billinger wordmark.
+The home page is off-white with coral dimensional typography and no permanent sidebar.
+
+FIXES:
+- Complete studio CSS is bundled into the primary stylesheet.
+- Browser assets are cache-busted.
+- Critical layout rules prevent the legacy sidebar from becoming the default.
+- If port 8765 is occupied, the new bot automatically opens on the next free port.
+- All learning, company, institute, career, portfolio, resume and interview functions are retained.

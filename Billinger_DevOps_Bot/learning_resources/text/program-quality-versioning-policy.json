@@ -1,0 +1,35 @@
+{
+  "id": "program-quality-versioning-policy",
+  "title": "DevOps Master Course — Quality Audit, Versioning and Update Policy (2026)",
+  "page_count": 4,
+  "headings": [
+    "Purpose and Scope",
+    "Quality Principles",
+    "Content Quality Gates",
+    "Technical Quality Gates",
+    "PDF and DOCX Pair Integrity",
+    "Naming and Versioning",
+    "Errata Workflow",
+    "Update Cadence",
+    "Security and Privacy",
+    "Release Approval"
+  ],
+  "chunks": [
+    {
+      "page": 1,
+      "text": "DEVOPS MASTER COURSE | FINAL RELEASE PACKAGE 2026\nPage 1\nDEVOPS MASTER COURSE\nQuality Audit, Versioning and Update \nPolicy\nRelease assurance, file integrity, errata and sustainable curriculum maintenance\nEdition\n2026 Final Release\nCurriculum\nVolumes 1-15\nDelivery\nDOCX + PDF + Executable Repository\nProfessional learning, practical evidence, enterprise readiness."
+    },
+    {
+      "page": 2,
+      "text": "DEVOPS MASTER COURSE | FINAL RELEASE PACKAGE 2026\nPage 2\nExecutive Summary\nThis manual defines how the course is audited, published, corrected and updated. It separates curriculum \ncompletion from file availability, verifies DOCX/PDF pairing, protects against broken downloads and duplicate \ncontent, and creates an update path that does not require unnecessary new volumes.\n1. Quality Gates\nGate\nRequired check\nFailure action\nContent\nChapter sequence, scope and no \nunintended duplication\nCorrect source manuscript\nTechnical\nCommands, configurations and \nexamples are internally consistent\nRevise and re-test\nDOCX layout\nRender every page; no clipping, \nbroken tables or missing glyphs\nFix and re-render\nPDF layout\nRender and visually verify; selectable \ntext and embedded fonts\nRe-export and preflight\nPair integrity\nEvery DOCX has a matching PDF with \nthe same stem\nRegenerate missing pair\nLinks\nDownload and reference links resolve\nReplace or annotate\nAccessibility\nHeadings, table headers, readable \ncontrast and meaningful link text\nApply safe fixes\nPrivacy\nNo sensitive metadata, credentials or \nprivate paths\nScrub before release\n2. Current-Workspace Audit Scope\nAt build time, the active workspace contained 33 course DOCX files and 33 matching course PDF files. This count \nreflects files available in the current runtime, not the full historical library across previous conversations or \nstorage locations.\nImportant distinction: Curriculum status may be complete while older files are not mounted in the current \nworkspace. The included audit script reports file availability without incorrectly declaring missing historical \nfiles as unwritten content.\n3. Automated File Audit\npython scripts/audit_course_files.py --root /path/to/course-library --json-out audit.json\nChecks:\n- DOCX count\n- PDF count\n- DOCX files without matching PDFs\n- PDF files without matching DOCX files"
+    },
+    {
+      "page": 3,
+      "text": "DEVOPS MASTER COURSE | FINAL RELEASE PACKAGE 2026\nPage 3\n4. Release Naming Standard\nDevOps_Master_Course_Volume_<NN><Part>_<Canonical_Title>_v<MAJOR>.<MINOR>.<PATCH>.docx\nDevOps_Master_Course_Volume_<NN><Part>_<Canonical_Title>_v<MAJOR>.<MINOR>.<PATCH>.pdf\nExamples:\nDevOps_Master_Course_Volume_11B_Prometheus_PromQL_Alertmanager_v1.0.0.pdf\nDevOps_Master_Course_Volume_14D_Model_Serving_RAG_Agents_LLMOps_v1.1.0.docx\n5. Version Policy\nChange\nVersion increment\nExample\nTypo, broken link, formatting defect\nPATCH\n1.0.0 -> 1.0.1\nNew lab, changed tool workflow, \nexpanded chapter\nMINOR\n1.0.1 -> 1.1.0\nMajor restructure or incompatible \nlearning sequence\nMAJOR\n1.1.0 -> 2.0.0\n6. Errata Workflow\n1.\nRecord the issue with volume, part, chapter, page and evidence.\n2.\nClassify severity: critical, high, medium or editorial.\n3.\nVerify the correction against authoritative documentation or reproducible tests.\n4.\nUpdate the source DOCX and companion repository asset.\n5.\nRender and visually verify DOCX and PDF again.\n6.\nIncrement the version and update the changelog.\n7.\nPublish the corrected files and archive the replaced release.\n7. Technology Update Cadence\nReview\nCadence\nFocus\nCritical advisory review\nAs needed\nSecurity, deprecations and broken \nworkflows\nQuarterly maintenance\nEvery 3 months\nLinks, versions and lab compatibility\nAnnual edition review\nOnce per year\nArchitecture changes, new standards \nand roadmap\nMajor curriculum review\nEvery 2-3 years\nStructure, learning outcomes and \nmarket relevance\n8. Update Decision Framework\n\nUpdate an existing chapter when the learning outcome is unchanged.\n\nAdd an appendix or lab when a new tool is an alternative implementation.\n\nAdd a minor section when a new standard changes production practice.\n\nCreate a new part only when the topic requires a coherent multi-chapter learning track.\n\nCreate a new volume only when the domain is materially distinct and cannot fit the existing roadmap."
+    },
+    {
+      "page": 4,
+      "text": "DEVOPS MASTER COURSE | FINAL RELEASE PACKAGE 2026\nPage 4\n9. Release Checklist\nRelease check\nPass\nReviewer note\nAll expected files present\n[ ]\nDOCX/PDF pairs have identical stems\n[ ]\nEvery DOCX rendered and inspected\n[ ]\nEvery PDF rendered and inspected\n[ ]\nNo blank spill pages\n[ ]\nNo clipped code or tables\n[ ]\nPage numbering and headers correct\n[ ]\nHyperlinks and references checked\n[ ]\nAccessibility audit reviewed\n[ ]\nMetadata and sensitive information \nscrubbed\n[ ]\nRepository validation passes\n[ ]\nZIP opens and contains expected assets\n[ ]\nChecksums recorded\n[ ]\nChangelog and version updated\n[ ]\nArchive copy retained\n[ ]\n10. Final Implementation Status\nImplementation item\nStatus\nDelivered artifact\nMaster course index\nImplemented\nFinal Release Handbook\nHands-on lab repository\nImplemented\n150 lab guides and starter kits\nAssessment system\nImplemented\n15 banks, rubrics and exam model\nCapstone package\nImplemented\nRequirements, risks, acceptance and \nrunbooks\nProgress tracker\nImplemented\nWorkbook plus CSV trackers\nQuality audit\nImplemented\nManual and automated audit script\nVersion/update system\nImplemented\nVersion policy, errata and cadence"
+    }
+  ]
+}

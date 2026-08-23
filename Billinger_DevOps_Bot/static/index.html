@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080d13">
+  <title>Billinger DevOps Learning Bot — 4K Precision Polish 2.9.0</title>
+  <style id="billinger-studio-critical">
+    html,body{margin:0;background:#080d13;color:#eef2f7}
+    body.studio-experience .app-shell{display:block}
+    body.studio-experience .content{margin:0 auto}
+    body.studio-experience .sidebar{position:fixed;left:0;top:0;bottom:0;z-index:70;transform:translateX(-103%)}
+    body.studio-experience .sidebar.open{transform:translateX(0)}
+  </style>
+  <link rel="stylesheet" href="/styles.css?v=2.9.0-4k">
+</head>
+<body class="studio-experience theme-comfort-dark high-contrast">
+  <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
+  <div id="navScrim" class="nav-scrim" aria-hidden="true"></div>
+  <div class="vfx-grid" aria-hidden="true"></div><div class="vfx-stars" aria-hidden="true"></div><div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <header class="topbar">
+    <button id="menuButton" class="studio-menu-button" aria-label="Open navigation" aria-expanded="false">
+      <span class="menu-bars" aria-hidden="true"><i></i><i></i></span><b>Menu</b>
+    </button>
+    <div class="brand">
+      <div class="studio-wordmark" aria-label="Billinger"><strong>billinger</strong><sup>°</sup></div>
+      <small>DevOps learning, portfolio & career studio</small><span class="studio-build-badge">4K precision build 2.9.0</span>
+    </div>
+    <div class="top-actions">
+      <div class="local-badge"><span class="status-dot"></span> Local / private</div>
+      <label class="student-switcher">
+        <span>Active learner</span>
+        <select id="studentSelect" aria-label="Active student"></select>
+      </label>
+      <button id="comfortQuickToggle" class="button comfort-quick" type="button" title="Toggle comfort dark mode" aria-label="Toggle comfort dark mode">☾ Comfort</button><button id="adminPortalButton" class="button vfx-button">Admin</button><button id="addStudentButton" class="button secondary">Add learner</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside id="sidebar" class="sidebar" aria-label="Main navigation">
+      <div class="sidebar-head"><div><span>Billinger index</span><b>Explore the system</b></div><button id="menuClose" class="menu-close" aria-label="Close navigation">×</button></div>
+      <nav id="mainNav">
+        <div class="nav-group-label">Overview</div>
+        <button class="nav-item active" data-page="dashboard"><span>◫</span><b>Command Center</b></button>
+        <button class="nav-item" data-page="readiness"><span>◎</span><b>Start Readiness</b></button>
+        <button class="nav-item" data-page="skills"><span>◇</span><b>Skill Matrix</b></button>
+        <button class="nav-item" data-page="myday"><span>☀</span><b>My Learning Day</b></button>
+        <div class="nav-group-label">Institute training</div>
+        <button class="nav-item" data-page="practical"><span>⚡</span><b>Practical Exams</b></button>
+        <button class="nav-item" data-page="projects"><span>⌘</span><b>Project Workspace</b></button>
+        <button class="nav-item" data-page="certificates"><span>✦</span><b>Certificates</b></button>
+        <button class="nav-item admin-nav" data-page="admin"><span>⬡</span><b>Admin Control</b></button>
+        <div class="nav-group-label">Learn</div>
+        <button class="nav-item" data-page="roadmap"><span>⌁</span><b>Tool Learning</b></button>
+        <button class="nav-item" data-page="library"><span>▦</span><b>Program Library</b></button>
+        <button class="nav-item" data-page="coverage"><span>≡</span><b>Coverage Catalog</b></button>
+        <div class="nav-group-label">Work like a company</div>
+        <button class="nav-item" data-page="company"><span>🏢</span><b>Virtual Company</b></button>
+        <button class="nav-item" data-page="reallab"><span>▣</span><b>Safe Real Lab</b></button>
+        <button class="nav-item" data-page="practice"><span>⌨</span><b>Practice Labs</b></button>
+        <button class="nav-item" data-page="capstone"><span>◆</span><b>Enterprise Capstones</b></button>
+        <div class="nav-group-label">Career and portfolio</div>
+        <button class="nav-item" data-page="portfolio"><span>◈</span><b>Portfolio Studio</b></button>
+        <button class="nav-item" data-page="career"><span>🚀</span><b>Career Command</b></button>
+        <div class="nav-group-label">Assess and get hired</div>
+        <button class="nav-item" data-page="tests"><span>✓</span><b>Test Center</b></button>
+        <button class="nav-item" data-page="interview"><span>◉</span><b>Interview Studio</b></button>
+        <button class="nav-item" data-page="recruitment"><span>🧭</span><b>Full Recruitment</b></button>
+        <button class="nav-item" data-page="resume"><span>▤</span><b>ATS Resume Builder</b></button>
+        <div class="nav-group-label">Data and system</div>
+        <button class="nav-item" data-page="online"><span>↻</span><b>Internet Question Lab</b></button>
+        <button class="nav-item" data-page="history"><span>◷</span><b>History & Backup</b></button>
+        <button class="nav-item" data-page="system"><span>⚙</span><b>System & AI</b></button>
+      </nav>
+      <div class="sidebar-card">
+        <div class="mini-orbit"><span></span></div>
+        <strong>Learning sequence</strong>
+        <p>Learn → Prove → Portfolio → Apply → Interview</p>
+      </div>
+      <div class="version">Version 2.9.0 · 4K Precision Polish Edition</div>
+    </aside>
+
+    <main class="content">
+      <section id="page-readiness" class="page">
+        <div class="page-header"><div><span class="eyebrow">FINAL ACCEPTANCE BEFORE LEARNING</span><h1>Start Readiness</h1><p>Complete the required setup once, establish your real starting level, verify a backup, and generate the first evidence-based learning plan.</p></div><div class="action-row"><button id="refreshFinalReadiness" class="button secondary">Refresh readiness</button><button id="goToLearningFromReadiness" class="button primary" disabled>Begin learning</button></div></div>
+        <div class="readiness-hero panel"><div class="readiness-score"><strong id="finalReadinessPercent">0%</strong><span>ready</span></div><div><span class="eyebrow">LEARNING LAUNCH GATE</span><h2 id="finalReadinessTitle">Checking this installation…</h2><p id="finalReadinessNotice">Required items must pass before the platform marks the learner ready. AI and external tools remain optional.</p></div></div>
+        <div id="finalReadinessSteps" class="readiness-step-grid"></div>
+        <div class="readiness-work-grid">
+          <form id="readinessProfileForm" class="panel"><span class="eyebrow">STEP 1</span><h2>Learner goal</h2><label>Target role<select id="readinessRole"></select></label><label>Daily study time, minutes<input id="readinessMinutes" type="number" min="20" max="480" value="90"></label><button class="button primary wide">Save learning goal</button></form>
+          <article class="panel"><span class="eyebrow">STEP 2</span><h2>Baseline assessment</h2><p>Twenty verified questions across foundations, containers, infrastructure, security, SRE, and system design.</p><button id="startBaselineAssessment" class="button primary wide">Start baseline</button><div id="baselineSummary" class="mini-result"></div></article>
+          <article class="panel"><span class="eyebrow">STEP 3</span><h2>Environment labels</h2><p>Detects tools using read-only version checks and separates guided, simulated, local, cloud, and company practice.</p><button id="runFinalEnvironmentCheck" class="button secondary wide">Run safe environment check</button><div id="finalEnvironmentSummary" class="mini-result"></div></article>
+          <article class="panel"><span class="eyebrow">STEP 4</span><h2>Backup and first plan</h2><p>Create a verified data backup and generate today’s personalized learning sequence.</p><div class="stacked-actions"><button id="createFinalBackup" class="button secondary wide">Create verified backup</button><button id="generateFirstPlan" class="button primary wide">Generate today’s plan</button></div><div id="backupPlanSummary" class="mini-result"></div></article>
+        </div>
+        <div id="baselineRunner" class="hidden">
+          <div class="test-bar panel"><div><span id="baselineProgressText">Baseline assessment</span><div class="meter"><i id="baselineProgressMeter"></i></div></div><button id="cancelBaseline" class="button ghost">Close</button></div>
+          <form id="baselineForm" class="question-list"></form><button id="submitBaseline" class="button primary wide">Submit baseline assessment</button>
+        </div>
+        <section class="mastery-section"><div class="section-title-row"><div><span class="eyebrow">GRADUATION STANDARD</span><h2>Tool Mastery Gates</h2><p>A domain is mastered only after lessons, labs, tests, practicals, company tickets, incident, capstone, interview, and portfolio evidence pass.</p></div><button id="refreshMasteryGates" class="button secondary">Refresh gates</button></div><div id="masteryGateGrid" class="mastery-gate-grid"></div></section>
+      </section>
+
+      <section id="page-dashboard" class="page active">
+        <div class="hero panel hero-v22 studio-room">
+          <div class="room-beam beam-one" aria-hidden="true"></div><div class="room-beam beam-two" aria-hidden="true"></div><div class="room-floor" aria-hidden="true"></div>
+          <div class="hero-copy">
+            <div class="hero-kicker"><span class="live-pulse"></span> PRIVATE WINDOWS LEARNING STUDIO / 2026</div>
+            <h1>From learning<br><span>to hired.</span></h1>
+            <p>One local studio for verified DevOps learning, company-grade practice, portfolio proof, truthful job applications and end-to-end interview preparation.</p>
+            <div class="hero-actions">
+              <button class="button primary go-page" data-page="roadmap">Start learning</button>
+              <button class="button secondary go-page" data-page="portfolio">Build portfolio</button>
+              <button class="button ghost go-page" data-page="career">Find matching jobs</button>
+            </div>
+            <div class="hero-trust-row"><span>Verified materials</span><span>Company simulations</span><span>Human-approved applications</span></div>
+            <div class="hand-note">your career system,<br>not another course.</div>
+          </div>
+          <div class="ops-console studio-exhibit" aria-hidden="true">
+            <div class="exhibit-label"><span>01</span><b>Capability engine</b></div>
+            <div class="console-top"><i></i><i></i><i></i><span>billinger.system</span></div>
+            <div class="console-body">
+              <div class="console-line"><span>LEARNING LIBRARY</span><b>69 BOOKS</b></div>
+              <div class="console-line"><span>COMPANY SCENARIOS</span><b>126</b></div>
+              <div class="console-line"><span>PRACTICAL EXAMS</span><b>84</b></div>
+              <div class="console-line"><span>CAREER WORKFLOW</span><b>READY</b></div>
+              <div class="console-map"><div class="holo-core"><span></span><i></i><b>B/</b></div><i style="--x:12%;--y:25%"></i><i style="--x:72%;--y:18%"></i><i style="--x:45%;--y:55%"></i><i style="--x:82%;--y:70%"></i><i style="--x:20%;--y:78%"></i></div>
+            </div>
+          </div>
+          <button class="scroll-cue" type="button" data-scroll-target="studioStats"><span>Scroll to explore</span><i>↓</i></button>
+        </div>
+        <div class="studio-marquee" aria-label="Billinger capabilities"><div><span>LEARN</span><i>✦</i><span>PRACTICE</span><i>✦</i><span>PROVE</span><i>✦</i><span>PORTFOLIO</span><i>✦</i><span>APPLY</span><i>✦</i><span>INTERVIEW</span><i>✦</i><span>LEARN</span><i>✦</i><span>PRACTICE</span><i>✦</i><span>PROVE</span><i>✦</i></div></div>
+        <div class="studio-home-signature reveal-ready"><strong>A learning platform presented like a modern digital studio—not an admin dashboard.</strong><span>Local Windows edition<br>Immersive interface / verified workflows</span></div>
+
+        <div id="dashboardReadinessCallout" class="readiness-callout panel"><div><span class="eyebrow">START CHECK</span><h2>Complete readiness before regular learning</h2><p>Baseline, verified backup, learning goal, and first plan are checked in one place.</p></div><button class="button primary go-page" data-page="readiness">Open readiness</button></div>
+
+        <div class="library-audit-strip panel">
+          <div><span class="audit-icon">✓</span><div><b>Library classification corrected</b><small>139 broad cross-tool placements removed. Every technical course now appears in one verified primary tool only.</small></div></div>
+          <button class="button secondary go-page" data-page="library">View audit model</button>
+        </div>
+
+        <div id="studioStats" class="stats-grid studio-gallery">
+          <article class="stat panel"><span class="stat-icon">📚</span><div><small>Lessons completed</small><strong id="statLessons">0 / 336</strong><div class="meter"><i id="lessonMeter"></i></div></div></article>
+          <article class="stat panel"><span class="stat-icon">🧪</span><div><small>Labs passed</small><strong id="statLabs">0 / 84</strong><div class="meter"><i id="labMeter"></i></div></div></article>
+          <article class="stat panel"><span class="stat-icon">🎯</span><div><small>Average score</small><strong id="statAverage">0%</strong><div class="meter"><i id="scoreMeter"></i></div></div></article>
+          <article class="stat panel"><span class="stat-icon">💼</span><div><small>Interview passes</small><strong id="statInterviews">0</strong><span class="stat-note">Adaptive technical rounds</span></div></article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="panel journey-panel studio-feature-panel">
+            <div class="panel-heading"><div><span class="eyebrow">THE BILLINGER METHOD</span><h2>One journey. Every career stage.</h2></div><span class="panel-index">02 / 05</span></div>
+            <div class="journey">
+              <button class="journey-step go-page" data-page="roadmap"><b>01</b><span>Learn</span><small>Concepts + company use</small></button>
+              <i></i><button class="journey-step go-page" data-page="practice"><b>02</b><span>Practice</span><small>Realistic labs</small></button>
+              <i></i><button class="journey-step go-page" data-page="tests"><b>03</b><span>Test</span><small>Pass mastery gates</small></button>
+              <i></i><button class="journey-step go-page" data-page="interview"><b>04</b><span>Interview</span><small>Adaptive rounds</small></button>
+              <i></i><button class="journey-step go-page" data-page="resume"><b>05</b><span>Resume</span><small>ATS alignment</small></button>
+            </div>
+          </article>
+          <article class="panel readiness-panel studio-feature-panel dark-exhibit">
+            <div class="panel-heading"><div><span class="eyebrow">YOUR SIGNAL</span><h2>Current readiness</h2></div><span class="panel-index">LIVE</span></div>
+            <div class="readiness-ring"><div><strong id="readinessPercent">0%</strong><span>track complete</span></div></div>
+            <div class="readiness-list">
+              <div><span>Tests passed</span><b id="statTests">0</b></div>
+              <div><span>Resumes generated</span><b id="statResumes">0</b></div>
+              <div><span>Curriculum domains</span><b>21</b></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+      <section id="page-myday" class="page">
+        <div class="page-header"><div><span class="eyebrow">PERSONAL MISSION CONTROL</span><h1>My Learning Day</h1><p>A daily plan generated from prerequisites, weak areas, target role and available study time.</p></div><button id="regeneratePlan" class="button vfx-button">↻ Regenerate today</button></div>
+        <div class="myday-grid">
+          <article class="panel profile-orbit-card vfx-tilt"><div class="profile-orbit"><span id="myDayInitial">S</span><i></i><i></i><i></i></div><h2 id="myDayStudent">Student</h2><p id="myDayRole">DevOps Engineer</p><div class="profile-settings"><label>Target role<select id="myDayRoleSelect"></select></label><label>Study time<input id="myDayMinutes" type="number" min="20" max="480" value="90"> minutes</label><label>Interview date<input id="myDayInterviewDate" type="date"></label><button id="saveMyProfile" class="button secondary wide">Save learning profile</button></div></article>
+          <article class="panel mission-board vfx-tilt"><div class="panel-heading"><div><span class="eyebrow">TODAY’S SPRINT</span><h2 id="myDayDate">Today</h2></div><div class="mission-time"><strong id="myDayTotal">0</strong><span>minutes</span></div></div><div id="dailyPlanList" class="daily-plan-list"></div></article>
+        </div>
+        <article class="panel roadmap-rail vfx-tilt"><div class="panel-heading"><div><span class="eyebrow">DEPENDENCY-GATED ROADMAP</span><h2>Recommended tool sequence</h2></div><span class="pill">60% prerequisite gate</span></div><div id="dependencyRoadmap" class="dependency-roadmap"></div></article>
+        <div class="myday-lower-grid"><article class="panel"><div class="panel-heading"><h2>Batch assignments</h2></div><div id="myAssignments" class="assignment-list"></div></article><article class="panel"><div class="panel-heading"><h2>Institute announcements</h2></div><div id="myAnnouncements" class="announcement-list"></div></article></div>
+      </section>
+
+      <section id="page-practical" class="page">
+        <div class="page-header"><div><span class="eyebrow">TIMED COMPANY ASSESSMENT</span><h1>Practical Examination Arena</h1><p>84 tool-and-level examinations with hidden validation checks, evidence scoring, security review and rollback requirements.</p></div></div>
+        <div class="practical-layout">
+          <aside class="panel practical-selector"><div class="form-grid"><label>Tool<select id="practicalTool"><option value="">All tools</option></select></label><label>Level<select id="practicalLevel"><option value="">All levels</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>Master</option></select></label></div><div id="practicalTemplateList" class="practical-template-list"></div></aside>
+          <article class="panel practical-arena vfx-tilt"><div id="practicalIdle" class="empty-state"><div class="arena-core"><span>84</span><i></i></div><h2>Select a practical examination</h2><p>Your timer begins only after you press Start Exam.</p></div><div id="practicalPreview" class="hidden"><span id="practicalCode" class="pill"></span><h2 id="practicalTitle"></h2><p id="practicalScenario"></p><ul id="practicalRequirements"></ul><button id="startPractical" class="button primary">Start timed examination</button></div><div id="practicalRunner" class="hidden"><div class="exam-hud"><span id="practicalActiveCode" class="pill"></span><div><small>Time remaining</small><strong id="practicalTimer">00:00</strong></div></div><h2 id="practicalActiveTitle"></h2><p id="practicalActiveScenario"></p><textarea id="practicalResponse" rows="18" placeholder="Document diagnosis, commands/configuration, validation output, security controls, rollback and communication..."></textarea><button id="submitPractical" class="button primary wide">Submit for hidden validation</button><div id="practicalResult" class="result-card hidden"></div></div></article>
+        </div>
+      </section>
+
+      <section id="page-projects" class="page">
+        <div class="page-header"><div><span class="eyebrow">PRIVATE PROJECT EVIDENCE</span><h1>Student Project Workspace</h1><p>Keep scripts, YAML, Terraform, Dockerfiles, notes and evidence inside the selected student’s local folder.</p></div><button id="refreshWorkspace" class="button secondary">↻ Refresh files</button></div>
+        <div class="workspace-shell panel">
+          <aside class="workspace-explorer"><div class="workspace-head"><b>PROJECT EXPLORER</b><span id="workspaceSize">0 KB</span></div><button id="newWorkspaceFile" class="button secondary wide">＋ New text file</button><label class="button ghost wide upload-label">⇧ Upload evidence<input id="workspaceUpload" type="file" hidden></label><div id="workspaceFileList" class="workspace-file-list"></div></aside>
+          <section class="workspace-editor"><div class="editor-toolbar"><input id="workspacePath" value="projects/README.md" placeholder="folder/file.ext"><select id="workspaceTool"></select><button id="saveWorkspaceFile" class="button primary">Save file</button></div><textarea id="workspaceEditor" spellcheck="false" placeholder="# Project evidence
+
+Describe the ticket, implementation, validation, security and rollback..."></textarea><div class="editor-status"><span id="workspaceStatus">Ready</span><a id="downloadWorkspaceFile" class="button ghost" href="#">Download selected</a></div></section>
+        </div>
+      </section>
+
+      <section id="page-certificates" class="page">
+        <div class="page-header"><div><span class="eyebrow">VERIFIABLE ACHIEVEMENT</span><h1>Certificates & Reports</h1><p>Generate locally verifiable completion certificates and check certificate authenticity by verification code.</p></div></div>
+        <div class="certificate-layout"><article class="panel certificate-forge vfx-tilt"><div class="certificate-seal">B</div><h2>Issue a certificate</h2><label>Certificate type<select id="certificateType"><option>Tool Completion</option><option>Level Completion</option><option>Practical Excellence</option><option>DevOps Graduation</option></select></label><label>Subject<input id="certificateSubject" placeholder="Linux Administration — Beginner"></label><label>Verified score<input id="certificateScore" type="number" min="0" max="100" value="80"></label><button id="issueCertificate" class="button primary wide">Generate certificate</button><p class="muted">The administrator or instructor should issue certificates only after checking the learner’s evidence.</p></article><article class="panel"><div class="panel-heading"><h2>Student certificates</h2></div><div id="certificateList" class="certificate-list"></div><div class="verify-box"><h3>Verify a certificate</h3><div class="action-row"><input id="verifyCertificateCode" placeholder="BLG-XXXXXXXXXX"><button id="verifyCertificate" class="button secondary">Verify</button></div><div id="verifyCertificateResult"></div></div></article></div>
+      </section>
+
+      <section id="page-admin" class="page">
+        <div class="page-header"><div><span class="eyebrow">INSTITUTE OPERATIONS</span><h1>Administrator Control Deck</h1><p>Manage students, batches, assignments, verified learning imports, reports, backups and offline updates.</p></div><div class="admin-session"><span id="adminSessionState" class="pill">Locked</span><button id="adminUnlockButton" class="button vfx-button">Unlock admin</button></div></div>
+        <div id="adminLocked" class="panel admin-lock"><div class="admin-lock-core"><span>⬡</span><i></i></div><h2>Administrator access required</h2><p>Set or enter the local administrator PIN. No account or cloud connection is required.</p><button id="adminUnlockCenter" class="button primary">Configure or unlock</button></div>
+        <div id="adminDashboard" class="hidden">
+          <div id="adminStats" class="admin-stats-grid"></div>
+          <div class="admin-tabs"><button class="admin-tab active" data-admin-tab="students">Students & batches</button><button class="admin-tab" data-admin-tab="assignments">Assignments</button><button class="admin-tab" data-admin-tab="imports">Verified importer</button><button class="admin-tab" data-admin-tab="maintenance">Backup & updates</button></div>
+          <section id="admin-tab-students" class="admin-tab-pane active"><div class="admin-two-col"><article class="panel"><div class="panel-heading"><h2>Student performance</h2><a id="adminReportLink" class="button secondary" href="#">Export CSV</a></div><div id="adminStudentTable" class="admin-table"></div></article><article class="panel"><h2>Create or update batch</h2><form id="batchForm"><input name="id" type="hidden"><label>Batch name<input name="name" required></label><label>Description<textarea name="description" rows="3"></textarea></label><div class="form-grid two"><label>Target role<select name="target_role" id="batchRole"></select></label><label>Level<select name="level"><option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>Master</option></select></label></div><label>Deadline<input name="deadline" type="date"></label><button class="button primary wide">Save batch</button></form><div id="batchList" class="batch-list"></div></article></div></section>
+          <section id="admin-tab-assignments" class="admin-tab-pane"><div class="admin-two-col"><form id="assignmentForm" class="panel"><h2>Assign work to a batch</h2><label>Batch<select name="batch_id" id="assignmentBatch"></select></label><label>Title<input name="title" required></label><div class="form-grid two"><label>Type<select name="item_type"><option value="lesson">Lesson</option><option value="practice">Practice</option><option value="test">Test</option><option value="practical_exam">Practical exam</option><option value="project">Project</option><option value="interview">Interview</option><option value="custom">Custom</option></select></label><label>Item ID<input name="item_id" placeholder="Optional"></label></div><label>Due date<input name="due_date" type="date"></label><label>Instructions<textarea name="instructions" rows="5"></textarea></label><button class="button primary wide">Create assignment</button></form><form id="announcementForm" class="panel"><h2>Post announcement</h2><label>Batch<select name="batch_id" id="announcementBatch"></select></label><label>Title<input name="title" required></label><label>Message<textarea name="message" rows="7" required></textarea></label><button class="button secondary wide">Post announcement</button></form></div><div id="adminAssignmentList" class="panel"></div></section>
+          <section id="admin-tab-imports" class="admin-tab-pane"><article class="panel verified-importer"><div><span class="eyebrow">MANUAL APPROVAL WORKFLOW</span><h2>Verified PDF/DOCX ZIP importer</h2><p>The bot recommends a primary tool using file names and DOCX text, but nothing is published until the administrator confirms one tool and one level.</p></div><label class="drop-zone">Drop or choose a ZIP<input id="contentImportFile" type="file" accept=".zip"><span>PDF, DOCX, TXT, Markdown or HTML · up to 75 MB ZIP</span></label><button id="stageContentImport" class="button primary">Inspect and stage ZIP</button><div id="contentImportResult"></div></article><div id="contentImportEditor" class="panel hidden"></div><article class="panel"><h2>Content versions</h2><div id="contentVersionList" class="version-list"></div></article></section>
+          <section id="admin-tab-maintenance" class="admin-tab-pane"><div class="admin-two-col"><article class="panel"><h2>One-click local backup</h2><p>Includes the SQLite database, workspaces, certificates, resumes and lab evidence.</p><button id="createFullBackup" class="button primary">Create full backup</button><div id="backupList" class="backup-list"></div><label class="drop-zone compact">Stage backup restore<input id="restoreBackupFile" type="file" accept=".zip"></label><button id="stageRestore" class="button secondary">Verify and stage restore</button></article><article class="panel"><h2>Offline update manager</h2><p>Verifies the ZIP, detects VERSION.txt, calculates SHA-256 and stages it for the separate updater.</p><label class="drop-zone compact">Choose Billinger update ZIP<input id="offlineUpdateFile" type="file" accept=".zip"></label><button id="stageOfflineUpdate" class="button primary">Verify and stage update</button><div id="updateList" class="update-list"></div><div class="maintenance-note">After staging, close the bot and run <code>Apply_Pending_Update.bat</code> or <code>Apply_Pending_Restore.bat</code>.</div></article></div></section>
+        </div>
+      </section>
+
+      <section id="page-company" class="page">
+        <div class="page-header"><div><span class="eyebrow">REAL COMPANY EDITION</span><h1>Billinger Technologies HQ</h1><p>Work as a DevOps engineer through tickets, stand-ups, service health, reviewer feedback, and production incidents.</p></div><button id="refreshCompany" class="button secondary">Refresh workday</button></div>
+        <div class="company-kpi-grid">
+          <article class="panel company-card"><small>Assigned role</small><strong id="companyRole">DevOps Engineer</strong><span>Platform Engineering</span></article>
+          <article class="panel company-card"><small>Tickets passed</small><strong id="companyTicketsPassed">0</strong><span id="companyAttempts">0 attempts</span></article>
+          <article class="panel company-card"><small>Reviewer score</small><strong id="companyAverage">0%</strong><span>Seven-dimensional rubric</span></article>
+          <article class="panel company-card"><small>Current sprint</small><strong>Release 14</strong><span>Digital Commerce Platform</span></article>
+        </div>
+        <div class="company-layout">
+          <aside class="panel company-feed">
+            <div class="panel-heading"><div><span class="eyebrow">MANAGER BRIEFING</span><h2>Today’s work</h2></div></div>
+            <p id="managerMessage" class="manager-message"></p>
+            <h3>Service health</h3><div id="serviceHealth" class="service-health"></div>
+            <h3>Assigned tickets</h3><div id="companyTicketList" class="ticket-list"></div>
+            <h3>Incident simulations</h3><div id="incidentList" class="ticket-list"></div>
+          </aside>
+          <article class="panel company-workspace">
+            <div id="companyEmpty" class="empty-state"><span>🏢</span><h2>Select a company assignment</h2><p>Complete it like a real engineer: diagnose, implement, validate, secure, recover, and communicate.</p></div>
+            <div id="companyTicketWorkspace" class="hidden">
+              <div class="ticket-head"><span id="companyTicketId" class="pill"></span><span id="companyPriority" class="priority-chip"></span></div>
+              <h2 id="companyTicketTitle"></h2><p id="companyScenario" class="scenario"></p>
+              <div class="two-columns"><div><h3>Business impact</h3><p id="companyImpact"></p><h3>Company workflow</h3><p id="companyWorkflow"></p></div><div><h3>Acceptance criteria</h3><ul id="companyCriteria"></ul></div></div>
+              <label class="editor-label">Engineering implementation and evidence<textarea id="companyResponse" rows="12" placeholder="Clarify impact, inspect evidence, state a hypothesis, implement safely, validate, secure, define rollback, and communicate..."></textarea></label>
+              <label class="editor-label">Stand-up update<textarea id="companyStandup" rows="4" placeholder="Completed / Next / Evidence / Blockers"></textarea></label>
+              <button id="submitCompanyTicket" class="button primary">Submit for senior review</button>
+              <div id="companyResult" class="result-card hidden"></div>
+            </div>
+            <div id="incidentWorkspace" class="hidden">
+              <div class="incident-banner"><span id="incidentSeverity"></span><strong id="incidentTitle"></strong></div>
+              <p id="incidentSymptoms" class="scenario"></p><div id="incidentSignals" class="signal-grid"></div>
+              <label class="editor-label">Incident response and timeline<textarea id="incidentResponse" rows="15" placeholder="Acknowledge, assess customer impact, collect logs/metrics, form a hypothesis, mitigate or roll back, verify recovery, communicate, and write preventive actions..."></textarea></label>
+              <button id="submitIncident" class="button danger">Complete incident review</button>
+              <div id="incidentResult" class="result-card hidden"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="page-reallab" class="page">
+        <div class="page-header"><div><span class="eyebrow">SAFE EXECUTION WORKSPACE</span><h1>DevOps Terminal Lab</h1><p>Use the isolated simulator by default. On Windows, you may optionally enable allowlisted Windows or WSL commands from System & AI.</p></div></div>
+        <div class="terminal-layout">
+          <aside class="panel terminal-guide"><h2>Safe command examples</h2><button class="command-example" data-command="pwd">pwd</button><button class="command-example" data-command="ls">ls</button><button class="command-example" data-command="mkdir project">mkdir project</button><button class="command-example" data-command="touch deployment.yaml">touch deployment.yaml</button><button class="command-example" data-command="git status">git status</button><button class="command-example" data-command="git diff">git diff</button><button class="command-example" data-command="python --version">python --version</button><button class="command-example" data-command="docker ps">docker ps</button><button class="command-example" data-command="kubectl get pods">kubectl get pods</button><button class="command-example" data-command="terraform validate">terraform validate</button><div class="safety-note"><strong>Safety boundary</strong><p>Destructive commands, shell chaining, redirection, privilege escalation, remote access, and host administration are blocked.</p></div></aside>
+          <article class="panel terminal-panel"><div class="terminal-toolbar"><span class="terminal-dots">● ● ●</span><strong>student-workspace</strong><select id="labMode"><option value="simulator">Simulator</option><option value="windows">Windows allowlist</option><option value="wsl">WSL allowlist</option></select></div><pre id="terminalOutput">Billinger Safe Lab v2.9.0
+Type an allowlisted command below.
+</pre><form id="terminalForm" class="terminal-input"><span>$</span><input id="terminalCommand" autocomplete="off" placeholder="git status"><button class="button primary">Run</button></form><small id="terminalSafety" class="muted">Isolated simulator: no host changes.</small></article>
+        </div>
+      </section>
+
+      <section id="page-skills" class="page">
+        <div class="page-header"><div><span class="eyebrow">PERSONAL KNOWLEDGE GRAPH</span><h1>Adaptive Skill Matrix</h1><p>Combines learning, practice, tests, interviews, and company work into one readiness view.</p></div><button id="refreshSkills" class="button secondary">Recalculate</button></div>
+        <div class="panel"><p id="skillRecommendation" class="manager-message"></p><div class="skill-table-wrap"><table class="skill-table"><thead><tr><th>Domain</th><th>Learn</th><th>Practice</th><th>Test</th><th>Interview</th><th>Company</th><th>Overall</th><th>Level</th></tr></thead><tbody id="skillTableBody"></tbody></table></div></div>
+      </section>
+
+
+      <section id="page-capstone" class="page">
+        <div class="page-header"><div><span class="eyebrow">MASTER-LEVEL DELIVERY</span><h1>Enterprise Capstone Projects</h1><p>Prove end-to-end capability through architecture, automation, security, observability, recovery, governance, cost, and operational handover.</p></div></div>
+        <div class="workspace-grid"><aside class="panel control-card"><h2>Choose a capstone</h2><div id="capstoneList" class="lab-list"></div></aside><article class="panel work-card"><div id="capstoneEmpty" class="empty-state"><span>◆</span><h2>Select an enterprise project</h2><p>Each project represents a complete company delivery rather than a single lesson or tool exercise.</p></div><div id="capstoneWorkspace" class="hidden"><span id="capstoneId" class="pill"></span><h2 id="capstoneTitle"></h2><p id="capstoneBrief" class="scenario"></p><div class="two-columns"><div><h3>Required milestones</h3><ul id="capstoneMilestones"></ul></div><div><h3>Expected outcomes</h3><ul id="capstoneOutcomes"></ul></div></div><label class="editor-label">Architecture and delivery submission<textarea id="capstoneSubmission" rows="18" placeholder="Describe architecture, assumptions, implementation, pipelines, security controls, tests, evidence, observability, SLOs, rollback, disaster recovery, governance, cost, documentation, and handover..."></textarea></label><button id="submitCapstone" class="button primary">Submit enterprise review</button><div id="capstoneResult" class="result-card hidden"></div></div></article></div>
+      </section>
+
+      <section id="page-recruitment" class="page">
+        <div class="page-header"><div><span class="eyebrow">APPLICATION → FINAL HR</span><h1>Complete Recruitment Journey</h1><p>Nine realistic rounds: screening, HR, technical fundamentals, company scenario, troubleshooting, scripting, system design, managerial, and final HR.</p></div></div>
+        <div class="interview-grid">
+          <aside class="panel interview-control"><h2>Target interview</h2><label>Target role<input id="recruitmentRole" value="DevOps Engineer"></label><label>Track<select id="recruitmentTrack"></select></label><label>Difficulty<select id="recruitmentDifficulty"><option>Beginner</option><option selected>Intermediate</option><option>Advanced</option><option>Master</option></select></label><label>Resume text<textarea id="recruitmentResume" rows="7" placeholder="Paste resume content for resume-driven questions"></textarea></label><label>Job description<textarea id="recruitmentJob" rows="7" placeholder="Paste the target job description"></textarea></label><button id="startRecruitment" class="button primary wide">Start full recruitment</button></aside>
+          <article class="panel interview-room"><div id="recruitmentIdle" class="empty-state"><span>🧭</span><h2>Recruitment panel ready</h2><p>The final report provides round scores, weak areas, and interview-readiness guidance.</p></div><div id="recruitmentActive" class="hidden"><div class="interviewer-header"><div class="ai-avatar small"><span>HR</span><i></i><i></i></div><div><span id="recruitmentRound" class="pill"></span><h2>Billinger Hiring Panel</h2><small id="recruitmentCounter"></small></div><button id="speakRecruitment" class="icon-button">🔊</button></div><div id="recruitmentQuestion" class="interview-question"></div><textarea id="recruitmentAnswer" rows="11" placeholder="Answer exactly as you would in a face-to-face interview..."></textarea><div class="action-row"><button id="recruitmentMic" class="button secondary">🎙 Dictate</button><button id="submitRecruitment" class="button primary">Submit answer</button></div><div id="recruitmentFeedback" class="feedback-box hidden"></div></div><div id="recruitmentComplete" class="hidden"></div></article>
+        </div>
+      </section>
+
+      <section id="page-coverage" class="page">
+        <div class="page-header"><div><span class="eyebrow">EXACT CONTENT MANIFEST</span><h1>Command & Scenario Coverage</h1><p>Search the exact lessons, command examples, practice labs, company tickets, production incidents, tests, interviews, and capstones bundled in this release.</p></div><button id="refreshCoverage" class="button secondary">Refresh catalog</button></div>
+        <div id="coverageNotice" class="panel coverage-notice"></div>
+        <div id="coverageStats" class="coverage-stats"></div>
+        <div class="panel coverage-controls"><label>Domain<select id="coverageToolFilter"><option value="all">All DevOps domains</option></select></label><label>Search<input id="coverageSearch" placeholder="command, topic, ticket, incident, scenario..."></label></div>
+        <div id="safeLabCoverage" class="panel coverage-safe"></div>
+        <div id="coverageResults" class="coverage-results"></div>
+      </section>
+
+      <section id="page-system" class="page">
+        <div class="page-header"><div><span class="eyebrow">ADAPTIVE MULTI-PROVIDER INTELLIGENCE</span><h1>AI Control Center</h1><p>Configure Gemini, OpenAI, Groq and OpenRouter once in the local dashboard. Billinger assigns each provider a workload and automatically fails over when credits, quota, rate limits, timeouts or outages interrupt a request.</p></div><div class="action-row"><button id="unlockAiAdmin" class="button secondary">Unlock AI administration</button><button id="refreshReadiness" class="button secondary">Scan system</button></div></div>
+        <div id="readinessCards" class="readiness-cards"></div>
+        <section class="panel display-control-panel" aria-labelledby="displayControlTitle"><div class="display-control-copy"><span class="eyebrow">EYE-COMFORT ACCESSIBILITY</span><h2 id="displayControlTitle">Accessibility & Display</h2><p>Comfort Dark remains the default. Precision rendering removes frosted blur and excessive glow while keeping every label, control and workspace crisp from laptop screens through 4K displays.</p></div><div class="display-control-grid"><label>Theme<select id="displayTheme"><option value="comfort">Comfort Dark</option><option value="standard">Standard Dark</option></select></label><label>Text size<select id="displayTextSize"><option value="normal">Normal</option><option value="large">Large</option><option value="xlarge">Extra large</option></select></label><label class="checkbox-label"><input id="displayHighContrast" type="checkbox" checked><span>High contrast text</span></label><label class="checkbox-label"><input id="displayReduceMotion" type="checkbox" checked><span>Reduce motion and glow</span></label></div><div class="display-sample" aria-live="polite"><b>4K precision preview — Aa 123</b><span>Primary text · Secondary text · Commands · Status labels</span></div></section>
+        <div class="system-stability-grid"><article class="panel"><span class="eyebrow">SAFE ENVIRONMENT CHECK</span><h2>Installed lab tools</h2><p>Read-only detection only. Missing tools never block the verified course.</p><button id="runSystemEnvironmentCheck" class="button secondary">Scan installed tools</button><div id="systemEnvironmentResults" class="environment-results"></div></article><article class="panel"><span class="eyebrow">BACKUP HEALTH</span><h2>Latest recovery point</h2><p>Verifies file existence, SHA-256 and ZIP integrity.</p><button id="verifyBackupHealth" class="button secondary">Verify latest backup</button><div id="systemBackupHealth" class="mini-result"></div></article></div>
+        <div id="aiStatusBanner" class="panel ai-status-banner"><div><span class="eyebrow">FAILOVER STATUS</span><h2>Loading provider route…</h2></div><span class="pill">Local/private core remains available</span></div>
+        <div class="system-grid"><form id="settingsForm" class="panel"><h2>Local runtime settings</h2><label>Lab mode<select name="lab_mode" id="settingsLabMode"><option value="simulator">Safe simulator</option><option value="windows">Allowlisted Windows commands</option><option value="wsl">Allowlisted WSL commands</option></select></label><label>WSL distribution (optional)<input name="wsl_distribution" id="wslDistribution" placeholder="Ubuntu"></label><label class="checkbox-label"><input type="checkbox" name="ai_enabled" id="aiEnabled"><span>Keep optional localhost AI connector</span></label><label>Local AI endpoint<input name="ai_endpoint" id="aiEndpoint" value="http://127.0.0.1:8080/v1/chat/completions"></label><label>Local model name<input name="ai_model" id="aiModel" value="local-model"></label><button class="button primary" type="submit">Save local runtime</button></form><article class="panel"><h2>Adaptive AI mentor</h2><p class="muted">Uses the configured task route. Provider name, model and fallback trace are shown with every answer.</p><div id="aiChat" class="ai-chat"><div class="chat-bubble bot">The deterministic course continues to work without online AI. Add provider keys below to enable adaptive analysis and automatic failover.</div></div><form id="aiChatForm" class="chat-input"><textarea id="aiPrompt" rows="4" placeholder="Explain a command, review a troubleshooting plan, or create a company example..."></textarea><button class="button primary">Ask adaptive mentor</button></form></article></div>
+
+        <section class="ai-admin-zone">
+          <div class="section-title-row"><div><span class="eyebrow">ADMINISTRATOR-ONLY CREDENTIAL VAULT</span><h2>Provider keys and models</h2><p>Keys are entered only here. On Windows they are protected with DPAPI and are never returned to the browser after saving.</p></div><span id="aiSecretStorage" class="pill">Locked</span></div>
+          <div id="aiAdminLocked" class="panel ai-locked"><h3>Unlock the local administrator session</h3><p>Students can use approved AI routes but cannot view or change API credentials.</p><button id="openAiAdminDialog" class="button primary">Unlock administrator</button></div>
+          <div id="aiAdminDashboard" class="hidden">
+            <div class="ai-provider-count"><b>4 online AI providers</b><span>Gemini · OpenAI · Groq · OpenRouter</span></div><div id="aiProviderOverview" class="ai-provider-overview"></div><div id="aiProviderGrid" class="ai-provider-grid"></div>
+            <div class="ai-health-grid"><article class="panel"><span class="eyebrow">ACCOUNT MODEL DISCOVERY</span><h2>Use models available to your API key</h2><p>Each provider can list account-accessible model identifiers. Discovery does not generate text.</p><div id="aiModelDiscoverySummary" class="ai-model-discovery-summary"></div></article><form id="fallbackDryRunForm" class="panel"><span class="eyebrow">NO-CREDIT ROUTE TEST</span><h2>Simulate complete failover</h2><label>Workload<select id="fallbackDryRunTask"></select></label><label>Simulate unavailable providers<input id="fallbackSimulatedProviders" placeholder="gemini, openai"></label><button class="button secondary wide">Run fallback dry-run</button><div id="fallbackDryRunResult" class="mini-result"></div></form></div>
+            <div class="ai-routing-grid">
+              <form id="aiGlobalSettingsForm" class="panel"><span class="eyebrow">PRIVACY & BUDGET</span><h2>Online AI policy</h2><label class="checkbox-label"><input id="onlineAiEnabled" type="checkbox"><span>Enable online AI</span></label><label class="checkbox-label"><input id="autoAiFailover" type="checkbox"><span>Automatic provider failover</span></label><label class="checkbox-label"><input id="redactAiPii" type="checkbox"><span>Redact email, phone and detected secrets before sending</span></label><label class="checkbox-label"><input id="allowAiStudentContent" type="checkbox"><span>Allow student answers to be analyzed online</span></label><label>Global requests per day<input id="aiGlobalDailyLimit" type="number" min="1" max="5000"></label><label>Request timeout, seconds<input id="aiRequestTimeout" type="number" min="10" max="300"></label><label>Maximum output tokens<input id="aiMaxOutputTokens" type="number" min="200" max="5000"></label><button class="button primary wide">Save AI policy</button></form>
+              <article class="panel"><span class="eyebrow">WORKLOAD ORCHESTRATION</span><h2>Task-specific fallback routes</h2><p class="muted">Enter providers in order, separated by commas. Example: <code>openai, gemini, openrouter, groq</code>.</p><div id="aiTaskRoutes" class="ai-task-routes"></div></article>
+            </div>
+            <div class="ai-audit-grid">
+              <form id="curriculumAuditForm" class="panel"><span class="eyebrow">FUTURE-READINESS AUDITOR</span><h2>Find missing commands and course gaps</h2><label>Audit scope<input id="curriculumAuditScope" value="Full DevOps Beginner-to-Master curriculum"></label><label>Current tool/version focus<input id="curriculumAuditVersion" placeholder="Example: Kubernetes current stable, Terraform 1.x"></label><button class="button primary wide">Run AI gap audit</button><p class="muted">AI proposals are review-only and are never published automatically.</p><div id="curriculumAuditResult" class="ai-analysis-box hidden"></div></form>
+              <article class="panel"><span class="eyebrow">ROUTING OBSERVABILITY</span><h2>Recent AI calls</h2><div id="aiUsageLog" class="ai-usage-log"></div></article>
+            </div>
+          </div>
+        </section>
+        <section class="freshness-section"><div class="section-title-row"><div><span class="eyebrow">VERSION AND FRESHNESS CONTROL</span><h2>Course Freshness Dashboard</h2><p>Records the curriculum version, tool version covered, official documentation, last review, deprecated notes, and pending AI proposals.</p></div><button id="refreshCourseFreshness" class="button secondary">Refresh freshness</button></div><div id="courseFreshnessSummary" class="coverage-stats"></div><div id="courseFreshnessGrid" class="freshness-grid"></div></section>
+      </section>
+
+      <section id="page-roadmap" class="page">
+        <div class="page-header"><div><span class="eyebrow">BEGINNER → MASTER</span><h1>DevOps Learning Roadmap</h1><p>Every tool contains four levels, company workflows, lessons, mastery gates, hands-on labs, and imported PDF/DOCX course books.</p></div><div class="search-box"><span>⌕</span><input id="toolSearch" placeholder="Search tools or categories"></div></div>
+        <div class="level-legend panel"><span><i class="dot beginner"></i>Beginner</span><span><i class="dot intermediate"></i>Intermediate</span><span><i class="dot advanced"></i>Advanced</span><span><i class="dot master"></i>Master</span></div>
+        <div id="toolGrid" class="tool-grid"></div>
+      </section>
+
+      <section id="page-practice" class="page">
+        <div class="page-header"><div><span class="eyebrow">COMPANY SIMULATION</span><h1>Practice Labs</h1><p>Plan and explain production-style work. The evaluator checks technical coverage, validation, risk control, and rollback.</p></div></div>
+        <div class="practice-mode-legend panel"><span><b>📘 Guided learning</b> verified explanation</span><span><b>🧪 Safe simulation</b> no host changes</span><span><b>💻 Real local execution</b> installed tools only</span><span><b>☁ External cloud lab</b> separate controlled account</span><span><b>🏢 Company scenario</b> ticket and incident workflow</span></div>
+        <div class="workspace-grid">
+          <aside class="panel control-card">
+            <h2>Choose a lab</h2>
+            <label>DevOps domain<select id="practiceTool"></select></label>
+            <label>Level<select id="practiceLevel"><option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>Master</option></select></label>
+            <div id="practiceLabList" class="lab-list"></div>
+          </aside>
+          <article class="panel work-card">
+            <div id="practiceEmpty" class="empty-state"><span>🧪</span><h2>Select a company lab</h2><p>Your scenario, deliverables, and acceptance criteria will appear here.</p></div>
+            <div id="practiceWorkspace" class="hidden">
+              <span id="practiceDifficulty" class="pill"></span><h2 id="practiceTitle"></h2><p id="practiceScenario" class="scenario"></p>
+              <div class="two-columns"><div><h3>Deliverables</h3><ul id="practiceDeliverables"></ul></div><div><h3>Acceptance criteria</h3><ul id="practiceCriteria"></ul></div></div>
+              <label class="editor-label">Your implementation plan / answer<textarea id="practiceResponse" rows="13" placeholder="Explain assumptions, steps, commands/configuration, validation evidence, risks, communication, and rollback..."></textarea></label>
+              <div class="action-row"><button id="submitPractice" class="button primary">Evaluate practice</button><span class="muted">No commands are executed on your computer.</span></div>
+              <div id="practiceResult" class="result-card hidden"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="page-tests" class="page">
+        <div class="page-header"><div><span class="eyebrow">MASTERY GATE</span><h1>Test Center</h1><p>Mixed multiple-choice and written scenarios with level-based pass marks.</p></div></div>
+        <div id="testSetup" class="panel setup-panel">
+          <div class="setup-copy"><h2>Configure your test</h2><p>Choose one domain or the full DevOps track. Online synced questions can be included after importing them.</p></div>
+          <div class="form-grid">
+            <label>Domain<select id="testTool"></select></label>
+            <label>Difficulty<select id="testDifficulty"><option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>Master</option></select></label>
+            <label>Questions<select id="testCount"><option>5</option><option selected>8</option><option>10</option><option>15</option></select></label>
+            <label class="checkbox-label"><input id="includeOnline" type="checkbox"><span>Include internet-synced questions</span></label>
+          </div>
+          <button id="startTest" class="button primary">Start controlled test</button>
+        </div>
+        <div id="aiTestSetup" class="panel setup-panel ai-test-setup">
+          <div class="setup-copy"><span class="eyebrow">ADAPTIVE AI + INTERNET SOURCES</span><h2>Generate a realistic test</h2><p>Build a random, weak-area, command, incident or company-role assessment. The router uses Groq first for speed and falls back automatically. Synced public questions are used as attributed source material when available.</p></div>
+          <div class="form-grid"><label>Mode<select id="aiTestMode"><option value="adaptive">Adaptive weak-area</option><option value="random">Random realistic</option><option value="commands">Commands and output interpretation</option><option value="incident">Production incident</option><option value="company">Company and role specific</option></select></label><label>Domain<select id="aiTestTool"></select></label><label>Difficulty<select id="aiTestDifficulty"><option>Beginner</option><option selected>Intermediate</option><option>Advanced</option><option>Master</option></select></label><label>Questions<select id="aiTestCount"><option>5</option><option selected>8</option><option>10</option><option>15</option></select></label></div>
+          <label>Company role, job description, or special focus<textarea id="aiTestContext" rows="5" placeholder="Example: DevOps Engineer at a fintech company requiring AWS, Terraform, Kubernetes and incident response"></textarea></label>
+          <button id="startAiTest" class="button primary">Generate adaptive AI test</button><span id="aiTestProvider" class="muted"></span>
+        </div>
+        <div id="aiTestRunner" class="hidden"><div class="test-bar panel"><div><span id="aiTestProgressText">Adaptive assessment</span><div class="meter"><i id="aiTestProgressMeter"></i></div></div><div class="timer"><span>AI route</span><b id="aiTestRoute">—</b></div></div><form id="aiTestForm" class="question-list"></form><button id="submitAiTest" class="button primary wide">Submit adaptive AI test</button></div>
+        <div id="aiTestResult" class="panel result-summary hidden"></div>
+        <div id="testRunner" class="hidden">
+          <div class="test-bar panel"><div><span id="testProgressText">Question 1</span><div class="meter"><i id="testProgressMeter"></i></div></div><div class="timer"><span>Session</span><b id="testTimer">00:00</b></div></div>
+          <form id="testForm" class="question-list"></form>
+          <button id="submitTest" class="button primary wide">Submit test</button>
+        </div>
+        <div id="testResult" class="panel result-summary hidden"></div>
+      </section>
+
+      <section id="page-interview" class="page">
+        <div class="page-header"><div><span class="eyebrow">REALISTIC ADAPTIVE ROUNDS</span><h1>Interview Studio</h1><p>HR, fundamentals, company scenarios, troubleshooting, architecture, feedback, and automatic difficulty adjustment.</p></div></div>
+        <div class="interview-grid">
+          <aside class="panel interview-control">
+            <h2>Interview configuration</h2>
+            <label>Track<select id="interviewTool"></select></label>
+            <label>Starting difficulty<select id="interviewDifficulty"><option>Beginner</option><option selected>Intermediate</option><option>Advanced</option><option>Master</option></select></label>
+            <button id="startInterview" class="button primary">Enter interview room</button>
+            <div class="interview-tips"><strong>Answer method</strong><p>Clarify → Explain → Apply → Validate → Secure → Recover → Communicate.</p></div>
+          </aside>
+          <article class="panel interview-room">
+            <div id="interviewIdle" class="empty-state"><div class="ai-avatar"><span>AI</span><i></i><i></i></div><h2>Your interviewer is ready</h2><p>Start when prepared. Voice controls use your browser only and are optional.</p></div>
+            <div id="interviewActive" class="hidden">
+              <div class="interviewer-header"><div class="ai-avatar small"><span>AI</span><i></i><i></i></div><div><span id="interviewRound" class="pill">Technical</span><h2>Billinger Interviewer</h2><small id="interviewCounter">Question 1 of 8 · Intermediate</small></div><button id="speakQuestion" class="icon-button" title="Read question aloud">🔊</button></div>
+              <div id="interviewQuestion" class="interview-question"></div>
+              <label class="editor-label">Your answer<textarea id="interviewAnswer" rows="10" placeholder="Answer as though you are speaking to a real interviewer..."></textarea></label>
+              <div class="action-row"><button id="micButton" class="button secondary">🎙 Dictate</button><button id="submitInterviewAnswer" class="button primary">Submit answer</button></div>
+              <div id="interviewFeedback" class="feedback-box hidden"></div>
+            </div>
+            <div id="interviewComplete" class="hidden"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="page-portfolio" class="page">
+        <div class="page-header"><div><span class="eyebrow">VERIFIED EVIDENCE → RECRUITER PROOF</span><h1>DevOps Portfolio Studio</h1><p>Convert approved labs, projects, incidents and capstones into labelled portfolio evidence. Simulated work is never presented as employment.</p></div><button id="refreshPortfolio" class="button vfx-button">↻ Refresh</button></div>
+        <div class="career-summary-grid"><article class="panel"><small>Portfolio-ready projects</small><strong id="portfolioReadyCount">0</strong></article><article class="panel"><small>Generated portfolio builds</small><strong id="portfolioBuildCount">0</strong></article><article class="panel"><small>Secret findings blocked</small><strong id="portfolioBlockedCount">0</strong></article></div>
+        <div class="portfolio-layout">
+          <form id="portfolioProjectForm" class="panel career-form">
+            <div class="panel-heading"><div><span class="eyebrow">PROJECT EVIDENCE</span><h2>Add or review a project</h2></div></div>
+            <input id="portfolioProjectId" type="hidden">
+            <div class="form-grid"><label>Project title<input id="portfolioTitle" required></label><label>Origin<select id="portfolioOrigin"><option>Independent project</option><option>Guided course project</option><option>Simulated company assignment</option><option>Practical assessment</option><option>Professional work experience</option></select></label><label>Level<select id="portfolioLevel"><option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>Master</option></select></label><label>Tools<input id="portfolioTools" placeholder="Linux, Docker, Kubernetes, Jenkins"></label></div>
+            <label>Problem statement<textarea id="portfolioProblem" rows="3"></textarea></label><label>Business requirement<textarea id="portfolioBusiness" rows="3"></textarea></label><label>Architecture<textarea id="portfolioArchitecture" rows="3"></textarea></label><label>Implementation<textarea id="portfolioImplementation" rows="5"></textarea></label>
+            <div class="form-grid"><label>Security controls<textarea id="portfolioSecurity" rows="4"></textarea></label><label>Testing and evidence<textarea id="portfolioTesting" rows="4"></textarea></label><label>Monitoring<textarea id="portfolioMonitoring" rows="4"></textarea></label><label>Troubleshooting<textarea id="portfolioTroubleshooting" rows="4"></textarea></label><label>Rollback<textarea id="portfolioRollback" rows="4"></textarea></label><label>Outcome<textarea id="portfolioOutcome" rows="4"></textarea></label></div>
+            <label>Evidence items, one per line<textarea id="portfolioEvidence" rows="4" placeholder="Pipeline result screenshot&#10;kubectl rollout status output&#10;Grafana dashboard screenshot"></textarea></label><label>Repository URL (optional)<input id="portfolioRepo" placeholder="https://github.com/.../"></label><label class="check-row"><input id="portfolioApprove" type="checkbox"> Instructor/owner has approved this evidence for publishing</label><button class="button primary wide" type="submit">Score and save project</button>
+          </form>
+          <div class="portfolio-side"><article class="panel"><div class="panel-heading"><div><span class="eyebrow">PROJECT REGISTER</span><h2>Verified projects</h2></div></div><div id="portfolioProjectList" class="career-list"></div></article><article class="panel"><div class="panel-heading"><div><span class="eyebrow">PORTFOLIO BUILD</span><h2>Generate recruiter view</h2></div></div><label>Target job<select id="portfolioJobSelect"><option value="">General DevOps portfolio</option></select></label><label>Template<select id="portfolioTemplate"><option>DevOps Command Centre</option><option>Professional Corporate</option><option>SRE Dashboard</option><option>Minimal Recruiter View</option></select></label><button id="buildPortfolio" class="button primary wide">Generate website, PDF and GitHub-ready ZIP</button><div id="portfolioBuildList" class="career-list"></div></article></div>
+        </div>
+      </section>
+
+      <section id="page-career" class="page">
+        <div class="page-header"><div><span class="eyebrow">HUMAN-APPROVED JOB AUTOMATION</span><h1>Career Application Command Centre</h1><p>Discover permitted public jobs, explain suitability, tailor only truthful evidence, preview every email, apply with approval, track outcomes, and prepare job-specific interviews.</p></div><button id="refreshCareer" class="button vfx-button">↻ Refresh command centre</button></div>
+        <div class="career-summary-grid"><article class="panel"><small>Jobs discovered</small><strong id="careerJobCount">0</strong></article><article class="panel"><small>Recommended matches</small><strong id="careerRecommendedCount">0</strong></article><article class="panel"><small>Applications tracked</small><strong id="careerApplicationCount">0</strong></article><article class="panel"><small>Gmail connection</small><strong id="careerGmailStatus">Not connected</strong></article></div>
+        <div class="career-tabs"><button class="career-tab active" data-career-tab="profile">Candidate Profile</button><button class="career-tab" data-career-tab="discover">Job Discovery</button><button class="career-tab" data-career-tab="apply">Resume & Apply</button><button class="career-tab" data-career-tab="track">Tracker & Interview</button></div>
+        <div id="career-tab-profile" class="career-tab-pane active"><form id="candidateProfileForm" class="panel career-form"><h2>Verified master candidate profile</h2><div class="form-grid"><label>Full name<input id="candidateName"></label><label>Email<input id="candidateEmail" type="email"></label><label>Phone<input id="candidatePhone"></label><label>Location<input id="candidateLocation"></label><label>Headline<input id="candidateHeadline" placeholder="Junior DevOps Engineer"></label><label>Minimum job match<input id="candidateMinMatch" type="number" min="0" max="100" value="75"></label></div><label>Professional summary<textarea id="candidateSummary" rows="5"></textarea></label><label>Verified skills, comma separated<textarea id="candidateSkills" rows="4"></textarea></label><label>Experience, one record per line: Role | Company | Years | Details<textarea id="candidateExperience" rows="6"></textarea></label><label>Education, one per line: Qualification | Institution | Year<textarea id="candidateEducation" rows="4"></textarea></label><label>Certifications, one per line<textarea id="candidateCertifications" rows="3"></textarea></label><div class="form-grid"><label>Target roles<input id="candidateRoles" placeholder="Junior DevOps Engineer, Cloud Engineer"></label><label>Preferred locations<input id="candidateLocations" placeholder="Remote, Hyderabad, Bengaluru"></label><label>GitHub URL<input id="candidateGithub"></label><label>LinkedIn URL<input id="candidateLinkedin"></label><label>Published portfolio URL<input id="candidatePortfolioUrl"></label></div><label>Master resume text<textarea id="candidateResumeText" rows="8"></textarea></label><label class="check-row"><input id="candidateVerified" type="checkbox"> I verified this profile and confirm the bot must not invent missing experience</label><button class="button primary wide" type="submit">Save verified profile</button></form></div>
+        <div id="career-tab-discover" class="career-tab-pane"><div class="two-column-command"><form id="jobSourceForm" class="panel career-form"><h2>Add an approved public source</h2><label>Source type<select id="jobSourceType"><option value="greenhouse">Greenhouse board token</option><option value="lever">Lever site token</option><option value="rss">Public HTTPS RSS feed</option><option value="career_url">Public HTTPS careers page</option></select></label><label>Company/source name<input id="jobSourceName"></label><label>Identifier or HTTPS URL<input id="jobSourceIdentifier"></label><button class="button primary" type="submit">Add source</button><button id="scanJobSources" class="button secondary" type="button">Scan all sources</button><p class="muted">The scanner does not bypass login, CAPTCHA, robots.txt or portal restrictions. Restricted portals use assisted application mode.</p><div id="jobSourceList" class="career-list"></div></form><form id="manualJobForm" class="panel career-form"><h2>Analyze a pasted job description</h2><div class="form-grid"><label>Company<input id="manualJobCompany" required></label><label>Job title<input id="manualJobTitle" required></label><label>Location<input id="manualJobLocation"></label><label>Official job URL<input id="manualJobUrl"></label></div><label>Complete job description<textarea id="manualJobDescription" rows="13" required></textarea></label><button class="button primary wide" type="submit">Analyze suitability</button></form></div><article class="panel"><div class="panel-heading"><h2>Job matches</h2><input id="careerJobSearch" placeholder="Search company, role or skill"></div><div id="careerJobList" class="career-job-grid"></div></article></div>
+        <div id="career-tab-apply" class="career-tab-pane"><div class="two-column-command"><article class="panel career-form"><h2>Tailor truthful resume and portfolio</h2><label>Selected job<select id="careerApplyJob"></select></label><label>Portfolio build<select id="careerApplyPortfolio"><option value="">No portfolio attachment</option></select></label><button id="generateCareerResume" class="button primary wide">Generate job-specific resume</button><div id="careerResumeResult"></div><div id="careerResumeList" class="career-list"></div></article><form id="careerEmailForm" class="panel career-form"><h2>Prepare approved application email</h2><label>Tailored resume<select id="careerEmailResume"></select></label><label>Portfolio attachment<select id="careerEmailPortfolio"><option value="">No portfolio PDF</option></select></label><label>HR/recruiter email<input id="careerEmailTo" type="email" required></label><label>Subject<input id="careerEmailSubject" required></label><label>Email body<textarea id="careerEmailBody" rows="10" required></textarea></label><button class="button primary wide" type="submit">Generate preview and .EML draft</button><div id="careerEmailPreview"></div></form></div><article class="panel gmail-connect"><h2>Gmail OAuth — send only after explicit approval</h2><div class="form-grid"><label>Google OAuth client JSON<input id="gmailClientFile" type="file" accept=".json"></label><div class="action-stack"><button id="saveGmailClient" class="button secondary">Save OAuth client</button><button id="connectGmail" class="button vfx-button">Connect Gmail</button></div></div><p class="muted">Uses the minimum Gmail send scope. The refresh token is protected with Windows DPAPI and must be reconnected on another Windows user account.</p></article></div>
+        <div id="career-tab-track" class="career-tab-pane"><div class="two-column-command"><article class="panel"><h2>Application tracker</h2><div id="careerApplicationList" class="career-list"></div></article><article class="panel career-form"><h2>Company research and job-specific interview</h2><label>Applied or selected job<select id="careerInterviewJob"></select></label><label>Optional public company URL<input id="careerCompanyUrl" placeholder="https://company.example/about"></label><button id="prepareCareerInterview" class="button primary wide">Build interview preparation pack</button><div id="careerResearchResult"></div></article></div></div>
+      </section>
+
+      <section id="page-resume" class="page">
+        <div class="page-header"><div><span class="eyebrow">TRUTHFUL ATS ALIGNMENT</span><h1>ATS Resume Builder</h1><p>Uses only the information you provide. It identifies missing job-description keywords but never invents experience.</p></div></div>
+        <div class="resume-grid">
+          <form id="resumeForm" class="panel resume-form">
+            <h2>Candidate information</h2>
+            <div class="import-resume-box"><label>Import existing resume<input id="resumeFile" type="file" accept=".docx,.txt,.md,.html,.htm,.csv"></label><button id="importResumeButton" class="button secondary" type="button">Extract resume text</button><small>Supported locally: DOCX, TXT, Markdown, HTML, and CSV. Maximum 3 MB.</small></div>
+            <label>Imported resume content<textarea id="existingResume" name="existing_resume" rows="7" placeholder="Imported text appears here. Review and edit it before generating the new ATS resume."></textarea></label>
+            <div class="form-grid two"><label>Full name<input name="name" required placeholder="Your full name"></label><label>Target title<input name="target_title" value="DevOps Engineer"></label></div>
+            <label>Contact details<textarea name="contact" rows="2" placeholder="Phone | Email | City | LinkedIn | GitHub"></textarea></label>
+            <label>Professional summary<textarea name="summary" rows="4" placeholder="Use concise, truthful statements about your experience and value."></textarea></label>
+            <label>Technical skills<textarea name="skills" rows="4" placeholder="Linux, Git, Docker, Kubernetes, Terraform..."></textarea></label>
+            <h3>Experience 1</h3><div class="form-grid three"><label>Role<input name="role1"></label><label>Company<input name="company1"></label><label>Dates<input name="dates1"></label></div><label>Responsibilities and results<textarea name="details1" rows="5" placeholder="Use measurable results where accurate. One statement per line is ideal."></textarea></label>
+            <h3>Experience 2</h3><div class="form-grid three"><label>Role<input name="role2"></label><label>Company<input name="company2"></label><label>Dates<input name="dates2"></label></div><label>Responsibilities and results<textarea name="details2" rows="5"></textarea></label>
+            <label>Projects<textarea name="projects" rows="4" placeholder="Project, technology, action, result"></textarea></label>
+            <label>Education<textarea name="education" rows="3"></textarea></label>
+            <label>Certifications<textarea name="certifications" rows="3"></textarea></label>
+            <label>Target job description<textarea name="job_description" rows="8" placeholder="Paste the job description to calculate keyword alignment."></textarea></label>
+            <button class="button primary wide" type="submit">Generate ATS resume</button>
+          </form>
+          <aside class="panel resume-preview-panel">
+            <div id="resumeEmpty" class="empty-state"><span>▤</span><h2>Resume preview</h2><p>Your clean, single-column ATS resume will appear here.</p></div>
+            <div id="resumeOutput" class="hidden"><div class="resume-score"><div><strong id="resumeMatch">0%</strong><span>keyword match</span></div><p id="resumeNotice"></p></div><div id="resumeKeywords" class="keyword-box"></div><iframe id="resumePreview" title="Generated resume preview"></iframe><div class="download-row"><a id="downloadHtml" class="button secondary" href="#">HTML</a><a id="downloadDoc" class="button secondary" href="#">Word-compatible DOC</a><a id="downloadTxt" class="button secondary" href="#">Plain text</a></div></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="page-library" class="page">
+        <div class="page-header library-page-head"><div><span class="eyebrow">STRICTLY CLASSIFIED LEARNING MATERIAL</span><h1>Program Library</h1><p>Program-wide handbooks, assessment manuals, evidence workbooks and release policies are stored here once. They are not mixed into Linux, Git, Ansible, CI/CD or any other technical tool list.</p></div><div class="verified-badge"><span>✓</span><div><b>Classification verified</b><small>Primary-tool placement only</small></div></div></div>
+        <div class="library-policy panel"><div><b>How placement now works</b><p><strong>Tool Learning:</strong> 65 technical course books, each assigned to exactly one primary tool. <strong>Program Library:</strong> four cross-domain guides. Related technologies remain searchable metadata but never create duplicate placement.</p></div></div>
+        <div class="program-library-controls panel"><div class="search-box"><span>⌕</span><input id="programLibrarySearch" placeholder="Search handbook, labs, evidence, policy..."></div><span id="programLibraryCount" class="library-count">Loading…</span></div>
+        <div id="programLibraryGrid" class="program-library-grid"></div>
+        <dialog id="programReaderDialog" class="program-reader-dialog">
+          <button id="programReaderClose" class="modal-close" aria-label="Close">×</button>
+          <div class="program-reader-head"><span id="programReaderLabel" class="pill"></span><h2 id="programReaderTitle"></h2><p id="programReaderSummary"></p><div id="programReaderRationale" class="placement-proof"></div></div>
+          <div class="resource-reader-actions"><button id="programPdfTab" class="button primary">PDF view</button><button id="programTextTab" class="button secondary">Text view</button><button id="programMarkComplete" class="button secondary">Mark reviewed</button><a id="programOpenPdf" class="button secondary" target="_blank" rel="noopener">Open full PDF</a><a id="programOpenDocx" class="button secondary">Open DOCX</a></div>
+          <div id="programPdfPane" class="resource-pane"><iframe id="programPdfFrame" title="Program document PDF"></iframe></div>
+          <div id="programTextPane" class="resource-pane hidden"><div class="resource-page-controls"><button id="programPrevPage" class="icon-button">←</button><label>Page <select id="programPageSelect"></select></label><button id="programNextPage" class="icon-button">→</button><span id="programPageCount" class="muted"></span></div><article id="programPageText" class="resource-page-text"></article></div>
+          <div class="resource-study-assistant"><div><span class="eyebrow">DOCUMENT-GROUNDED STUDY ASSISTANT</span><h3>Ask this program document</h3><p>Answers are retrieved only from the selected document and include page references.</p></div><form id="programAskForm"><textarea id="programQuestion" rows="3" placeholder="Example: What evidence is required before a learner can complete a capstone?"></textarea><button class="button primary" type="submit">Ask document</button></form><div id="programAnswer" class="resource-answer hidden"></div></div>
+        </dialog>
+      </section>
+
+      <section id="page-online" class="page">
+        <div class="page-header"><div><span class="eyebrow">OPTIONAL INTERNET MODE</span><h1>Internet Question Lab</h1><p>Imports attributed Stack Overflow questions with accepted answers. Imported questions are stored locally for later tests.</p></div></div>
+        <div class="online-grid">
+          <article class="panel setup-panel">
+            <h2>Sync fresh technical scenarios</h2>
+            <div class="form-grid"><label>Assign to domain<select id="onlineTool"></select></label><label>Stack Overflow tag<input id="onlineTag" value="devops" placeholder="docker, kubernetes, terraform..."></label><label>Import count<select id="onlineCount"><option>4</option><option selected>8</option><option>12</option></select></label></div>
+            <button id="syncOnline" class="button primary">Sync attributed questions</button>
+            <p class="legal-note">Internet access is used only when you press sync. Source links and author attribution are retained. Community answers should be reviewed critically before use.</p>
+          </article>
+          <article class="panel source-card"><div class="source-icon">SO</div><div><h2>How online evaluation works</h2><p>The bot fetches public questions that have accepted answers, extracts key technical concepts from the accepted answer, and scores your response for concept coverage. It does not treat keyword scoring as a substitute for expert review.</p></div></article>
+        </div>
+        <div id="onlineResult" class="panel hidden"></div>
+      </section>
+
+      <section id="page-history" class="page">
+        <div class="page-header"><div><span class="eyebrow">LOCAL RECORDS</span><h1>History & Backup</h1><p>Review learning activity and export all local student data as a JSON backup.</p></div><a class="button secondary" href="/api/backup">Download backup</a></div>
+        <div class="panel"><div id="historyList" class="history-list"></div></div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="studentDialog" class="modal">
+    <form id="studentForm" method="dialog"><button class="modal-close" value="cancel" aria-label="Close">×</button><span class="eyebrow">UP TO 10 PROFILES</span><h2>Add student</h2><label>Name<input name="name" required maxlength="120"></label><label>Email (optional)<input name="email" type="email"></label><label>PIN (optional)<input name="pin" type="password" maxlength="30" inputmode="numeric"></label><p class="muted">The PIN is stored as a one-way hash in the local database.</p><button class="button primary wide" value="default">Create profile</button></form>
+  </dialog>
+
+  <dialog id="pinDialog" class="modal"><form id="pinForm" method="dialog"><button class="modal-close" value="cancel">×</button><h2>Enter student PIN</h2><input id="pinInput" type="password" inputmode="numeric" autocomplete="current-password"><div id="pinError" class="error-text"></div><button class="button primary wide" value="default">Unlock</button></form></dialog>
+
+  <dialog id="adminDialog" class="modal admin-dialog"><form id="adminAuthForm" method="dialog"><button class="modal-close" value="cancel">×</button><div class="admin-auth-icon">⬡</div><span class="eyebrow">LOCAL ADMINISTRATOR</span><h2 id="adminDialogTitle">Unlock Admin Control</h2><div id="adminSetupFields"><label>Administrator name<input id="adminNameInput" value="Institute Administrator"></label><label>Institute name<input id="instituteNameInput" value="Billinger DevOps Academy"></label></div><label>Administrator PIN<input id="adminPinInput" type="password" minlength="4" maxlength="30" required autocomplete="current-password"></label><div id="adminAuthError" class="error-text"></div><button id="adminAuthSubmit" class="button primary wide" value="default">Unlock</button></form></dialog>
+
+  <dialog id="toolDialog" class="tool-modal"><button id="closeToolDialog" class="modal-close">×</button><div id="toolDetail"></div></dialog>
+
+  <div id="pointerHalo" class="pointer-halo" aria-hidden="true"></div>
+  <script src="/app.js?v=2.9.0-4k"></script>
+</body>
+</html>

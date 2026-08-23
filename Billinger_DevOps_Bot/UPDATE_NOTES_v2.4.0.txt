@@ -1,0 +1,27 @@
+BILLINGER BOT v2.4.0 — CAREER, PORTFOLIO & SECURE APPLICATION COMMAND CENTRE
+
+NEW
+- Verified master candidate profile and explainable job-match scoring.
+- Greenhouse, Lever, public RSS, and public careers-page job discovery adapters.
+- Human-approved application workflow; restricted portals remain assisted/manual.
+- Truthful job-specific PDF, DOCX, HTML, and TXT resume variants.
+- DevOps portfolio project scoring, secret scanning, website/PDF/ZIP generation.
+- Portfolio evidence added selectively to job-specific resumes.
+- HR/recruiter email draft preview, EML export, attachments, Gmail OAuth send.
+- Gmail sends require the exact confirmation word SEND and use persistent rate limits.
+- Application tracker and company/job-specific nine-round interview preparation.
+
+SECURITY HARDENING
+- Student-scoped sessions on career and portfolio APIs.
+- Localhost Host/Origin enforcement and security response headers.
+- SSRF/private-network blocking and redirect checks for public job research.
+- Google OAuth endpoints pinned to official hosts; OAuth state is single-use.
+- Email header-injection, duplicate-send, ownership, and attachment checks.
+- ZIP-slip, symlink, encrypted-entry, oversized-member, and archive-bomb protection.
+- Administrator brute-force throttling.
+- Stored-XSS escaping, parameterized SQLite, and safe file-path enforcement.
+- Expanded terminal allowlists and destructive-command blocking.
+
+UPGRADE
+Copy data\billinger.db and, when needed, student_workspaces, portfolios,
+career_data, resumes, certificates, mail_outbox, and backups into this release.
