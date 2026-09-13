@@ -1,9 +1,0 @@
-Billinger Bot v2.6.1 — Four-Provider Visibility and Timeout Fix
-
-- All four online providers are shown in a visible provider overview: Gemini, OpenAI, Groq and OpenRouter.
-- Wide screens display all four credential cards in one row; medium screens display a 2x2 layout; mobile displays one card per row.
-- Provider selector buttons jump directly to any provider form.
-- Default AI timeout increased from 45 to 120 seconds. Existing databases using the original 45-second default migrate automatically.
-- Timeout setting now supports up to 300 seconds.
-- Provider connection tests request only 64 output tokens and use at least a 120-second read window.
-- Errors distinguish read timeout from network failure and display useful detail.
