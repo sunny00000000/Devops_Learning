@@ -1,0 +1,22 @@
+============================================================
+           BILLINGER DEVOPS BOT - QUICK START GUIDE
+============================================================
+
+1. STARTING THE APPLICATION:
+   - On Windows: Double-click 'Start_Billinger_Bot.bat'
+   - On Linux:   Run './start_billinger.sh'
+   - Open your browser at http://127.0.0.1:8080
+
+2. RUNNING TESTS:
+   - On Windows: Run 'Run_Self_Test.bat'
+   - On Linux:   Run './run_self_test.sh'
+
+3. DEFAULT CREDENTIALS:
+   - Admin:   username: admin   | password: admin123
+   - Student: username: student | password: student123
+
+4. AI PROVIDERS:
+   - Optional: set GEMINI_API_KEY, GROQ_API_KEY, or OPENAI_API_KEY.
+   - If unset, the offline deterministic knowledge engine activates automatically.
+
+Enjoy your DevOps learning journey!

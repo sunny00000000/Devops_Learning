@@ -1,0 +1,317 @@
+{
+  "version": "2.0.0",
+  "platform": "Billinger DevOps Bot",
+  "total_questions": 11,
+  "stages_covered": [
+    "HR Screening",
+    "Technical Screening",
+    "DevOps Core",
+    "Troubleshooting",
+    "Scenario Architecture",
+    "Senior / Staff SRE",
+    "Managerial",
+    "Final CTO"
+  ],
+  "personas_represented": [
+    "Friendly HR",
+    "Strict HR",
+    "Technical Engineer",
+    "Senior DevOps Engineer",
+    "SRE",
+    "Security Engineer",
+    "Engineering Manager",
+    "CTO",
+    "Stress Interviewer"
+  ],
+  "questions": [
+    {
+      "id": "INT-001",
+      "stage": "HR Screening",
+      "category": "Career Motivation & Culture Fit",
+      "interviewer_persona": "Friendly HR",
+      "question": "Can you walk me through your journey into DevOps and SRE, and what motivates you to work in high-stakes infrastructure environments?",
+      "expected_points": [
+        "Clear articulation of career transition into DevOps and systems engineering",
+        "Passion for automation, reliability, and eliminating manual toil",
+        "Demonstrated empathy for development velocity balanced with production stability",
+        "Examples of continuous self-learning and adaptability in fast-evolving tech ecosystems"
+      ],
+      "technical_accuracy_criteria": "Candidate understands the cultural philosophy of DevOps (collaboration, feedback loops, shared ownership) rather than just viewing it as a set of tools.",
+      "rubric": {
+        "unsatisfactory": "Gives purely tool-centric answers without explaining motivation or shows frustration with development teams.",
+        "developing": "Mentions basic interest in Linux and cloud tools but lacks clear narrative or perspective on team collaboration.",
+        "competent": "Clear story connecting development/operations experience with strong motivation for reliability and automation.",
+        "strong": "Articulates deep appreciation for toil reduction, blameless culture, and cross-functional enablement.",
+        "exemplary": "Inspiring career arc demonstrating mentorship, community contributions, and a strategic view of developer productivity engineering."
+      },
+      "follow_up_questions": [
+        "How do you typically manage stress when handling a high-priority production incident?",
+        "What has been your most impactful project over the past 18 months?"
+      ]
+    },
+    {
+      "id": "INT-002",
+      "stage": "HR Screening",
+      "category": "On-Call Commitment & Compliance",
+      "interviewer_persona": "Strict HR",
+      "question": "This role requires participating in a 24/7 on-call rotation with a strict 15-minute SLA for SEV-1 incidents. Describe your experience with on-call duties, your adherence to incident documentation, and how you handle conflicting priorities during off-hours paging.",
+      "expected_points": [
+        "Direct experience with on-call rotation schedules (e.g. primary/secondary weekly rotations)",
+        "Familiarity with paging platforms like PagerDuty or Opsgenie",
+        "Commitment to SLA adherence and rapid incident triage protocols",
+        "Discipline around updating runbooks and documenting incident response steps"
+      ],
+      "technical_accuracy_criteria": "Candidate demonstrates realistic, disciplined understanding of on-call fatigue mitigation, handoff hygiene, and escalation paths.",
+      "rubric": {
+        "unsatisfactory": "Hesitant about on-call expectations or dismissive of SLA requirements.",
+        "developing": "Has done on-call but expresses poor work-life balance habits without strategies for managing paging fatigue.",
+        "competent": "Clear track record of reliable on-call participation with solid adherence to paging SLAs and documentation.",
+        "strong": "Proactive in improving on-call hygiene, automating flaky alerts, and conducting comprehensive shift handoffs.",
+        "exemplary": "Has led initiatives to measure on-call health, reduce noisy pages by >50%, and establish psychological safety in on-call rotations."
+      },
+      "follow_up_questions": [
+        "How do you handle being paged for an issue in a service you are unfamiliar with?",
+        "What do you do if you receive an alert outside your rotation hours that isn't being acknowledged?"
+      ]
+    },
+    {
+      "id": "INT-003",
+      "stage": "Technical Screening",
+      "category": "Linux & Systems Diagnostics",
+      "interviewer_persona": "Technical Engineer",
+      "question": "You log into an Ubuntu server and notice that the load average is 24 on a 4-core machine, but CPU utilization is only 15%. Walk me through your step-by-step diagnostic process to find the root cause.",
+      "expected_points": [
+        "Understanding that Linux load average measures processes in both Running ('R') and Uninterruptible Sleep ('D') states",
+        "Executing `vmstat 1 5` to inspect the 'b' (blocked on I/O) column",
+        "Executing `ps -eo state,pid,cmd | grep '^D'` to isolate processes waiting on disk or network storage",
+        "Using `iostat -xz 1 5` to check disk utilization (%util, await, svctm)",
+        "Checking `dmesg -T` or kernel logs for SCSI timeouts, disk hardware errors, or unresponsive NFS mounts"
+      ],
+      "technical_accuracy_criteria": "Candidate must correctly identify the 'D' state (disk I/O wait or NFS hang) rather than assuming CPU thread contention.",
+      "rubric": {
+        "unsatisfactory": "Confuses load average with CPU percentage and attempts to kill high CPU processes.",
+        "developing": "Knows I/O wait is involved but cannot name specific diagnostic commands beyond `top`.",
+        "competent": "Systematically checks vmstat/iostat, explains the 'D' process state, and checks kernel messages.",
+        "strong": "Quickly points to uninterruptible sleep, inspects block device latency, and investigates hung filesystems or storage controllers.",
+        "exemplary": "Includes eBPF/bcc tools (`biosnoop`, `offcputime`), traces kernel stack traces in `/proc/<PID>/stack`, and outlines safe remediation steps without data loss."
+      },
+      "follow_up_questions": [
+        "Why does `kill -9` fail to terminate a process stuck in the 'D' state?",
+        "How would you identify whether a hung process is waiting on a local NVMe drive versus a remote NFS share?"
+      ]
+    },
+    {
+      "id": "INT-004",
+      "stage": "DevOps Core",
+      "category": "CI/CD & Immutable Infrastructure",
+      "interviewer_persona": "Senior DevOps Engineer",
+      "question": "How do you design an enterprise CI/CD pipeline that implements automated security gates, keyless cloud authentication, and progressive zero-downtime deployment?",
+      "expected_points": [
+        "Decoupling build, test, scan, and deploy phases into distinct stages",
+        "Keyless authentication using OpenID Connect (OIDC) to assume cloud IAM roles without static keys",
+        "Automated security scanning: SAST (SonarQube), secret scanning (TruffleHog), and container scanning (Trivy) with failure gates",
+        "Cryptographic signing of container images with Cosign and SBOM generation",
+        "Progressive delivery strategies: Canary or Blue-Green using Argo Rollouts or Istio with automated rollback on error spikes"
+      ],
+      "technical_accuracy_criteria": "Candidate emphasizes immutability (build artifact once, promote across environments), supply chain security, and automated telemetry-driven rollbacks.",
+      "rubric": {
+        "unsatisfactory": "Describes deploying via SSH scripts or using long-lived static AWS root access keys in CI.",
+        "developing": "Covers basic Jenkins/GitHub Actions steps but omits security scanning, image signing, and canary verification.",
+        "competent": "Comprehensive pipeline design covering OIDC, automated container scanning, and blue-green/canary rollout gates.",
+        "strong": "Details SLSA provenance, Cosign image verification in Kubernetes admission controllers, and metric-based automated rollback.",
+        "exemplary": "Architects a multi-tenant enterprise pipeline platform featuring ephemeral runner autoscaling, OIDC cross-account role assumption, and automated compliance attestation."
+      },
+      "follow_up_questions": [
+        "How do you handle database schema migrations in a zero-downtime canary deployment?",
+        "What happens if an upstream base image contains a zero-day vulnerability: how do you patch and redeploy 200 services automatically?"
+      ]
+    },
+    {
+      "id": "INT-005",
+      "stage": "Troubleshooting",
+      "category": "Kubernetes Pod Failure Modes",
+      "interviewer_persona": "SRE",
+      "question": "A critical payment microservice in your production Kubernetes cluster has entered `CrashLoopBackOff`. The previous on-call engineer restarted the deployment, but pods continue crashing within 30 seconds. How do you triage, diagnose, and fix this issue under live customer impact?",
+      "expected_points": [
+        "Run `kubectl describe pod <name>` to inspect termination exit code and last termination reason",
+        "Check for Exit Code 137 (OOMKilled) vs Exit Code 1/2/143",
+        "Run `kubectl logs <name> --previous` to view the crash trace from the terminated container instance before restart",
+        "Inspect probe configuration: verify if a failing Liveness probe is prematurely restarting a slow-starting container",
+        "Verify environment variables, missing ConfigMaps, or rotated database Secret credentials",
+        "Check network reachability to database/Redis dependencies from an ephemeral debug pod"
+      ],
+      "technical_accuracy_criteria": "Candidate must emphasize checking `--previous` logs and understanding exit codes rather than blindly deleting or restarting pods.",
+      "rubric": {
+        "unsatisfactory": "Suggests repeatedly deleting pods or redeploying without checking crash logs or exit codes.",
+        "developing": "Checks pod logs but forgets `--previous`, missing the fatal crash stack trace.",
+        "competent": "Systematically inspects `kubectl describe` exit codes, reads previous logs, verifies ConfigMap/Secret bindings, and checks dependency health.",
+        "strong": "Differentiates application exception vs OOM vs probe failure; provisions temporary fallback or scales replicas while root-causing.",
+        "exemplary": "Deep mastery of Kubernetes container lifecycle: checks cgroup memory events, analyzes startup vs liveness probe miscalibration, and sets up automated rollback."
+      },
+      "follow_up_questions": [
+        "If the exit code is 137 but `kubectl describe` does not report OOMKilled, what happened?",
+        "Why might a liveness probe pass in development but continuously fail under production load?"
+      ]
+    },
+    {
+      "id": "INT-006",
+      "stage": "Scenario Architecture",
+      "category": "Scalability & Resilience Design",
+      "interviewer_persona": "Engineering Manager",
+      "question": "Our platform expects a 10x traffic spike during an upcoming flash sale event. Design an end-to-end resilient cloud architecture for an e-commerce platform that guarantees high availability, prevents database connection exhaustion, and handles downstream vendor outages gracefully.",
+      "expected_points": [
+        "Edge caching and CDN rate-limiting (Cloudflare / CloudFront) to absorb static assets and read-heavy catalog traffic",
+        "Horizontal Pod Autoscaling (HPA) coupled with cluster autoscaling (Karpenter / Cluster Autoscaler) and pre-warmed instance pools",
+        "Connection pooling layer (PgBouncer / AWS RDS Proxy) to prevent backend database connection starvation",
+        "Decoupling synchronous order creation using asynchronous message queues (Kafka / RabbitMQ / SQS)",
+        "Resilience patterns: Circuit Breakers, Exponential Backoff, Bulkheading, and Graceful Degradation (fallback cached responses)",
+        "Database read/write splitting with multi-AZ read replicas"
+      ],
+      "technical_accuracy_criteria": "Candidate balances computing capacity, connection management, asynchronous queue buffering, and graceful degradation.",
+      "rubric": {
+        "unsatisfactory": "Suggests simply upsizing the database instance to the largest size without architectural patterns.",
+        "developing": "Mentions autoscaling and load balancers but overlooks database connection limits and third-party vendor failures.",
+        "competent": "Strong multi-tier design featuring edge caching, HPA, connection pooling (PgBouncer), and asynchronous queue buffering.",
+        "strong": "Incorporates formal circuit breakers, bulkhead isolation, backpressure handling, and detailed capacity pre-warming calculations.",
+        "exemplary": "Delivers a master-class architecture with chaos-tested graceful degradation, multi-region active-passive failover, and comprehensive FinOps cost projections."
+      },
+      "follow_up_questions": [
+        "How do you prevent a flood of retry requests from overwhelming an already struggling backend service (Thundering Herd)?",
+        "If the third-party payment gateway goes down during the flash sale, how does your architecture handle in-flight customer orders?"
+      ]
+    },
+    {
+      "id": "INT-007",
+      "stage": "Senior / Staff SRE",
+      "category": "SLO Governance & Error Budgets",
+      "interviewer_persona": "SRE",
+      "question": "How do you implement and enforce an Error Budget policy across an organization with multiple product engineering teams? Specifically, what happens when a product team burns 100% of their monthly error budget in the first week?",
+      "expected_points": [
+        "Defining quantitative SLIs based on Google SRE Four Golden Signals",
+        "Calculating Error Budgets: (1 - SLO) * total traffic",
+        "Multi-window multi-burn-rate alerting to detect rapid vs chronic budget burn",
+        "Formal Error Budget Policy agreed upon by Product, Engineering, and Leadership",
+        "Enforcement mechanisms: blocking feature deployments via CI/CD gates when error budget is exhausted, redirecting engineering sprints to reliability and technical debt",
+        "Blameless review and postmortem process to restore operational stability"
+      ],
+      "technical_accuracy_criteria": "Candidate treats Error Budgets as an organizational decision-making contract between Product and SRE, not just a technical dashboard.",
+      "rubric": {
+        "unsatisfactory": "Believes Error Budgets are just informational graphs with no governance or consequences.",
+        "developing": "Understands the math behind SLOs but lacks actionable strategy for enforcing deployment freezes when product teams push back.",
+        "competent": "Articulates clear SLO calculation, burn rate alerting, and the formal process for gating feature releases upon budget depletion.",
+        "strong": "Addresses organizational friction, executive alignment, exceptions/escalation processes, and automating CI deployment blockages.",
+        "exemplary": "Designs a holistic reliability governance framework with tier-1/2 service classification, automated policy enforcement in GitOps pipelines, and measurable cultural impact."
+      },
+      "follow_up_questions": [
+        "What do you do if a Product VP demands overriding the error budget freeze to launch a marketing-critical feature?",
+        "How do you distinguish between customer-impacting outages and internal non-impacting errors when calculating SLIs?"
+      ]
+    },
+    {
+      "id": "INT-008",
+      "stage": "Managerial",
+      "category": "Incident Leadership & Blameless Culture",
+      "interviewer_persona": "Engineering Manager",
+      "question": "Tell me about a major production outage you participated in or led. How did you coordinate the response, communicate with executive stakeholders, and ensure a blameless postmortem that produced real organizational change?",
+      "expected_points": [
+        "Clear role establishment during the incident (Incident Commander, Operations Lead, Scribe, Communications Lead)",
+        "Transparent and predictable stakeholder updates (every 15-30 minutes on status, impact, and next steps)",
+        "Decisive mitigation (prioritizing customer recovery over finding root cause during live impact)",
+        "Leading a blameless postmortem focusing on systemic causes, tooling gaps, and missing guardrails",
+        "Tracking corrective action items (P0/P1/P2) to completion rather than letting postmortem documents gather dust"
+      ],
+      "technical_accuracy_criteria": "Candidate shows high emotional intelligence, operational leadership under pressure, and commitment to systemic improvement without blaming individuals.",
+      "rubric": {
+        "unsatisfactory": "Blames a junior engineer or vendor, or exhibits poor communication and disorganized incident handling.",
+        "developing": "Good technical problem-solving but weak communication with business stakeholders and unstructured postmortem.",
+        "competent": "Solid incident command structure, regular executive comms, and well-organized blameless retrospective with prioritized action items.",
+        "strong": "Demonstrates exceptional poise, shields the engineering team from executive distraction, and drives long-term architectural improvements from the outage.",
+        "exemplary": "Transformational incident leadership that turned an enterprise-threatening failure into an organizational catalyst for adopting SRE best practices across the entire company."
+      },
+      "follow_up_questions": [
+        "How do you respond if an executive demands to know 'who caused the outage' and wants disciplinary action taken?",
+        "How do you prevent postmortem action items from being deprioritized in subsequent product sprint planning?"
+      ]
+    },
+    {
+      "id": "INT-009",
+      "stage": "Final CTO",
+      "category": "Technical Strategy & Cloud FinOps",
+      "interviewer_persona": "CTO",
+      "question": "Over the past year, our cloud bill has grown 65% faster than our revenue, while our developer velocity has slowed down due to complex infrastructure overhead. What is your 90-day strategic plan to rationalize our cloud spend (FinOps) and build an Internal Developer Platform (IDP) that accelerates feature delivery?",
+      "expected_points": [
+        "Day 1-30: Comprehensive discovery and cost attribution. Tagging audit, idle resource cleanup, identifying unit economics (cost per active user / transaction).",
+        "Day 30-60: Architectural optimization. Rightsizing compute/databases, adopting Graviton/ARM instances, Spot/Savings Plans/Reserved Instances, cleaning unattached EBS volumes and stale S3 data.",
+        "Day 60-90: Platform Engineering & IDP. Building standardized developer golden paths using Backstage, Terraform modules, and self-service ephemeral preview environments.",
+        "Shifting from ticketing-based infrastructure requests to self-service GitOps catalogs.",
+        "Establishing continuous FinOps dashboards and automated cost anomaly alerts."
+      ],
+      "technical_accuracy_criteria": "Candidate balances financial discipline with developer velocity, demonstrating executive business acumen alongside deep architectural mastery.",
+      "rubric": {
+        "unsatisfactory": "Suggests heavy-handed cost cutting (e.g. shutting down test environments) that severely cripples developer productivity.",
+        "developing": "Focuses strictly on basic cloud cost reduction (reserved instances) without addressing platform engineering or developer velocity.",
+        "competent": "Structured 30-60-90 day roadmap integrating cost allocation, architectural rightsizing, and self-service internal developer tooling.",
+        "strong": "Deeply integrates FinOps unit economics with Platform Engineering, golden paths, and automated policy guardrails.",
+        "exemplary": "Visionary executive roadmap that aligns infrastructure investment with business growth, establishes high-velocity self-service developer platforms, and reduces cloud COGS by 30-40%."
+      },
+      "follow_up_questions": [
+        "How do you convince skeptical product teams to invest engineering time into cloud cost optimization?",
+        "When should a company build an Internal Developer Platform versus relying on standard cloud vendor consoles?"
+      ]
+    },
+    {
+      "id": "INT-010",
+      "stage": "Troubleshooting",
+      "category": "Live Pressure & Critical Reasoning",
+      "interviewer_persona": "Stress Interviewer",
+      "question": "Our primary production database is at 100% CPU. The CEO is on the phone screaming that we are losing $50,000 every minute. The senior DBA says we must reboot the database immediately. The lead developer says rebooting will corrupt the transaction log and insists on waiting for their script to finish. You have 30 seconds to make a call. What do you do?",
+      "expected_points": [
+        "Maintaining composure under intense emotional and executive pressure",
+        "Refusing to panic or make blind guesses: neither blindly rebooting without checking nor letting unknown scripts run unbounded",
+        "First step: inspect active queries immediately with `SELECT pid, age(clock_timestamp(), query_start), state, query FROM pg_stat_activity WHERE state != 'idle' ORDER BY 2 DESC LIMIT 5;`",
+        "Identify and terminate the specific rogue query or connection pooler causing the CPU lockup using `pg_cancel_backend()` or `pg_terminate_backend()`",
+        "Establish incident command authority calmly: inform stakeholders that targeted query termination takes 10 seconds and avoids a high-risk 15-minute crash-recovery reboot",
+        "If database is completely unresponsive to queries, evaluate WAL recovery risk before authorizing clean failover to read replica rather than raw reboot"
+      ],
+      "technical_accuracy_criteria": "Candidate demonstrates that terminating specific rogue backend PIDs is vastly superior to hard-rebooting an ACID relational database, and handles executive pressure with calm authority.",
+      "rubric": {
+        "unsatisfactory": "Panics, gives in to the CEO's demand to hard-reboot blindly, or freezes under the time constraint.",
+        "developing": "Recognizes rebooting is risky but doesn't know how to inspect or terminate rogue queries in PostgreSQL.",
+        "competent": "Calmly rejects blind rebooting, runs `pg_stat_activity` to find long-running queries, and cancels the offending PID within seconds.",
+        "strong": "Articulates clear communication to CEO, manages DBA and developer inputs, and executes targeted mitigation while preparing a safe failover plan.",
+        "exemplary": "Masterful crisis leadership: takes charge of the call, executes laser-focused query termination in 10 seconds, communicates business impact in plain English, and de-escalates executive panic."
+      },
+      "follow_up_questions": [
+        "What is the difference between `pg_cancel_backend(pid)` and `pg_terminate_backend(pid)`?",
+        "If `pg_terminate_backend` fails to release the CPU lock, what is your immediate next fallback action?"
+      ]
+    },
+    {
+      "id": "INT-011",
+      "stage": "DevOps Core",
+      "category": "Zero-Trust Infrastructure Security",
+      "interviewer_persona": "Security Engineer",
+      "question": "How do you implement a Zero-Trust security model across a multi-tenant Kubernetes cluster hosting microservices that handle PCI-DSS payment card data?",
+      "expected_points": [
+        "Network microsegmentation with default-deny NetworkPolicies and Cilium eBPF",
+        "Enforcing Pod Security Standards (PSS) Restricted profile: no root users, no privileged containers, read-only root filesystems",
+        "Mutual TLS (mTLS) with cryptographic identity verification between all pods via Service Mesh (Istio/Linkerd) or SPIFFE/SPIRE",
+        "Runtime threat detection and syscall auditing using Falco and eBPF",
+        "Ephemeral cloud credentials via AWS IRSA / GCP Workload Identity with least-privilege IAM roles",
+        "Automated vulnerability and admission gating using Kyverno/OPA and Cosign image signature verification"
+      ],
+      "technical_accuracy_criteria": "Candidate covers identity, network segmentation, runtime detection, admission control, and encryption in transit and at rest.",
+      "rubric": {
+        "unsatisfactory": "Suggests relying solely on perimeter VPC security groups without cluster-internal controls.",
+        "developing": "Mentions mTLS and namespaces but neglects admission controllers, non-root enforcement, and runtime security.",
+        "competent": "Comprehensive Zero-Trust design addressing network policies, mTLS, PSS restricted profiles, and IRSA credentials.",
+        "strong": "Incorporates eBPF runtime auditing (Falco), automated image signature admission gating (Cosign), and PCI-DSS compliance controls.",
+        "exemplary": "Architects an end-to-end zero-trust platform with automated continuous compliance auditing, SPIFFE/SPIRE workload attestation, and hardware-backed KMS envelope encryption."
+      },
+      "follow_up_questions": [
+        "How do you enforce that no container image can be deployed to the cluster unless it has been signed by your enterprise CI/CD pipeline?",
+        "How do you handle PCI-DSS audit requirements for capturing all interactive administrative kubectl exec sessions?"
+      ]
+    }
+  ]
+}

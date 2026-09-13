@@ -1,0 +1,1 @@
+BILLINGER DEVOPS BOT - V2.4.0 RELEASE NOTES\n=======================================================\n\nCareer dashboard, job matching, and ATS resume analyzer.\n

@@ -1,0 +1,467 @@
+{
+  "version": "2.0.0",
+  "platform": "Billinger DevOps Bot",
+  "total_questions": 25,
+  "questions": [
+    {
+      "id": "QB-001",
+      "tool": "Linux",
+      "difficulty": "Beginner",
+      "type": "MCQ",
+      "question": "Which Linux command displays total, used, and available disk space along with filesystem types in human-readable units, while excluding virtual tmpfs mounts?",
+      "options": [
+        "df -hT --exclude-type=tmpfs",
+        "du -sh --exclude=tmpfs /",
+        "lsblk -f -m --no-tmpfs",
+        "fdisk -l --human-readable"
+      ],
+      "correct_answer": "df -hT --exclude-type=tmpfs",
+      "explanation": "`df` reports filesystem disk space usage. `-h` renders sizes in powers of 1024 (GiB/MiB), `-T` prints the filesystem type, and `--exclude-type=tmpfs` filters out transient in-memory filesystems.",
+      "tags": [
+        "linux",
+        "sysadmin",
+        "storage",
+        "df"
+      ],
+      "remediation_lesson": "Module 1.1: Review Linux storage commands, mount points, and the difference between block usage (df) and directory usage (du)."
+    },
+    {
+      "id": "QB-002",
+      "tool": "Git",
+      "difficulty": "Beginner",
+      "type": "short_answer",
+      "question": "What Git command is used to inspect the chronological history of all HEAD pointer movements and branch updates on your local machine, even after an errant hard reset?",
+      "options": null,
+      "correct_answer": "git reflog",
+      "explanation": "`git reflog` records the updates made to the tips of branches and other references in the local repository, serving as the ultimate safety net for recovering lost commits or resets.",
+      "tags": [
+        "git",
+        "version-control",
+        "reflog",
+        "recovery"
+      ],
+      "remediation_lesson": "Module 3.3: Study Git reference logs, DAG graph recovery, and HEAD dereferencing."
+    },
+    {
+      "id": "QB-003",
+      "tool": "Docker",
+      "difficulty": "Beginner",
+      "type": "command_writing",
+      "question": "Write a single Docker CLI command to run an Nginx container in the background named 'web-proxy', mapping host port 80 to container port 80, with an automatic restart policy of 'unless-stopped'.",
+      "options": null,
+      "correct_answer": "docker run -d --name web-proxy -p 80:80 --restart unless-stopped nginx",
+      "explanation": "`-d` runs in detached mode, `--name` assigns the container name, `-p 80:80` forwards host port 80 to container port 80, and `--restart unless-stopped` defines the restart policy.",
+      "tags": [
+        "docker",
+        "containers",
+        "cli",
+        "nginx"
+      ],
+      "remediation_lesson": "Module 6.1: Master Docker container lifecycle flags, port bindings, and restart policies."
+    },
+    {
+      "id": "QB-004",
+      "tool": "Bash",
+      "difficulty": "Beginner",
+      "type": "configuration",
+      "question": "Provide the standard three-flag directive placed at the start of production Bash scripts to ensure immediate failure on command error, treating unset variables as fatal errors, and propagating pipeline errors.",
+      "options": null,
+      "correct_answer": "set -euo pipefail",
+      "explanation": "`set -e` halts on error, `-u` fails on unset variables, and `-o pipefail` ensures pipelines fail if any sub-command fails.",
+      "tags": [
+        "bash",
+        "scripting",
+        "defensive-automation"
+      ],
+      "remediation_lesson": "Module 4.1: Review defensive shell scripting standards and strict execution modes."
+    },
+    {
+      "id": "QB-005",
+      "tool": "Kubernetes",
+      "difficulty": "Beginner",
+      "type": "troubleshooting",
+      "question": "A newly deployed Kubernetes pod remains in the 'Pending' state indefinitely. What is the primary diagnostic kubectl command you should run to inspect the scheduler events and find out why the pod cannot be scheduled?",
+      "options": null,
+      "correct_answer": "kubectl describe pod <pod-name> -n <namespace>",
+      "explanation": "`kubectl describe pod` outputs the pod's specification, status, and the chronological list of Kubernetes cluster events at the bottom, which reveals scheduling blockers like insufficient CPU/memory or node selector mismatches.",
+      "tags": [
+        "kubernetes",
+        "kubectl",
+        "troubleshooting",
+        "pending-pods"
+      ],
+      "remediation_lesson": "Module 7.1: Learn how to interpret kubectl describe pod output and cluster scheduler events."
+    },
+    {
+      "id": "QB-006",
+      "tool": "Terraform",
+      "difficulty": "Beginner",
+      "type": "MCQ",
+      "question": "Which Terraform command is used to download required provider plugins, initialize the remote backend, and prepare the working directory?",
+      "options": [
+        "terraform init",
+        "terraform plan",
+        "terraform apply",
+        "terraform refresh"
+      ],
+      "correct_answer": "terraform init",
+      "explanation": "`terraform init` initializes the working directory containing Terraform configuration files by installing provider plugins and configuring the backend state storage.",
+      "tags": [
+        "terraform",
+        "iac",
+        "cli",
+        "init"
+      ],
+      "remediation_lesson": "Module 8.1: Understand the Terraform workflow lifecycle (init -> validate -> plan -> apply)."
+    },
+    {
+      "id": "QB-007",
+      "tool": "Networking",
+      "difficulty": "Beginner",
+      "type": "command_writing",
+      "question": "Write the modern Linux command used to list all active listening TCP sockets in numeric format with their associated process names and PIDs.",
+      "options": null,
+      "correct_answer": "ss -tulpn",
+      "explanation": "`ss` replaces netstat. `-t` filters TCP, `-u` UDP, `-l` listening sockets, `-p` processes, and `-n` disables DNS resolution for faster output.",
+      "tags": [
+        "networking",
+        "linux",
+        "sockets",
+        "ss"
+      ],
+      "remediation_lesson": "Module 2.1: Practice network diagnostic commands including ss, ip, and ping."
+    },
+    {
+      "id": "QB-008",
+      "tool": "Linux",
+      "difficulty": "Intermediate",
+      "type": "troubleshooting",
+      "question": "A production server reports 'No space left on device' when creating new files, but `df -h` shows 45% disk space available on the root filesystem. What is the root cause and which command diagnoses it?",
+      "options": null,
+      "correct_answer": "Inode exhaustion. Diagnose with `df -i`.",
+      "explanation": "Filesystems have a fixed number of inodes allocated at format time. If an application creates millions of tiny files (such as PHP session files or temp cache), all inodes can be consumed even while free disk block capacity remains.",
+      "tags": [
+        "linux",
+        "inodes",
+        "storage",
+        "troubleshooting"
+      ],
+      "remediation_lesson": "Module 1.1: Study VFS architecture, inode limits, and file system metadata constraints."
+    },
+    {
+      "id": "QB-009",
+      "tool": "Kubernetes",
+      "difficulty": "Intermediate",
+      "type": "MCQ",
+      "question": "In a Kubernetes Deployment manifest, which probe type should be configured to temporarily remove a pod from Service load balancer endpoints when it is overloaded, without terminating the container?",
+      "options": [
+        "Readiness Probe",
+        "Liveness Probe",
+        "Startup Probe",
+        "PreStop Hook"
+      ],
+      "correct_answer": "Readiness Probe",
+      "explanation": "Readiness probes determine if a container is ready to accept network traffic. If a readiness probe fails, Kubernetes removes the pod's IP from the Service endpoints list without restarting the container.",
+      "tags": [
+        "kubernetes",
+        "probes",
+        "readiness",
+        "traffic-routing"
+      ],
+      "remediation_lesson": "Module 7.2: Differentiate between Startup, Liveness, and Readiness probes and their failure consequences."
+    },
+    {
+      "id": "QB-010",
+      "tool": "Docker",
+      "difficulty": "Intermediate",
+      "type": "configuration",
+      "question": "Write a minimal two-stage Dockerfile snippet for a Go application that compiles the binary in a `golang:1.22-alpine` builder stage and runs it in a minimal `alpine:3.19` production stage with an unprivileged user.",
+      "options": null,
+      "correct_answer": "FROM golang:1.22-alpine AS builder\nWORKDIR /app\nCOPY . .\nRUN CGO_ENABLED=0 go build -o server .\n\nFROM alpine:3.19\nRUN adduser -D -u 10001 appuser\nWORKDIR /app\nCOPY --from=builder /app/server .\nUSER 10001\nCMD [\"./server\"]",
+      "explanation": "Multi-stage builds separate heavy compilers from the runtime image. Copying only the compiled binary to Alpine with `USER 10001` ensures minimal image footprint and unprivileged execution.",
+      "tags": [
+        "docker",
+        "dockerfile",
+        "multi-stage",
+        "security"
+      ],
+      "remediation_lesson": "Module 6.2: Review multi-stage Dockerfile design patterns and non-root user enforcement."
+    },
+    {
+      "id": "QB-011",
+      "tool": "Prometheus",
+      "difficulty": "Intermediate",
+      "type": "command_writing",
+      "question": "Write a PromQL expression that calculates the 95th percentile (P95) request latency over a rolling 5-minute window for the metric `http_request_duration_seconds_bucket` across all instances.",
+      "options": null,
+      "correct_answer": "histogram_quantile(0.95, sum by (le) (rate(http_request_duration_seconds_bucket[5m])))",
+      "explanation": "`histogram_quantile` calculates the requested percentile (0.95) over histogram buckets aggregated using `sum by (le)` applied to the rate of bucket counts over time.",
+      "tags": [
+        "prometheus",
+        "promql",
+        "metrics",
+        "latency"
+      ],
+      "remediation_lesson": "Module 11.2: Practice PromQL histogram and percentile calculations."
+    },
+    {
+      "id": "QB-012",
+      "tool": "Ansible",
+      "difficulty": "Intermediate",
+      "type": "short_answer",
+      "question": "In an Ansible playbook, what keyword is used on a task to trigger a handler, and under what specific condition does the handler actually run?",
+      "options": null,
+      "correct_answer": "The `notify` keyword. Handlers execute at the end of the play only if the notifying task reports a 'changed' state.",
+      "explanation": "`notify: <handler_name>` flags a handler for execution. If the task is idempotent and produces no changes (`ok`), the handler is skipped.",
+      "tags": [
+        "ansible",
+        "playbooks",
+        "handlers",
+        "idempotency"
+      ],
+      "remediation_lesson": "Module 9.1: Understand Ansible handlers, notify triggers, and play execution order."
+    },
+    {
+      "id": "QB-013",
+      "tool": "CI/CD",
+      "difficulty": "Intermediate",
+      "type": "MCQ",
+      "question": "Why is using OpenID Connect (OIDC) preferred over storing long-lived AWS Access Keys in GitHub Actions repository secrets?",
+      "options": [
+        "OIDC exchanges short-lived, dynamically scoped JWT tokens for temporary IAM credentials, eliminating static secrets that can be leaked",
+        "OIDC makes pipeline execution 5x faster by bypassing AWS IAM authentication",
+        "OIDC encrypts the Git repository contents on GitHub servers",
+        "OIDC allows running GitHub Actions on self-hosted runners without network connectivity"
+      ],
+      "correct_answer": "OIDC exchanges short-lived, dynamically scoped JWT tokens for temporary IAM credentials, eliminating static secrets that can be leaked",
+      "explanation": "OIDC enables keyless authentication: GitHub issues a signed JWT token that AWS STS validates to assume a temporary IAM role, eliminating permanent credentials.",
+      "tags": [
+        "cicd",
+        "github-actions",
+        "security",
+        "oidc",
+        "iam"
+      ],
+      "remediation_lesson": "Module 10.1: Review GitHub Actions OIDC federation and cloud credential hardening."
+    },
+    {
+      "id": "QB-014",
+      "tool": "Terraform",
+      "difficulty": "Intermediate",
+      "type": "troubleshooting",
+      "question": "When refactoring Terraform code by moving a resource into a reusable child module, running `terraform plan` shows that Terraform plans to destroy the existing resource and recreate it inside the module. How do you prevent this destruction and update the state mapping without downtime?",
+      "options": null,
+      "correct_answer": "Use `terraform state mv <old_resource_address> <new_module_resource_address>` (or declare a `moved` block in HCL).",
+      "explanation": "`terraform state mv` renames the resource's tracking address within `terraform.tfstate`. In Terraform 1.1+, the `moved { from = ... to = ... }` block achieves this declaratively.",
+      "tags": [
+        "terraform",
+        "state-management",
+        "refactoring",
+        "state-mv"
+      ],
+      "remediation_lesson": "Module 8.1: Master Terraform state manipulation and refactoring techniques."
+    },
+    {
+      "id": "QB-015",
+      "tool": "Kubernetes",
+      "difficulty": "Advanced",
+      "type": "architecture",
+      "question": "Explain the architectural difference between Kubernetes Guaranteed, Burstable, and BestEffort Quality of Service (QoS) classes. Under what node conditions does Kubelet evict pods, and in what exact priority order?",
+      "options": null,
+      "correct_answer": "Guaranteed pods have limits equal to requests for CPU and memory. Burstable pods have requests lower than limits. BestEffort pods have no requests or limits specified. When a node encounters memory pressure (memory.available < threshold), Kubelet evicts BestEffort pods first. If pressure persists, Burstable pods exceeding their memory requests are evicted next. Guaranteed pods are only evicted as a last resort if all lower classes are gone.",
+      "tags": [
+        "kubernetes",
+        "qos",
+        "kubelet",
+        "eviction",
+        "memory-pressure"
+      ],
+      "remediation_lesson": "Module 7.2: Study Kubernetes resource requests, limits, and kubelet eviction algorithms.",
+      "explanation": "Guaranteed pods have limits equal to requests for CPU and memory. Burstable pods have requests lower than limits. BestEffort pods have no requests or limits specified. When a node encounters memory pressure (memory.available < threshold), Kubelet evicts BestEffort pods first. If pressure persists, Burstable pods exceeding their memory requests are evicted next. Guaranteed pods are only evicted as a last resort if all lower classes are gone."
+    },
+    {
+      "id": "QB-016",
+      "tool": "Linux",
+      "difficulty": "Advanced",
+      "type": "troubleshooting",
+      "question": "A production server shows an overall CPU utilization of only 8%, but the 1-minute load average is 32.0 on an 8-core CPU. Running `ps -eo state,pid,cmd` reveals dozens of processes in the 'D' state. What does the 'D' state signify, why does it drive up the load average, and how do you resolve it?",
+      "options": null,
+      "correct_answer": "The 'D' state represents Uninterruptible Sleep, where a process is waiting on kernel-level disk I/O, paging, or a deadlocked network filesystem (e.g. NFS). In Linux, the load average counts processes in both Running ('R') and Uninterruptible Sleep ('D') states. Because processes in D state cannot respond to signals (even kill -9), the issue must be resolved by restoring the blocked storage subsystem, remounting hung NFS mounts with soft timeouts, or rebooting if a hardware/driver deadlock occurred.",
+      "tags": [
+        "linux",
+        "kernel",
+        "load-average",
+        "process-states",
+        "d-state"
+      ],
+      "remediation_lesson": "Module 1.4: Deep dive into Linux process states, task scheduler run queues, and I/O bottlenecks.",
+      "explanation": "The 'D' state represents Uninterruptible Sleep, where a process is waiting on kernel-level disk I/O, paging, or a deadlocked network filesystem (e.g. NFS). In Linux, the load average counts processes in both Running ('R') and Uninterruptible Sleep ('D') states. Because processes in D state cannot respond to signals (even kill -9), the issue must be resolved by restoring the blocked storage subsystem, remounting hung NFS mounts with soft timeouts, or rebooting if a hardware/driver deadlock occurred."
+    },
+    {
+      "id": "QB-017",
+      "tool": "Networking",
+      "difficulty": "Advanced",
+      "type": "troubleshooting",
+      "question": "In a high-throughput microservices cluster, an API gateway begins dropping incoming TCP connections with kernel errors stating `nf_conntrack: table full, dropping packet`. What Linux subsystem is failing, and what sysctl parameters must be tuned to remediate this?",
+      "options": null,
+      "correct_answer": "The Netfilter Connection Tracking (conntrack) subsystem has exhausted its maximum allocated state tracking table. Remediate by increasing `net.netfilter.nf_conntrack_max` and adjusting the hash bucket size via `echo <size> > /sys/module/nf_conntrack/parameters/hashsize`, and shortening TCP timeout windows via `net.netfilter.nf_conntrack_tcp_timeout_established`.",
+      "tags": [
+        "networking",
+        "conntrack",
+        "netfilter",
+        "sysctl",
+        "kernel-tuning"
+      ],
+      "remediation_lesson": "Module 2.1: Study Netfilter connection tracking table mechanics and high-concurrency kernel tuning.",
+      "explanation": "The Netfilter Connection Tracking (conntrack) subsystem has exhausted its maximum allocated state tracking table. Remediate by increasing `net.netfilter.nf_conntrack_max` and adjusting the hash bucket size via `echo <size> > /sys/module/nf_conntrack/parameters/hashsize`, and shortening TCP timeout windows via `net.netfilter.nf_conntrack_tcp_timeout_established`."
+    },
+    {
+      "id": "QB-018",
+      "tool": "Prometheus",
+      "difficulty": "Advanced",
+      "type": "MCQ",
+      "question": "What is the primary danger of setting high-cardinality values (such as `user_id`, `email`, or `ip_address`) as Prometheus metric labels?",
+      "options": [
+        "It generates millions of unique time series, exhausting Prometheus memory (RAM) and causing TSDB crashes due to cardinality explosion",
+        "It causes Prometheus to reject all scrape targets over HTTP",
+        "It invalidates the TLS certificate on the Prometheus endpoint",
+        "It automatically converts all Counter metrics into Gauge metrics"
+      ],
+      "correct_answer": "It generates millions of unique time series, exhausting Prometheus memory (RAM) and causing TSDB crashes due to cardinality explosion",
+      "explanation": "Every unique combination of key-value labels creates a distinct time series in Prometheus TSDB. High-cardinality labels result in millions of time series, causing RAM exhaustion and OOM crashes.",
+      "tags": [
+        "prometheus",
+        "cardinality",
+        "tsdb",
+        "observability"
+      ],
+      "remediation_lesson": "Module 11.1: Learn metric relabeling techniques and cardinality mitigation."
+    },
+    {
+      "id": "QB-019",
+      "tool": "Git",
+      "difficulty": "Advanced",
+      "type": "incident_response",
+      "question": "A software engineer accidentally committed an AWS root administrator access key to a public GitHub repository 2 hours ago. Outline the immediate 4-step emergency incident response sequence to contain the blast radius.",
+      "options": null,
+      "correct_answer": "1. Immediately deactivate and revoke the leaked AWS IAM access key in the AWS IAM console/CLI so it cannot be used. 2. Inspect AWS CloudTrail logs for the compromised access key to audit any unauthorized API calls made during the exposure window. 3. Purge the secret from the Git repository history using `git-filter-repo` or BFG Repo-Cleaner and force-push with lease. 4. Rotate all associated credentials, invalidate active sessions, and file a security incident report.",
+      "tags": [
+        "git",
+        "security",
+        "incident-response",
+        "secret-leak",
+        "aws"
+      ],
+      "remediation_lesson": "Module 3.3: Master git-filter-repo and credential leakage remediation.",
+      "explanation": "1. Immediately deactivate and revoke the leaked AWS IAM access key in the AWS IAM console/CLI so it cannot be used. 2. Inspect AWS CloudTrail logs for the compromised access key to audit any unauthorized API calls made during the exposure window. 3. Purge the secret from the Git repository history using `git-filter-repo` or BFG Repo-Cleaner and force-push with lease. 4. Rotate all associated credentials, invalidate active sessions, and file a security incident report."
+    },
+    {
+      "id": "QB-020",
+      "tool": "SRE",
+      "difficulty": "Professional",
+      "type": "architecture",
+      "question": "Define the mathematical relationship between Service Level Indicator (SLI), Service Level Objective (SLO), and Error Budget. If a payment service processes 20,000,000 requests per month with an SLO of 99.95% availability, how many failed requests can occur before the Error Budget is exhausted, and what operational policy should be enforced upon exhaustion?",
+      "options": null,
+      "correct_answer": "SLI is the quantitative measure of good events / total events. SLO is the target reliability threshold agreed with stakeholders (e.g. 99.95%). Error Budget = 100% - SLO = 0.05%. With 20,000,000 requests, the Error Budget allows (20,000,000 * 0.0005) = 10,000 failed requests per month. When the Error Budget is exhausted, the Error Budget Policy mandates freezing non-critical feature deployments and redirecting engineering capacity to reliability improvements, technical debt remediation, and testing infrastructure.",
+      "tags": [
+        "sre",
+        "slo",
+        "sli",
+        "error-budget",
+        "reliability-engineering"
+      ],
+      "remediation_lesson": "Module 12.1: Study SRE mathematical frameworks and error budget governance.",
+      "explanation": "SLI is the quantitative measure of good events / total events. SLO is the target reliability threshold agreed with stakeholders (e.g. 99.95%). Error Budget = 100% - SLO = 0.05%. With 20,000,000 requests, the Error Budget allows (20,000,000 * 0.0005) = 10,000 failed requests per month. When the Error Budget is exhausted, the Error Budget Policy mandates freezing non-critical feature deployments and redirecting engineering capacity to reliability improvements, technical debt remediation, and testing infrastructure."
+    },
+    {
+      "id": "QB-021",
+      "tool": "Kubernetes",
+      "difficulty": "Professional",
+      "type": "configuration",
+      "question": "Provide a Kubernetes NetworkPolicy YAML snippet that isolates the `backend` namespace by default (deny all ingress and egress), while explicitly allowing ingress on TCP port 8080 only from pods labeled `app=frontend` in the `frontend` namespace.",
+      "options": null,
+      "correct_answer": "apiVersion: networking.k8s.io/v1\nkind: NetworkPolicy\nmetadata:\n  name: allow-frontend-to-backend\n  namespace: backend\nspec:\n  podSelector: {}\n  policyTypes:\n  - Ingress\n  - Egress\n  ingress:\n  - from:\n    - namespaceSelector:\n        matchLabels:\n          kubernetes.io/metadata.name: frontend\n      podSelector:\n        matchLabels:\n          app: frontend\n    ports:\n    - protocol: TCP\n      port: 8080",
+      "explanation": "Setting empty `podSelector: {}` applies the policy to all pods in the namespace. Specifying `policyTypes: [Ingress, Egress]` without matching rules enforces a default deny, while the `ingress` rule scopes access strictly to frontend pods across namespace boundaries.",
+      "tags": [
+        "kubernetes",
+        "network-policy",
+        "security",
+        "zero-trust"
+      ],
+      "remediation_lesson": "Module 7.2: Learn Kubernetes NetworkPolicy microsegmentation and default-deny policies."
+    },
+    {
+      "id": "QB-022",
+      "tool": "Terraform",
+      "difficulty": "Professional",
+      "type": "troubleshooting",
+      "question": "A production Terraform apply failed halfway through due to an AWS service quota limit. The DynamoDB state lock was left locked, and rerunning apply yields 'Error: Error acquiring the state lock'. How do you safely verify and release the lock, and what precautions must you take before doing so?",
+      "options": null,
+      "correct_answer": "1. Verify that no background CI/CD runner or engineer is actively running Terraform against that state file by inspecting running pipeline jobs. 2. Extract the Lock ID provided in the error message. 3. Safely unlock the state using `terraform force-unlock <LOCK_ID>`. Precaution: Never force unlock while an apply operation is actively modifying cloud infrastructure, as this leads to state corruption.",
+      "tags": [
+        "terraform",
+        "state-locking",
+        "dynamodb",
+        "troubleshooting"
+      ],
+      "remediation_lesson": "Module 8.1: Practice state recovery and distributed lock resolution in Terraform.",
+      "explanation": "1. Verify that no background CI/CD runner or engineer is actively running Terraform against that state file by inspecting running pipeline jobs. 2. Extract the Lock ID provided in the error message. 3. Safely unlock the state using `terraform force-unlock <LOCK_ID>`. Precaution: Never force unlock while an apply operation is actively modifying cloud infrastructure, as this leads to state corruption."
+    },
+    {
+      "id": "QB-023",
+      "tool": "CI/CD",
+      "difficulty": "Professional",
+      "type": "incident_response",
+      "question": "During an automated canary release of a critical payment API, Prometheus detects that the HTTP 5xx error rate on canary pods has reached 8.5% while stable pods remain at 0.01%. Describe the automated and manual rollback procedures using Argo Rollouts and Prometheus metrics.",
+      "options": null,
+      "correct_answer": "Automated: Configure an AnalysisTemplate in Argo Rollouts with a PromQL metric provider checking `sum(rate(http_requests_total{status=~'5..'}[2m])) / sum(rate(http_requests_total[2m])) <= 0.01`. When the error rate exceeds 1% for consecutive evaluation intervals, Argo Rollouts automatically marks the analysis as Failed and triggers an automated abort, routing 100% of traffic back to the stable ReplicaSet. Manual: The on-call engineer can immediately execute `kubectl argo rollouts abort <rollout-name> -n <namespace>` followed by `kubectl argo rollouts undo <rollout-name> -n <namespace>`.",
+      "tags": [
+        "cicd",
+        "argo-rollouts",
+        "canary",
+        "incident-response",
+        "automated-rollback"
+      ],
+      "remediation_lesson": "Module 10.1: Master progressive delivery, canary analysis, and automated rollbacks.",
+      "explanation": "Automated: Configure an AnalysisTemplate in Argo Rollouts with a PromQL metric provider checking `sum(rate(http_requests_total{status=~'5..'}[2m])) / sum(rate(http_requests_total[2m])) <= 0.01`. When the error rate exceeds 1% for consecutive evaluation intervals, Argo Rollouts automatically marks the analysis as Failed and triggers an automated abort, routing 100% of traffic back to the stable ReplicaSet. Manual: The on-call engineer can immediately execute `kubectl argo rollouts abort <rollout-name> -n <namespace>` followed by `kubectl argo rollouts undo <rollout-name> -n <namespace>`."
+    },
+    {
+      "id": "QB-024",
+      "tool": "Linux",
+      "difficulty": "Master",
+      "type": "architecture",
+      "question": "Explain how eBPF (Extended Berkeley Packet Filter) differs from traditional kernel modules (LKMs) in terms of safety, performance, and execution context. How does the eBPF in-kernel verifier prevent kernel crashes, and how do modern networking CNI plugins (like Cilium) leverage eBPF to bypass the Linux iptables stack?",
+      "options": null,
+      "correct_answer": "eBPF allows executing sandboxed bytecode inside the Linux kernel at designated hook points (kprobes, tracepoints, XDP, tc) without modifying kernel source or loading unsafe kernel modules (LKMs). LKMs run with full kernel privileges and can crash the machine (kernel panic) or leak memory; eBPF programs must pass the in-kernel verifier, which mathematically proves that the code cannot dereference null pointers, cannot loop indefinitely (bounded loops), and adheres to strict memory bounds before execution. Cilium leverages eBPF via the tc (traffic control) and XDP (eXpress Data Path) hooks to process and route packets directly at the network driver or socket layer, performing service routing (kube-proxy replacement) via eBPF BPF maps in O(1) time complexity, completely bypassing the sequential O(N) packet traversal penalty of iptables chains.",
+      "tags": [
+        "linux",
+        "ebpf",
+        "kernel",
+        "cilium",
+        "networking",
+        "cni"
+      ],
+      "remediation_lesson": "Module 1.4 & Module 2.1: Advanced study of eBPF architecture and modern kernel bypass networking.",
+      "explanation": "eBPF allows executing sandboxed bytecode inside the Linux kernel at designated hook points (kprobes, tracepoints, XDP, tc) without modifying kernel source or loading unsafe kernel modules (LKMs). LKMs run with full kernel privileges and can crash the machine (kernel panic) or leak memory; eBPF programs must pass the in-kernel verifier, which mathematically proves that the code cannot dereference null pointers, cannot loop indefinitely (bounded loops), and adheres to strict memory bounds before execution. Cilium leverages eBPF via the tc (traffic control) and XDP (eXpress Data Path) hooks to process and route packets directly at the network driver or socket layer, performing service routing (kube-proxy replacement) via eBPF BPF maps in O(1) time complexity, completely bypassing the sequential O(N) packet traversal penalty of iptables chains."
+    },
+    {
+      "id": "QB-025",
+      "tool": "SRE",
+      "difficulty": "Master",
+      "type": "incident_response",
+      "question": "A global cloud provider experiences an unprecedented simultaneous multi-availability-zone power failure affecting both AZ-a and AZ-b in `us-east-1`. Describe an end-to-end multi-region disaster recovery architecture for an active-passive PostgreSQL and Kubernetes workload in `us-west-2`, detailing DNS failover mechanics, RTO, RPO, and asynchronous replication reconciliation.",
+      "options": null,
+      "correct_answer": "Architecture: Primary region (us-east-1) runs active Kubernetes workloads and primary Aurora/Patroni PostgreSQL. Secondary region (us-west-2) maintains a standby cluster with an asynchronous cross-region read replica and warm standby Kubernetes cluster (scaled to baseline 10%). DNS: AWS Route53 configured with health-checked Failover Routing policies pointing to ALB endpoints with 60-second TTL. Execution: 1. When Route53 health checks detect us-east-1 failure, DNS traffic automatically shifts to us-west-2 ALBs. 2. Promote the us-west-2 PostgreSQL read replica to standalone read-write primary using `aws rds promote-read-replica` or Patroni promotion. 3. Trigger Karpenter autoscaling to rapidly scale up Kubernetes microservice replicas from warm standby to 100% capacity. 4. Metrics: RTO (Recovery Time Objective) target < 5 minutes (DNS propagation + DB promotion + pod scale); RPO (Recovery Point Objective) < 30 seconds (bounded by cross-region async replication lag). 5. Post-recovery: Audit WAL replay gaps and reconcile transactions against external payment gateway webhooks.",
+      "tags": [
+        "sre",
+        "disaster-recovery",
+        "multi-region",
+        "failover",
+        "database",
+        "rto-rpo"
+      ],
+      "remediation_lesson": "Module 12.1: Design and drill enterprise multi-region disaster recovery architectures.",
+      "explanation": "Architecture: Primary region (us-east-1) runs active Kubernetes workloads and primary Aurora/Patroni PostgreSQL. Secondary region (us-west-2) maintains a standby cluster with an asynchronous cross-region read replica and warm standby Kubernetes cluster (scaled to baseline 10%). DNS: AWS Route53 configured with health-checked Failover Routing policies pointing to ALB endpoints with 60-second TTL. Execution: 1. When Route53 health checks detect us-east-1 failure, DNS traffic automatically shifts to us-west-2 ALBs. 2. Promote the us-west-2 PostgreSQL read replica to standalone read-write primary using `aws rds promote-read-replica` or Patroni promotion. 3. Trigger Karpenter autoscaling to rapidly scale up Kubernetes microservice replicas from warm standby to 100% capacity. 4. Metrics: RTO (Recovery Time Objective) target < 5 minutes (DNS propagation + DB promotion + pod scale); RPO (Recovery Point Objective) < 30 seconds (bounded by cross-region async replication lag). 5. Post-recovery: Audit WAL replay gaps and reconcile transactions against external payment gateway webhooks."
+    }
+  ]
+}

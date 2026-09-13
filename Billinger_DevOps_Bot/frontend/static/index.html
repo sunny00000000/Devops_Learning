@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BILLINGER — DevOps Learning & Career Command Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="theme-obsidian-cyberpunk font-normal">
+  <div class="app-layout">
+    <!-- SIDEBAR RAIL -->
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main Navigation">
+      <div class="sidebar-header">
+        <div class="logo-badge">⚡</div>
+        <div class="brand-text">
+          <h2>BILLINGER</h2>
+          <span class="version-tag">PRO v3.0.0</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#home" class="nav-item active" data-tab="home"><span class="icon">🏠</span> <span>Command Hub</span></a>
+        <a href="#learning" class="nav-item" data-tab="learning"><span class="icon">📚</span> <span>Learning Core</span></a>
+        <a href="#playground" class="nav-item" data-tab="playground"><span class="icon">💻</span> <span>Playground</span></a>
+        <a href="#labs" class="nav-item" data-tab="labs"><span class="icon">🏢</span> <span>Simulation</span></a>
+        <a href="#incidents" class="nav-item" data-tab="incidents"><span class="icon">🚨</span> <span>Incidents</span></a>
+        <a href="#assessment" class="nav-item" data-tab="assessment"><span class="icon">📝</span> <span>Assessment</span></a>
+        <a href="#interview" class="nav-item" data-tab="interview"><span class="icon">🎙️</span> <span>Interview Studio</span></a>
+        <a href="#career" class="nav-item" data-tab="career"><span class="icon">🎯</span> <span>Career Match</span></a>
+        <a href="#resume" class="nav-item" data-tab="resume"><span class="icon">📄</span> <span>ATS Resume</span></a>
+        <a href="#portfolio" class="nav-item" data-tab="portfolio"><span class="icon">🏆</span> <span>Portfolio</span></a>
+        <a href="#documents" class="nav-item" data-tab="documents"><span class="icon">📁</span> <span>Doc Vault</span></a>
+        <a href="#ai" class="nav-item" data-tab="ai"><span class="icon">🤖</span> <span>AI Matrix</span></a>
+        <a href="#system" class="nav-item" data-tab="system"><span class="icon">⚙️</span> <span>Telemetry & State</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="status-indicator">
+          <span class="dot online" id="conn-dot"></span>
+          <span id="conn-text">NODE ONLINE</span>
+        </div>
+        <div class="accessibility-controls">
+          <button id="btn-theme-toggle" title="Cycle Visual Themes (Obsidian / High-Contrast / Matrix)">👁️</button>
+          <button id="btn-font-toggle" title="Scale Typography">🔤</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN OPERATIONS VIEWPORT -->
+    <main class="main-content">
+      <!-- TOPBAR HUD -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 id="page-title">Executive Command Hub</h1>
+          <p class="subtitle" id="page-subtitle">Adaptive Learning Twin • SRE Incident Operations • Career Acceleration</p>
+        </div>
+        <div class="topbar-right">
+          <div class="hud-pill"><span class="dot online"></span> SANDBOX ENFORCED</div>
+          <div class="readiness-metric">
+            <span class="metric-label">Job Readiness</span>
+            <span class="metric-val" id="topbar-readiness">84.5%</span>
+          </div>
+          <div class="user-profile-badge">
+            <span class="avatar-pill">👨‍💻</span>
+            <span id="user-display-name">DevOps Engineer</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- TAB CONTENT PANES -->
+      <div class="content-body">
+        
+        <!-- TAB 1: HOME (COMMAND HUB) -->
+        <section id="tab-home" class="tab-pane active">
+          <!-- HERO NEXT BEST ACTION -->
+          <div class="hero-hud-banner" id="next-action-box">
+            <div class="hero-hud-left">
+              <div class="hero-icon-orb">🎯</div>
+              <div>
+                <div class="pill-tag safe" style="margin-bottom: 6px;">RECOMMENDED NEXT BEST ACTION</div>
+                <h3 id="rec-action">Master Kubernetes Pod Security Policies & Network Policies</h3>
+                <p>Target Lab: <strong id="rec-lab" style="color:var(--neon-cyan);">Lab 07: K8s Zero-Trust Network Isolation</strong> • Lesson: <span id="rec-lesson" style="color:var(--text-main);">7.3 Hardened Ingress Controller</span></p>
+              </div>
+            </div>
+            <button class="btn-cyber" onclick="document.querySelector('[data-tab=learning]').click()">Engage Lesson →</button>
+          </div>
+
+          <!-- TELEMETRY 4-GRID -->
+          <div class="telemetry-grid">
+            <div class="card-glass telemetry-card">
+              <div class="telemetry-header">
+                <span class="telemetry-title">System Status</span>
+                <span class="telemetry-icon">⚡</span>
+              </div>
+              <div class="telemetry-value" id="sys-status" style="color:var(--neon-emerald);">HEALTHY</div>
+              <div class="meter-track"><div class="meter-fill emerald" style="width: 100%;"></div></div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Python 3.10+ Native Engine • No Daemons</span>
+            </div>
+
+            <div class="card-glass telemetry-card">
+              <div class="telemetry-header">
+                <span class="telemetry-title">Memory Footprint</span>
+                <span class="telemetry-icon">💾</span>
+              </div>
+              <div class="telemetry-value" id="sys-ram">512 MB</div>
+              <div class="meter-track"><div class="meter-fill" style="width: 12.5%;"></div></div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Strict &lt; 4096 MB Hardware Ceiling</span>
+            </div>
+
+            <div class="card-glass telemetry-card">
+              <div class="telemetry-header">
+                <span class="telemetry-title">Command Mastery</span>
+                <span class="telemetry-icon">💻</span>
+              </div>
+              <div class="telemetry-value" id="twin-cmds-count">78 / 85</div>
+              <div class="meter-track"><div class="meter-fill" style="width: 91.7%;"></div></div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">12 Tools • Verified Execution Evidence</span>
+            </div>
+
+            <div class="card-glass telemetry-card">
+              <div class="telemetry-header">
+                <span class="telemetry-title">Incident MTTR</span>
+                <span class="telemetry-icon">⏱️</span>
+              </div>
+              <div class="telemetry-value" id="twin-mttr" style="color:var(--neon-cyan);">4.2m</div>
+              <div class="meter-track"><div class="meter-fill emerald" style="width: 82%;"></div></div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">SRE SLA Benchmark: &lt; 10.0m Target</span>
+            </div>
+          </div>
+
+          <!-- RADAR & PROFILE CONTAINER -->
+          <div class="radar-dual-container">
+            <!-- 8D Competency Radar -->
+            <div class="card-glass">
+              <h3 style="font-size:1.1rem; margin-bottom:16px; display:flex; align-items:center; justify-content:space-between;">
+                <span>Personal Learning Twin Radar</span>
+                <span class="pill-tag safe" id="twin-level">LEVEL: SENIOR DEVOPS</span>
+              </h3>
+              <div class="radar-chart-wrapper">
+                <!-- Embedded High-Tech SVG Radar Graphic -->
+                <svg viewBox="0 0 360 360" width="300" height="300">
+                  <polygon points="180,30 286,74 330,180 286,286 180,330 74,286 30,180 74,74" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                  <polygon points="180,75 243,101 270,180 243,243 180,270 117,243 90,180 117,101" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                  <polygon points="180,120 206,131 220,180 206,206 180,220 154,206 140,180 154,131" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                  <!-- Data Polygon -->
+                  <polygon points="180,50 270,90 310,180 260,260 180,300 95,270 50,180 90,95" fill="rgba(0, 242, 254, 0.2)" stroke="#00f2fe" stroke-width="2"/>
+                  <!-- Nodes -->
+                  <circle cx="180" cy="50" r="4" fill="#00f2fe"/>
+                  <circle cx="270" cy="90" r="4" fill="#00f2fe"/>
+                  <circle cx="310" cy="180" r="4" fill="#00f2fe"/>
+                  <circle cx="260" cy="260" r="4" fill="#00f2fe"/>
+                  <circle cx="180" cy="300" r="4" fill="#00f2fe"/>
+                  <circle cx="95" cy="270" r="4" fill="#00f2fe"/>
+                  <circle cx="50" cy="180" r="4" fill="#00f2fe"/>
+                  <circle cx="90" cy="95" r="4" fill="#00f2fe"/>
+                  <!-- Labels -->
+                  <text x="180" y="20" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="monospace">LINUX</text>
+                  <text x="300" y="70" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="monospace">NETWORKING</text>
+                  <text x="345" y="185" fill="#94a3b8" font-size="11" text-anchor="start" font-family="monospace">GIT</text>
+                  <text x="290" y="300" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="monospace">DOCKER</text>
+                  <text x="180" y="350" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="monospace">K8S</text>
+                  <text x="70" y="300" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="monospace">TERRAFORM</text>
+                  <text x="15" y="185" fill="#94a3b8" font-size="11" text-anchor="end" font-family="monospace">CI/CD</text>
+                  <text x="70" y="70" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="monospace">SRE</text>
+                </svg>
+              </div>
+              <div id="dimension-bars-container" style="display:flex; flex-direction:column; gap:10px; margin-top:10px;">
+                <!-- Filled dynamically by app.js -->
+              </div>
+            </div>
+
+            <!-- Active Operations & Outage Simulation Card -->
+            <div class="card-glass">
+              <h3 style="font-size:1.1rem; margin-bottom:16px;">SRE Outage Watchdog &amp; Goals</h3>
+              <div style="background:rgba(0,0,0,0.3); padding:16px; border-radius:8px; border:1px solid var(--border-glass); margin-bottom:16px;">
+                <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Current Certification Goal</span>
+                <h4 id="twin-next-goal" style="color:#ffffff; margin-top:4px;">Principal SRE &amp; Enterprise Cloud Architect</h4>
+              </div>
+              <div id="active-incident-box">
+                <p style="color:var(--text-muted); font-size:0.9rem;">No active production alerts. Platform operating within 99.99% SLA parameters.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 2: LEARNING CORE -->
+        <section id="tab-learning" class="tab-pane">
+          <div style="margin-bottom:24px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h2 style="font-size:1.3rem;">12-Domain DevOps Curriculum Matrix</h2>
+              <p style="color:var(--text-muted); font-size:0.85rem;">Exhaustive reference from beginner fundamentals to enterprise production SRE</p>
+            </div>
+            <a href="/api/content/pdfs/DevOps_Complete_Master_Encyclopedia.pdf" target="_blank" class="btn-cyber">📥 Download Full Compendium (PDF)</a>
+          </div>
+
+          <div class="domains-matrix" id="domain-catalog-grid">
+            <!-- Populated dynamically by app.js -->
+          </div>
+
+          <div class="card-glass" id="domain-detail-card" style="display:none; margin-top:24px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+              <h3 id="domain-detail-title">Domain Detail</h3>
+              <button class="btn-secondary" onclick="document.getElementById('domain-detail-card').style.display='none'">Close</button>
+            </div>
+            <div id="domain-detail-body"></div>
+          </div>
+        </section>
+
+        <!-- TAB 3: COMMAND PLAYGROUND -->
+        <section id="tab-playground" class="tab-pane">
+          <div style="margin-bottom:20px;">
+            <h2 style="font-size:1.3rem;">3-Tier Defensive Command Playground</h2>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Interactive execution sandbox isolated within student lab workspace</p>
+          </div>
+
+          <div class="terminal-window">
+            <div class="terminal-topbar">
+              <div class="terminal-dots">
+                <span class="term-dot red"></span>
+                <span class="term-dot yellow"></span>
+                <span class="term-dot green"></span>
+              </div>
+              <span class="terminal-title-text">devops@billinger-sandbox:~/workspace (BASH 5.2)</span>
+              <span class="pill-tag safe" id="playground-tier-pill">SECURITY GUARD: ARMED</span>
+            </div>
+
+            <div class="terminal-output" id="terminal-screen">=== Billinger Command Sandbox Active ===
+Type any Linux, Docker, K8s, Git or Bash command below.
+Commands are evaluated against 3-Tier Security Policy (SAFE, CAUTION, BLOCKED).
+</div>
+
+            <div class="terminal-input-row">
+              <span class="terminal-prompt">devops@billinger:~$</span>
+              <input type="text" id="term-input" class="terminal-input" placeholder="Type a command (e.g. ls -la, df -hT, docker ps, kubectl get pods)..." autocomplete="off">
+              <button class="btn-cyber" onclick="executePlaygroundCmd()">Execute ↵</button>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;">
+            <span style="font-size:0.85rem; color:var(--text-muted); align-self:center;">Quick Commands:</span>
+            <button class="btn-secondary" onclick="setPlaygroundInput('df -hT')">df -hT</button>
+            <button class="btn-secondary" onclick="setPlaygroundInput('ps aux | head -n 10')">ps aux</button>
+            <button class="btn-secondary" onclick="setPlaygroundInput('git status')">git status</button>
+            <button class="btn-secondary" onclick="setPlaygroundInput('docker info 2>/dev/null || echo Docker Client Ready')">docker info</button>
+            <button class="btn-secondary" onclick="setPlaygroundInput('rm -rf /')">Test Blocked: rm -rf /</button>
+          </div>
+        </section>
+
+        <!-- TAB 4: COMPANY SIMULATION -->
+        <section id="tab-labs" class="tab-pane">
+          <div style="margin-bottom:20px;">
+            <h2 style="font-size:1.3rem;">Virtual Company Scenario Simulator</h2>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Resolve complex multi-tier production outages across Fintech, HealthTech, and E-Commerce</p>
+          </div>
+
+          <div id="scenario-list-container" class="domains-matrix">
+            <!-- Populated dynamically by app.js -->
+          </div>
+
+          <div class="card-glass" id="active-scenario-card" style="display:none; margin-top:24px;">
+            <h3 id="scen-active-title">Active Scenario</h3>
+            <div id="scen-active-body" style="margin-top:12px;"></div>
+          </div>
+        </section>
+
+        <!-- TAB 5: INCIDENTS -->
+        <section id="tab-incidents" class="tab-pane">
+          <div style="margin-bottom:20px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h2 style="font-size:1.3rem;">Production Incident Response Center</h2>
+              <p style="color:var(--text-muted); font-size:0.85rem;">Live SLA Countdown Watchdog, Triage Escalation &amp; Postmortem Generator</p>
+            </div>
+            <button class="btn-cyber" onclick="triggerIncident('SCEN-001', 'Black Friday Checkout Failure', 'SRE')">🚨 Simulate Critical Outage (SRE)</button>
+          </div>
+
+          <div class="card-glass" style="margin-bottom:24px;">
+            <h3 style="font-size:1.1rem; margin-bottom:12px;">Incident Watchdog Console</h3>
+            <div id="incident-sla-timer" style="font-family:var(--font-mono); font-size:1.8rem; color:var(--neon-crimson); margin-bottom:16px;">
+              SLA TIMER: IDLE
+            </div>
+            <div style="display:flex; gap:12px;">
+              <select id="inc-mitigation-select" class="btn-secondary" style="flex:1;">
+                <option value="rollback">Execute Automated Canary Rollback</option>
+                <option value="scale">Trigger Horizontal Pod Autoscaler (HPA)</option>
+                <option value="drain">Isolate and Drain Failing Node Pool</option>
+              </select>
+              <button class="btn-cyber" onclick="resolveIncident('INC-ACTIVE', document.getElementById('inc-mitigation-select').value)">Apply Mitigation &amp; Resolve</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 6: ASSESSMENT -->
+        <section id="tab-assessment" class="tab-pane">
+          <div style="margin-bottom:20px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h2 style="font-size:1.3rem;">DevOps Assessment &amp; Certification Engine</h2>
+              <p style="color:var(--text-muted); font-size:0.85rem;">Multi-format test questions with error pinpointing and remediation roadmap</p>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <select id="test-tool-select" class="btn-secondary">
+                <option value="all">All Domains (25 Questions)</option>
+                <option value="linux">Linux SysAdmin</option>
+                <option value="docker">Docker &amp; Containers</option>
+                <option value="k8s">Kubernetes</option>
+              </select>
+              <select id="test-diff-select" class="btn-secondary">
+                <option value="all">All Difficulties</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+              <button class="btn-cyber" onclick="startTestSession()">Start Examination</button>
+            </div>
+          </div>
+
+          <div class="card-glass" id="test-session-container">
+            <p style="color:var(--text-muted);">Select test parameters and click 'Start Examination' to begin.</p>
+          </div>
+        </section>
+
+        <!-- TAB 7: INTERVIEW STUDIO -->
+        <section id="tab-interview" class="tab-pane">
+          <div style="margin-bottom:20px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h2 style="font-size:1.3rem;">DevOps Mock Interview Studio</h2>
+              <p style="color:var(--text-muted); font-size:0.85rem;">Interactive interview simulation across 9 technical and leadership personas</p>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <select id="interview-stage" class="btn-secondary">
+                <option value="1">Round 1: Screening</option>
+                <option value="2">Round 2: Technical Deep-Dive</option>
+                <option value="3">Round 3: Live Incident Troubleshooting</option>
+                <option value="4">Round 4: Architecture Design</option>
+              </select>
+              <select id="interview-persona" class="btn-secondary">
+                <option value="Senior DevOps Engineer">Senior DevOps Engineer</option>
+                <option value="SRE">Site Reliability Engineer</option>
+                <option value="Strict HR">Strict HR</option>
+                <option value="CTO">CTO</option>
+              </select>
+              <input type="text" id="interview-company" class="btn-secondary" placeholder="Company (e.g. Amazon, Stripe)" value="Nutrabay">
+              <button class="btn-cyber" onclick="startInterviewSession()">Begin Interview</button>
+            </div>
+          </div>
+
+          <div class="card-glass">
+            <div id="interview-chat-box" style="height:340px; overflow-y:auto; padding:16px; background:rgba(0,0,0,0.3); border-radius:8px; margin-bottom:16px;">
+              <p style="color:var(--text-muted);">Press 'Begin Interview' to receive your scenario prompt from the interviewer.</p>
+            </div>
+            <div id="interview-input-area" style="display:flex; gap:12px;">
+              <textarea id="interview-answer-input" class="terminal-input" style="height:80px; padding:12px; background:rgba(0,0,0,0.4); border-radius:8px; border:1px solid var(--border-glass);" placeholder="Type your structured technical response..."></textarea>
+              <button class="btn-cyber" onclick="submitInterviewAnswer()">Submit Answer ↵</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 8: CAREER MATCH -->
+        <section id="tab-career" class="tab-pane">
+          <div style="margin-bottom:20px;">
+            <h2 style="font-size:1.3rem;">Career Intelligence &amp; Job Description Matcher</h2>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Analyze real-world job postings to identify skill matches, gaps, and remediation plans</p>
+          </div>
+
+          <div class="card-glass" style="margin-bottom:20px;">
+            <label style="font-size:0.85rem; color:var(--text-muted);">Paste Target Job Description (JD):</label>
+            <textarea id="jd-input" class="terminal-input" style="width:100%; height:120px; padding:12px; background:rgba(0,0,0,0.4); border-radius:8px; border:1px solid var(--border-glass); margin-top:8px;" placeholder="Paste job description requirements here (e.g. Terraform, Kubernetes, Helm, AWS VPC, Prometheus, Jenkins)..."></textarea>
+            <button class="btn-cyber" style="margin-top:12px;" onclick="runCareerMatch()">Analyze Fit &amp; Generate Roadmap</button>
+          </div>
+
+          <div id="career-match-results"></div>
+        </section>
+
+        <!-- TAB 9: ATS RESUME STUDIO -->
+        <section id="tab-resume" class="tab-pane">
+          <div style="margin-bottom:20px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h2 style="font-size:1.3rem;">ATS Resume Studio &amp; Honest Evidence Tailoring</h2>
+              <p style="color:var(--text-muted); font-size:0.85rem;">Real-time ATS keyword matching, honest metric scoring, and PDF generation</p>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <input type="text" id="resume-role-input" class="btn-secondary" value="DevOps Engineer">
+              <button class="btn-cyber" onclick="analyzeResumeATS()">Analyze ATS Score</button>
+            </div>
+          </div>
+
+          <div class="card-glass" id="resume-preview-box">
+            <p style="color:var(--text-muted);">Click 'Analyze ATS Score' to view verified keyword optimization and recommendations.</p>
+          </div>
+        </section>
+
+        <!-- TAB 10: EVIDENCE PORTFOLIO -->
+        <section id="tab-portfolio" class="tab-pane">
+          <div style="margin-bottom:20px;">
+            <h2 style="font-size:1.3rem;">Cryptographically Verifiable Portfolio Showcases</h2>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Automated evidence harvested from completed production scenarios and labs</p>
+          </div>
+
+          <div id="portfolio-items-container" class="domains-matrix">
+            <!-- Populated dynamically by app.js -->
+          </div>
+        </section>
+
+        <!-- TAB 11: DOCUMENT VAULT -->
+        <section id="tab-documents" class="tab-pane">
+          <div style="margin-bottom:20px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h2 style="font-size:1.3rem;">Document Vault &amp; Anti-Cross-Contamination Classifier</h2>
+              <p style="color:var(--text-muted); font-size:0.85rem;">Strict domain isolation ensuring tool boundaries are mathematically maintained</p>
+            </div>
+            <a href="/api/documents/audit" target="_blank" class="btn-secondary">View Classification Audit CSV</a>
+          </div>
+
+          <div class="card-glass" style="margin-bottom:20px;">
+            <h4 style="margin-bottom:12px;">Search Verified Library Index</h4>
+            <div style="display:flex; gap:12px;">
+              <input type="text" id="doc-search-input" class="terminal-input" style="padding:10px; background:rgba(0,0,0,0.4); border-radius:8px; border:1px solid var(--border-glass);" placeholder="Search keywords across 12 verified modules...">
+              <button class="btn-cyber" onclick="searchDocuments()">Search Index</button>
+            </div>
+            <div id="doc-search-results" style="margin-top:16px;"></div>
+          </div>
+
+          <div class="card-glass">
+            <h4 style="margin-bottom:12px;">Ingest New Technical Document</h4>
+            <input type="text" id="doc-ingest-name" class="btn-secondary" style="width:100%; margin-bottom:10px;" placeholder="Document Title (e.g. Linux_Kernel_Tuning_Guide.md)">
+            <textarea id="doc-ingest-text" class="terminal-input" style="width:100%; height:100px; padding:10px; background:rgba(0,0,0,0.4); border-radius:8px; border:1px solid var(--border-glass); margin-bottom:10px;" placeholder="Paste raw document content to evaluate classification against zero-cross-contamination rules..."></textarea>
+            <button class="btn-cyber" onclick="ingestDocument()">Classify &amp; Ingest</button>
+            <div id="doc-ingest-result" style="margin-top:12px;"></div>
+          </div>
+        </section>
+
+        <!-- TAB 12: AI CONTROL CENTER -->
+        <section id="tab-ai" class="tab-pane">
+          <div style="margin-bottom:20px;">
+            <h2 style="font-size:1.3rem;">Multi-Provider Adaptive AI Control Matrix</h2>
+            <p style="color:var(--text-muted); font-size:0.85rem;">4-Provider Fallback Cascade (Gemini • Groq • OpenAI • OpenRouter) + Deterministic Offline Engine</p>
+          </div>
+
+          <div class="card-glass" style="margin-bottom:20px;">
+            <h4 style="margin-bottom:12px;">Active Providers &amp; Failover Status</h4>
+            <div id="ai-providers-table-container">
+              <!-- Populated dynamically by app.js -->
+            </div>
+          </div>
+
+          <div class="card-glass">
+            <h4 style="margin-bottom:12px;">Query AI Routing Engine</h4>
+            <div style="display:flex; gap:12px; margin-bottom:12px;">
+              <select id="ai-workload-select" class="btn-secondary">
+                <option value="auto">Auto-Select Optimal Provider</option>
+                <option value="gemini">Google Gemini 1.5 Flash</option>
+                <option value="groq">Groq (Llama 3.1 70B)</option>
+                <option value="openai">OpenAI (GPT-4o Mini)</option>
+                <option value="openrouter">OpenRouter (Claude 3.5 Sonnet)</option>
+              </select>
+              <input type="text" id="ai-prompt-input" class="terminal-input" style="flex:1; padding:10px; background:rgba(0,0,0,0.4); border-radius:8px; border:1px solid var(--border-glass);" placeholder="Ask any technical DevOps question (works offline or online)...">
+              <button class="btn-cyber" onclick="sendAIQuery()">Dispatch Query</button>
+            </div>
+            <div id="ai-route-response-box" style="background:rgba(0,0,0,0.3); padding:16px; border-radius:8px; min-height:80px; font-family:var(--font-mono); font-size:0.9rem; color:#e2e8f0;">
+              AI Response Console: Waiting for query...
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 13: SYSTEM & BACKUP -->
+        <section id="tab-system" class="tab-pane">
+          <div style="margin-bottom:20px;">
+            <h2 style="font-size:1.3rem;">System Telemetry, SQLite Integrity &amp; Backups</h2>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Deterministic state management, backup archives with SHA256 manifests</p>
+          </div>
+
+          <div class="card-glass" style="margin-bottom:20px;">
+            <h4 style="margin-bottom:12px;">Runtime Environment Metrics</h4>
+            <div id="system-info-container"></div>
+          </div>
+
+          <div class="card-glass">
+            <h4 style="margin-bottom:12px;">Create Atomic System Backup</h4>
+            <div style="display:flex; gap:12px; margin-bottom:12px;">
+              <input type="text" id="backup-label-input" class="btn-secondary" style="flex:1;" placeholder="Backup Label (e.g. pre-capstone-snapshot)" value="manual-snapshot">
+              <button class="btn-cyber" onclick="triggerBackup()">Create Verified Backup</button>
+            </div>
+            <div id="backup-status-box" style="background:rgba(0,0,0,0.3); padding:16px; border-radius:8px;"></div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
